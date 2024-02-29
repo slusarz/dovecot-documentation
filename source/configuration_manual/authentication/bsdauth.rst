@@ -9,8 +9,8 @@ parameter the same way as PAM.
 
 .. Note::
 
-   BSDAuth is deprecated and it is NOT supported by :ref:`ox_dovecot_pro`.
-   It will be maintained on a best-effort basis for `Dovecot Community Edition
-   <https://repo.dovecot.org>`_, based on community patches.
+   BSDAuth is deprecated.
+
+   It will be maintained on a best-effort basis for Dovecot CE, based on community patches.
 
    Users are strongly advised to use :ref:`authentication-pam` instead.
