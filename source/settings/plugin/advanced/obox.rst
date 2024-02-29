@@ -58,7 +58,7 @@ Settings
    Disable including secondary indexes into the user root bundle when using
    the virtual or virtual-attachments plugin (see
    :ref:`virtual plugin <virtual_plugin_obox_secondary_indexes>` and
-   :ref:`virtual-attachments plugin <virtual_attachments_plugin_obox_secondary_indexes>`).
+   virtual-attachments plugin <virtual_attachments_plugin_obox_secondary_indexes>).
 
    This setting can be used to exclude the virtual and virtual-attachments
    folders from the user root bundle in case any problems are encountered.
