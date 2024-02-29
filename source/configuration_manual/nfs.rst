@@ -62,11 +62,6 @@ Potential optimizations to use:
   in the proper backends.
 * Use ``mail_location = ...:VOLATILEDIR=/dev/shm/dovecot/%2.256Nu/%u`` to
   store some temporary files (e.g. lock files) in tmpfs rather than NFS.
-* Use ``mail_location = ...:LISTINDEX=/dev/shm/dovecot/%2.256Nu/%u/dovecot.list.index``
-  to store mailbox list indexes in tmpfs rather than NFS. This makes moving
-  the users between backends more expensive though. It also needs a way to
-  delete the list indexes for users that have already moved to different
-  backends. This can be done with :ref:`nfs_hostchange`.
 * Use ``mail_location = ...:INDEX=/fast/%2.256Nu/%u:ITERINDEX`` to use
   "smaller fast storage" for index files and "larger slow storage" for mail
   files. The ``ITERINDEX`` is used to list mailboxes via the fast index
