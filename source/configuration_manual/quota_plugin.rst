@@ -118,7 +118,6 @@ Configuration
   :maxdepth: 1
 
   quota/index
-  quota/unified_quota_configuration
 
 Quota Recalculation
 ===================
