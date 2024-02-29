@@ -236,10 +236,3 @@ setting.
      # If Cassandra w/obox is used:
      obox_track_copy_flags = yes
   }
-
-========
-Dumpster
-========
-
-See :ref:`dumpster_config` for information on how to configure lazy_expunge
-with the OX Dumpster module.
