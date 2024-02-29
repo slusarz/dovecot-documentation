@@ -2006,7 +2006,7 @@ fs-dictmap
    Normally this shouldn't happen, because the writes and deletes are
    done in such an order that Dovecot prefers to rather leak objects in storage
    than cause this error. A likely source of this error can be resurrected
-   deleted data (see :ref:`cassandra` for more details).
+   deleted data (see cassandra for more details).
 
 
 .. dovecot_core:event:: fs_dictmap_max_bucket_changed

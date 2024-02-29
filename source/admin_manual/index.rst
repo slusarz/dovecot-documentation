@@ -8,7 +8,7 @@ Administrative Manual
    :maxdepth: 1
    :glob:
 
-   cassandra/index
+   cassandra
    chrooting
    clients
    cluster/index

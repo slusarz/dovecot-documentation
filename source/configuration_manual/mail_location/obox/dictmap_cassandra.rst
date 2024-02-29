@@ -127,8 +127,8 @@ The following base tables are always needed by fs-dictmap:
 
 For more Cassandra details, see:
 
- * :ref:`cassandra`
- * :ref:`cassandra_replication_factor`
+ * cassandra
+ * cassandra_replication_factor
 
 .. _dictmap_cassandra_diff_table:
 
@@ -280,4 +280,4 @@ fixing up these uncertain writes when Cassandra is again working normally.
 See also
 --------
 
- * :ref:`cassandra_administration`
+ * cassandra_administration
