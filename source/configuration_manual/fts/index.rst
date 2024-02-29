@@ -7,9 +7,8 @@ FTS (Full Text Search)
 .. toctree::
   :maxdepth: 1
 
-  dovecot
-  solr
   flatcurve
+  solr
   tokenization
 
 Introduction
@@ -35,11 +34,10 @@ utilization may be too large, especially in mailboxes with large messages.
 Dovecot maintains these FTS indexing engines:
 
 ============================= ================================================
-Name                           Description
+Name                          Description
 ============================= ================================================
-:ref:`fts_backend_dovecot`    Dovecot native, object storage optimized driver.
-                              Only available as part of
-                              :ref:`ox_dovecot_pro`.
+Dovecot Pro FTS               Dovecot native, object storage optimized driver.
+                              Only available as part of Dovecot Pro.
 :ref:`fts_backend_solr`       Interface to
                               `Apache Solr <https://solr.apache.org/>`_.
 :ref:`fts_backend_flatcurve`  `Xapian`_ based driver; stores data locally.
@@ -120,21 +118,6 @@ and the achieved scaling comes at a high price as the number of required
 host systems quickly grows very large.
 
 
-OX Dovecot Pro Full Text Search Backend
----------------------------------------
-
-:ref:`fts_backend_dovecot` is a proprietary FTS plugin available for
-:ref:`ox_dovecot_pro`. It provides fast and compact indexing of search data.
-
-All Dovecot indexes, including FTS indexes, are stored in the same storage
-(including object storage) used to store the mail and index data. No
-separate permanent storage media is needed for the FTS indexes.
-
-The pre and post processing of input data and search terms heavily relies on
-the upper level fts-plugin and lib-fts. Most of the configuration options
-affect lib-fts functionality.
-
-
 FTS Configuration
 -----------------
 
@@ -194,10 +177,6 @@ mails), you'll need to do a rescan and then index missing mails:
 Note that currently most FTS backends don't properly implement the rescan.
 Instead, they simply delete all the FTS indexes. This may change in the
 future versions.
-
-In Dovecot Pro FTS backend there are ``doveadm fts check`` commands, which
-can be used to determine whether rescan is necessary. See
-:ref:`fts_dovecot_consistency_check` for details.
 
 
 Dovecot General FTS Configuration

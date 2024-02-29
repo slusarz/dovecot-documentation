@@ -5,7 +5,7 @@ fs-compress plugin
 ==================
 
 It can be used by any of the settings using the FS drivers (e.g.
-:dovecot_plugin:ref:`obox_fs`, :dovecot_plugin:ref:`fts_dovecot_fs`, etc.)
+:dovecot_plugin:ref:`obox_fs`, etc.)
 
 The exact location where to set it in the FS driver string depends on what
 other FS drivers are being used.

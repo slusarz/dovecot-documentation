@@ -370,7 +370,6 @@ fs-crypt and fs-mail-crypt
 The fs-crypt is a lib-fs wrapper that can encrypt and decrypt files. It works
 similarly to the fs-compress wrapper. It can be used to encrypt e.g.:
 
-* FTS index objects (fts_dovecot_fs)
 * External mail attachments (mail_attachment_fs)
 
 fs-crypt comes in two flavors, ``mail-crypt`` and ``crypt``. (The differences

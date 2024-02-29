@@ -60,8 +60,6 @@ Categories
         - :ref:`fs-dictmap <dictmap_configuration>`
       * - ``fts``
         - Full text search plugin
-      * - ``fts-dovecot``
-        - :ref:`fts_backend_dovecot`
       * - ``http-client``
         - HTTP client library
 
@@ -2338,22 +2336,6 @@ Events emitted when login process proxies a connection to a backend.
      - Anonymous authentication is not enabled.
 
 Additionally :ref:`proxying errors <proxy_error_codes>` can occur.
-
-***********
-FTS-Dovecot
-***********
-
-lib-fts-index
-=============
-
-.. dovecot_core:event:: fts_dovecot_too_many_triplets
-   :added: 2.3.15
-   :inherit: mail_user
-
-   :field triplet_count: Number of triplets found.
-
-   Emitted when number of triplets exceeds the limit defined by
-   :dovecot_plugin:ref:`fts_dovecot_max_triplets`.
 
 
 *******

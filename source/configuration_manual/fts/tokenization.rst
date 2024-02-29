@@ -4,8 +4,7 @@
 FTS Tokenization
 ================
 
-:ref:`fts_backend_dovecot` requires configuring FTS tokenization.
-Other FTS engines can also optionally use it.
+Dovecot contains tokenization support that can be used by FTS drivers.
 
 The lib-fts tokenization library works in the following way:
 
