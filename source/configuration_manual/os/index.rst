@@ -10,9 +10,6 @@ to check are:
 * ``/proc/sys/fs/inotify/max_user_watches`` and ``max_user_instances`` need to
   be large enough to handle all the IDLEing IMAP processes.
 
-  The default Dovecot-EE init script already attempts to set these values
-  automatically.
-
 .. code-block:: none
 
   fs.inotify.max_user_instances = 65535
