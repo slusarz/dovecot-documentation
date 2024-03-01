@@ -10,7 +10,7 @@ We have customers using OpenStack, KVM, VMware and others. We are in the end
 agnostic to the virtualization technology used, as long as there is no
 overcommitment of resources (see below).
 
-:ref:`Dovecot v3.0 cluster architecture <dovecot_cluster_architecture>`
+Dovecot v3.0 cluster architecture <dovecot_cluster_architecture>
 contains 2 layers:
 
 * Proxies

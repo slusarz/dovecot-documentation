@@ -144,7 +144,7 @@ Settings
 
    If metacache_last_host_dict is configured to a valid
    :ref:`dictionary uri<dict>`, obox looks up ``metacache_last_host`` key from
-   dict. This is meant to be used with :ref:`dovecot_cluster_architecture`.
+   dict. This is meant to be used with dovecot_cluster_architecture.
    The metacache_last_host value is kept in :cluster:ref:`cluster_geodb`.
 
    If the lookup is successful and ``metacache_last_host`` is different from the

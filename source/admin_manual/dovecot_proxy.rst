@@ -21,5 +21,3 @@ The proxying can be done for all users, or only for some specific users. There a
 #. Let Dovecot proxy perform the authentication and login to remote server
    using the proxy's master password. This allows client to use also
    non-cleartext authentication mechanism.
-
-.. seealso:: :ref:`dovecot_cluster_architecture`

@@ -9,8 +9,7 @@ accessing the same user simultaneously by different servers. That will
 result in more or less severe mailbox corruption. Note that this applies
 to all mailbox access, including mail delivery.
 
-* Use :ref:`dovecot_cluster_architecture` or assign users to specific backends
-  in the proxy's passdb lookups.
+* Users must be assigned to specific backends (i.e. in the proxy's passdb lookups).
 * Use :ref:`lmtp_server` for mail deliveries.
 * Set :dovecot_core:ref:`mmap_disable` = ``yes``
 * Set :dovecot_core:ref:`mail_fsync` = ``always``

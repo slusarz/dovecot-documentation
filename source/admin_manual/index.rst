@@ -11,7 +11,6 @@ Administrative Manual
    cassandra
    chrooting
    clients
-   cluster/index
    debugging/index
    doveadm_http_api
    doveadm_mailbox_commands

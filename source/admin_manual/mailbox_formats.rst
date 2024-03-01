@@ -162,8 +162,8 @@ Caching
 
 Your cluster will probably perform better if users are usually redirected to
 the same server. This is because the mailbox may already be cached in the
-memory and it may also reduce the traffic between the clusterfs nodes. You
-can use :ref:`dovecot_cluster_architecture` to handle this. Or at the very
+memory and it may also reduce the traffic between the clusterfs nodes.
+Or at the very
 least, make sure that your load balancer redirects connections from the same
 IP address to the same server.
 
