@@ -30,10 +30,6 @@ Increase the maximum user connections per IP
 
    mail_max_userip_connections = 1000
 
-Object Storage
-^^^^^^^^^^^^^^
-Reducing the fscache value in ``obox_fs`` will result in more load for your storage platform. The fscache / ftscache should always be on ``tmpfs``.  
-
 Troubleshooting
 ^^^^^^^^^^^^^^^
 You might run into problems where you have too few services running and you need to increase the number of services and/or modify client limit for the following:
@@ -42,5 +38,3 @@ You might run into problems where you have too few services running and you need
 * imap
 * pop3
 * lmtp
-* metacache
-* metacache-worker 

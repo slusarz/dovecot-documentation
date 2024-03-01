@@ -602,8 +602,8 @@ Settings
 
    :dovecot_core:ref:`mail_always_cache_fields` = ``date.save`` is also
    recommended when using this setting with sdbox or Maildir, as it avoids
-   using ``stat()`` to find out the mail's saved-timestamp. With mdbox and obox
-   formats this isn't necessary, since the saved-timestamp is always available.
+   using ``stat()`` to find out the mail's saved-timestamp. With mdbox
+   format this isn't necessary, since the saved-timestamp is always available.
 
 
 .. dovecot_core:setting:: namespace/mailbox/autoexpunge_max_mails

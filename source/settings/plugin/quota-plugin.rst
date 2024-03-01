@@ -154,13 +154,6 @@ Settings
        quota_over_script = quota-warning mismatch %u
      }
 
-   .. IMPORTANT:: obox installations using ``quota_over_script`` must
-                  currently also have
-                  :dovecot_plugin:ref:`quota_over_flag_lazy_check` enabled.
-                  Otherwise the ``quota_over_flag`` checking may cause a race
-                  condition with metacache cleaning, which may end up losing
-                  folder names or mail flags within folders.
-
 
 .. dovecot_plugin:setting:: quota_rule
    :plugin: quota

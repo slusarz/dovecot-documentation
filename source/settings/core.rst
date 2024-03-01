@@ -2019,11 +2019,6 @@ See :ref:`settings` for list of all setting groups.
      This provides the best performance, but risks losing recently saved emails
      in case of a crash with most mailbox formats.
 
-     With :ref:`obox <obox_settings>`, this option is recommended to be used
-     because it affects only the local metacache operations. If a server
-     crashes, the existing metacache is treated as potentially corrupted and
-     isn't used.
-
 
 .. dovecot_core:setting:: mail_full_filesystem_access
    :default: no
@@ -2200,17 +2195,8 @@ See :ref:`settings` for list of all setting groups.
      commands, while with ``mail_prefetch_count=1`` they would be combined into
      a single ``FETCH 1:2 BODY.PEEK[]`` command. The downside is that each mail
      uses a file descriptor and disk space in :dovecot_core:ref:`mail_temp_dir`.
-   * obox: Read multiple mails in parallel from object storage to local disk
-     without waiting for previous reads to finish. The downside is that each
-     mail uses a file descriptor and disk space in
-     :dovecot_core:ref:`mail_temp_dir`.
 
-     This setting is also the default for
-     :dovecot_plugin:ref:`obox_max_parallel_copies`,
-     :dovecot_plugin:ref:`obox_max_parallel_deletes` and
-     :dovecot_plugin:ref:`obox_max_parallel_writes`.
-
-   For imapc and obox formats a good value is likely between 10..100.
+   For imapc, a good value is likely between ``10..100``.
 
    ``0`` means that no prefetching is done.
 
@@ -2299,15 +2285,6 @@ See :ref:`settings` for list of all setting groups.
    .. code-block:: none
 
      NO [LIMIT] Requested sort would have taken too long.
-
-   .. note:: As a special case with the :ref:`obox <obox_settings>` format when
-             doing a ``SORT (ARRIVAL)``, the SORT will always return OK.
-
-             When it reaches the slow access limit, it falls back to using the
-             save-date (instead of received-date) for the rest of the mails.
-
-             Often this produces mostly the same result, especially in the
-             INBOX.
 
 
 .. dovecot_core:setting:: mail_temp_dir

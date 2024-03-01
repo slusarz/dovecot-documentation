@@ -432,5 +432,4 @@ See Also
    imapc/*
    Maildir/*
    mbox/*
-   obox/index
    pop3c/*

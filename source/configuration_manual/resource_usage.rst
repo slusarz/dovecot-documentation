@@ -7,17 +7,12 @@ Resource Usage
 These settings are useful to prevent IMAP commands from opening too many emails and causing larger system-wide performance problems.
 
 .. code-block:: none
-   
+
    mail_sort_max_read_count = 100
 
 This controls how many slow mail accesses sorting can perform before it fails with:
 ``NO [LIMIT] Requested sort would have taken too long.``
 The SORT reply is still returned, but it's likely not correct.
-
-As an exception with the obox format, ``SORT (ARRIVAL)`` will always return OK.
-When it reaches the limit, it starts getting the received-timestamps from the
-time the object was saved. This is commonly the same as the received-timestamp,
-but not always.
 
 .. code-block:: none
 

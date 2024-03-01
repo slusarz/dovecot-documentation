@@ -23,7 +23,7 @@ The mail index files are used in a few different places:
  * mdbox map index (``dovecot.map.index*``)
 
 The mailbox index is optional for some mailbox formats (maildir, mbox), but
-required required for all high performance mailbox formats (sdbox, mdbox, obox).
+required for all high performance mailbox formats (sdbox, mdbox).
 
 The index files were implemented to optimize Dovecot, so the file formats
 attempt to be efficient. The index files are often mmap()ed into memory and
@@ -100,8 +100,6 @@ There are several advantages to having a transaction log:
 
     * QRESYNC extension
     * doveadm sync (dsync)
-
- * obox index merging works better using the transaction log.
 
 See :ref:`mail_index_format_log` for more details.
 

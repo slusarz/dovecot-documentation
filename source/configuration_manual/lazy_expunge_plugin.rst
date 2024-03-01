@@ -220,19 +220,3 @@ Set autoexpunge configuration for expunge storage to automatically clean
 old messages.
 
 See :ref:`namespaces`.
-
-Obox Settings
-=============
-
-Lazy expunge allows reduction of Cassandra dictmap lookups by removing the
-lockdir setting and enabling the :dovecot_plugin:ref:`obox_track_copy_flags`
-setting.
-
-.. code-block:: none
-
-   mail_plugins = $mail_plugins lazy_expunge
-   plugin {
-     lazy_expunge = .EXPUNGED
-     # If Cassandra w/obox is used:
-     obox_track_copy_flags = yes
-  }

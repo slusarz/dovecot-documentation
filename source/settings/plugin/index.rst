@@ -11,12 +11,3 @@ See :ref:`settings` for list of all setting groups.
    :glob:
 
    *
-
-Advanced Settings
------------------
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   advanced/*

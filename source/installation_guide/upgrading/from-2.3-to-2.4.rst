@@ -111,25 +111,6 @@ Removed features and their replacements
 |                                                            | be SSL/TLS encrypted with this setting. See also                                         |
 |                                                            | :ref:`secured connections <secured_connections>`.                                        |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| ``absolute_timeout_msecs``                                 | Deprecated HTTP-storage parameter. Use :ref:`absolute_timeout <http_storages>` setting   |
-|                                                            | instead.                                                                                 |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| ``connect_timeout_msecs``                                  | Deprecated HTTP-storage parameter. Use :ref:`connect_timeout <http_storages>` setting    |
-|                                                            | instead.                                                                                 |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| ``delete_timeout_msecs``                                   | Deprecated HTTP-storage parameter. Use :ref:`delete_timeout <http_storages>` setting     |
-|                                                            | instead.                                                                                 |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| ``read_timeout_msecs``                                     | Deprecated HTTP-storage parameter. Use :ref:`read_timeout <http_storages>` setting       |
-|                                                            | instead.                                                                                 |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| ``slow_warn_msecs``                                        | Deprecated HTTP-storage parameter. Use :ref:`slow_warn <http_storages>` setting instead. |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| ``timeout_msecs``                                          | Deprecated HTTP-storage parameter. Use :ref:`timeout <http_storages>` setting instead.   |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| ``write_timeout_msecs``                                    | Deprecated HTTP-storage parameter. Use :ref:`write_timeout <http_storages>` setting      |
-|                                                            | instead.                                                                                 |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | ``dict_db_config``                                         | Berkeley DB is not supported anymore.                                                    |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | ``idle_msecs``                                             | Deprecated dict proxy parameter. Use :ref:`idle_timeout <dict-proxy>` setting instead.   |
@@ -140,10 +121,6 @@ Removed features and their replacements
 |                                                            | For a small-scale, unmaintained replacement, see :ref:`howto_director_with_lua`.         |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | ``imap_id_log`` setting.                                   | Replaced by the :dovecot_core:ref:`imap_id_received` event.                              |
-+------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| ``no-cleanup-uncertain``                                   | Previously cleanup-uncertain needed to be explicitly enabled, now it is enabled by       |
-|                                                            | default. It can be disabled by ``no-cleanup-uncertain`` - see                            |
-|                                                            | :ref:`dictmap_configuration_parameters` for more details.                                |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------+
 | ``replicator``                                             | Use :ref:`NFS <nfs>` or some other shared filesystem instead.                            |
 +------------------------------------------------------------+------------------------------------------------------------------------------------------+
@@ -179,10 +156,6 @@ Changed default settings
    -
    - ``NO-NOSELECT``
    - ``NO-NOSELECT`` is the new default behavior. To revert to the old default specify ``KEEP-NOSELECT``.
- * - :ref:`max-parallel-iter<dictmap_configuration_parameters>`
-   - 1
-   - 10
-   -
  * - :dovecot_core:ref:`mail_cache_max_headers_count`
    - unlimited
    - 100

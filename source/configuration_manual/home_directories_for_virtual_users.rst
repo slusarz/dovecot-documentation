@@ -33,7 +33,7 @@ Home vs. mail directory
 =======================
 
 Home directory shouldn't be the same as mail directory with mbox or Maildir
-formats (but with dbox/obox it's fine). It's possible to do that, but you might
+formats (but with dbox it's fine). It's possible to do that, but you might
 run into trouble with it sooner or later. Some problems with this are:
 
 * Non-mailbox files may show up as mailboxes.

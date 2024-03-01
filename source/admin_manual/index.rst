@@ -37,7 +37,6 @@ Administrative Manual
    migrating_mailboxes
    mta
    namespaces
-   obox/index
    pigeonhole_managesieve_server
    post_login_scripting
    process_titles

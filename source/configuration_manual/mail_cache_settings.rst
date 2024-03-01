@@ -47,8 +47,7 @@ Fields
    have CRLF linefeeds? Does it have NUL characters?
  * ``date.sent``: The Date: header parsed to timestamp
  * ``date.received``: Mail delivery date (IMAP INTERNALDATE)
- * ``date.save``: Mail save/copy date (mdbox and obox formats store this always in
-   dovecot.index)
+ * ``date.save``: Mail save/copy date (mdbox stores this always in dovecot.index)
  * ``size.physical``: Physical message size (line feeds exactly as they are
    stored in the stored mail). Note that the size is of the mail as plaintext,
    i.e. after decryption/compression. This is typically used by :ref:`fs <quota_backend_fs>` or :ref:`maildir <quota_backend_maildir>` quota.

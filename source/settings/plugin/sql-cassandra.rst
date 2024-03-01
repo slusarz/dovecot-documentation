@@ -44,7 +44,6 @@ Supported Options
 .. dovecot_core:setting:: delete_consistency
    :default: local-quorum
    :domain: sql-cassandra
-   :seealso: @dictmap_cassandra_quorum_configuration
    :values: !:ref:`cassandra_consistency`
 
    Write consistency when deleting from the database.
@@ -53,7 +52,6 @@ Supported Options
 .. dovecot_core:setting:: delete_fallback_consistency
    :default: local-quorum
    :domain: sql-cassandra
-   :seealso: @dictmap_cassandra_fallback_consistency
    :values: !:ref:`cassandra_consistency`
 
    Write consistency when deleting from the database fails with primary
@@ -179,7 +177,6 @@ Supported Options
 .. dovecot_core:setting:: read_consistency
    :default: local-quorum
    :domain: sql-cassandra
-   :seealso: @dictmap_cassandra_quorum_configuration
    :values: !:ref:`cassandra_consistency`
 
    Read consistency.
@@ -188,7 +185,6 @@ Supported Options
 .. dovecot_core:setting:: read_fallback_consistency
    :default: local-quorum
    :domain: sql-cassandra
-   :seealso: @dictmap_cassandra_fallback_consistency
    :values: !:ref:`cassandra_consistency`
 
    Read consistency if primary consistency fails.
@@ -282,7 +278,6 @@ Supported Options
 .. dovecot_core:setting:: write_consistency
    :default: local-quorum
    :domain: sql-cassandra
-   :seealso: @dictmap_cassandra_quorum_configuration
    :values: !:ref:`cassandra_consistency`
 
    Write consistency when updating or inserting to the database.
@@ -291,7 +286,6 @@ Supported Options
 .. dovecot_core:setting:: write_fallback_consistency
    :default: local-quorum
    :domain: sql-cassandra
-   :seealso: @dictmap_cassandra_fallback_consistency
    :values: !:ref:`cassandra_consistency`
 
    Write consistency when updating or inserting to the database fails with

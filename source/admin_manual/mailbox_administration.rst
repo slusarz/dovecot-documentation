@@ -11,5 +11,3 @@ Mailbox Administration
    importing_mailboxes
 
    doveadm_mailbox_commands
-
-   obox/index

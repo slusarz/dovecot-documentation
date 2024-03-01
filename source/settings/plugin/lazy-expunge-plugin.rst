@@ -77,7 +77,3 @@ Settings
      :dovecot_core:ref:`maildir_copy_with_hardlinks = yes <maildir_copy_with_hardlinks>`,
      which is the default)
    * :ref:`sdbox/mdbox <dbox_mbox_format>`
-   * :ref:`obox with fs-dictmap <dictmap_configuration>`
-
-   .. warning:: This setting does not fully work with obox without fs-dictmap (e.g.
-                :ref:`S3-only <amazon_s3>` setup).

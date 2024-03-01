@@ -224,9 +224,3 @@ To generate read load (BODY FETCHs):
 .. code-block:: none
 
    imaptest - user=terra.29.%d select=100 fetch2=100,0 logout=0 clients=10 msgs=100000 no_pipelining users=400 no_tracking
-
-To avoid out-of-socket issues when connecting to local HAproxy instance, spread load between multiple local IP addresses to hit HAproxy, e.g.:
-
-.. code-block:: none
-
-   obox_fs = scality:http://127.0.%4Hu.1:8080/?timeout_msecs=30000&addhdr=X-Dovecot-Hash:%2Mu/%2.3Mu&bulk_delete=1

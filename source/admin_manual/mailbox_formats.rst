@@ -108,7 +108,7 @@ Shared Storage
 
 The recommended storage solution for large installations that require
 high-availability and scalable performance is object storage.
-:ref:`ox_dovecot_pro` provides the :ref:`obox mailbox format <obox_settings>`
+:ref:`ox_dovecot_pro` provides the obox mailbox format
 to efficiently interact with selected object storage systems.
 
 Dovecot allows keeping mails and index files in clustered filesystems.
@@ -119,6 +119,9 @@ testing to guarantee the storage solution provides adequate performance.
 Dovecot also supports keeping mails and index files on NFS. Everything
 described in this page applies to NFS as well, but see :ref:`nfs` for
 additional NFS-specific problems and optimizations.
+
+Dovecot CE only supports mailbox access on a single server: a user can only be
+accessed by a single Dovecot server at a time.
 
 Memory Mapping
 ^^^^^^^^^^^^^^
