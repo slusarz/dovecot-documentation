@@ -51,4 +51,3 @@ Administrative Manual
    testing
    timeouts
    troubleshooting
-   virtualised_architecture
