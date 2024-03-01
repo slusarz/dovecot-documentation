@@ -94,24 +94,6 @@ indexer
 
  * ``indexer:index_mailbox`` - Mailbox is being indexed
 
-obox
-----
-
- * ``metacache_worker:cmd_<name>`` - metacache-worker is running a command
- * ``obox:mailbox_rescan`` - Mailbox is being rescanned when opening
- * ``obox:mailbox_rebuild`` - Mailbox index is being rebuilt when opening
- * ``obox:mailbox_uids_non_reproducible`` - Mailbox index bundle is being uploaded to make sure UIDs don't change unexpectedly.
- * ``metacache:upload_important`` - Important metacache changes are being uploaded
- * ``metacache:upload_all`` - All metacache changes are being uploaded
- * ``metacache:upload_root`` - User's root metacache is being uploaded
- * ``metacache:upload_mailbox`` - Mailbox's metacache is being uploaded
- * ``metacache:flush_all_changed`` - All the changes in metacache are being uploaded due to ``doveadm metacache flushall``
- * ``metacache:flush_all_important`` - All the important changes in metacache are being uploaded due to ``doveadm metacache flushall -i``
- * ``metacache:flush_bg_important`` - Important changes for a user in metacache are being uploaded due to background uploader.
- * ``obox:mail_metadata_fill`` - Filling metadata after mail stream was read.
-   This shouldn't cause any additional IO.
- * ``obox:mail_metadata_<name>`` - Mail metadata with specified name requested.
-
 Other plugins
 -------------
 
@@ -121,7 +103,6 @@ Other plugins
  * ``quota:count`` - quota plugin is counting the mailbox's full size.
    This is normal with quota=count driver.
  * ``quota:recalculate`` - Quota is being recalculated (e.g. doveadm quota recalc)
- * ``pop3_migration:uidl_sync`` - pop3_migration plugin matching IMAP and POP3 mails.
  * ``lazy_expunge:expunge`` - lazy_expunge plugin is handling an expunge.
    Use for checking the refcount and for actually doing the lazy_expunge move.
  * ``fts:lookup`` - Searching is accessing full text search index.
