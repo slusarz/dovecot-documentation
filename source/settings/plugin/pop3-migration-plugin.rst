@@ -10,9 +10,6 @@ When dsync is handling IMAP INBOX and requests a POP3 UIDL, the plugin
 connects to the POP3 server and figures out which IMAP messages match the
 POP3 messages and returns the appropriate POP3 UIDL.
 
-For some POP3 servers it's possible to use the more efficient
-:ref:`plugin-pop3-uidl-migrate`.
-
 .. warning:: Always do a test migration to verify that POP3 UIDLs are preserved
              correctly. If the UIDL format is wrong, all the mails have to be
 	     re-migrated.
