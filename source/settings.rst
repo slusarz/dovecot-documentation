@@ -13,8 +13,6 @@ Settings
 
    settings/plugin/index
 
-   settings/cluster
-
    settings/pigeonhole
 
    settings/pigeonhole-ext/index
