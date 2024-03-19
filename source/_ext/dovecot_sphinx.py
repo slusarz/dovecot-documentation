@@ -335,14 +335,6 @@ dovecot_versionlabel_mapping = {
     'dovecotremoved': 'versionremoved'
 }
 
-# If version begins with this string, it will be replaced by
-# the value text. First match wins, so more exact matches
-# should appear before more general matches.
-dovecot_product_mapping = {
-    '3.0': '%s (Pro)',
-    '2.4': '%s (CE)'
-}
-
 class DovecotVersionChange(VersionChange):
 
     def run(self):
@@ -375,11 +367,6 @@ class DovecotVersionChange(VersionChange):
             # Do product/version matching
             if pigeonhole:
                 x = f'{x} (Pigeonhole)'
-            else:
-                for k,v in dovecot_product_mapping.items():
-                    if x.startswith(k):
-                        x = v % x
-                        break
 
             self.arguments[0] = x
             ret += super().run()
