@@ -6,7 +6,7 @@ See :ref:`settings` for list of all setting groups.
 
 
 .. dovecot_core:setting:: auth_allow_weak_schemes
-   :added: 2.4.0,3.0.0
+   :added: 2.4.0
    :default: no
    :values: @boolean
 
@@ -29,7 +29,7 @@ See :ref:`settings` for list of all setting groups.
 .. dovecot_core:setting:: auth_allow_cleartext
    :default: no
    :values: @boolean
-   :added: 2.4.0,3.0.0
+   :added: 2.4.0
 
    If ``no``, disables the LOGIN command and all other cleartext
    authentication unless SSL/TLS is used (LOGINDISABLED capability) or the
@@ -81,7 +81,7 @@ See :ref:`settings` for list of all setting groups.
 
 
 .. dovecot_core:setting:: auth_debug
-   :changed: 2.4.0,3.0.0
+   :changed: 2.4.0
    :default: no
    :values: @boolean
 
@@ -107,7 +107,7 @@ See :ref:`settings` for list of all setting groups.
    See :dovecot_core:ref:`log_debug`
 
 .. dovecot_core:setting:: auth_default_domain
-   :added: 2.4.0,3.0.0
+   :added: 2.4.0
    :values: @string
 
    This setting indicates the default realm/domain to use if none has
@@ -115,7 +115,7 @@ See :ref:`settings` for list of all setting groups.
    and appending an @domain element to the username in cleartext logins.
 
 .. dovecot_core:setting:: auth_default_realm
-   :removed: 2.4.0,3.0.0
+   :removed: 2.4.0
    :values: @string
 
    Renamed to :dovecot_core:ref:`auth_default_domain`
@@ -394,7 +394,7 @@ See :ref:`settings` for list of all setting groups.
 
 .. dovecot_core:setting:: auth_stats
    :added: 2.3.0
-   :removed: 3.0.0
+   :removed: 2.4.0
    :default: no
    :values: @boolean
 
@@ -662,7 +662,7 @@ See :ref:`settings` for list of all setting groups.
 
 .. dovecot_core:setting:: dict_db_config
    :values: @string
-   :removed: 2.4.0,3.0.0
+   :removed: 2.4.0
 
    Points to a Berkeley DB config file. Equivalent to adding
    ``DB_CONFIG=/path`` to :dovecot_core:ref:`import_environment`.
@@ -969,7 +969,7 @@ See :ref:`settings` for list of all setting groups.
 
 
 .. dovecot_core:setting:: imap_id_log
-   :removed: 2.4.0,3.0.0
+   :removed: 2.4.0
    :values: @string
 
    The ID fields sent by the client that are output to the log.
@@ -1568,7 +1568,7 @@ See :ref:`settings` for list of all setting groups.
 
 .. dovecot_core:setting:: login_access_sockets
    :values: @string
-   :removed: 2.4.0,3.0.0
+   :removed: 2.4.0
 
    For blacklisting or whitelisting networks, supply a space-separated list of
    login-access-check sockets for this setting.
@@ -1902,7 +1902,7 @@ See :ref:`settings` for list of all setting groups.
 
       SIS with immediate byte-by-byte comparison during saving.
 
-      .. dovecotchanged:: 2.4.0,3.0.0 SIS is deprecated and writing of
+      .. dovecotchanged:: 2.4.0 SIS is deprecated and writing of
         SIS files is disabled. Reading is supported for now, any missing
         SIS attachments are replaced with files filled with spaces.
 
@@ -2870,12 +2870,12 @@ See :ref:`settings` for list of all setting groups.
      * Other connections from :dovecot_core:ref:`login_trusted_networks` are
        ``secured``, but only if ``ssl`` setting is not ``required``.
 
-       .. dovecotchanged:: 2.4.0,3.0.0 With old versions these connections
+       .. dovecotchanged:: 2.4.0 With old versions these connections
           were ``secured`` regardless of the ``ssl`` setting.
      * Other connections from HAProxy are ``secured``, but only if ``ssl``
        setting is not ``required``.
 
-       .. dovecotchanged:: 2.4.0,3.0.0 With old versions these connections
+       .. dovecotchanged:: 2.4.0 With old versions these connections
           were ``secured`` regardless of the ``ssl`` setting.
 
    Connections that are ``secured`` are always allowed to use plaintext
@@ -3159,14 +3159,14 @@ See :ref:`settings` for list of all setting groups.
    ``ANY``
 
      .. dovecotadded:: 2.3.15
-     .. dovecotchanged:: 2.4.0,3.0.0
+     .. dovecotchanged:: 2.4.0
 
      .. warning:: this value is meant for tests only.
                   It should not be used in any deployment of any value/relevance.
 
    ``SSLv3``
 
-     .. dovecotremoved:: 2.4.0,3.0.0
+     .. dovecotremoved:: 2.4.0
 
    ``TLSv1``
 

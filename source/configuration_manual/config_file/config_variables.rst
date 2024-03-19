@@ -259,17 +259,17 @@ Login variables
 +----------+-----------------------+---------------------------------------------------------------+
 | %k       | ssl_security          | TLS session security string.                                  |
 |          |                       |                                                               |
-|          |                       | .. dovecotadded:: 2.4.0,3.0.0 If HAProxy is configured and    |
+|          |                       | .. dovecotadded:: 2.4.0       If HAProxy is configured and    |
 |          |                       |    it terminated the TLS connection, contains "(proxied)".    |
 +----------+-----------------------+---------------------------------------------------------------+
 |          | ssl_ja3               | :ref:`JA3 string <ssl_ja3>` composed from TLS Client Hello.   |
 |          |                       |                                                               |
-|          |                       | .. dovecotadded:: 2.4.0,3.0.0                                 |
+|          |                       | .. dovecotadded:: 2.4.0                                       |
 +----------+-----------------------+---------------------------------------------------------------+
 |          | ssl_ja3_hash          | MD5 hash from :ref:`JA3 string <ssl_ja3>` composed from       |
 |          |                       | TLS Client Hello.                                             |
 |          |                       |                                                               |
-|          |                       | .. dovecotadded:: 2.4.0,3.0.0                                 |
+|          |                       | .. dovecotadded:: 2.4.0                                       |
 +----------+-----------------------+---------------------------------------------------------------+
 | %e       | mail_pid              | PID for process that handles the mail session post-login      |
 +----------+-----------------------+---------------------------------------------------------------+
@@ -436,7 +436,7 @@ Authentication variables
 +----------+-----------------------+---------------------------------------------------------------+
 |          | ssl_ja3_hash          | MD5 hash from JA3 string composed from TLS Client Hello.      |
 |          |                       |                                                               |
-|          |                       | .. dovecotadded:: 2.4.0,3.0.0                                 |
+|          |                       | .. dovecotadded:: 2.4.0                                       |
 +----------+-----------------------+---------------------------------------------------------------+
 | %k       | cert                  | "valid" if client had sent a valid client certificate,        |
 |          |                       | otherwise empty.                                              |

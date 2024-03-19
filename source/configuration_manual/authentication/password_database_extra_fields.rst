@@ -63,7 +63,7 @@ specially:
 
   .. dovecotadded:: 2.3.21
 
-.. dovecotchanged:: 2.4.0,3.0.0
+.. dovecotchanged:: 2.4.0
    Extra fields can now also be set to empty string, while previously they were
    changed to ``yes``. Extra fields without value (without ``=``) will default to
    ``yes``.

@@ -81,7 +81,7 @@ Settings
 .. dovecot_plugin:setting:: mail_crypt_require_encrypted_user_key
    :plugin: mail-crypt
    :values: @boolean
-   :changed: 2.4.0,3.0.0  Changed the value type to be boolean. Earlier versions evaluated all values as true.
+   :changed: 2.4.0  Changed the value type to be boolean. Earlier versions evaluated all values as true.
 
    If true, require user key encryption with password.
 

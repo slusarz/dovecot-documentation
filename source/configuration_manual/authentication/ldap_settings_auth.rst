@@ -271,7 +271,7 @@ Example:
 ``userdb_warning_disable``
 --------------------------
 
-.. dovecotremoved:: 2.4.0,3.0.0
+.. dovecotremoved:: 2.4.0
 
 - Default: ``no``
 - Values:  :ref:`boolean`

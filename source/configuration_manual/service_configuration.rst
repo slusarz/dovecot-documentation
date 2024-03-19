@@ -172,7 +172,7 @@ Path to the file, relative to ``base_dir`` setting. This is also used as the sec
 type
 ^^^^
 
-.. dovecotadded:: 2.4.0,3.0.0
+.. dovecotadded:: 2.4.0
 
 Listener type. This string value has service-specific meaning and is used to distinguish different listener types that one service may employ. The default value is the empty string.
 
@@ -200,7 +200,7 @@ Section name of this listener. It is meant to be descriptive for humans (e.g. `i
 type
 ^^^^
 
-.. dovecotadded:: 2.4.0,3.0.0
+.. dovecotadded:: 2.4.0
 
 Listener type. This string value has service-specific meaning and is used to distinguish different listener types that one service may employ. The default value is the empty string.
 
@@ -257,7 +257,7 @@ The master auth process. There are 4 types of auth client connections:
    * **login**: Starts a two phase user login by performing authenticating (same as`client` type). Used by login processes.
    * **master**: Finishes the two phase user login by performing a userdb lookup (similar to "userdb" type). Used by post-login processes (e.g. imap, pop3).
 
-.. dovecotchanged:: 2.4.0,3.0.0 The listener type is configured explicitly using the **type** field. For older versions the listener type is selected based on the (file)name after the last ``-`` in the name. For example ``anything-userdb`` is of `userdb` type. The default type is `auth` for unrecognized listeners. You can add as many `auth` and `userdb` listeners as you want (and you probably shouldn't touch the `login` and `master` listeners).
+.. dovecotchanged:: 2.4.0 The listener type is configured explicitly using the **type** field. For older versions the listener type is selected based on the (file)name after the last ``-`` in the name. For example ``anything-userdb`` is of `userdb` type. The default type is `auth` for unrecognized listeners. You can add as many `auth` and `userdb` listeners as you want (and you probably shouldn't touch the `login` and `master` listeners).
 
    * **client_limit** should be large enough to handle all the simultaneous connections.
      Dovecot attempts to verify that the limit is high enough at startup.
@@ -323,7 +323,7 @@ Dovecot has a `lib-dict"` API for doing simple key-value lookups/updates in vari
 dict-expire
 ^^^^^^^^^^^
 
-.. dovecotadded:: 2.4.0,3.0.0
+.. dovecotadded:: 2.4.0
 
 This process periodically goes through configured dicts and deletes all
 expired rows in them. Currently this works only for dict-sql when expire_field

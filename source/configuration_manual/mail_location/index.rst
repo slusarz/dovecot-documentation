@@ -84,7 +84,7 @@ Key                Value Description
                      ``dovecot.list.index*`` files.
 
 ``KEEP-NOSELECT``  Do NOT automatically delete ``\NoSelect`` mailboxes that have
-                   no children. This was the default before v2.4.0;v3.0.0
+                   no children. This was the default before v2.4.0
 
                    The current default is instead to
                    automatically delete any ``\NoSelect`` mailboxes that have
@@ -107,7 +107,7 @@ Key                Value Description
                    Additionally, the behavior of *rename* already noted for
                    ``LAYOUT=fs`` applies as well.
 
-                   .. dovecotadded:: 2.4.0,3.0.0
+                   .. dovecotadded:: 2.4.0
 
 ``NO-NOSELECT``    **This is now the default behavior.**
 
@@ -116,7 +116,7 @@ Key                Value Description
                    .. dovecotchanged:: 2.3.19 Add support for using ``NO-NOSELECT``
                                        with LAYOUT=index
 
-                   .. dovecotchanged:: 2.4.0,3.0.0 this is now the default.
+                   .. dovecotchanged:: 2.4.0 this is now the default.
 
 ``UTF-8``          Store mailbox names on disk using UTF-8 instead of
                    modified UTF-7 (mUTF-7).

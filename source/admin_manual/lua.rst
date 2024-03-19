@@ -28,7 +28,7 @@ unloaded.
 
 When script is loaded, :func:`script_init` function is called if found.
 
-.. dovecotchanged:: 2.4.0,3.0.0 ``script_init`` return value is no longer checked. Use error() instead if necessary.
+.. dovecotchanged:: 2.4.0 ``script_init`` return value is no longer checked. Use error() instead if necessary.
 
 When script is being unloaded, :func:`script_deinit` function is called if found.
 
@@ -432,7 +432,7 @@ object dns_client
 
 .. py:currentmodule:: dns_client
 
-.. dovecotadded:: 2.4.0,3.0.0
+.. dovecotadded:: 2.4.0
 
 .. note:: Currently this object cannot be created within the Lua code itself.
 

@@ -182,7 +182,7 @@ All fields supported by :ref:`variables-auth` can be used. In addition, you can 
   Username for regular logins. For master user logins, this is the requested login username (not the master username).
 
 ``fail_type``
-  .. dovecotadded:: 2.4.0,3.0.0
+  .. dovecotadded:: 2.4.0
 
   Will be the reason request failed. This can take one of
 
@@ -256,7 +256,7 @@ Default values for auth_policy_request_attributes
 
    login=%{requested_username} pwhash=%{hashed_password} remote=%{rip} device_id=%{client_id} protocol=%s session_id=%{session}
 
-.. dovecotadded:: 2.4.0,3.0.0
+.. dovecotadded:: 2.4.0
 
 .. code-block:: none
 

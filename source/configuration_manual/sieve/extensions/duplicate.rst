@@ -14,7 +14,7 @@ from previously delivered messages. For more complex applications, the
 ``duplicate`` test can also use the content of a specific header field
 or other parts of the message.
 
-.. dovecotchanged:: 2.4.0,3.0.0
+.. dovecotchanged:: 2.4.0
 
   ``vnd.dovecot.duplicate`` extension has been removed in favor of this.
 

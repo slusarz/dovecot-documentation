@@ -115,7 +115,7 @@ virtual mailbox.
 IMAPSieve filters with virtual mailboxes
 ----------------------------------------
 
-.. dovecotadded:: 2.4.0,3.0.0
+.. dovecotadded:: 2.4.0
 
 When saving to a virtual mailbox is configured, imapsieve scripts act as if the
 save was done directly to the physical destination mailbox. For example if

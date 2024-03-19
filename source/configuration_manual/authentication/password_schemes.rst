@@ -29,7 +29,7 @@ complexity, minimum is 3. ARGON2ID is only available if your libsodium is
 recent enough. ARGON2 can require quite a hefty amount of virtual memory, so we
 recommend that you set service ``auth { vsz_limit = 2G }`` at least, or more.
 
-.. dovecotadded:: 2.4.0,3.0.0
+.. dovecotadded:: 2.4.0
 
 **ARGON2** scheme is also accepted and processed according to the actual
 algorithm as described in the hash, e.g ``{ARGON2}$argon2id$...`` is recognized
@@ -175,7 +175,7 @@ Strong schemes and mechanism-specific schemes are listed above.
 * **CRYPT**: Traditional DES-crypted password in ``/etc/passwd (e.g. "pass" =
   vpvKh.SaNbR6s)``
 
-.. dovecotchanged:: 2.4.0,3.0.0 DES and MD5 based crypt are disabled by default.
+.. dovecotchanged:: 2.4.0 DES and MD5 based crypt are disabled by default.
 
  * Dovecot uses libc's ``crypt()`` function, which means that CRYPT is usually
    able to recognize MD5-CRYPT and possibly also other password schemes. See
@@ -196,7 +196,7 @@ Strong schemes and mechanism-specific schemes are listed above.
 MD5 based schemes:
 ******************
 
-.. dovecotchanged:: 2.4.0,3.0.0 Disabled by default.
+.. dovecotchanged:: 2.4.0 Disabled by default.
 
 * **PLAIN-MD4**: MD4 sum of the password stored in hex.
 * **MD5**: Alias for MD5-CRYPT.
@@ -229,7 +229,7 @@ Other schemes
   Note that there is no standard encoding for this format, so this scheme may not be interoperable with other software.
   Dovecot implements it as "$1$salt$rounds$hash".
 
-.. dovecotadded:: 2.4.0,3.0.0
+.. dovecotadded:: 2.4.0
 
 * **ARGON2**: ARGON2 password scheme, needs libsodium
 

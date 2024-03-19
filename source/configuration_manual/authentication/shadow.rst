@@ -4,7 +4,7 @@
 Shadow
 =======
 
-.. dovecotremoved:: 2.4.0,3.0.0
+.. dovecotremoved:: 2.4.0
 
 .. warning:: This plugin has been removed. Use :ref:`authentication-pam` instead.
 

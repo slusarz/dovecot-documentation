@@ -105,7 +105,7 @@ Code  Label                     Description
                                 successfully because the requested contents are no longer
                                 valid or no longer up to date.
 
-                                .. dovecotadded:: 2.4.0,3.0.0
+                                .. dovecotadded:: 2.4.0
 ===== ===================       =========================================================
 
 Other Issues:
