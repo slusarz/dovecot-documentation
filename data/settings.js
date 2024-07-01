@@ -6645,10 +6645,7 @@ The compile-time directory PKG_STATEDIR (typically /var/lib/dovecot)
 is hard-coded as the location of state files. The PKG_STATEDIR value
 is taken as the default state_dir setting but can be overridden - for
 instance, if you wish to use the same binaries for a system daemon and
-a user daemon.
-
-The settings [[setting,state_dir,/home/foo/dovecot/state]] and
-[[setting,base_dir,/home/foo/dovecot/run]] give an example of usage.`
+a user daemon.`
 	},
 
 	stats_writer_socket_path: {
