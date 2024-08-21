@@ -2551,10 +2551,36 @@ plugin {
 If set, allows message deliveries to exceed quota by this value.`
 	},
 
+	quota_mailbox_count: {
+		default: '0',
+		plugin: 'quota',
+		values: setting_types.UINT,
+		tags: [ 'storage_size_limits' ],
+		seealso: [ '[[link,quota_mailbox_count]]' ],
+		text: `
+Maximum number of mailboxes that can be created. Each namespace is tracked
+separately, so e.g. shared mailboxes aren't counted towards the user's own
+limit.
+
+\`0\` means unlimited.`
+	},
+
+	quota_mailbox_message_count: {
+		default: '0',
+		plugin: 'quota',
+		values: setting_types.UINT,
+		tags: [ 'storage_size_limits' ],
+		text: `
+Maximum number of messages that can be created in a single mailbox.
+
+\`0\` means unlimited.`
+	},
+
 	quota_max_mail_size: {
 		default: '0',
 		plugin: 'quota',
 		values: setting_types.UINT,
+		tags: [ 'storage_size_limits' ],
 		seealso: [ '[[link,quota_max_mail_size]]' ],
 		text: `
 The maximum message size that is allowed to be saved (e.g. by LMTP, IMAP
@@ -2675,14 +2701,6 @@ expanded in plugin section.
 Backend-specific configuration currently is used only with \`Maildir++\`
 quota backend. It means you can have the quota in Maildir++ format (e.g.
 \`10000000S\`).`
-	},
-
-	quota_set: {
-		plugin: 'quota',
-		values: setting_types.STRING,
-		seealso: [ '[[link,quota_admin]]' ],
-		text: `
-A dictionary string where your quota limit exists and can be modified.`
 	},
 
 	quota_warning: {
@@ -2867,7 +2885,6 @@ entry is to be added.`
 		default: 'no',
 		tags: [ 'auth_cache' ],
 		values: setting_types.BOOLEAN,
-		advanced: true,
 		text: `
 The auth master process by default is responsible for the hash
 verifications. Setting this to \`yes\` moves the verification to auth-worker
@@ -2916,6 +2933,7 @@ and appending an \`@domain\` element to the username in cleartext logins.`
 	auth_failure_delay: {
 		default: '2secs',
 		values: setting_types.TIME,
+		seealso: [ 'auth_internal_failure_delay' ],
 		text: `
 This is the delay before replying to failed authentication attempts.
 
@@ -2927,7 +2945,6 @@ encounter.`
 	auth_gssapi_hostname: {
 		default: '<name returned by gethostname()>',
 		values: setting_types.STRING,
-		advanced: true,
 		text: `
 This supplies the hostname to use in Generic Security Services API
 (GSSAPI) principal names.
@@ -2935,10 +2952,25 @@ This supplies the hostname to use in Generic Security Services API
 Use \`"$ALL"\` (with the quotation marks) to allow all keytab entries.`
 	},
 
+	auth_internal_failure_delay: {
+		default: '2secs',
+		values: setting_types.TIME_MSECS,
+		added: {
+			settings_auth_internal_failure_delay_added: false
+		},
+		seealso: [ 'auth_failure_delay' ],
+		text: `
+The delay before replying to client when authentication fails with
+internal failure. An additional 0..50% delay is added on top of this to
+prevent thundering herd issues.
+
+This setting is intended to prevent clients from hammering the server with
+immediate retries.`
+	},
+
 	auth_krb5_keytab: {
 		default: '<system default (e.g. /etc/krb5.keytab)>',
 		values: setting_types.STRING,
-		advanced: true,
 		text: `
 This specifies the Kerberos keytab to use for the GSSAPI mechanism.
 
@@ -3193,7 +3225,6 @@ OBJ_txt2nid() function).
 	auth_use_winbind: {
 		default: 'no',
 		values: setting_types.BOOLEAN,
-		advanced: true,
 		text: `
 By default, the NTLM mechanism is handled internally.
 
@@ -3278,7 +3309,6 @@ Available transformations:
 
 	auth_winbind_helper_path: {
 		values: setting_types.STRING,
-		advanced: true,
 		text: `
 This setting tells the system the path for Samba's ntlm_auth helper binary.
 
@@ -3502,6 +3532,33 @@ If the worker count set here is non-zero, mail commands are run via this
 many connections to the doveadm service.
 
 If \`0\`, commands are run directly in the same process.`
+	},
+
+	dovecot_config_version: {
+		values: setting_types.STRING,
+		text: `
+Dovecot configuration version. It uses the same versioning as Dovecot in
+general, e.g. \`3.0.5\`. This must be the first setting in the
+configuration file. It specifies the configuration syntax, the used setting
+names and the expected default values.
+
+When there are default configuration changes in newer Dovecot versions, the
+existing installations will continue to work the same as before with the same
+default settings until this version number is increased. If there are other
+configuration changes, the old configuration will either keep working or there
+will be a clear failure at startup.`
+	},
+
+	dovecot_storage_version: {
+		values: setting_types.STRING,
+		text: `
+Dovecot storage file format version. It uses the same versioning as Dovecot in
+general, e.g. \`3.0.5\`. It specifies the oldest Dovecot version
+that must be able to read files written by this Dovecot instance. The intention
+is that when upgrading Dovecot cluster, this setting is first kept as the old
+Dovecot version. Once the cluster is fully upgraded to a new version and
+there is no intention to rollback to the old version anymore, this version
+number can be increased.`
 	},
 
 	dsync_alt_char: {
@@ -4413,7 +4470,7 @@ format), save the message to the detail mailbox.`
 
 	lmtp_user_concurrency_limit: {
 		default: 0,
-		tags: [ 'lmtp' ],
+		tags: [ 'lmtp', 'user_concurrency_limits' ],
 		values: setting_types.UINT,
 		text: `
 Limit the number of concurrent deliveries to a single user to this maximum
@@ -5024,7 +5081,6 @@ Compliance is enforced only during attempts to create new keywords.`
 	mail_max_lock_timeout: {
 		default: '0',
 		values: setting_types.TIME,
-		advanced: true,
 		text: `
 This value is used as a timeout for tempfailing mail connections.  It
 can be set globally, for application to all Dovecot services, but
@@ -5037,6 +5093,7 @@ tolerate tempfailing less well.`
 	mail_max_userip_connections: {
 		default: '10',
 		values: setting_types.UINT,
+		tags: [ 'user_concurrency_limits' ],
 		text: `
 The maximum number of IMAP connections allowed for a user from each IP
 address.
@@ -6537,8 +6594,8 @@ The path to the Diffie-Hellman parameters file must be provided. This
 setting isn't needed if using only ECDSA certificates.
 
 You can generate a new parameters file by, for example, running
-\`openssl gendh 4096\` on a machine with sufficient entropy (this may take
-some time).
+\`openssl dhparam -out dh.pem 4096\` on a machine with sufficient entropy
+(this may take some time).
 
 Example:
 

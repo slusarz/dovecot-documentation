@@ -14,6 +14,9 @@ dovecotlinks:
   quota_backend_maildir:
     hash: backend-maildir
     text: Maildir quota backend
+  quota_mailbox_count:
+    hash: maximum-mailbox-count
+    text: quota maximum mailbox count
   quota_max_mail_size:
     hash: maximum-saved-mail-size
     text: quota maximum saved mail size
@@ -514,7 +517,7 @@ smtpd_recipient_restrictions =
 ```
 
 For more about this service, see
-https://blog.sys4.de/postfix-dovecot-mailbox-quota-en.html.
+https://sys4.de/en/blog/postfix-dovecot-mailbox-quota/
 
 ## Quota Warning Scripts
 
@@ -626,6 +629,20 @@ plugin {
   quota_grace = 50 M
 }
 ```
+
+## Maximum Mailbox Count
+
+See [[setting,quota_mailbox_count]].
+
+Maximum number of mailboxes that can be created. Each namespace is tracked
+separately, so e.g. shared mailboxes aren't counted towards the user's own
+limit. The default is `0`, which is unlimited.
+
+## Maximum Messages Per Mailbox
+
+See [[setting,quota_mailbox_message_count]].
+
+Maximum number of messages that can be created in a single mailbox.
 
 ## Maximum Saved Mail Size
 

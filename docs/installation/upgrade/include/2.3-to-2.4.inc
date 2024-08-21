@@ -1,5 +1,28 @@
 ## Dovecot Core
 
+### Configuration Changes
+
+The first setting in `dovecot.conf` must now be
+[[setting,dovecot_config_version]]. This helps to avoid unexpected
+configuration changes in the future.
+
+Another new required setting is [[setting,dovecot_storage_version]]. This helps
+to avoid unexpected storage file format incompatibilities.
+
+passdb and userdb sections now require a name, i.e.:
+
+
+```
+# This gives an error:
+passdb {
+  ...
+}
+
+# Use this instead:
+passdb some_name {
+}
+```
+
 ### Removed Features
 
 | Feature | Notes |
@@ -32,6 +55,7 @@
 | Dovecot director role | This has been replaced with the Dovecot Pro Palomar architecture. |
 | `imap_id_log` setting | Replaced by the [[event,imap_id_received]] event. |
 | size.virtual | size.virtual field is no longer written to dovecot.index.cache file as it is duplicating vsize record in dovecot.index file. Reading of the field from old files is supported. |
+| SETQUOTA / `quota_set` | Quota limits can no longer be modified using the IMAP SETQUOTA command. |
 
 ### Changed Default Settings
 

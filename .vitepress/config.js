@@ -3,8 +3,9 @@ import path from 'path'
 import { defineConfig } from 'vitepress'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { generateSidebar } from 'vitepress-sidebar'
-import { dovecotMdExtend } from '../lib/markdown.js'
+import { dovecotMdExtend, initDovecotMd } from '../lib/markdown.js'
 import { frontmatterIter } from '../lib/utility.js'
+import { checkExternalLinks, outputBrokenLinks } from '../lib/link_checker.js'
 
 const base = '/2.4'
 
@@ -16,6 +17,11 @@ await frontmatterIter(function (f, data) {
 		excludes.push(path.relative('docs/', f))
 	}
 })
+
+// Need to bootstrap configuration for Dovecot markdown driver (specifically,
+// loading all data files to allow existence checking), or else the markdown
+// processing will begin before Dovecot link markup is enabled
+await initDovecotMd(base)
 
 export default defineConfig({
 	title: "Dovecot CE",
@@ -40,6 +46,7 @@ export default defineConfig({
 	},
 
 	ignoreDeadLinks: 'localhostLinks',
+	metaChunk: true,
 
 	themeConfig: {
 		nav: [
@@ -102,7 +109,7 @@ export default defineConfig({
 	},
 
 	markdown: {
-		config: async (md) => await dovecotMdExtend(md),
+		config: (md) => dovecotMdExtend(md),
 		image: {
 			lazyLoading: true,
 		},
@@ -112,4 +119,13 @@ export default defineConfig({
 	head: [
 		['link', { rel: 'icon', type: 'image/x-icon', href: base + '/favicon.ico' } ]
 	],
+
+	async transformHead(context) {
+		checkExternalLinks(context)
+	},
+
+	async buildEnd(siteConfig) {
+		outputBrokenLinks()
+	}
+
 })
