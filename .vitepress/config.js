@@ -2,15 +2,10 @@ import gitCommitInfo from 'git-commit-info'
 import { defineConfig } from 'vitepress'
 import { pagefindPlugin } from 'vitepress-plugin-pagefind'
 import { generateSidebar } from 'vitepress-sidebar'
-import { dovecotMdExtend, initDovecotMd } from '../lib/markdown.js'
+import { dovecotMdExtend } from '../lib/markdown.js'
 import { getExcludes } from '../lib/utility.js'
 
 const base = '/2.4'
-
-// Need to bootstrap configuration for Dovecot markdown driver (specifically,
-// loading all data files to allow existence checking), or else the markdown
-// processing will begin before Dovecot link markup is enabled
-await initDovecotMd(base)
 
 export default defineConfig({
 	title: "Dovecot CE",
@@ -107,6 +102,16 @@ export default defineConfig({
 
 		/* Dovecot VitePress paths. */
 		dovecot: {
+			data_paths: {
+				doveadm: '../data/doveadm.js',
+				event_categories: '../data/event_categories.js',
+				event_reasons: '../data/event_reasons.js',
+				events: '../data/events.js',
+				links_overrides: '../data/links_overrides.js',
+				lua: '../data/lua.js',
+				settings: '../data/settings.js',
+				updates: '../data/updates.js',
+			},
 			man_includes: [
 				'docs/core/man/include/*.inc'
 			],
@@ -125,7 +130,7 @@ export default defineConfig({
 	},
 
 	markdown: {
-		config: (md) => dovecotMdExtend(md),
+		config: async (md) => await dovecotMdExtend(md),
 		image: {
 			lazyLoading: true,
 		},
