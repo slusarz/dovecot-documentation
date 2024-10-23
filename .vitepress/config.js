@@ -113,6 +113,9 @@ export default defineConfig({
 			man_paths: [
 				'docs/core/man/*.[[:digit:]].md'
 			],
+			plugin_paths: [
+				'docs/core/plugins/*.md'
+			],
 			watch_paths: [
 				'docs/**/*.md',
 				'docs/**/*.inc',
