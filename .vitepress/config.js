@@ -107,6 +107,12 @@ export default defineConfig({
 
 		/* Dovecot VitePress paths. */
 		dovecot: {
+			man_includes: [
+				'docs/core/man/include/*.inc'
+			],
+			man_paths: [
+				'docs/core/man/*.[[:digit:]].md'
+			],
 			watch_paths: [
 				'docs/**/*.md',
 				'docs/**/*.inc',

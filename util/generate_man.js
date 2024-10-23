@@ -14,7 +14,7 @@ import matter from 'gray-matter'
 import pdc from 'pdc'
 import path from 'path'
 import { VFile } from 'vfile'
-import { manFiles, manIncludes } from '../lib/utility.js'
+import { dovecotSetting } from '../lib/utility.js'
 import remarkDeflist from 'remark-definition-list'
 import remarkMan from 'remark-man'
 import remarkParse from 'remark-parse'
@@ -126,8 +126,8 @@ const main = async (component, outPath) => {
 	}
 
 	/* Generate list of man files. */
-	const files = (await manFiles()).flatMap((x) => fg.sync(x))
-	const includes = (await manIncludes()).flatMap((x) => fg.sync(x))
+	const files = dovecotSetting('man_paths').flatMap((x) => fg.sync(x))
+	const includes = dovecotSetting('man_includes').flatMap((x) => fg.sync(x))
 
 	/* Get hash of last git commit. */
 	const gitHash = gitCommitInfo().shortHash
