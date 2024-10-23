@@ -103,6 +103,15 @@ export default defineConfig({
 		gitrev: {
 			align: 'right',
 			hash: gitCommitInfo().shortHash,
+		},
+
+		/* Dovecot VitePress paths. */
+		dovecot: {
+			watch_paths: [
+				'docs/**/*.md',
+				'docs/**/*.inc',
+				'data/**/*'
+			]
 		}
 	},
 
