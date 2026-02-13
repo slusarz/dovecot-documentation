@@ -30,7 +30,8 @@
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
     "docs:preview": "vitepress preview",
-    "man:build": "node util/generate_man.js"
+    "man:build": "node util/generate_man.js",
+    "test": "node --test test/*.test.js"
   },
   "type": "module"
 }
