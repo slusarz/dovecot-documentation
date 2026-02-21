@@ -43,13 +43,13 @@ export const dovecotConfig = {
 	]
 }
 
-export default defineConfig({
+export default defineConfig(async () => ({
 	title: "Dovecot CE",
 	description: "Dovecot CE Documentation",
 	lang: "en-us",
 
 	srcDir: ".",
-	srcExclude: [ '*.md' ].concat(getExcludes()),
+	srcExclude: [ '*.md' ].concat(await getExcludes()),
 	rewrites: {
 		'docs/:path(.*)': ':path',
 	},
@@ -159,4 +159,4 @@ export default defineConfig({
 		['script', { async: '', src: '/js/versions.js' } ]
 	]
 
-})
+}))
