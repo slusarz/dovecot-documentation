@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Events Design
 
-Dovecot supports events, which improves both logging and statistics.
+Dovecot supports events, which improves both logging and [[link,stats,statistics]].
 
 ::: tip
 See Also:
@@ -18,12 +18,12 @@ See Also:
 :::
 
 Each logging call can be attached to a specific event, which can provide more
-metadata and context than just the log message string. This will eventually
+metadata and context than just the log message [[link,settings_types_string,string]]. This will eventually
 allow implementing things like machine-parsable (e.g. `JSON`) log lines
 containing key=value pairs, while still keeping the human readable text
 available. Each logging event can also be captured and sent to stats, even if
 it's not actually logged. Commonly statistics-related events are logged with
-debug level.
+[[link,debug,debug]] level.
 
 Events have:
 
@@ -71,7 +71,7 @@ little sense for most of those events.
 The event categories are hierarchical. 
 
 Example: `mail` category has parent `mailbox`, which has parent `storage`.
-If an event filter contains `category=storage`, it will match the `mail`
+If an [[link,event_filter,event filter]] contains `category=storage`, it will match the `mail`
 and `mailbox` child categories as well.
 
 ::: tip

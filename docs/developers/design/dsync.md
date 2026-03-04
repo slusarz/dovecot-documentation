@@ -27,7 +27,7 @@ major problems:
   GUID hasn't changed.
 
 - If mailbox has been deleted and recreated, dsync doesn't attempt to
-  sync it because it's a different mailbox.
+  sync it because it's a different [[link,design_mailbox,mailbox]].
 
 Then there's the problem of how to correctly sync mailbox renames and
 deletions. How do you know which side of the sync has the most recent

@@ -290,7 +290,7 @@ writing.
 In this version of the folder keys mode, each user's private key is stored
 unencrypted on the server.
 
-Example config for folder keys with Maildir:
+Example config for folder keys with [[link,maildir,Maildir]]:
 
 ```[dovecot.conf]
 mail_plugins {
@@ -334,7 +334,7 @@ provided via the [[setting,crypt_user_key_password]] setting. See below.
 It is recommended to use a hash of the user's plaintext login password as the
 encryption key password instead of the plaintext password directly. This way
 the plaintext password is less likely to become visible accidentally, such as
-in debug logs. Also using a strong hash makes the key more resistant against
+in [[link,debug,debug]] logs. Also using a strong hash makes the key more resistant against
 brute force attacks.
 
 Another issue that you must consider when using the login password is that
@@ -357,7 +357,7 @@ passdb sql {
 ## Base64-encoded Keys
 
 Mail-crypt plugin can read keys that are base64 encoded. This is intended
-mostly for providing PEM keys via userdb, because it may be difficult to get
+mostly for providing PEM keys via [[link,userdb,userdb]], because it may be difficult to get
 userdb to return multi-line values.
 
 Hence, this is possible:
@@ -452,7 +452,7 @@ by default.
 ## Doveadm Commands
 
 ::: tip
-For doveadm commands that are working with password protected keys, the global
+For [[link,doveadm,doveadm]] commands that are working with password protected keys, the global
 `-o` option should be used to provide the password.  Example:
 
 ```sh

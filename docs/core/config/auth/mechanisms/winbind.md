@@ -5,7 +5,7 @@ title: Winbind
 
 # Winbind Mechanisms
 
-Dovecot supports NTLM and GSS-SPNEGO authentication mechanisms using
+Dovecot supports NTLM and GSS-SPNEGO [[link,authentication_mechanisms,authentication mechanisms]] using
 [Samba](https://www.samba.org)'s winbind daemon. It is useful when you
 need to authenticate users against a Windows domain (either AD or NT).
 
@@ -19,7 +19,7 @@ obtain corresponding local username, for example), set
 [[setting,auth_username_format,%{user | username}]].
 
 Dovecot needs path to Samba's `ntlm_auth` binary to perform the
-authentication. You can change the path with
+[[link,authentication,authentication]]. You can change the path with
 [[setting,auth_winbind_helper_path,/usr/bin/ntlm_auth]].
 
 Dovecot currently does blocking lookups, so if `ntlm_auth` is slow on

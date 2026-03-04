@@ -5,7 +5,7 @@ title: sieve-imapsieve
 
 # Sieve IMAPSieve Plugin (`sieve-imapsieve`)
 
-IMAPSieve ([[rfc,6785]]) defines the use of Sieve
+IMAPSieve ([[rfc,6785]]) defines the use of [[link,sieve,Sieve]]
 filtering in IMAP, operating when messages are created or their
 attributes are changed.
 

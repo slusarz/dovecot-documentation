@@ -40,7 +40,7 @@ You can use special variables in several places:
 
 [[changed,var_expand]]
 
-We have introduced an entirely new variable expansion syntax.
+We have introduced an entirely new [[link,settings_syntax_expansion,variable expansion]] syntax.
 
 The basic syntax is `%{variable (| filter | filter ...)}`, which means that most existing
 variables work, but there are some changes, so check variable usage carefully when converting old syntax.
@@ -82,14 +82,14 @@ Addition, substraction, multiplication, division and modulo operations are suppo
 A special case for modulo operation is that it can be applied to binary input, e.g. `sha1 % 256`.
 The input is treated as 64-bit unsigned number and modulo is taken from that.
 
-All strings must be encapsulated with `"` or `'`, and you can escape them using `\\` within string.
+All strings must be encapsulated with `"` or `'`, and you can escape them using `\\` within [[link,settings_types_string,string]].
 Numbers when used as parameters must be provided without quotes.
 
 ## List of filters
 
 All parameters are strings unless stated otherwise.
 If parameter is `any`, it accepts both numbers and strings.
-Boolean type is `0` for false and `1` for true.
+[[link,settings_types_boolean,Boolean]] type is `0` for false and `1` for true.
 
 Filters that have `any` in input and output mean that they will accept bytes or string, and the result
 will be bytes or strings, depending on the input. The types indicated as interpreted types, as everything
@@ -231,7 +231,7 @@ Variables that work nearly everywhere where there is a username:
 | -------- | ----------- |
 | `user` | Full username (e.g. user@domain) |
 | `session` | Session ID for this client connection (unique for 9 years) |
-| `auth_user` | SASL authentication ID (e.g. if master user login is done, this contains the master username). If username changes during authentication, this value contains the original username. Otherwise the same as `user`. |
+| `auth_user` | SASL [[link,authentication,authentication]] ID (e.g. if master user login is done, this contains the master username). If username changes during authentication, this value contains the original username. Otherwise the same as `user`. |
 
 ## Mail Service User Variables
 
@@ -243,12 +243,12 @@ See also:
 
 | Variable | Description |
 | -------- | ----------- |
-| `service` | imap, pop3, smtp, lda (and doveadm, etc.) |
+| `service` | imap, pop3, smtp, lda (and [[link,doveadm,doveadm]], etc.) |
 | `local_ip` | local IP address |
 | `remote_ip` | remote IP address |
 | `local_port` | local port |
 | `remote_port` | remote port |
-| `userdb:<name>` | Return userdb extra field "name". |
+| `userdb:<name>` | Return [[link,userdb,userdb]] extra field "name". |
 
 ## Mail User Variables
 
@@ -285,8 +285,8 @@ See also:
 | `real_remote_port` | Similar to `real_remote_ip` except for port instead of IP. |
 | `real_local_port` | Similar to `real_local_ip` except for port instead of IP. |
 | `mechanism` | [[link,sasl]], e.g., PLAIN. |
-| `secured` | "TLS" with established SSL/TLS connections, "TLS handshaking", or "TLS [handshaking]: error text" if disconnecting due to TLS error. "secured" with secured connections (see: [[setting,ssl]]). Otherwise empty. |
-| `ssl_security` | TLS session security string. If HAProxy is configured and it terminated the TLS connection, contains "(proxied)". |
+| `secured` | "TLS" with established SSL/TLS connections, "TLS handshaking", or "TLS [handshaking]: error text" if disconnecting due to TLS error. "secured" with [[link,secured_connections,secured connections]] (see: [[setting,ssl]]). Otherwise empty. |
+| `ssl_security` | TLS session security string. If [[link,haproxy,HAProxy]] is configured and it terminated the TLS connection, contains "(proxied)". |
 | `ssl_ja3` | [[link,ssl_ja3]] composed from TLS Client Hello. |
 | `ssl_ja3_hash` | MD5 hash from [[link,ssl_ja3]] composed from TLS Client Hello. |
 | `ssl_client_cert_fp` | [[setting,ssl_peer_certificate_fingerprint_hash]] of client certificate. |
@@ -295,7 +295,7 @@ See also:
 | `original_user` | Same as `user`, except using the original username the client sent before any changes by auth process. With master user logins (also with [[setting,auth_master_user_separator]] based logins),this contains only the original master username. |
 | `listener` | Socket listener name as specified in config file, which accepted the client connection. |
 | `owner_user` | For shared storage this is the `user` variable of the owner, otherwise it is the same as `user`.<br />[[added,variables_owner_user_added]] |
-| `passdb:<name>` | Return passdb extra field "name". |
+| `passdb:<name>` | Return [[link,passdb,passdb]] extra field "name". |
 | `passdb:forward_<name>` | Used by proxies to pass on extra fields to the next hop, see [[link,auth_forward_fields]]. |
 
 ## Authentication Variables
@@ -325,7 +325,7 @@ See also:
 | `mechanism` | [[link,sasl]], e.g., PLAIN. |
 | `password` | Cleartext password from cleartext authentication mechanism. |
 | `secured` | "TLS" with established SSL/TLS connections, "secured" with secured connections (see: [[setting,ssl]]). Otherwise empty. |
-| `ssl_ja3_hash` | MD5 hash from JA3 string composed from TLS Client Hello. |
+| `ssl_ja3_hash` | MD5 hash from [[link,ssl_ja3,JA3 string]] composed from TLS Client Hello. |
 | `ssl_client_cert_fp` | [[setting,ssl_peer_certificate_fingerprint_hash]] of client certificate. |
 | `ssl_client_cert_pubkey_fp` | [[setting,ssl_peer_certificate_fingerprint_hash]] of client certificate public key. |
 | `cert` | "valid" if client had sent a valid client certificate, otherwise empty. |

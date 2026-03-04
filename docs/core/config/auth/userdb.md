@@ -16,7 +16,7 @@ dovecotlinks:
 
 # User Databases (`userdb`)
 
-Dovecot uses [[link,passdb]] and `userdb` as part of the authentication
+Dovecot uses [[link,passdb]] and `userdb` as part of the [[link,authentication,authentication]]
 process.
 
 [[link,passdb]] authenticated the user. `userdb` lookup then retrieves
@@ -67,7 +67,7 @@ User's GID (UNIX group ID), overrides the global [[setting,mail_gid]] setting.
 
 User's home directory, overrides the global [[setting,mail_home]] setting.
 
-Although not required, it's highly recommended even for virtual users.
+Although not required, it's highly recommended even for [[link,virtual_users,virtual users]].
 
 ### Optional Extra Fields
 
@@ -83,7 +83,7 @@ Changes the username (can also be done by the [[link,passdb]] lookup).
 
 | Database | Description |
 | -------- | ----------- |
-| [[link,auth_passwd,Passwd]] | System users (NSS, `/etc/passwd`, or similar). |
+| [[link,auth_passwd,Passwd]] | [[link,system_users,System users]] (NSS, `/etc/passwd`, or similar). |
 | [[link,auth_passwd_file,Passwd-file]] | `/etc/passwd`-like file. |
 | [[link,auth_ldap,LDAP]] | Lightweight Directory Access Protocol. |
 | [[link,auth_sql,SQL]] | SQL database (PostgreSQL, MySQL, SQLite, Cassandra). |
@@ -145,7 +145,7 @@ overridden to provide per-user mail path or quota limit.
 The extra fields are also passed to [[link,post_login_scripting]].
 
 ::: info [[changed,extra_fields_empty]]
-Extra fields can now also be set to empty string, while previously they were
+Extra fields can now also be set to empty [[link,settings_types_string,string]], while previously they were
 changed to `yes`.
 
 Extra fields without value (without `=`) will default to `yes`.
@@ -188,7 +188,7 @@ wherever NSS is configured to taken them from).
 
 The logged in user has access to those groups.
 
-This may be useful for shared mailboxes.
+This may be useful for [[link,shared_mailboxes,shared mailboxes]].
 
 #### `userdb_import`
 

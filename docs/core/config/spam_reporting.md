@@ -14,7 +14,7 @@ clients and is entirely self-contained within the server.
 :::
 
 Spam/not-spam reporting within Dovecot (IMAP) can be handled by the user
-action of moving a message into (or out of) a defined Spam mailbox.
+action of moving a message into (or out of) a defined Spam [[link,design_mailbox,mailbox]].
 
 ## Configuration
 
@@ -25,7 +25,7 @@ messages in/out of the Spam mailbox.
 ::: warning
 **You cannot run shell scripts anywhere you want.**
 
-Sieve allows you to only run scripts under [[setting,sieve_pipe_bin_dir]]. You
+[[link,sieve,Sieve]] allows you to only run scripts under [[setting,sieve_pipe_bin_dir]]. You
 can't use `/usr/local/bin/my-sieve-filter.sh`, you have to put the
 script under `sieve_pipe_bin_dir` and use `my-sieve-filter.sh` in the
 script instead.
@@ -132,7 +132,7 @@ to do classification.
   socket based worker might work better.
 
 - Please read [[link,sieve]] and [[link,sieve_configuration]] to
-  understand sieve configuration better.
+  understand [[link,sieve_configuration,sieve configuration]] better.
 
 - Please read [[link,sieve_plugins]] for more information about sieve
   extensions.
@@ -145,7 +145,7 @@ to do classification.
   See: https://docs.iredmail.org/store.spamassassin.bayes.in.sql.html.
 
   In this case, the `-u` parameter passed to `sa-learn` (and the
-  relevant sieve variables) is obsolete and can be safely removed.
+  relevant [[link,sieve_variables,sieve variables]]) is obsolete and can be safely removed.
 
 - Reloading Dovecot doesn't activate changes in this configuration,
   you'll need to perform a full restart.
@@ -330,7 +330,7 @@ folders.
 
 ## Debugging
 
-To debug, you need to import "vnd.dovecot.debug" extension. Then you can
+To [[link,debug,debug]], you need to import "vnd.dovecot.debug" extension. Then you can
 put in your Sieve script, when required (variables supported):
 
 ```

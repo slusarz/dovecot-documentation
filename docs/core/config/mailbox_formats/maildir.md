@@ -8,7 +8,7 @@ dovecotlinks:
 # Maildir Mailbox Format
 
 The Maildir format debuted with the qmail server in the mid-1990s. Each
-mailbox folder is a directory and each message a file. This improves
+[[link,design_mailbox,mailbox]] folder is a directory and each message a file. This improves
 efficiency because individual emails can be modified, deleted and added
 without affecting the mailbox or other emails, and makes it safer to use on
 networked file systems such as NFS.
@@ -287,7 +287,7 @@ The proper way to configure procmail to deliver to a Maildir is to use
 
 ### Mail Location
 
-Maildir exists almost always in `~/Maildir` directory. The mail location is
+Maildir exists almost always in `~/Maildir` directory. The [[link,mail_location,mail location]] is
 specified with:
 
 ```[dovecot.conf]
@@ -418,7 +418,7 @@ here, unusual upper/lower casing has been used.
 
 ### Multiple Namespaces pointing to INBOX
 
-When there are multiple namespaces that point to the same INBOX namespace,
+When there are multiple [[link,namespaces,namespaces]] that point to the same INBOX namespace,
 `dovecot.list.index` can potentially keep fighting over whether INBOX exists
 or not.
 

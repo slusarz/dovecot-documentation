@@ -7,11 +7,11 @@ dovecotlinks:
 
 # System Users Configuration
 
-Dovecot typically requires 3 or more system users:
+Dovecot typically requires 3 or more [[link,system_users,system users]]:
 
 * `root`: Dovecot is started as root.
 * [`dovenull`](#dovenull-user): Dovecot uses an unprivileged user for
-  untrusted login processes.
+  untrusted [[link,login_processes,login processes]].
 * [`dovecot`](#dovecot-user): Dovecot uses an unprivileged user for
   internal processes.
 * [`mail user(s)`](#mail-users): Mails are accessed using yet another user.
@@ -27,7 +27,7 @@ it is possible. See [[link,rootless]].
 ## `dovenull` user
 
 `dovenull` user is used internally for processing users' logins. It shouldn't
-have access to any files, authentication databases or anything else either. It
+have access to any files, [[link,authentication,authentication]] databases or anything else either. It
 should belong to its own private `dovenull` group where no one else belongs
 to, and which doesn't have access to any files either (other than what Dovecot
 internally creates).
@@ -55,7 +55,7 @@ configurations can be placed to two categories:
 2. [[link,virtual_users]], where all Dovecot users run under a single
    system user. Typically you'd set this with [[setting,mail_uid]]
    (e.g. `mail_uid=vmail`). Note that you most likely don't want the
-   userdb lookup to return any UID/GID, as they override [[setting,mail_uid]].
+   [[link,userdb,userdb]] lookup to return any UID/GID, as they override [[setting,mail_uid]].
 
 However it's possible to use a setup that is anything between these two. For
 example use a separate system user for each domain. See below for more
@@ -98,10 +98,10 @@ separate group for each user.
 
 If you use multiple UIDs and you wish to create [[link,shared_mailboxes]],
 setting up the groups properly may make your configuration more secure.
-For example if you have two teams and their mailboxes are shared only to
+For example if you have two teams and their [[link,design_mailbox,mailbox]]es are shared only to
 their team members, you could create a group for each team and set the
 shared mailbox's group to the team's group and permissions to `0660`, so
-neither team can even accidentally see each others' shared mailboxes.
+neither team can even accidentally see each others' [[link,shared_mailboxes,shared mailboxes]].
 
 Currently Dovecot supports specifying only the primary group, but if your
 userdb returns `system_user` [[link,userdb_extra_fields]], the
@@ -114,7 +114,7 @@ It's also possible to give all the users access to extra groups with
 
 ## Authentication Process User
 
-Depending on passdb and userdb configuration, the lookups are done either by
+Depending on [[link,passdb,passdb]] and userdb configuration, the lookups are done either by
 auth process or auth worker process. They have different default users:
 
 ```[dovecot.conf]

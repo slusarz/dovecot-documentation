@@ -13,7 +13,7 @@ This document specifies the Dovecot Auth protocol v1.3.
 
 This is a line based protocol. Each line is a command which ends with an
 LF character. The maximum line length isn't defined, but it's currently
-expected to fit into 16384 bytes. Authentication mechanism specific data
+expected to fit into 16384 bytes. [[link,authentication,Authentication]] mechanism specific data
 transfers are the largest single parameters.
 
 Each command is in format:
@@ -115,7 +115,7 @@ Mechanisms may have parameters giving some details about them:
 | ---------- | ----------- |
 | `anonymous` | Anonymous authentication |
 | `plaintext` | Transfers plaintext passwords |
-| `dictionary` | Subject to passive (dictionary) attack |
+| `dictionary` | Subject to passive ([[link,dict,dictionary]]) attack |
 | `active` | Subject to active (non-dictionary) attack |
 | `forward-secrecy` | Provides forward secrecy between sessions |
 | `mutual-auth` | Provides mutual authentication |
@@ -141,11 +141,11 @@ AUTH and USER (see below) common parameters are:
 | Parameters | Description |
 | ---------- | ----------- |
 | `session=<id>` | Unique session ID. Mainly used for logging. |
-| `lip=<ip>` | Local IP connected to by the client. In standard string format, e.g. `127.0.0.1` or `::1`. |
+| `lip=<ip>` | Local IP connected to by the client. In standard [[link,settings_types_string,string]] format, e.g. `127.0.0.1` or `::1`. |
 | `rip=<ip>` | Remote client IP |
 | `lport=<port>` | Local port connected to by the client. |
 | `rport=<port>` | Remote client port |
-| `real_rip`<br/>`real_lip`<br/>`real_lport`<br/>`real_rport` | When Dovecot proxy is used, the real_rip/real_port are the proxy's IP/port and real_lip/real_lport are the backend's IP/port where the proxy was connected to. |
+| `real_rip`<br/>`real_lip`<br/>`real_lport`<br/>`real_rport` | When [[link,recommended_metrics_dovecot_proxy,Dovecot proxy]] is used, the real_rip/real_port are the proxy's IP/port and real_lip/real_lport are the backend's IP/port where the proxy was connected to. |
 | `local_name=<name>` | TLS SNI name |
 | `debug` | Enable debugging for this lookup. |
 | `forward_fields` | List of fields that will become available via `%{forward_*}` variables. The list is double-tab-escaped, like: `tab_escaped[tab_escaped(key=value)[<TAB>...]` |
@@ -161,7 +161,7 @@ AUTH-only parameters are:
 | `tls_pfs=<string>` | TLS perfect forward secrecy algorithm (e.g. DH, ECDH) |
 | `tls_protocol=<name>` | TLS protocol name (e.g. `TLSv1.2`) |
 | `valid-client-cert` | Remote user has presented a valid SSL certificate. |
-| `no-penalty` | Ignore auth penalty tracking for this request |
+| `no-penalty` | Ignore [[link,auth_penalty,auth penalty]] tracking for this request |
 | `cert_username` | Username taken from client's SSL certificate. |
 | `client_id` | IMAP ID string |
 | `resp=<base64>` | Initial response for authentication mechanism. NOTE: This must be the last parameter. Everything after it is ignored. This is to avoid accidental security holes if user-given data is directly put to base64 string without filtering out tabs. |

@@ -12,7 +12,7 @@ problems:
 
 - Instead of using user@domain usernames, it supports **realms**.
 - User name and realm are part of the MD5 hash that's used for
-  authentication.
+  [[link,authentication,authentication]].
 
 For these and other reasons Digest-MD5 has been obsoleted ([[rfc,6331]]) by
 SCRAM ([[rfc,5802]]).
@@ -31,7 +31,7 @@ you provided (KMail, others?). In both cases the user never sees the
 advertised realms.
 
 ::: warning
-Any settings that modify the username before the passdb lookup (e.g.
+Any settings that modify the username before the [[link,passdb,passdb]] lookup (e.g.
 [[setting,auth_default_domain]]) will not work with Digest-MD5
 password scheme, because the password hash was calculated using the
 unmodified username. Any username modification will result in hash
@@ -43,7 +43,7 @@ mismatch.
 Password must be stored in either cleartext or with DIGEST-MD5 scheme.
 See [[link,password_schemes]].
 
-The Digest is the MD5 sum of the string "user:realm:password". For example,
+The Digest is the MD5 sum of the [[link,settings_types_string,string]] "user:realm:password". For example,
 if you want to log in as `user` with password `pass` and the
 realm should be `example.com` (usually not provided by the user, see
 above), create the digest with:

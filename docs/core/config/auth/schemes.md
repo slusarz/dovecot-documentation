@@ -16,7 +16,7 @@ passwords and using them to access other services.
 
 ::: warning [[deprecated,weak_password_schemes]]
 Some password schemes are disabled by default due to being considered weak.
-This includes MD based (except DIGEST-MD5 and CRAM-MD5), LANMAN, NTLM and
+This includes MD based (except [[link,auth_digest_md5,DIGEST-MD5]] and CRAM-MD5), LANMAN, NTLM and
 a few others.
 
 Please read the documentation carefully.
@@ -111,7 +111,7 @@ generate passwords that have other letters after $2, those should work too.)
 
 bcrypt is bundled with Dovecot, so it does not require an external library.
 
-You can tune the computational cost using -r parameter for doveadm.
+You can tune the computational cost using -r parameter for [[link,doveadm,doveadm]].
 
 ### SHA512-CRYPT
 
@@ -169,7 +169,7 @@ incompatible with all other non-cleartext mechanisms. In addition, the
 mechanism-specific schemes often offer very little protection. This isn't a
 limitation of Dovecot, it's a requirement for the algorithms to even work.
 
-For example if you're going to use CRAM-MD5 authentication, the password needs
+For example if you're going to use CRAM-MD5 [[link,authentication,authentication]], the password needs
 to be stored in either PLAIN or CRAM-MD5 scheme. If you want to allow both
 CRAM-MD5 and DIGEST-MD5, the password must be stored in cleartext.
 

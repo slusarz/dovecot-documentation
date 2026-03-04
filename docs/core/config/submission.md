@@ -57,7 +57,7 @@ provide a basis for adding all kinds of functionality in the (not so distant)
 future. For the first time, it will be possible to act upon message
 submission, rather than only message retrieval; e.g. plugins can be devised
 that process outgoing messages somehow. Examples of the things that could be
-implemented are adding Sieve filtering support for outgoing messages, or
+implemented are adding [[link,sieve,Sieve]] filtering support for outgoing messages, or
 implicitly storing submitted messages to the Sent folder. Once a plugin API
 is devised, you can create your own plugins.
 :::
@@ -122,7 +122,7 @@ Like IMAP and POP3, the Submission login service supports
 [[link,authentication_proxies,proxying]] to multiple backend Dovecot servers.
 
 ::: warning
-Please note that the login proxy described here is configured between two
+Please note that the [[link,login_proxy,login proxy]] described here is configured between two
 Dovecot servers (e.g. proxy frontend and mail storage backend). This is
 not the way to configure the relay connection between the Dovecot submission
 service and the MTA! That is configured using the relay settings described in
@@ -151,7 +151,7 @@ pop3 services, meaning that it has separate pre-login and post-login
 services called submission-login and submission respectively.
 
 The pre-login service can be chrooted and can be devoid of most privileges
-and only serves to operate the TLS layer and perform authentication.
+and only serves to operate the TLS layer and perform [[link,authentication,authentication]].
 This serves to isolate the sensitive SMTP functionality from unauthorized
 access, also when the frontend were compromised. Once authenticated, the
 connection is handed over to the post-login service.
@@ -164,7 +164,7 @@ post-login service has direct access to the user's mail storage.
 
 Proxying for the submission service works identical to the imap and pop3
 services. This means that the submission-login service proxies to another
-Dovecot backend instance that handles the subsequent relay to the MTA
+[[link,recommended_metrics_dovecot_backend,Dovecot backend]] instance that handles the subsequent relay to the MTA
 infrastructure. In this case there is proxying between two Dovecot instances
 and a relay from the Dovecot backend instance to a non-Dovecot backend MTA.
 

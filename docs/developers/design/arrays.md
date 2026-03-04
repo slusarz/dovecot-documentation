@@ -63,7 +63,7 @@ i_array_init(&foo, 32); /* initialize array with 32 elements until it needs to b
 
 Arrays can be freed with `array_free()`, but this isn't necessary if
 the memory gets freed by other means (i.e. it was allocated from
-alloconly-pool or data stack).
+alloconly-pool or [[link,data_stack,data stack]]).
 
 ## Writing
 

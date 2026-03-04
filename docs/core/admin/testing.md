@@ -48,7 +48,7 @@ sure, that relevant `!include` or `!include_try` configuration lines
 are not commented.
 
 If the connection fails and dovecot emits a log "*auth: Fatal: Support not
-compiled in for passdb driver 'pam'*", then rebuild dovecot with the pam
+compiled in for [[link,passdb,passdb]] driver 'pam'*", then rebuild dovecot with the pam
 development headers package installed. In that case you have to re-run
 the configure script, possibly including option **--with-pam** to the
 configure
@@ -82,10 +82,10 @@ nc localhost 143
 a login "username" "password"
 ```
 
-Replace the username and password with your local authentication credentials.
+Replace the username and password with your local [[link,authentication,authentication]] credentials.
 
 Note that all IMAP commands begin with a tag, which is basically any
-string you want, but it must be there. So don't leave out the "a" in the
+[[link,settings_types_string,string]] you want, but it must be there. So don't leave out the "a" in the
 above example.
 
 If the password contains `"` character, escape it with `\\` (e.g.
@@ -297,7 +297,7 @@ Check the output for errors.
 Verify that messages exist in INBOX:
 [[doveadm,mailbox status,-u testuser1 all INBOX]].
 
-Copy a message with doveadm:
+Copy a message with [[link,doveadm,doveadm]]:
 [[doveadm,copy,-u testuser1 Trash mailbox INBOX 1]].
 
 Copy messages with imaptest:

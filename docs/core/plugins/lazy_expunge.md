@@ -10,7 +10,7 @@ dovecotlinks:
 # Lazy Expunge Plugin (`lazy-expunge`)
 
 The lazy expunge plugin provides a "second-chance" to recover messages that
-would otherwise be deleted from a mailbox by user action.
+would otherwise be deleted from a [[link,design_mailbox,mailbox]] by user action.
 
 It does this by moving the message to a defined location when a user deletes
 the message from a mailbox.
@@ -125,7 +125,7 @@ See [[plugin,quota]].
 
 ### Doveadm
 
-Doveadm can be used to manually clean expunge storage.
+[[link,doveadm,Doveadm]] can be used to manually clean expunge storage.
 
 Example to delete all messages in `.EXPUNGED` mailbox older than one day:
 

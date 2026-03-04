@@ -132,7 +132,7 @@ changed using the `--with-ssldir=DIR` configure option. Both can of
 course be overridden from the configuration file.
 
 You can use [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/#server=dovecot&config=modern)
-to help create a default SSL configuration.
+to help create a default [[link,ssl_configuration,SSL configuration]].
 
 ### Optional Configure Options
 
@@ -239,7 +239,7 @@ system.
 
 ##### `--with-lua`
 
-Enables Lua support for authentication and push notifications.
+Enables Lua support for [[link,authentication,authentication]] and [[link,push_notification,push notifications]].
 
 ##### `--with-pcre2`
 
@@ -356,7 +356,7 @@ similar package). You can also build this as a plugin.
 
 ##### `--with-gssapi(=plugin)`
 
-Build with GSSAPI authentication support (requires `krb5-devel`,
+Build with [[link,auth_gssapi,GSSAPI]] authentication support (requires `krb5-devel`,
 `libkrb5-dev` or similar package)
 
 ### Dynamic IMAP and POP3 Modules

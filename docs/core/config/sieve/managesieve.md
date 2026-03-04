@@ -14,13 +14,13 @@ The ManageSieve ([[rfc,5804]]) service is used to manage a user's
 It has the following advantages over doing it directly via filesystem:
 
 * No need to let users log in via FTP/SFTP/etc, which could be difficult
-  especially with virtual users.
+  especially with [[link,virtual_users,virtual users]].
 * ManageSieve is a standard protocol ([[rfc,5804]]), so users can manage
   their scripts using (hopefully) user-friendly ManageSieve
   clients. Many webmails already include a ManageSieve client.
 * Scripts are compiled before they are installed, which guarantees that the
   uploaded script is valid. This prevents a user from inadvertently installing
-  a broken Sieve script.
+  a broken [[link,sieve,Sieve]] script.
 
 ## Configuration
 
@@ -66,7 +66,7 @@ accepts a few more. The following settings can be configured in the
 
 The part of the [[link,sieve]] configuration that is relevant
 for ManageSieve mainly consists of the configuration of the
-[[link,sieve_storage_type_personal,personal]] Sieve script storage type.
+[[link,sieve_storage_type_personal,personal]] Sieve [[link,sieve_storage,script storage]] type.
 Currently, only the [[link,sieve_storage_file,file driver]] Sieve script
 storage driver supports the management functions needed by Managesieve. For
 ManageSieve, the configuration of [[setting,sieve_script_active_path]] is
@@ -167,7 +167,7 @@ sieve_script personal {
 
 ### Proxy
 
-Like Dovecot's imap server, the ManageSieve login daemon supports proxying to
+Like Dovecot's [[link,imap_server,imap server]], the ManageSieve login daemon supports proxying to
 multiple backend servers. The [[link,authentication_proxies]] page
 for POP3 and IMAP applies automatically to ManageSieve as well.
 
@@ -178,7 +178,7 @@ error message** if something goes wrong at the server (refer to
 [[link,logging]] for more details): the logs are the first place to look if
 you suspect something is wrong.
 
-To get additional debug messages in your log file, you should set
+To get additional [[link,debug,debug]] messages in your log file, you should set
 [[setting,log_debug,category=sieve]] in `dovecot.conf` (inside
 `protocol sieve {...}` if you want to enable this for ManageSieve
 only).
@@ -228,13 +228,13 @@ OK "Dovecot ready."
 Note that the reported `STARTTLS` capability means that the server
 accepts TLS, but, since you are using telnet/netcat, you cannot use this
 (refer to Manual TLS Login below). The `SASL` capability lists the
-available SASL authentication mechanisms. If this list is empty and
+available SASL [[link,authentication_mechanisms,authentication mechanisms]]. If this list is empty and
 `STARTTLS` is available, it probably means that the server forces you
 to initiate TLS first (as dictated by [[setting,auth_allow_cleartext,yes]]
 in `dovecot.conf`).
 
 Now you need to log in. Although potentially multiple SASL mechanisms
-are available, only `PLAIN` is described here. Authentication is
+are available, only `PLAIN` is described here. [[link,authentication,Authentication]] is
 performed using the ManageSieve `AUTHENTICATE` command. This command
 typically looks as follows when the `PLAIN` mechanism is used:
 
@@ -242,7 +242,7 @@ typically looks as follows when the `PLAIN` mechanism is used:
 AUTHENTICATE "PLAIN" "<base64-encoded credentials>"
 ```
 
-The credentials are the base64-encoded version of the string
+The credentials are the base64-encoded version of the [[link,settings_types_string,string]]
 `"\0<username>\0<password"` (in which `\0` represents the ASCII NUL
 character). Generating this is cumbersome and a bit daunting for the
 novice user, so for convenience a

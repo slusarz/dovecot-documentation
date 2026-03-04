@@ -10,7 +10,7 @@ See also:
 * [[link,doveadm_http_api]].
 :::
 
-doveadm-server can be accessed via UNIX sockets or TCP protocol (by
+[[link,doveadm,doveadm]]-server can be accessed via UNIX sockets or TCP protocol (by
 adding `inet_listener` to doveadm service).
 
 The doveadm server supports the following protocol versions (major.minor):
@@ -47,7 +47,7 @@ change much practically, because the client was supposed to have sent the
 
 ## Authentication
 
-The authentication is done with a regular SASL PLAIN authentication,
+The [[link,authentication,authentication]] is done with a regular SASL PLAIN authentication,
 i.e. `PLAIN<tab>base64(\0username\0password)`. Currently the username
 must be `doveadm`. For example for user=doveadm, password=secret use:
 
@@ -60,7 +60,7 @@ S: +
 
 The actual commands are in format: `flags<tab>username<tab>command
 name[<tab>parameter[<tab>parameter2...]]`, where the flags can be either
-empty, "v" (verbose) or "D" (debug). Note that if the command name has
+empty, "v" (verbose) or "D" ([[link,debug,debug]]). Note that if the command name has
 spaces, they are sent as spaces instead of as tabs (e.g. "quota get",
 not `quota<tab>get`). So for example to get a quota for user tss:
 
@@ -109,7 +109,7 @@ fa8cb722dfad9c52b62600007049b30b        125159
 fa8cb722dfad9c52b62600007049b30b        125160
 ```
 
-There are two fields, "mailbox-guid" and "uid" in the output. The title
+There are two fields, "[[link,design_mailbox,mailbox]]-guid" and "uid" in the output. The title
 names won't be sent via doveadm protocol, but everything else will be
 sent in one line. So in the above case the protocol output will be:
 

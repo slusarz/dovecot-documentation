@@ -19,7 +19,7 @@ dovecotlinks:
 
 ## Disabling
 
-Authentication penalty tracking can be disabled completely with:
+[[link,authentication,Authentication]] penalty tracking can be disabled completely with:
 
 ```[dovecot.conf]
 service anvil {

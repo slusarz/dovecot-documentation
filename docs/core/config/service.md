@@ -121,7 +121,7 @@ used to kick users' connections.
 * **idle_kill_interval=infinite**, because it should never die or all of its
   tracked state would be lost.
 
-* [[doveadm,who]] and some other doveadm commands connect to anvil's UNIX
+* [[doveadm,who]] and some other [[link,doveadm,doveadm]] commands connect to anvil's UNIX
   listener and request its state.
 
 ### auth
@@ -129,18 +129,18 @@ used to kick users' connections.
 The master auth process. There are 4 types of auth client connections:
 
 **auth**
-:   Only [[link,sasl]] authentication is allowed. This can be safely
+:   Only [[link,sasl]] [[link,authentication,authentication]] is allowed. This can be safely
     exposed to entire world.
 
-**userdb**
-:   userdb lookups and passdb lookups (without the password itself) can
+**[[link,userdb,userdb]]**
+:   userdb lookups and [[link,passdb,passdb]] lookups (without the password itself) can
     be done for any user, and a list of users can be requested. This may
     or may not be a security issue. Access to userdb lookup is commonly
     needed by [[link,lda]], doveadm, and other tools.
 
 **login**
 :   Starts a two phase user login by performing authenticating (same as
-    `client` type). Used by login processes.
+    `client` type). Used by [[link,login_processes,login processes]].
 
 **master**
 :   Finishes the two phase user login by performing a userdb lookup
@@ -315,7 +315,7 @@ doveadm can automatically connect to the correct backend to run the command.
 
 ### imap, pop3, submission, managesieve
 
-Post-login process for handling IMAP/POP3/Submission/ManageSieve client
+Post-login process for handling IMAP/POP3/Submission/[[link,managesieve,ManageSieve]] client
 connections.
 
 * **client_limit** may be increased from the default `1` to save some CPU
@@ -428,7 +428,7 @@ logging via syslog.
 
 ### stats
 
-Event statistics tracking. Its behavior is very similar to the anvil process,
+Event [[link,stats,statistics]] tracking. Its behavior is very similar to the anvil process,
 but anvil's data is of higher importance and lower traffic than stats, so stats
 are tracked in a separate process.
 

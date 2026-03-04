@@ -65,9 +65,9 @@ The flags are a combination of `enum mail_flags` and
   reused for other purposes.
 * 0x40 - `MAIL_INDEX_MAIL_FLAG_BACKEND` - For private use by backend.
 * 0x80 - `MAIL_INDEX_MAIL_FLAG_DIRTY` - Message flags haven't been
-  successfully written to backend mailbox. This is used for example with mbox
+  successfully written to backend [[link,design_mailbox,mailbox]]. This is used for example with mbox
   and `mbox_lazy_writes=yes`. It also allows having modifiable flags for
-  read-only mailboxes. Alternatively, with some mailbox formats this flag
+  read-only mailboxes. Alternatively, with some [[link,mailbox_formats,mailbox formats]] this flag
   can be used in a backend-specific way.
 
 The rest of the data is stored in record extensions.

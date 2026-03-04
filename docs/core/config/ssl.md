@@ -72,14 +72,14 @@ There are a couple of different ways to specify when SSL/TLS is required:
 
 * [[setting,ssl,yes]] and [[setting,auth_allow_cleartext,yes]]: SSL/TLS
   is offered to the client, but the client isn't required to use it. The
-  client is allowed to login with cleartext authentication even when SSL/TLS
+  client is allowed to login with cleartext [[link,authentication,authentication]] even when SSL/TLS
   isn't enabled on the connection. This is insecure, because the
   cleartext password is exposed to the internet.
 
 * [[setting,ssl,yes]] and [[setting,auth_allow_cleartext,no]]: SSL/TLS
   is offered to the client, but the client isn't required to use it. The
   client isn't allowed to use cleartext authentication, unless SSL/TLS is
-  enabled first. However, if non-cleartext authentication mechanisms are
+  enabled first. However, if non-cleartext [[link,authentication_mechanisms,authentication mechanisms]] are
   enabled they are still allowed even without SSL/TLS.
 
   Depending on how secure they are, the authentication is either fully
@@ -142,7 +142,7 @@ The value of [[setting,ssl]] influences whether a connection is considered
 * [[link,haproxy_tls_forward]] are always `secured`.
 
   * This is true even if HAProxy isn't running on the same server as
-    Dovecot, and the connection between HAProxy and Dovecot isn't secured.
+    Dovecot, and the connection between [[link,haproxy,HAProxy]] and Dovecot isn't secured.
 
     The reasoning here is that this kind of a configuration is most likely
     intentional. If such connection wasn't treated `secured`, it would
@@ -420,7 +420,7 @@ setting [[setting,auth_ssl_username_from_cert,yes]].
 
 You may also want to disable the password checking completely. Doing this
 currently circumvents Dovecot's security model so it's not recommended to
-use it, but it is possible by making the passdb allow logins using any
+use it, but it is possible by making the [[link,passdb,passdb]] allow logins using any
 password (typically requiring `nopassword` extra field to be returned).
 
 ## Testing

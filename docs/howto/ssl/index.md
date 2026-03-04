@@ -59,8 +59,8 @@ SSL port deprecation never really happened, probably because of a few reasons:
 * Some admins understand everything, but still prefer to allow only SSL ports
   (maybe with a firewall). This could be because it makes it easier to ensure
   that no information is leaked, because SSL/TLS handshake happens immediately.
-  Some clients unfortunately try to do cleartext authentication without
-  STARTTLS, even when IMAP server has told the client that it won't work.
+  Some clients unfortunately try to do cleartext [[link,authentication,authentication]] without
+  STARTTLS, even when [[link,imap_server,IMAP server]] has told the client that it won't work.
   Besides, it requires fewer round-trips if you begin SSL upon connection when
   you know you want it, instead of connect, negotiate capabilities, insist on
   TLS, then start all over again inside the encrypted session.

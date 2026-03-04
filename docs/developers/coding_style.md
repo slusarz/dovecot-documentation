@@ -40,7 +40,7 @@ compiler, use safe_memset().
 
 GCC makes it easy to catch some potential errors:
 
-Format string vulnerabilities can be prevented by marking all functions
+Format [[link,settings_types_string,string]] vulnerabilities can be prevented by marking all functions
 using format strings with `__attr_format__()` and `__attr_format_arg__()`
 macros and using `-Wformat=2` GCC option. `-W` option checks that you don't
 compare signed and unsigned variables.
@@ -225,7 +225,7 @@ you probably should split it into two.
 
 ## Boolean Expressions
 
-Try to use boolean expressions the way they work in Java. C doesn't
+Try to use [[link,settings_types_boolean,boolean]] expressions the way they work in Java. C doesn't
 require this, but I think it makes the code easier to understand and
 reduces bugs in some cases (e.g. if (!foo()) when thinking foo() returns
 bool/FALSE, but actually returns int/-1 on error). We've a clang patch
@@ -391,7 +391,7 @@ succeed or kill the process. There's no point in writing a lot of code
 to check for memory allocation failures that happen just about never.
 The only reason some memory allocations fail in Dovecot currently is
 because a process VSZ limit is reached, which usually indicates either a
-memory leak or trying to access a mailbox that is too large. In either
+memory leak or trying to access a [[link,design_mailbox,mailbox]] that is too large. In either
 of these cases it's better to just completely restart the process than
 try to limp along without getting anything useful done anymore.
 
@@ -457,7 +457,7 @@ possible to write a portable GC without radical changes in how you write
 code. There are a few ways to avoid most free() calls however: data
 stack and memory pools.
 
-Data stack works in somewhat similar way to C's control stack. alloca()
+[[link,data_stack,Data stack]] works in somewhat similar way to C's control stack. alloca()
 is quite near to what it does, but there's one major difference: Stack
 frames are explicitly defined, so functions can return values allocated
 from data stack. t_strdup_printf() call is an excellent example of why

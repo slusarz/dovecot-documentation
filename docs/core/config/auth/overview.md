@@ -25,7 +25,7 @@ Dovecot authentication is split into four parts:
 
    * [[link,userdb,User Databases (userdb)]]
 
-For authentication policy topics, see also:
+For [[link,auth_policy,authentication policy]] topics, see also:
 
 * [[link,auth_penalty]]
 * [[link,auth_policy]]
@@ -45,7 +45,7 @@ See [[setting,auth_allow_cleartext]] for removing this requirement.
 
 ## Authentication Mechanisms vs. Password Schemes
 
-Authentication mechanisms and password schemes are often confused,
+[[link,authentication_mechanisms,Authentication mechanisms]] and [[link,password_schemes,password schemes]] are often confused,
 because they have somewhat similar values. For example there is a PLAIN
 auth mechanism and PLAIN password scheme. But they mean completely
 different things.
@@ -71,7 +71,7 @@ different things.
 
 ## Debugging
 
-Set [[setting,log_debug,category=auth]] which makes Dovecot log a debug
+Set [[setting,log_debug,category=auth]] which makes Dovecot log a [[link,debug,debug]]
 line for just about anything related to authentication.
 
 If you're having problems with passwords, you can also set
@@ -83,9 +83,9 @@ dovecot-auth is doing, and that should help you to fix the problem.
 For easily testing authentication, use
 [[doveadm,auth test,user@domain password]].
 
-For looking up userdb information for a user, use [[doveadm,user,user@domain]].
+For looking up [[link,userdb,userdb]] information for a user, use [[doveadm,user,user@domain]].
 
-For simulating a full login with both passdb and userdb lookup, use
+For simulating a full login with both [[link,passdb,passdb]] and userdb lookup, use
 [[doveadm,auth login,user@domain password]].
 
 ### PLAIN SASL Mechanism
@@ -93,7 +93,7 @@ For simulating a full login with both passdb and userdb lookup, use
 With IMAP and POP3, it's easy to log in manually using the IMAP's LOGIN
 command or POP3's USER and PASS commands (see [[link,testing]] for details),
 but with SMTP AUTH you'll need to use PLAIN authentication mechanism, which
-requires you to build a base64-encoded string in the correct format.
+requires you to build a base64-encoded [[link,settings_types_string,string]] in the correct format.
 
 The PLAIN authentication is also used internally by both IMAP and POP3 to
 authenticate to dovecot-auth, so you see it in the debug logs.

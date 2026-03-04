@@ -5,11 +5,11 @@ title: sieve-extprograms
 
 # Pigeonhole Sieve Extprograms Plugin (`sieve-extprograms`)
 
-The "sieve_extprograms" plugin provides an extension to the Sieve
+The "sieve_extprograms" plugin provides an extension to the [[link,sieve,Sieve]]
 filtering language, adding new action commands for invoking a predefined
 set of external programs.
 
-Messages can be piped to or filtered through those programs and string
+Messages can be piped to or filtered through those programs and [[link,settings_types_string,string]]
 data can be input to and retrieved from those programs.
 
 To mitigate the security concerns, the external programs cannot be chosen

@@ -25,7 +25,7 @@ Images are based on Debian slim image, distribution is occasionally upgraded whe
 This is a hardened rootless image, which runs everything as vmail user, and minimal amount of binaries installed. This image
 uses non-standard ports, see [Listening ports](#listening-ports) for more information.
 
-Linux capability `CAP_SYS_CHROOT` is needed for the container, unless chrooting is disabled by placing `no-chroot.conf` drop-in to `conf.d`:
+Linux capability `CAP_SYS_CHROOT` is needed for the container, unless [[link,chrooting,chrooting]] is disabled by placing `no-chroot.conf` drop-in to `conf.d`:
 
 ```doveconf
 service imap-login {
@@ -99,7 +99,7 @@ protocols {
 }
 ```
 
-By default imap, submission, lmtp and sieve protocols are enabled.
+By default imap, submission, lmtp and [[link,sieve,sieve]] protocols are enabled.
 
 ### Authentication
 
@@ -110,7 +110,7 @@ passdb static {
 }
 ```
 
-This is useful only for testing purposes and single-user instances. To configure multiple users or other authentication methods, you need to override this file.
+This is useful only for testing purposes and single-user instances. To configure multiple users or other [[link,authentication,authentication]] methods, you need to override this file.
 
 ### TLS configuration
 
@@ -199,7 +199,7 @@ This command:
 - All data will be removed when the container exits
 - Provides shell access to the container (requires `latest-dev`)
 
-To run a command on the container (for example, doveadm):
+To run a command on the container (for example, [[link,doveadm,doveadm]]):
 
 ```console
 docker exec -it dovecot-test doveadm

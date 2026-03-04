@@ -14,7 +14,7 @@ TLS/SSL encrypted). There are several possibilities for this:
 
 2. Pre-login \*-login process via `-R` parameter. See below.
 
-3. For proxying (in \*-login processes), use
+3. For proxying (in \*-[[link,login_processes,login processes]]), use
    [[setting,login_proxy_rawlog_dir]].
 
 4. For lmtp, you need to use [[setting,lmtp_rawlog_dir]] and
@@ -28,8 +28,8 @@ TLS/SSL encrypted). There are several possibilities for this:
 
 ## Pre-login Rawlog
 
-The pre-login rawlog is used before IMAP, POP3, Submission or ManageSieve
-client logs into the post-login process. Note that LMTP and doveadm protocols
+The pre-login rawlog is used before IMAP, POP3, Submission or [[link,managesieve,ManageSieve]]
+client logs into the post-login process. Note that LMTP and [[link,doveadm,doveadm]] protocols
 don't have a pre-login process.
 
 ::: info
@@ -67,7 +67,7 @@ performance impact for those users is minimal.
 ### Home Directory
 
 ::: info
-For rawlog binary to work, your userdb must have returned a home directory
+For rawlog binary to work, your [[link,userdb,userdb]] must have returned a home directory
 for the user.
 :::
 
@@ -118,7 +118,7 @@ See [[setting,import_environment]].
 
 ### Configuration
 
-To enable rawlog binary, use post-login scripting:
+To enable rawlog binary, use [[link,post_login_scripting,post-login scripting]]:
 
 ```[dovecot.conf]
 service imap {

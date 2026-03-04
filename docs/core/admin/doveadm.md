@@ -99,7 +99,7 @@ service doveadm {
 ### Usage
 
 Connecting to the endpoint can be done by using standard HTTP protocol and
-authentication headers.
+[[link,authentication,authentication]] headers.
 
 ::: info
 There is also https://github.com/dovecot/doveadm-http-cli that can be
@@ -290,7 +290,7 @@ This is equivalent to the command [[doveadm,reload]].
 These commands should be run on one of the Dovecot proxies. The proxy is then
 responsible for forwarding the command to be run in the correct backend. This
 guarantees that two backend servers don't attempt to modify the same user's
-mailbox at the same time (which might cause problems).
+[[link,design_mailbox,mailbox]] at the same time (which might cause problems).
 
 ::: warning [[changed,doveadm_mailbox_commands_user]]
 All mail commands require providing `-u`, `-F` or `-A` parameter.
@@ -298,7 +298,7 @@ All mail commands require providing `-u`, `-F` or `-A` parameter.
 `USER` environment variable is no longer supported.
 
 This will always be subject to user database lookup and requires access to
-auth userdb socket.
+auth [[link,userdb,userdb]] socket.
 :::
 
 ### doveadm fetch

@@ -30,7 +30,7 @@ enough information on how it happened.
 
 ### Generating Core Dumps
 
-The best way to debug is to get a backtrace from gdb, but the problem is that
+The best way to [[link,debug,debug]] is to get a backtrace from gdb, but the problem is that
 Dovecot doesn’t dump core files by default. You can solve this in a few ways:
 
 #### systemd-coredump
@@ -267,7 +267,7 @@ src/imap/imap -u <username>
 doveadm exec imap -u <username>
 ```
 
-This also works for pop3 and managesieve. lmtp can also be started from
+This also works for pop3 and [[link,managesieve,managesieve]]. lmtp can also be started from
 command line without the -u parameter (because the recipient is given
 with RCPT TO command).
 
@@ -286,7 +286,7 @@ with RCPT TO command).
    This can also be used together with imaptest, if you define
    imaptest to use only one username. Some configurations or use
    cases might require dovecot to be running (e.g. for
-   authentication). In those cases, select a different port for
+   [[link,authentication,authentication]]). In those cases, select a different port for
    "nc" or change dovecot not to listen on 143.
 
 ## Debug Most Dovecot Executables Inside the Source Tree
@@ -467,7 +467,7 @@ following the linked list:
 Dovecot uses [[link,data_stack]] to implement its own secondary stack.
 This stack is intended to usually stay rather small, ideally within its
 initial 32 kB size. There are `data_stack_grow` events sent when it grows.
-To debug why data stack grows, you can have it panic:
+To debug why [[link,data_stack,data stack]] grows, you can have it panic:
 
 ```
 log_core_filter = event=data_stack_grow

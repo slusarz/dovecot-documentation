@@ -155,7 +155,7 @@ It's possible to override the default mail location for specific users by
 making the [[link,userdb]] return the settings as extra field.
 
 ::: tip
-Note that `%{home}` doesn't work in the userdb queries or templates. `~/` gets
+Note that `%{home}` doesn't work in the [[link,userdb,userdb]] queries or templates. `~/` gets
 expanded later, so use it instead.
 
 If you have explicit settings inside [[link,namespaces,namespace { .. }]] they
@@ -195,10 +195,10 @@ user:{PLAIN}password:1000:1000::/home/user::userdb_mail_driver=mbox userdb_mail_
 
 ## Mixing Multiple Mailbox Formats
 
-It's possible to use different mailbox formats same user by configuring
-multiple namespaces. See [[link,namespaces]].
+It's possible to use different [[link,mailbox_formats,mailbox formats]] same user by configuring
+multiple [[link,namespaces,namespaces]]. See [[link,namespaces]].
 
-Each mailbox format has to live in a different namespace. Mixing mailbox
+Each [[link,design_mailbox,mailbox]] format has to live in a different namespace. Mixing mailbox
 formats within the same namespace is not supported.
 
 ## Custom Namespace Location
@@ -231,7 +231,7 @@ Before configuring Dovecot, you'll need to know where your mails are
 located. You should already have an SMTP server installed and configured
 to deliver mails somewhere, so the easiest way to make Dovecot work is
 to just use the same location. Otherwise you could create a `~/Maildir`
-directory and configure your SMTP server to use the Maildir format.
+directory and configure your SMTP server to use the [[link,maildir,Maildir]] format.
 
 First send a test mail to yourself (as your own non-root user):
 

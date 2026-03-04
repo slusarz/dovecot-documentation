@@ -92,7 +92,7 @@ section multiple times, the settings are merged together.
 
 ## Authentication
 
-The above example configures Dovecot to use PAM for system user authentication.
+The above example configures Dovecot to use PAM for system user [[link,authentication,authentication]].
 See [[link,auth_pam]] for how to configure it.
 
 A typical configuration with Linux would be to create `/etc/pam.d/dovecot`
@@ -105,7 +105,7 @@ account   required        pam_unix.so
 
 ### Virtual Users
 
-If you're planning on using virtual users, it's easier to first create a
+If you're planning on using [[link,virtual_users,virtual users]], it's easier to first create a
 simple passwd-like file to make sure that the authentication will work.
 Later when you know Dovecot is working, you can do it differently (see
 [[link,virtual_users]]).
@@ -141,13 +141,13 @@ If you're using something else, see [[link,passdb]] and [[link,userdb]].
 
 ## Mail Location
 
-You can let Dovecot do its automatic mail location detection, but if that
+You can let Dovecot do its automatic [[link,mail_location,mail location]] detection, but if that
 doesn't work you can set the location manually. See
 [[link,mail_location_mailbox_root_autodetection]].
 
 ::: tip
 It is recommended to use either [[link,maildir]] or [[link,dbox]] as your
-mailbox format.
+[[link,design_mailbox,mailbox]] format.
 
 [[link,mbox]] is a deprecated format, and should
 only be used for legacy message access and not for new systems.
@@ -174,7 +174,7 @@ An easy way to build a self-signed test certificate is using Dovecot's
 
 By default [[setting,auth_allow_cleartext,no]], which means that Dovecot
 will fail the authentication if the client doesn't use SSL (or use
-non-cleartext authentication mechanisms). This is recommended in most
+non-cleartext [[link,authentication_mechanisms,authentication mechanisms]]). This is recommended in most
 situations, since it prevents leaking passwords. However, if you don't
 offer SSL for some reason, you'll probably want to set
 [[setting,auth_allow_cleartext,yes]].

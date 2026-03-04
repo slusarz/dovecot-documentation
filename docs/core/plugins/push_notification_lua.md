@@ -5,7 +5,7 @@ title: push-notification-lua
 
 # Push Notification Plugin: Lua (`push-notification-lua`)
 
-You can use Lua to write custom push notification handlers.
+You can use Lua to write custom [[link,push_notification,push notification]] handlers.
 
 ::: info
 Lua push notification requires the base push-notification plugin to be
@@ -80,7 +80,7 @@ Lua when it's not needed.
 
 ### Mailbox Events
 
-All mailbox events contain the following parameters:
+All [[link,design_mailbox,mailbox]] events contain the following parameters:
 
 | Name | Description |
 | ---- | ----------- |

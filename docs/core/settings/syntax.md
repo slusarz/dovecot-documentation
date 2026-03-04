@@ -67,7 +67,7 @@ settings_key = settings_value
 
 The `#` character and everything after it are comments. Extra spaces and tabs
 are ignored. If you need to use these, put the value inside quotes. The quote
-character inside a quoted string is escaped with `\"`:
+character inside a quoted [[link,settings_types_string,string]] is escaped with `\"`:
 
 ```[dovecot.conf]
 settings_key = "# char, \"quote\", and trailing whitespace    "
@@ -95,7 +95,7 @@ mail_attribute {
 ```
 
 In this case when mail attributes are being accessed, the dict settings are
-looked up using the named filter called `mail_attribute`. Note that named
+looked up using the [[link,settings_types_named_filter,named filter]] called `mail_attribute`. Note that named
 filters cannot have a name before the `{`, i.e. `mail_attribute foo {` will
 result in an error.
 
@@ -151,7 +151,7 @@ namespace inbox {
 }
 ```
 
-The named list filter's name may also sometimes be used as part of the settings
+The [[link,settings_types_named_list_filter,named list filter]]'s name may also sometimes be used as part of the settings
 instead of simply a name. For example:
 
 ```[dovecot.conf]
@@ -194,7 +194,7 @@ namespace inbox { prefix = INBOX/ } # DOES NOT WORK
 
 ## Named Filter Overrides
 
-It's possible to add/update/replace named (list) filters via userdb settings or
+It's possible to add/update/replace named (list) filters via [[link,userdb,userdb]] settings or
 via `-o` command line parameters. For example if you have:
 
 ```[dovecot.conf]
@@ -369,7 +369,7 @@ group @mailboxes finnish {
 
 It's possible to override groups using the command line parameter `-o` or
 userdb. For example above you can return `namespace/inbox/@mailboxes=finnish`
-from userdb to change mailbox names to Finnish language. Note that groups can't
+from userdb to change [[link,design_mailbox,mailbox]] names to Finnish language. Note that groups can't
 be added via overrides unless `@label` is already set in the config file.
 
 You can see the default group contents with e.g.:

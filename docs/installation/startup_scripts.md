@@ -42,7 +42,7 @@ Ownership should be `root:wheel`.
 ```
 
 If Dovecot is not started as a foreground process, launchd will keep
-restarting it until the "No authentication sockets found" error message
+restarting it until the "No [[link,authentication,authentication]] sockets found" error message
 shows up in the logs and further logins are denied.
 
 ## Sample Dovecot init.d Script

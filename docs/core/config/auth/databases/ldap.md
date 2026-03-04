@@ -7,7 +7,7 @@ dovecotlinks:
 
 # LDAP Authentication (`ldap`)
 
-There are two ways to do LDAP authentication in [[link,passdb,passdb]]:
+There are two ways to do LDAP [[link,authentication,authentication]] in [[link,passdb,passdb]]:
 
 * [Authentication Binds](#authentication-binds)
 * [Password Lookups](#password-lookups)
@@ -38,7 +38,7 @@ If LDAP server requires authentication, set:
 ### Worker Processes
 
 If [[setting,passdb_use_worker,no]] / [[setting,userdb_use_worker,no]]
-(default for passdb ldap), all LDAP lookups are performed by the auth master
+(default for [[link,passdb,passdb]] ldap), all LDAP lookups are performed by the auth master
 process. Each LDAP connection can keep up to 8 requests pipelined. For small
 systems this is sufficient and uses less resources, but it may become a
 bottleneck if there are a lot of queries.
@@ -56,7 +56,7 @@ When using
 -  auth binds and
 -  userdb ldap lookups,
 
-the userdb lookups should use a separate connection to the LDAP server.
+the [[link,userdb,userdb]] lookups should use a separate connection to the LDAP server.
 That way it can send LDAP requests asynchronously to the server, which
 improves the performance. This can be done by specifying distinct
 [[setting,ldap_connection_group]] in the LDAP
@@ -242,7 +242,7 @@ setting in `dovecot.conf` to specify it. Otherwise each password needs
 to be prefixed with `{password-scheme}`, for example
 `{plain}plaintext-password`.
 
-See [[link,password_schemes]] for a list of supported password schemes.
+See [[link,password_schemes]] for a list of supported [[link,password_schemes,password schemes]].
 
 #### Username
 

@@ -9,12 +9,12 @@ title: Mail User
 all kinds of useful information about the user that can be accessed
 directly. Some of the most useful things you can do with a user are:
 
-- `user->username` gives you the actual username string (e.g.
+- `user->username` gives you the actual username [[link,settings_types_string,string]] (e.g.
   `user@domain.org`).
 
 - `user->set` gives you access to user's settings.
 
-- `user->namespaces` points to a linked list of user's namespaces.
+- `user->namespaces` points to a linked list of user's [[link,namespaces,namespaces]].
 
 - `mail_user_get_home()` returns user's home directory, if there's
    one.
@@ -27,7 +27,7 @@ If the same process handles multiple connections for the same user, they
 don't share the same mail_user (especially since each mail_user has a
 unique session ID).
 
-If a user has shared mailboxes from other users (not public namespaces),
+If a user has [[link,shared_mailboxes,shared mailboxes]] from other users (not public namespaces),
 a mail user is also created whenever necessary to list/access the user's
 mailboxes. Again there is no attempt to share the created mail user with
 other connections.

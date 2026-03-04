@@ -8,7 +8,7 @@ title: pop3-migration
 The pop3-migration plugin is used to preserve POP3 UIDLs.
 
 When dsync is handling IMAP INBOX and requests a POP3 UIDL, the plugin
-connects to the POP3 server and figures out which IMAP messages match
+connects to the [[link,pop3_server,POP3 server]] and figures out which IMAP messages match
 the POP3 messages and returns the appropriate POP3 UIDL.
 
 The plugin works by matching POP3 messages to IMAP messages. This isn’t
@@ -28,7 +28,7 @@ See Also:
 
 ## Configuration
 
-This plugin requires a pop3c namespace configured for accessing the source
+This plugin requires a [[link,pop3c,pop3c]] namespace configured for accessing the source
 POP3 server. For example:
 
 ```[dovecot.conf]

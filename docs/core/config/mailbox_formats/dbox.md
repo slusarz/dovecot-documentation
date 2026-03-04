@@ -19,7 +19,7 @@ dovecotlinks:
 
 # dbox Mailbox Format
 
-dbox is Dovecot's own high-performance mailbox format. The original version
+dbox is Dovecot's own high-performance [[link,design_mailbox,mailbox]] format. The original version
 was introduced in v1.0 alpha4, but since then it has been completely
 redesigned in v1.1 series and improved even further in v2.0.
 
@@ -60,7 +60,7 @@ By default, the dbox filesystem layout is as follows.
 Data which isn't the actual message content is stored in a layout common to
 both `sdbox` and `mdbox`.
 
-In these tables `<root>` is shorthand for the mail location root directory
+In these tables `<root>` is shorthand for the [[link,mail_location,mail location]] root directory
 on the filesystem.
 
 Index files can be stored in a different location by using the
@@ -161,7 +161,7 @@ their state if map index or mailbox index gets corrupted:
 
 ## Alternate Storage
 
-Unlike Maildir, with dbox the message file names don't change. This makes it
+Unlike [[link,maildir,Maildir]], with dbox the message file names don't change. This makes it
 possible to support storing files in multiple directories or mount points.
 dbox supports looking up files from "altpath" if they're not found from the
 primary path. This means that it's possible to move older mails that are

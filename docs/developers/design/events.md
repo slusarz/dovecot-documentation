@@ -15,13 +15,13 @@ See [[link,event_design]] first for an overview of the design.
 
 Events are sent by logging it. Any `e_debug()`, `e_info()`, `e_warning()`
 or `e_error()` call will also send the event, which may be redirected to the
-stats process. Often events that are intended for statistics are sent using the
+stats process. Often events that are intended for [[link,stats,statistics]] are sent using the
 `e_debug()` call. The event can be sent to statistics even if it's not
 actually logged. Avoid sending events excessively.
 
 ::: warning
 An `e_debug()` call every time connection reads or writes something will
-likely result in a huge amount of unnecessary debug logging.
+likely result in a huge amount of unnecessary [[link,debug,debug]] logging.
 :::
 
 ## Event Names
@@ -32,7 +32,7 @@ consistent when naming the events.
 The name's prefix should be the subsystem that is logging the event. Usually
 this would be the primary category of the event. 
 
-Example: IMAP related events should begin with `imap_` and mailbox related
+Example: IMAP related events should begin with `imap_` and [[link,design_mailbox,mailbox]] related
 events begin with `mailbox_`.
 
 The name should consist of only `[a-z]`, `[0-9]` and `_` characters.
@@ -141,7 +141,7 @@ to the stats process. We may need to fix this if it becomes a problem.
 :::
 
 Field inheritance may become problematic also when multiple nested ioloops
-are used. For example an outgoing imapc connection could receive a reply,
+are used. For example an outgoing [[link,imapc,imapc]] connection could receive a reply,
 which synchronously triggers an outgoing quota SQL connection. The quota
 SQL connection's parent event likely shouldn't be the imapc connection's
 event, because otherwise they could be mixing the `IP/port fields` and

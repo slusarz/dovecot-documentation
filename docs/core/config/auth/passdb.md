@@ -25,7 +25,7 @@ dovecotlinks:
 
 # Password Databases (`passdb`)
 
-Dovecot uses `passdb` and [[link,userdb]] as part of the authentication process.
+Dovecot uses `passdb` and [[link,userdb]] as part of the [[link,authentication,authentication]] process.
 
 `passdb` authenticates the user. It also provides any other pre-login
 information needed for users, such as:
@@ -60,7 +60,7 @@ configure things like [[link,authentication_proxies]].
 
 You can use multiple databases, so if the password doesn't match in the first
 database, Dovecot checks the next one. This can be useful if you want to easily
-support having both virtual users and also local system users (see
+support having both [[link,virtual_users,virtual users]] and also local [[link,system_users,system users]] (see
 [[link,auth_multiple_dbs]]).
 
 You can control the behavior of what happens after a passdb lookup is
@@ -86,7 +86,7 @@ Databases that belong to this category are:
 | Database | Description |
 | -------- | ----------- |
 | [[link,auth_pam,PAM]] | Pluggable Authentication Modules. |
-| [[link,auth_imap,IMAP]] | Authenticate against remote IMAP server. |
+| [[link,auth_imap,IMAP]] | Authenticate against remote [[link,imap_server,IMAP server]]. |
 | [[link,auth_oauth2,OAuth2]] | Authenticate against OAuth2 provider. |
 | [[link,auth_bsd,BSDAuth]] | BSD authentication (deprecated, unsupported). |
 
@@ -220,13 +220,13 @@ specially.
 How to return these extra fields depends on the password database you use.
 Some `passdb`s don't support returning them at all, such as [[link,auth_pam]].
 
-Boolean fields are true always if the field exists. So `nodelay`,
+[[link,settings_types_boolean,Boolean]] fields are true always if the field exists. So `nodelay`,
 `nodelay=yes`, `nodelay=no` and `nodelay=0` all mean that the "nodelay"
 field is true. With SQL the field is considered to be nonexistent if its
 value is NULL.
 
 ::: info [[changed,extra_fields_empty]]
-Extra fields can now also be set to empty string, while previously they were
+Extra fields can now also be set to empty [[link,settings_types_string,string]], while previously they were
 changed to `yes`. Extra fields without value (without `=`) will default to
 `yes`.
 :::
@@ -297,7 +297,7 @@ Master `passdb` can use this to change the username.
 Allow user to log in from only specified IPs (checks against remote client
 IP).
 
-This field is a comma separated list of IP addresses and/or networks
+This field is a comma separated list of [[link,settings_types_ip,IP addresses]] and/or networks
 where the user is allowed to log in from. If the user tries to log in from
 elsewhere, the authentication will fail the same way as if a wrong password was
 given.
@@ -309,7 +309,7 @@ IPv6 addresses are also allowed. IPv6 mapped IPv4 addresses (eg.
 Example: `allow_nets=::1,2001:abcd:abcd::0:0/80,1.2.3.4`.
 
 Using `local` matches any auth connection that doesn't have an IP address.
-This usually means internal auth lookups from, e.g., doveadm.
+This usually means internal auth lookups from, e.g., [[link,doveadm,doveadm]].
 Example: `allow_nets=127.0.0.0/8,local`.
 
 ##### Example
@@ -343,13 +343,13 @@ reply to RCPT TO command))".
 #### `allow_real_nets`
 
 Allow user's network connection to log in from only specified IPs (checks
-against real remote IP, e.g. a Dovecot proxy).
+against real remote IP, e.g. a [[link,recommended_metrics_dovecot_proxy,Dovecot proxy]]).
 
 See [`allow_nets`](#allow-nets) for additional documentation.
 
 #### `proxy`
 
-Proxy the connection to another IMAP/POP3 server.
+Proxy the connection to another IMAP/[[link,pop3_server,POP3 server]].
 
 See [[link,authentication_proxies]].
 
@@ -385,7 +385,7 @@ notify the users.
 
 ::: warning
 The `nologin` field is mainly intended for user logins (IMAP, POP3,
-ManageSieve). It is ignored with `doveadm`, because the intention is that admin
+[[link,managesieve,ManageSieve]]). It is ignored with `doveadm`, because the intention is that admin
 could still be able to access a disabled user via `doveadm`.
 
 [[changed,lmtp_nologin_added]] The `nologin` field prevents LMTP access now

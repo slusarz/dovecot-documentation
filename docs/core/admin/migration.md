@@ -19,7 +19,7 @@ all mails! Read this page carefully!
 This guide assumes that the target host has a v2.3 or newer version of Dovecot.
 
 You should use migration when you are changing Dovecot storage configuration,
-such as compression, encryption or mail location driver; or want to
+such as compression, encryption or [[link,mail_location,mail location]] driver; or want to
 restructure your mails in some way.
 
 Things that you should consider in your config:
@@ -27,7 +27,7 @@ Things that you should consider in your config:
 * [[link,mail_location]]
 * IMAP client settings (when needed)
 * [[link,namespaces,Namespace definitions including public and shared
-  namespaces]]
+  [[link,namespaces,namespaces]]]]
 * [[plugin,acl,ACL settings]]
 * [[plugin,quota]]: Quota without rules (to make sure quota gets calculated,
   but not enforced)
@@ -37,8 +37,8 @@ Things that you should consider in your config:
 * [[plugin,mail-compress]] and [[plugin,mail-crypt]] settings
 * [[link,nfs]] related settings
 
-Sometimes, if your production configuration file has complex authentication
-flows, push notifications, or other settings that might cause unwanted
+Sometimes, if your production configuration file has complex [[link,authentication,authentication]]
+flows, [[link,push_notification,push notifications]], or other settings that might cause unwanted
 effects during migration, you can make a separate migration configuration
 file. To use this configuration file, you can store it as, for example,
 `/etc/dovecot/dovecot-migration.conf`, and use it with
@@ -85,13 +85,13 @@ are preserved:
    * Some IMAP clients store metadata by assigning it to specific UID,
      if UIDs are changed these will be lost.
 
-3. Mailbox subscription list
+3. [[link,design_mailbox,Mailbox]] subscription list
 
 ## Migrating Mailboxes from Another Dovecot Server
 
 ### Preparations
 
-If the old system is running v2.1.14+ , you can use doveadm protocol to
+If the old system is running v2.1.14+ , you can use [[link,doveadm,doveadm]] protocol to
 migrate your mails.
 
 If the old system is older, see
@@ -130,7 +130,7 @@ If you are experiencing problems, run:
 doveadm -D backup -Ru username tcp:host:port
 ```
 
-This will enable debug logging.
+This will enable [[link,debug,debug]] logging.
 
 The doveadm backup command forces the destination to look exactly like
 the source, deleting mails and mailboxes if necessary.
@@ -179,7 +179,7 @@ Ensure both source and target system agree on usernames.
 Configure IMAP client on the target system.
 
 ::: tip [[changed,migration_imapc_features]]
-All IMAPC features are auto-enabled by default. Please refer
+All [[link,imapc,IMAPC]] features are auto-enabled by default. Please refer
 to [[setting,imapc_features]] for description on individual flags
 on how to turn these off when necessary.
 :::
@@ -320,7 +320,7 @@ See [[link,doveadm_error_codes]] for details on how to handle errors.
 * Don't trust the migration tools blindly. Verify manually that the UIDLs
   are correct before exposing real clients to Dovecot.
 
-  You can do this by logging in using your old POP3 server, issuing UIDL
+  You can do this by logging in using your old [[link,pop3_server,POP3 server]], issuing UIDL
   command and saving the output.
 
   Then log in using Dovecot and save its UIDL output as well. Use e.g. `diff`
@@ -415,7 +415,7 @@ with GMail migration. It will:
 
 The `-s` (state) parameter can be used to significantly improve performance for incremental migrations.
 
-By using a "sync state string", dsync can avoid a full mailbox scan and only synchronize the changes
+By using a "sync state [[link,settings_types_string,string]]", dsync can avoid a full mailbox scan and only synchronize the changes
 that have occurred since the last synchronization.
 
 ### How it Works

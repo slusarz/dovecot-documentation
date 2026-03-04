@@ -35,7 +35,7 @@ If the master process sees that the service is completely full and can't
 accept any more client connections, it logs a warning and eventually starts
 rejecting the client connections for the service.
 
-The login processes are special however: When master process notices that
+The [[link,login_processes,login processes]] are special however: When master process notices that
 all login processes are full, it instead notifies them about it. The login
 processes then start closing their oldest connections in order to make space
 for more client connections. This prevent DoSing the login services by simply
@@ -77,8 +77,8 @@ executing `doveconf`.
 
 ## Authentication Process
 
-The auth process handles everything related to the actual authentication:
-SASL authentication mechanisms, looking up and verifying the passwords and
+The auth process handles everything related to the actual [[link,authentication,authentication]]:
+SASL [[link,authentication_mechanisms,authentication mechanisms]], looking up and verifying the passwords and
 looking up user information.
 
 There is only a single auth master process, which accepts all incoming
@@ -87,14 +87,14 @@ what it does and must not block for long or it will cause all the
 authentications to hang.
 
 To handle potentially long-running blocking operations there are auth worker
-processes. These are often used for passdb and userdb lookups. The auth worker
+processes. These are often used for [[link,passdb,passdb]] and [[link,userdb,userdb]] lookups. The auth worker
 processes can also be used for verifying password hashes, which may be
 necessary if strong hashing algorithms are used.
 
 ## Login Processes
 
 The login processes implement the required minimum of the IMAP, POP3,
-ManageSieve or Submission protocols before a user logs in successfully.
+[[link,managesieve,ManageSieve]] or Submission protocols before a user logs in successfully.
 Each protocol is handled by a separate process (and binary).
 
 These processes are run with least possible privileges. Unfortunately
@@ -105,7 +105,7 @@ login process is by default run under a user account that has no special
 access to anything, and runs inside a non-writable chroot where only a couple
 of UNIX sockets exist. Doing any damage inside there to the server itself
 should be difficult. It could of course still create connections to other
-services that would normally be unavailable from external IP addresses.
+services that would normally be unavailable from external [[link,settings_types_ip,IP addresses]].
 
 When a new connection comes, one of the login processes accept()s it.
 After that the client typically does nothing more than ask the server's

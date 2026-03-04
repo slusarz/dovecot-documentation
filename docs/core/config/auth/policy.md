@@ -13,7 +13,7 @@ dovecotlinks:
 
 # Authentication Policy
 
-Dovecot supports interfacing with an external authentication policy server.
+Dovecot supports interfacing with an external [[link,authentication,authentication]] policy server.
 
 This server can be used to decide whether the connecting user is permitted,
 tarpitted or outright rejected.
@@ -193,7 +193,7 @@ Overall indicator whether the request succeeded or not.
 ### Auth Policy check: Authentication 'Before' userdb/passdb
 
 First query is done **before** password and user databases are
-consulted. This means that any userdb/passdb attributes are left empty.
+consulted. This means that any [[link,userdb,userdb]]/[[link,passdb,passdb]] attributes are left empty.
 
 The command used here is `allow` and will appear on the URL as
 `command=allow`.
@@ -232,7 +232,7 @@ The JSON request is sent with two additional attributes:
 
 #### `success`
 
-Boolean true/false depending on whether the overall authentication succeeded
+[[link,settings_types_boolean,Boolean]] true/false depending on whether the overall authentication succeeded
 
 #### `policy_reject`
 Boolean true/false whether the failure was due to policy server

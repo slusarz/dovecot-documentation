@@ -15,13 +15,13 @@ You are recommended to use `oauthbearer` (preferred) or `xoauth2`
 The responses from endpoints must be JSON objects.
 
 [[changed,auth_oauth2_no_passdb_changed]]: The OAuth2 mechanism no longer uses
-a passdb for token authentication. Password Grant still needs a oauth2 passdb.
+a [[link,passdb,passdb]] for token [[link,authentication,authentication]]. Password Grant still needs a oauth2 passdb.
 
 ## Settings
 
 Oauth2 overrides some of the default HTTP client and SSL settings. You can
 override these and any other HTTP client or SSL settings by placing them inside
-the [[setting,oauth2]] named filter.
+the [[setting,oauth2]] [[link,settings_types_named_filter,named filter]].
 
 <SettingsComponent tag="oauth2" />
 
@@ -189,7 +189,7 @@ Example:
 
 Would turn into: `/shared/issuer.net-dovecot/ES256/Zm9vb2Jhcgo`.
 
-If using fs posix, key would be at
+If using [[link,fs_posix,fs posix]], key would be at
 `/etc/dovecot/keys/issuer.net-dovecot/ES256/Zm9vb2Jhcgo`.
 
 In key id and AZP field, `/` are escaped with `%2f` and `%` are escaped

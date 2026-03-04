@@ -10,11 +10,11 @@ dovecotlinks:
 
 # Lua Authentication Database (`lua`)
 
-You can implement passdb and userdb using [Lua](https://www.lua.org/) script.
+You can implement [[link,passdb,passdb]] and [[link,userdb,userdb]] using [Lua](https://www.lua.org/) script.
 
 ## Authentication
 
-When used in authentication, additional module `dovecot.auth` is added, which
+When used in [[link,authentication,authentication]], additional module `dovecot.auth` is added, which
 contains constants for [[link,passdb]] and [[link,userdb]].
 
 For details about Dovecot Lua, see [[link,lua]].
@@ -95,7 +95,7 @@ various parts of the auth request. You should use the loggers associated with
 
 ##### `auth_request#log_debug(text)`
 
-Logs debug message (if debug is enabled, noop otherwise).
+Logs [[link,debug,debug]] message (if debug is enabled, noop otherwise).
 
 ##### `auth_request#log_error(text)`
 
@@ -222,7 +222,7 @@ Function signature is `auth_passdb_lookup(request)`.
 
 Function must return a tuple, which contains:
  * `dovecot.auth.PASSDB_RESULT_OK` and extra fields table
- * `dovecot.auth.PASSDB_RESULT_*` error and error string
+ * `dovecot.auth.PASSDB_RESULT_*` error and error [[link,settings_types_string,string]]
 
 The extra fields table must be in key-value format, as it will be imported into
 auth request.

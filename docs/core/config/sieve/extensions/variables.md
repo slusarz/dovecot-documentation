@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Sieve: Variables Extension
 
-The Sieve variables extension ([[rfc,5229]]) adds the concept of
+The [[link,sieve,Sieve]] variables extension ([[rfc,5229]]) adds the concept of
 variables to the Sieve language.
 
 ## Configuration

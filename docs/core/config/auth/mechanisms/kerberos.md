@@ -5,9 +5,9 @@ title: Kerberos
 
 # Kerberos Authentication
 
-Dovecot supports Kerberos 5 using GSSAPI.
+Dovecot supports Kerberos 5 using [[link,auth_gssapi,GSSAPI]].
 
-The Kerberos authentication mechanism doesn't require having a
+The Kerberos [[link,authentication,authentication]] mechanism doesn't require having a
 [[link,passdb]], but you do need a [[link,userdb]] so Dovecot can lookup
 user-specific information, such as where their mailboxes are stored.
 
@@ -141,7 +141,7 @@ auth sufficient pam_krb5.so
 account sufficient pam_krb5.so
 ```
 
-Then enable PAM passdb:
+Then enable PAM [[link,passdb,passdb]]:
 
 ```
 passdb pam {

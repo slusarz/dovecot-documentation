@@ -8,7 +8,7 @@ dovecotlinks:
 # Authentication Caching
 
 Dovecot supports caching the results of [[link,passdb]] and [[link,userdb]]
-lookups. The following rules apply to using the authentication cache:
+lookups. The following rules apply to using the [[link,authentication,authentication]] cache:
 
 - Data is used from the cache if it's not expired ([[setting,auth_cache_ttl]]
   setting)
@@ -50,7 +50,7 @@ catch those cases (see the rules above).
 
 3. User logs in with password Y. The cached password X doesn't match Y,
    but since the previous authentication was successful Dovecot does
-   another backend passdb lookup to see if the password changed. It did,
+   another backend [[link,passdb,passdb]] lookup to see if the password changed. It did,
    so the password Y is cached and login succeeds.
 
 ## Old Cached Password

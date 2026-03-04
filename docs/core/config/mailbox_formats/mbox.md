@@ -27,7 +27,7 @@ It still exists solely to read old mail storages, and for backwards utility
 purposes (specifically for archival purposes, as mbox allows multiple
 messages to be natively stored in a single file).
 
-In a production system, a more modern mailbox format should be used, e.g.,
+In a production system, a more modern [[link,design_mailbox,mailbox]] format should be used, e.g.,
 [[link,dbox]] (or [[link,maildir]]).
 :::
 
@@ -42,7 +42,7 @@ the mbox format is typically thought of as a slow format. However with
 Dovecot's indexing this isn't true. Only expunging messages from the
 beginning of a large mbox file is slow with Dovecot, most other operations
 should be fast. Also because all the mails are in a single file, searching
-is much faster (if FTS is not used) than with Maildir.
+is much faster (if FTS is not used) than with [[link,maildir,Maildir]].
 
 Modifications to mbox may require moving data around within the file, so
 interruptions (eg. power failures) can cause the mbox to break more or less
@@ -519,7 +519,7 @@ In many systems, the user's mails are by default stored in
 IMAP supports multiple mailboxes, you'll need to have a directory for them as
 well. Usually `~/mail` is a good choice for this.
 
-For an installation such as this, the mail location is specified with:
+For an installation such as this, the [[link,mail_location,mail location]] is specified with:
 
 ```[dovecot.con]
 # %{user} is replaced with the username that logs in
@@ -591,7 +591,7 @@ mail_privileged_group = mail
 
 NOTE: With [[link,lda]] the [[setting,mail_privileged_group]] setting
 unfortunately doesn't work, so you'll have to use the sticky bit, disable
-dotlocking completely, or use LMTP server instead.
+dotlocking completely, or use [[link,lmtp,LMTP server]] instead.
 
 ### /var/mail/\* Permissions
 
@@ -618,7 +618,7 @@ each user has to have a private directory where the mailboxes are stored.
 Dovecot also needs a directory for its index files unless you disable them
 completely.
 
-If you **really** want to use Dovecot as a plain POP3 server without index
+If you **really** want to use Dovecot as a plain [[link,pop3_server,POP3 server]] without index
 files, you can work around not having a per-user directory:
 
 * Set users' home directory in an empty non-writable directory, e.g.

@@ -27,7 +27,7 @@ Currently supported FS drivers are:
 | Name | Description |
 | --- | --- |
 | [[link,fs_posix,posix]] | POSIX filesystem. |
-| [[link,fs_dict,dict]] | Dictionary (`lib-dict` wrapper). |
+| [[link,fs_dict,dict]] | [[link,dict,Dictionary]] (`lib-dict` wrapper). |
 <!-- @include: @docs/storage/providers/includes/fs.inc -->
 
 

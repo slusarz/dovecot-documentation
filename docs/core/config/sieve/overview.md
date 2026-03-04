@@ -65,7 +65,7 @@ The interpreter recognizes the following Sieve extensions:
 | `imapsieve` ([[rfc,6785]]) | no ([[plugin,imap-sieve]]) | Provides access to special environment items when executing at IMAP events |
 | <code>[[link,sieve_include,include]]</code> ([[rfc,6609]]) | **yes** | Allows including other Sieve scripts |
 | `index` ([[rfc,5260,6]])) | **yes** | Allows matching specific header field instances by index |
-| `mailbox` ([[rfc,5490,3]]) | **yes** | Provides a mailbox existence check and allows creating mailboxes upon fileinto |
+| `mailbox` ([[rfc,5490,3]]) | **yes** | Provides a [[link,design_mailbox,mailbox]] existence check and allows creating mailboxes upon fileinto |
 | `mboxmetadata` ([[rfc,5490]]) | no | Provides access to mailbox METADATA entries |
 | `mime` ([[rfc,5703,4]]) | **yes** | Allows testing parts of structured MIME header fields |
 | `regex` ([Draft](https://tools.ietf.org/html/draft-murchison-sieve-regex-08)) | **yes** | Provides regular expression match support |
@@ -85,9 +85,9 @@ The interpreter recognizes the following Dovecot-specific Sieve extensions:
 
 | Extension | Default Enabled | Purpose |
 | --------- | --------------- | ------- |
-| [`vnd.dovecot.debug`](https://raw.githubusercontent.com/dovecot/pigeonhole/main/doc/rfc/spec-bosch-sieve-debug.txt) | no | Allows logging debug messages |
+| [`vnd.dovecot.debug`](https://raw.githubusercontent.com/dovecot/pigeonhole/main/doc/rfc/spec-bosch-sieve-debug.txt) | no | Allows logging [[link,debug,debug]] messages |
 | [`vnd.dovecot.environment`](https://raw.githubusercontent.com/dovecot/pigeonhole/main/doc/rfc/spec-bosch-sieve-dovecot-environment.txt) | no | Extends the standard "environment" extension with extra items and a variables namespace for direct access |
-| [`vnd.dovecot.execute`](https://raw.githubusercontent.com/dovecot/pigeonhole/main/doc/rfc/spec-bosch-sieve-extprograms.txt) | no ([[plugin,sieve-extprograms]]) | Implements executing a pre-defined set of external programs with the option to process string data through the external program |
+| [`vnd.dovecot.execute`](https://raw.githubusercontent.com/dovecot/pigeonhole/main/doc/rfc/spec-bosch-sieve-extprograms.txt) | no ([[plugin,sieve-extprograms]]) | Implements executing a pre-defined set of external programs with the option to process [[link,settings_types_string,string]] data through the external program |
 | [`vnd.dovecot.filter`](https://raw.githubusercontent.com/dovecot/pigeonhole/main/doc/rfc/spec-bosch-sieve-extprograms.txt) | no ([[plugin,sieve-extprograms]]) | Implements filtering messages through a pre-defined set of external programs |
 | [`vnd.dovecot.pipe`](https://raw.githubusercontent.com/dovecot/pigeonhole/main/doc/rfc/spec-bosch-sieve-extprograms.txt) | no ([[plugin,sieve-extprograms]]) | Implements piping messages to a pre-defined set of external programs |
 | [`vnd.dovecot.report`](https://raw.githubusercontent.com/dovecot/pigeonhole/main/doc/rfc/spec-bosch-sieve-report.txt) | no | Implements sending Messaging Abuse Reporting Format (MARF) reports ([[rfc,5965]]) |
@@ -110,7 +110,7 @@ Basic configuration of the Sieve plugin can be found at [[plugin,sieve]].
 ## ManageSieve Server
 
 To give users the ability to upload their own Sieve scripts to your server,
-i.e. without the need for shell or FTP access, you can use the ManageSieve
+i.e. without the need for shell or FTP access, you can use the [[link,managesieve,ManageSieve]]
 protocol.
 
 Dovecot provides a [[link,managesieve]] service to provide this protocol.

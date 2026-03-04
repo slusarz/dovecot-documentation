@@ -6,7 +6,7 @@ title: Mailbox List
 # Mailbox List
 
 `src/lib-storage/mailbox-list.h` and `mailbox-list-private.h`
-describes mailbox list. The purpose of mailbox list is to manage mailbox
+describes [[link,design_mailbox,mailbox]] list. The purpose of mailbox list is to manage mailbox
 storage name &lt;-&gt; physical directory path mapping. Its most important
 functions are:
 
@@ -39,7 +39,7 @@ The same mailbox name can be visible in three different forms:
   doesn't have a namespace prefix. For example `foo.bar`.
 
 - Physical directory name on disk can be different again. For example
-  with Maildir++ it could be `.../Maildir/.foo.bar` (note the leading
+  with [[link,maildir,Maildir]]++ it could be `.../Maildir/.foo.bar` (note the leading
   dot before `foo`). With [[setting,mailbox_list_layout,index]] the directory
   name is the mailbox GUID (e.g.
   `.../mailboxes/d3b07384d113edec49eaa6238ad5ff00`).
@@ -65,7 +65,7 @@ List mailboxes that match any of the given patterns list.
 
 #### `mailbox_list_iter_init_namespaces()`
 
-List matching mailboxes from all namespaces.
+List matching mailboxes from all [[link,namespaces,namespaces]].
 
 - `MAILBOX_LIST_ITER_SKIP_ALIASES` flag skips namespaces that have
   `alias_for` set. You usually want to set this flag to avoid
@@ -75,7 +75,7 @@ List matching mailboxes from all namespaces.
 
 The patterns are IMAP-style patterns with '%' and '\*' wildcards as
 described by [[rfc,3501]]: '%' matches only up to next hierarchy separator,
-while '\*' matches the rest of the string.
+while '\*' matches the rest of the [[link,settings_types_string,string]].
 
 ### Mailbox Return Flags
 

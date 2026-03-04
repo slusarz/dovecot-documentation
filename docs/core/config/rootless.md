@@ -23,7 +23,7 @@ which is worse:
 
 - A small possibility to get user's privileges after logging in, but no
   possibility to read others' mails since they're saved with different
-  UIDs (plus you might also be chrooted to your own mailbox).
+  UIDs (plus you might also be chrooted to your own [[link,design_mailbox,mailbox]]).
 
 **or**
 

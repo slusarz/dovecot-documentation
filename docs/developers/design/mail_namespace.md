@@ -5,19 +5,19 @@ title: Mail Namespace
 
 # Mail Namespace
 
-`src/lib-storage/mail-namespace.h` describes mail namespaces. See
+`src/lib-storage/mail-namespace.h` describes mail [[link,namespaces,namespaces]]. See
 [[link,namespaces]] for more information about what they are actually about.
 
 ## Hierarchy Separators and Namespace Prefixes
 
 A namespace and [mailbox_list](mailbox_list) has 1:1
 relationship. A namespace is mainly about dealing with hierarchy separators
-and namespace prefixes, which mailbox list doesn't know or care much about.
+and namespace prefixes, which [[link,design_mailbox,mailbox]] list doesn't know or care much about.
 
 Mailbox lists have their native hierarchy separators. For example with
 FS layout the separator is '/', because child mailboxes are physically
 in subdirectories and '/' is the separator for directories. With
-Maildir++ layout the separator is hardcoded to '.' in the
+[[link,maildir,Maildir]]++ layout the separator is hardcoded to '.' in the
 maildir directory name, so that's its native hierarchy separator.
 
 Dovecot allows namespace separators to be configurable, so namespaces have two
@@ -47,7 +47,7 @@ mailbox names behave with namespace configuration.
 
 ## Users and Owners
 
-When accessing other users' shared mailboxes, there's a difference
+When accessing other users' [[link,shared_mailboxes,shared mailboxes]], there's a difference
 between a namespace's user and owner:
 
 - `ns->user` points to the mail user actually accessing the mailbox

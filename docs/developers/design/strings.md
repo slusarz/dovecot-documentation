@@ -16,7 +16,7 @@ or a `buffer_t` is mainly for human readability: If the buffer's contents
 are (ASCII/UTF8) text use `string_t`, otherwise for binary data use
 `buffer_t`.
 
-Once you've finished modifying a string with `str_*()` functions, you can
+Once you've finished modifying a [[link,settings_types_string,string]] with `str_*()` functions, you can
 get it out as a NUL-terminated string with `str_c()` or
 `str_c_modifiable()`. These pointers shouldn't be accessed after
 modifying the string again, since they could have moved elsewhere in memory
@@ -51,7 +51,7 @@ Dovecot's dynamic strings.
 - `i_snprintf()` is a wrapper to `snprintf()` that makes it easier
   to check if result was truncated. It also adds a few other safety
   checks. This should be avoided in general, except in situations where
-  you just don't want to use data stack and there's no way for the
+  you just don't want to use [[link,data_stack,data stack]] and there's no way for the
   result to get truncated.
 
 - `i_strocpy()` is similar to `strlcpy()`, but makes it easier to

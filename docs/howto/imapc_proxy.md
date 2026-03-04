@@ -6,7 +6,7 @@ title: imapc Proxy
 # Dovecot imapc Proxy
 
 Using Dovecot as a secure IMAP Proxy in front of Exchange, using
-Exchange Authentication and IMAPC.
+Exchange [[link,authentication,Authentication]] and [[link,imapc,IMAPC]].
 
 This is based on already having Dovecot already compiled and installed.
 

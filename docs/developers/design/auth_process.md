@@ -10,7 +10,7 @@ Dovecot processes work.
 
 There are four major classes in the code:
 
-- `struct mech_module`: Authentication (SASL) mechanism
+- `struct mech_module`: [[link,authentication,Authentication]] (SASL) mechanism
 
 - `struct password_scheme`: Password scheme
 
@@ -37,13 +37,13 @@ The code flow usually goes like:
   connects to the process type-specific socket (e.g. `imap` or `pop3`)
   and sending the authentication reply information to it.
 - The mail process connects to the `auth-master` UNIX socket and finishes
-  the authentication request. This includes doing a userdb lookup, which is
+  the authentication request. This includes doing a [[link,userdb,userdb]] lookup, which is
   returned back to the mail process.
 
 The authentication is fully asynchronous and it supports handling
 multiple requests in parallel.
 
-It's also possible to do passdb and userdb lookups directly without full
+It's also possible to do [[link,passdb,passdb]] and userdb lookups directly without full
 authentication.
 
 The login socket is mostly treated as untrusted. It's not possible for it
@@ -89,7 +89,7 @@ the cleartext password. This is true only for cleartext mechanisms
 such as PLAIN and LOGIN. The main purpose of this flag is to make
 dovecot-auth complain at startup if there are no passdbs defined in
 the configuration file. Note that a configuration without any passdbs
-is valid with eg. GSSAPI mechanism which doesn't need a passdb at
+is valid with eg. [[link,auth_gssapi,GSSAPI]] mechanism which doesn't need a passdb at
 all.
 
 #### `passdb_need_credentials`
@@ -220,7 +220,7 @@ Returns the password hash for given cleartext password.
 
 The `params` can be used to specify some extra parameters:
 
-* `user`: Used if the password hash depends on the username (eg. with DIGEST-MD5).
+* `user`: Used if the password hash depends on the username (eg. with [[link,auth_digest_md5,DIGEST-MD5]]).
 * `rounds`: Some schemes support a configurable number of hash rounds.
 
 #### New Password Scheme
@@ -234,7 +234,7 @@ shared object and placing it to `$moduledir/auth/` directory.
 See [[link,passdb]] for a description of passdbs and a list of already
 implemented ones.
 
-Plaintext authentication mechanisms typically call `verify_plain()`,
+Plaintext [[link,authentication_mechanisms,authentication mechanisms]] typically call `verify_plain()`,
 which is possible to implement with all the passdbs. Non-cleartext
 mechanisms typically call `lookup_credentials()`, which isn't possible
 to implement always (eg. PAM). If it's not possible to implement
@@ -298,7 +298,7 @@ Success.
 
 ##### `cache_key`
 
-A string containing [[variable]].
+A [[link,settings_types_string,string]] containing [[variable]].
 
 When expanded, it uniquely identifies a passdb lookup. This is `%{user}`
 when the passdb lookup validity depends only on the username. With
@@ -322,7 +322,7 @@ should be used if the lookup may block.
 ##### `iface.preinit(pool, args)`
 
 Allocate `struct passdb_module` from the `pool` and return it. This function is
-called before chrooting and before privileges are dropped from
+called before [[link,chrooting,chrooting]] and before privileges are dropped from
 the auth process, so if should do things like read the
 configuration file. `args` contains the args
 parameter in the configuration file.

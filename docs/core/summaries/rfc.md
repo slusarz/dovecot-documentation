@@ -42,7 +42,7 @@ This is a non-exhaustive list of RFCs that Dovecot implements/supports.
 - Using TLS with IMAP, POP3 and ACAP ([[rfc,2595]])
 - The SYS and AUTH POP Response Codes ([[rfc,3206]])
 - The Post Office Protocol (POP3) - Simple Authentication and Security
-  Layer (SASL) Authentication Mechanism ([[rfc,5034]])
+  Layer (SASL) [[link,authentication,Authentication]] Mechanism ([[rfc,5034]])
 
 ## IMAP (Base)
 
@@ -96,7 +96,7 @@ This is a non-exhaustive list of RFCs that Dovecot implements/supports.
 - Support for IMAP Events in Sieve ([[rfc,6785]])
 - Internet Message Access Protocol (IMAP) - MOVE Extension ([[rfc,6851]])
 - IMAP Extensions: Quick Flag Changes Resynchronization (CONDSTORE) and
-  Quick Mailbox Resynchronization (QRESYNC) (updated RFC 4551 and RFC 5162)
+  Quick [[link,design_mailbox,Mailbox]] Resynchronization (QRESYNC) (updated RFC 4551 and RFC 5162)
   ([[rfc,7162]])
 - IMAP4 Non-synchronizing Literals (updated RFC 2088) ([[rfc,7888]])
 - IMAP4 APPENDLIMIT Extension ([[rfc,7889]])

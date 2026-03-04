@@ -26,7 +26,7 @@ See Also:
 
 ## Exporter Definition
 
-The [[setting,event_exporter]] named list filter defines how
+The [[setting,event_exporter]] [[link,settings_types_named_list_filter,named list filter]] defines how
 [[link,summary_events]] should be exported. The basic definition is split into
 two orthogonal parts: the format and the driver.
 
@@ -132,7 +132,7 @@ To reopen the files created by `file` driver, see
 ## Event Definition
 
 The event definition reuses and extends the `metric` config block used for
-statistics gathering. The only additions to the block are the `exporter` and
+[[link,stats,statistics]] gathering. The only additions to the block are the `exporter` and
 `exporter_include` settings.
 
 These are only meaningful if the event matches the predicate (categories,

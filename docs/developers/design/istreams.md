@@ -87,7 +87,7 @@ needs to be done manually with `i_stream_skip()`. This makes it easy
 to read full data records into the stream directly instead of creating
 separate buffers. For example when reading line-based input you can keep
 reading input into the stream until you find LF and then just access the
-string directly from the input buffer. There are actually helper
+[[link,settings_types_string,string]] directly from the input buffer. There are actually helper
 functions for this: `i_stream_next_line()` attempts to return the next
 line if available, `i_stream_read_next_line()` does the same but does
 a read to try to get the data.
@@ -162,7 +162,7 @@ need to implement. The methods that need to be implemented are:
   input had changed. For example with compressed input the size could
   be the compressed size.
 
-- `stat(exact)` stats the file, filling as much of the fields as
+- `stat(exact)` [[link,stats,stats]] the file, filling as much of the fields as
   makes sense. `st_size` field is filled the same way as with
   `get_size()`, or set to -1 if it's unknown.
 

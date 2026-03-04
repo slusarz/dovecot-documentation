@@ -19,7 +19,7 @@ dovecotlinks:
 
 # Shared Mailboxes
 
-Dovecot supports mailbox sharing in a single backend setup:
+Dovecot supports [[link,design_mailbox,mailbox]] sharing in a single backend setup:
 
 * [Public Shared](#public-shared-mailboxes): Shared mailboxes created by administrators.
 * [User Shared](#user-shared-mailboxes): Users sharing their mailboxes to other users.
@@ -37,9 +37,9 @@ Public mailboxes are typically mailboxes that are visible to all users
 or to large user groups. They are created by defining a public
 namespace, under which all the shared mailboxes are.
 
-See [[link,namespaces]] for details of how namespaces are configured.
+See [[link,namespaces]] for details of how [[link,namespaces,namespaces]] are configured.
 
-For example to create a public Maildir mailboxes, use:
+For example to create a public [[link,maildir,Maildir]] mailboxes, use:
 
 ```[dovecot.conf]
 # User's private mail location
@@ -307,7 +307,7 @@ mailboxes to whom. Iterating through all users and looking inside their
 mail directories would be horribly inefficient for more than a couple
 users.
 
-To overcome this problem Dovecot needs a dictionary, which contains the
+To overcome this problem Dovecot needs a [[link,dict,dictionary]], which contains the
 list of users who have shared mailboxes and to whom they have shared. If
 the users aren't properly listed in this dictionary, their shared
 mailboxes won't be visible. Currently there's no way to automatically
@@ -329,7 +329,7 @@ acl_sharing_map {
 ```
 
 The IMAP processes must be able to write to the `db/` directory. If
-you're using system users, you probably want to make it mode 0770 and
+you're using [[link,system_users,system users]], you probably want to make it mode 0770 and
 group `sharedusers` and set `mail_access_groups=sharedusers` (or
 something similar).
 
@@ -604,7 +604,7 @@ UNIX groups defined for that user. You may use these groups when
 granting filesystem permissions.
 
 If you wish to use UNIX groups defined in `/etc/group` but don't use
-passwd userdb, you can still do this by returning `system_groups_user`
+passwd [[link,userdb,userdb]], you can still do this by returning `system_groups_user`
 [[link,userdb_extra_fields]], which contains the UNIX user name whose
 groups are read from the group file.
 

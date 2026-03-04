@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Sieve: Extlists Extension
 
-The extlists extension ([[rfc,6134]]) enables Sieve scripts to check membership
+The extlists extension ([[rfc,6134]]) enables [[link,sieve,Sieve]] scripts to check membership
 of a value in an external list or for redirecting messages to an external list
 of recipients. An "external list" is a list whose members are stored externally
 to the Sieve script. This extension adds a new ":list" match type to apply to

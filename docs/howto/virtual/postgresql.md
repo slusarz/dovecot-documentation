@@ -37,7 +37,7 @@ apt-get install postfix-pgsql sasl2-bin libsasl2-modules postgresql \
 
 ## Configuring PostgreSQL
 
-Edit `/etc/postgresql/pg_hba.conf` to accept password authentication for
+Edit `/etc/postgresql/pg_hba.conf` to accept password [[link,authentication,authentication]] for
 localhost:
 
 ```

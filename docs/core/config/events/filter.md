@@ -50,7 +50,7 @@ Regardless of the syntax used, matching is performed the same way:
 
 ## Common (Unified) Filter Language
 
-The unified event filtering language is a SQL-like boolean expression that
+The unified event filtering language is a SQL-like [[link,settings_types_boolean,boolean]] expression that
 supports the `AND`, `OR`, and `NOT` boolean operators, the `=`,
 `<`. `>`, `<=`, and `>=` comparison operators, and parentheses to
 clarify evaluation order.
@@ -95,7 +95,7 @@ There are some limitations on which operators work with what field types:
     will not match either of them.
   * Link-local addresses match only against the same interface, e.g.
     `"fe80::1%lo"` won't match against `"fe80::1%eth0"`. Note that the
-    `%` character needs to be inside a quoted string or event filter parsing
+    `%` character needs to be inside a quoted [[link,settings_types_string,string]] or event filter parsing
     fails.
 
 * number: All operators are supported.

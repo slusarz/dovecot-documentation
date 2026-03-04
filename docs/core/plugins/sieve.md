@@ -56,7 +56,7 @@ dovecotlinks:
 
 ## Configuration
 
-To use Sieve, you will first need to make sure you are using Dovecot
+To use [[link,sieve,Sieve]], you will first need to make sure you are using Dovecot
 [[link,lda]] or [[link,lmtp]] for delivering incoming mail to users'
 mailboxes.
 
@@ -96,7 +96,7 @@ The storage name (`personal` in the example) is used internally within
 configurations, as an identifier for logging, and as an identifier for command
 line tools. It also allows updating a storage that was defined earlier - by
 repeating the [[setting,sieve_script]] block and adding additional configuration
-settings - or it allows userdb to override storage settings for specific users.
+settings - or it allows [[link,userdb,userdb]] to override storage settings for specific users.
 
 ### Script storage types
 
@@ -118,8 +118,8 @@ the configuration is used.
 The LDA Sieve plugin uses the personal storage to find the active script for
 Sieve filtering at delivery. If the storage supports storing more than a single
 script (e.g. the [[link,sieve_storage_file,file storage]] does), personal
-scripts can also be retrieved by name. The Sieve include extension will then use
-this  storage for retrieving `:personal` scripts and the ManageSieve service
+scripts can also be retrieved by name. The [[link,sieve_include,Sieve include extension]] will then use
+this  storage for retrieving `:personal` scripts and the [[link,managesieve,ManageSieve]] service
 will be able to store the user's scripts there.
 
 If the storage supports storing more than a single script, only one of those
@@ -148,7 +148,7 @@ storages are defined in the configuration, unless the order is overridden by the
 [[setting,sieve_script_precedence]] setting.
 
 This is usually a global script, so be sure to pre-compile the specified
-script manually in that case using the sievec command line tool, as
+script manually in that case using the [[link,sievec,sievec]] command line tool, as
 explained by [[man,sievec]].
 
 #### `before` {#script-storage-type-before}
@@ -166,7 +166,7 @@ the configuration is used.
 
 If [[setting,sieve_script_name]] is set for this script storage, the default
 script can be seen and accessed by this name through ManageSieve (and
-doveadm sieve). See below ([[link,sieve_visible_default_script]]).
+[[link,doveadm,doveadm]] sieve). See below ([[link,sieve_visible_default_script]]).
 
 This is usually a global script, so be sure to pre-compile the specified
 script manually in that case using the sievec command line tool, as
@@ -183,7 +183,7 @@ is currently only applicable for message delivery.
 The script from the `discard` storage is only executed when the "implicit keep"
 is canceled, by e.g. the "discard" action, and no actions that deliver the
 message are executed. Delivery in this case means both local delivery to a
-mailbox and redirection to a remote recipient. This "discard script" can prevent
+[[link,design_mailbox,mailbox]] and redirection to a remote recipient. This "discard script" can prevent
 discarding the message, by executing alternative actions. If the discard
 script does nothing, the message is still discarded as it would be when no
 discard script is configured.
@@ -413,7 +413,7 @@ should consist of the following parts:
 
 First, set up a configuration file (such as
 `/etc/dovecot/dict-sieve-sql.conf`) with your database configuration. Next,
-create a dict proxy service (in `dovecot.conf`). Finally, configure Sieve to
+create a [[link,dict_proxy,dict proxy]] service (in `dovecot.conf`). Finally, configure Sieve to
 check the dict to lookup up a script called "active" in the database:
 
 ::: code-group

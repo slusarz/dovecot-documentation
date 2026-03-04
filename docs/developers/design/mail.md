@@ -32,7 +32,7 @@ Some of the mail fields can be accessed directly:
 
 #### `box`
 
-Mail's mailbox, same as the transaction's.
+Mail's [[link,design_mailbox,mailbox]], same as the transaction's.
 
 #### `transaction`
 
@@ -99,7 +99,7 @@ Only functions returning int can fail, others don't.
 
 - `mail_get_special()` can return various special fields. If a
   special isn't implemented by some driver, the call returns success
-  and sets the value to empty string.
+  and sets the value to empty [[link,settings_types_string,string]].
 
 - `mail_get_stream()` returns an input stream that can be used to
   access the mail. If this function is called multiple times, each call

@@ -11,7 +11,7 @@ hardcoded values, because there's normally no need to change them.
 ## Protocol Proxies
 
 - Dovecot proxy handles IMAP, POP3 and Submission pre-login timeouts and
-  invalid error command handling the same as Dovecot backend.
+  invalid error command handling the same as [[link,recommended_metrics_dovecot_backend,Dovecot backend]].
 
   After login the proxy will continue proxying until the client or the
   backend disconnects.
@@ -19,7 +19,7 @@ hardcoded values, because there's normally no need to change them.
 - Connect timeout to backend is governed by [[setting,login_proxy_timeout]],
   which is 30 seconds by default.
 
-  Can be overridden by `proxy_timeout` passdb extra field.
+  Can be overridden by `proxy_timeout` [[link,passdb,passdb]] extra field.
 
 - After connection has been established, there's still a login timeout
   `CLIENT_LOGIN_TIMEOUT_MSECS = MASTER_LOGIN_TIMEOUT_SECS*1000` = 3 minutes
@@ -49,7 +49,7 @@ hardcoded values, because there's normally no need to change them.
     - IMAP clients are supposed to send something before 30 minutes
       are up, but several clients don't do this. Some Outlook
       versions even stop receiving new mails entirely until manual
-      intervention if IMAP server disconnects the client.
+      intervention if [[link,imap_server,IMAP server]] disconnects the client.
 
 - Dovecot also disconnects an IMAP client that sends too many invalid
   commands:

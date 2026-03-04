@@ -26,7 +26,7 @@ should usually also define `<plugin_name>_version`, like:
 const char *imap_quota_plugin_version = DOVECOT_ABI_VERSION;
 ```
 
-If the version string in plugin doesn't match the version of the running
+If the version [[link,settings_types_string,string]] in plugin doesn't match the version of the running
 binary, the plugin loading fails. The `DOVECOT_ABI_VERSION` is defined in
 Dovecot's `config.h`, which you're typically including.
 

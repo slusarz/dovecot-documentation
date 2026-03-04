@@ -48,7 +48,7 @@ You can also import mails from a filesystem location:
 doveadm import -u destuser maildir:/opt/backup/destuser/Maildir "" ALL
 ```
 
-This will restore all mails from backup into mailbox root, with folder
+This will restore all mails from backup into [[link,design_mailbox,mailbox]] root, with folder
 structure.
 
 The main difference to the previous example is that the `-U` parameter is

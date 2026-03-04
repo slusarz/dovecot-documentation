@@ -43,7 +43,7 @@ type. These transactions are always processed at the same time, or if the
 write broke before finishing them the log file truncates the partial
 transaction away. However, there's no further guarantee that the subsequent
 transaction processing will all either succeed or fail. Generally they should,
-but the mailbox syncing could fail partially for example due to storage
+but the [[link,design_mailbox,mailbox]] syncing could fail partially for example due to storage
 problems.
 
 See `lib-index/mail-transaction-log.h` in the source code for details.
@@ -53,8 +53,8 @@ See `lib-index/mail-transaction-log.h` in the source code for details.
 Transactions are either internal or external. The difference is that
 external transactions describe changes that were already made to the
 mailbox, while internal transactions are commands to do something to the
-mailbox. This is especially relevant with mailbox formats that support
-changes to them done outside Dovecot, like mbox or Maildir. When
+mailbox. This is especially relevant with [[link,mailbox_formats,mailbox formats]] that support
+changes to them done outside Dovecot, like mbox or [[link,maildir,Maildir]]. When
 beginning to synchronize such a mailbox with index files, the
 index file is first updated with all the external changes, and the
 uncommitted internal transactions are applied on top of them.

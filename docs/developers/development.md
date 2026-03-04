@@ -30,7 +30,7 @@ Here are some hints on how to build/hack clang:
 
 - If you want to debug clang with gdb, you need to have a debug build.
   This used to be the default, but apparently not nowadays. Note
-  that Debug build takes ~15 GB of space vs non-debug build 5 GB.
+  that [[link,debug,Debug]] build takes ~15 GB of space vs non-debug build 5 GB.
   `cmake -DCMAKE_BUILD_TYPE=Debug`
 
 - With debug build you still want it to be optimized or the resulting

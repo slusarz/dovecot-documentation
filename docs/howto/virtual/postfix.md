@@ -9,7 +9,7 @@ title: Postfix
 This document has been taken out of the old wiki and has not yet been updated.
 :::
 
-This document describes how to user virtual users with
+This document describes how to user [[link,virtual_users,virtual users]] with
 [[link,auth_passwd_file]].
 
 ## Basic Configuration
@@ -23,7 +23,7 @@ protocols = imap lmtp
 ## Mail Location and Namespaces
 
 A private namespace configured for [[link,maildir]] or [[link,mdbox]]
-storage to hold the mailboxes and a public namespace configured for Maildir
+storage to hold the mailboxes and a public namespace configured for [[link,maildir,Maildir]]
 storage with filesystem layout (/dir/subdir) and per user
 index-information.
 
@@ -78,7 +78,7 @@ User logins are expected to be in full-qualified e-mail address format:
 `user@domain.tld`.
 
 Additional parameters may be used to override defaults, such as individual
-quotas or mailbox formats.
+quotas or [[link,mailbox_formats,mailbox formats]].
 
 ::: code-group
 ```[dovecot.conf]
@@ -100,13 +100,13 @@ userdb passwd-file {
 
 Later on the auth service will be configured to run in the `doveauth` user
 context. Therefore the directory `auth.d/` and its content will be owned
-by this user, while mails and Sieve scripts will be accessed using
+by this user, while mails and [[link,sieve,Sieve]] scripts will be accessed using
 the `vmail` context specified in the passwd-file.
 
 To keep directory permissions simple these will be stored seperately under
 the `conf.d/` tree.
 
-Per-domain authentication and configuration structure `/var/vmail`:
+Per-domain [[link,authentication,authentication]] and configuration structure `/var/vmail`:
 
 ```
 dr-x------ 3 doveauth dovecot  4096 2010-03-17 19:09 auth.d |--> domain.tld
@@ -275,7 +275,7 @@ e.g. due to upgrading to a new build.
 The configuration of the submission port is handled in `master.cf`
 overriding possible `main.cf` settings. Several sanity checks are
 performed upon submission like recipient domain validation and sender
-map checks. Final delivery is performed through Dovecot's LMTP server
+map checks. Final delivery is performed through Dovecot's [[link,lmtp,LMTP server]]
 via a socket.
 
 ::: code-group

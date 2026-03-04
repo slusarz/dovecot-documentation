@@ -8,7 +8,7 @@ dovecotlinks:
 
 # POP3
 
-Dovecot was primarily designed to be an IMAP server, so although it works fine
+Dovecot was primarily designed to be an [[link,imap_server,IMAP server]], so although it works fine
 as a POP3 server, it's not really optimized for that.
 
 ## Maildir Performance
@@ -19,7 +19,7 @@ how to get messages' size fast enough.
 The POP3 specification requires that the sizes are reported exactly, not just
 approximately. This means that linefeeds must be counted as `CR+LF` characters. 
 
-Normally with Maildir the linefeeds are stored as plain LF characters, which
+Normally with [[link,maildir,Maildir]] the linefeeds are stored as plain LF characters, which
 means that simply getting the file size would produce the wrong POP3 message
 size. Some Maildir POP3 servers do this anyway and violate the POP3
 specification.
@@ -64,7 +64,7 @@ fast access to the message sizes.
 
 ## Session Locking
 
-By default Dovecot allows multiple POP3 connections to the same mailbox. This
+By default Dovecot allows multiple POP3 connections to the same [[link,design_mailbox,mailbox]]. This
 is (was?) especially useful for dialup connections which die in the middle of
 the download, because the half-dead connections won't keep the mailbox locked.
 
@@ -119,7 +119,7 @@ pop3_uidl_format = %{guid}
 
 However, note that GUIDs may not be unique, as the GUID does not change when a
 message is copied. (While copying is not possible using only POP3, it can be
-done using IMAP, Sieve, or doveadm.)
+done using IMAP, [[link,sieve,Sieve]], or [[link,doveadm,doveadm]].)
 
 ### MD5 UIDL format (mbox-only)
 

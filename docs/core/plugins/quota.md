@@ -128,7 +128,7 @@ namespace inbox {
 ```
 
 This means that the user has 1GB quota, but when saving messages to Trash
-mailbox it's possible to use up to 1.1GB of quota. The quota isn't
+[[link,design_mailbox,mailbox]] it's possible to use up to 1.1GB of quota. The quota isn't
 specifically assigned to Trash, so if you had 1GB of mails in Trash you could
 still save 100MB of mails to Trash, but nothing to other mailboxes.
 
@@ -139,7 +139,7 @@ against the quota at all.
 
 You can override the quota settings in your [[link,userdb_extra_fields]]. Keep
 global settings in configuration plugin section and override only those
-settings you need to in your userdb.
+settings you need to in your [[link,userdb,userdb]].
 
 Use [[doveadm,user]] command to verify that the userdb returns the expected
 quota settings.
@@ -231,7 +231,7 @@ quota "User quota" {
 }
 ```
 
-Note that globally configured quota roots are used only for private namespaces.
+Note that globally configured quota roots are used only for private [[link,namespaces,namespaces]].
 
 ### Quota for Private Namespaces
 
@@ -390,7 +390,7 @@ mail_index_path = /var/no-quotas/index/%{user}
 
 #### Maildir
 
-Maildir needs to be able to add UIDs of new messages to `dovecot-uidlist`
+[[link,maildir,Maildir]] needs to be able to add UIDs of new messages to `dovecot-uidlist`
 file. If it can't do this, it can give an error when opening the mailbox,
 making it impossible to expunge any mails.
 
@@ -463,7 +463,7 @@ See [[link,imapc_quota]].
 
 #### Configuration
 
-<SettingsComponent tag="quota-imapc" level="4" />
+<SettingsComponent tag="quota-[[link,imapc,imapc]]" level="4" />
 
 ### Driver: maildir
 
@@ -683,7 +683,7 @@ quota_storage_grace = 50 M
 See [[setting,quota_mailbox_count]].
 
 Maximum number of mailboxes that can be created. Each namespace is tracked
-separately, so e.g. shared mailboxes aren't counted towards the user's own
+separately, so e.g. [[link,shared_mailboxes,shared mailboxes]] aren't counted towards the user's own
 limit. The default is `0`, which is unlimited.
 
 ## Maximum Messages Per Mailbox
@@ -697,7 +697,7 @@ Maximum number of messages that can be created in a single mailbox.
 See [[setting,quota_mail_size]].
 
 Dovecot allows specifying the maximum message size that is allowed to be
-saved (e.g. by LMTP, IMAP APPEND or doveadm save). The default is `unlimited`.
+saved (e.g. by LMTP, IMAP APPEND or [[link,doveadm,doveadm]] save). The default is `unlimited`.
 
 Since outgoing mail sizes are also typically limited on the MTA
 side, it can be beneficial to prevent user from saving too large mails, which

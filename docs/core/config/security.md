@@ -13,7 +13,7 @@ Additional things you can configure:
 
 - Allocate each user their own UID and GID (see [[link,system_users]])
 
-- Use a separate `dovecot-auth` user for authentication process (see
+- Use a separate `dovecot-auth` user for [[link,authentication,authentication]] process (see
   [[link,system_users]])
 
 - You can chroot authentication and mail processes (see [[link,chrooting]])

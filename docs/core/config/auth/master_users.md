@@ -27,12 +27,12 @@ There are two ways for master users to log in as other users:
 
 2. Specify both the master username and the login username in the same
    username field. See [[setting,auth_master_user_separator]] for the format
-   of the string.
+   of the [[link,settings_types_string,string]].
 
 Master users are configured by adding a new [[link,passdb]] with
-`master=yes` setting. The users in the master passdb cannot log in as
+`master=yes` setting. The users in the master [[link,passdb,passdb]] cannot log in as
 themselves, only as other people. That means they don't need to exist in the
-[[link,userdb]], because the userdb lookup is done only for the
+[[link,userdb]], because the [[link,userdb,userdb]] lookup is done only for the
 user they're logging in as.
 
 You should also add the `result_success=continue` setting to the master
@@ -59,7 +59,7 @@ someone else.
 Usually it's better to have **only** a few special master users that are used
 only to log in as other people. One example could be a special "spam" master
 user that trains the users' spam filters by reading the messages from the
-user's spam mailbox.
+user's spam [[link,design_mailbox,mailbox]].
 
 ### ACLs
 
@@ -159,7 +159,7 @@ the logs.
 
 ## Master Passwords
 
-You can configure a passdb which first performs authentication using the
+You can configure a passdb which first performs [[link,authentication,authentication]] using the
 master password. Then it continues to the primary passdb to verify that
 the user exists and get other extra fields.
 

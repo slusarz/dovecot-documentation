@@ -159,7 +159,7 @@ ${solr.autoSoftCommit.maxTime:60000}
 
 ## Re-index Mailbox
 
-If you require Dovecot to reindex a whole mailbox, you can run
+If you require Dovecot to reindex a whole [[link,design_mailbox,mailbox]], you can run
 [[doveadm,fts rescan]]. This command will only take action when a search is
 done and will apply to the whole mailbox.
 

@@ -19,7 +19,7 @@ passdb ldap {
 ```
 :::
 
-This enables LDAP to be used as passdb.
+This enables LDAP to be used as [[link,passdb,passdb]].
 The most important settings are:
 
 - Configure how the LDAP server is reached.

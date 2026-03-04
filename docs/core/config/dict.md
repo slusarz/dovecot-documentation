@@ -213,8 +213,8 @@ It's possible to implement [[setting,mail_attribute]] also with SQL dict.
 
 ::: warning
 Using shared attributes in [[setting,mail_attribute]] requires the
-mailbox GUID to be unique between users. This is not the case when
-mails were migrated via imapc, because it uses a hash of the
+[[link,design_mailbox,mailbox]] GUID to be unique between users. This is not the case when
+mails were migrated via [[link,imapc,imapc]], because it uses a hash of the
 mailbox name as the GUID. So every migrated user would have
 exactly the same INBOX GUID, preventing the use of dict-sql. It is
 currently not possible to add a username as an additional unique
@@ -290,7 +290,7 @@ service dict {
 ```
 
 If you use multiple UNIX UIDs, you can add an extra group for all Dovecot mail
-processes. This works even if you have untrusted system users who have shell
+processes. This works even if you have untrusted [[link,system_users,system users]] who have shell
 access to the server:
 
 ```

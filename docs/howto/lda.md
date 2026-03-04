@@ -75,7 +75,7 @@ dovecot_virtual_delivery:
   temp_errors = 64 : 69 : 70: 71 : 72 : 73 : 74 : 75 : 78
 ```
 
-You'll also need to have a master authentication socket and give vmail
+You'll also need to have a master [[link,authentication,authentication]] socket and give vmail
 user access to it. See [[link,lda]] for more information.
 
 List of temp_errors can be found in `/usr/include/sysexits.h`.
@@ -161,7 +161,7 @@ see [[link,lda]] for more information about using the LDA itself.
 
 ### System Users
 
-If you wish you use `dovecot-lda` for all system users on a single
+If you wish you use `dovecot-lda` for all [[link,system_users,system users]] on a single
 domain mail host you can do it by editing `mailbox_command` parameter
 in `/etc/postfix/main.cf`
 ([`postconf(5)`](http://www.postfix.org/postconf.5.html)):
@@ -237,7 +237,7 @@ dovecot   unix  -       n       n       -       -       pipe
 
 An example using address extensions (i.e. user+extension@domain.com (don't
 forget to define the proper recipient_delimiter in Postfix's main.cf))
-to deliver to the folder 'extension' in your maildir (If you wish to
+to deliver to the folder 'extension' in your [[link,maildir,maildir]] (If you wish to
 preserve the case of `${extension}`, remove the `hu`
 [flags](http://www.postfix.org/pipe.8.html), and be sure to utilize
 [[variable]] in your `dovecot.conf` for mail locations and other
@@ -254,7 +254,7 @@ dovecot unix    -       n       n       -       -      pipe
 
 This example ignores address extensions (ie user+extension@domain.com
 delivers just like user@domain.com ), but still shows the original
-address for Sieve:
+address for [[link,sieve,Sieve]]:
 
 ```
 dovecot   unix  -       n       n       -       -       pipe
@@ -307,7 +307,7 @@ recipients can be found in the local password or alias database.
 
 #### Virtual users (static)
 
-When you use virtual users and domains you should maintain a list of
+When you use [[link,virtual_users,virtual users]] and domains you should maintain a list of
 valid recipients. The relevant settings are:
 
 **virtual_alias_maps, virtual_mailbox_maps**
@@ -355,7 +355,7 @@ query = SELECT name FROM mailbox WHERE email='%s'
 ```
 
 This query will return the value of the filed "name" from table
-"mailbox" if the email address of the recipient matches the email from
+"[[link,design_mailbox,mailbox]]" if the email address of the recipient matches the email from
 the field "email". This is enough for Postfix because Postfix must only
 know if the recipient exists. The value doesn't matter. When you use a
 database (or LDAP) there's no need to manually maintain a file with

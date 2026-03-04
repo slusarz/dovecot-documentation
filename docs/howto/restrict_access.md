@@ -7,7 +7,7 @@ title: Restricting IMAP/POP3 access
 
 Below examples show how you can give POP3 access to everyone, but IMAP
 access only for some people. The exact solution you want depends on what
-passdb you use. The solutions can also be modified for other types of
+[[link,passdb,passdb]] you use. The solutions can also be modified for other types of
 IMAP/POP3/SMTP/etc. access checks.
 
 ## PAM
@@ -76,5 +76,5 @@ passdbs.
 ## Restricting IP Access
 
 It's possible to allow a user to authenticate only from a specific IP or
-network. This is especially useful for master users. This can be done by
+network. This is especially useful for [[link,auth_master_users,master users]]. This can be done by
 returning `allow_nets` extra field from [[link,passdb_extra_fields]].

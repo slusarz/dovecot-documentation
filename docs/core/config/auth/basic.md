@@ -5,7 +5,7 @@ title: Basic Configuration
 
 # Basic Configuration
 
-This page highlights some common authentication-related settings that
+This page highlights some common [[link,authentication,authentication]]-related settings that
 may need to be set on your system.
 
 ## General Settings
@@ -14,7 +14,7 @@ may need to be set on your system.
 
 [[setting,auth_mechanisms,plain login]]
 
-Enables the `PLAIN` and `LOGIN` authentication mechanisms.
+Enables the `PLAIN` and `LOGIN` [[link,authentication_mechanisms,authentication mechanisms]].
 
 The `LOGIN` mechanism is obsolete, but still used by old clients.
 
@@ -45,14 +45,14 @@ See [[link,auth_penalty]].
 
 [[setting,auth_cache_size,100M]]
 
-Specifies the amount of memory used for authentication caching (passdb
-and userdb lookups).
+Specifies the amount of memory used for [[link,auth_caching,authentication caching]] ([[link,passdb,passdb]]
+and [[link,userdb,userdb]] lookups).
 
 ### `imap_id_retain`
 
 [[setting,imap_id_retain,yes]]
 
-If `imap_id_retain=yes`, imap-login will send the IMAP ID string to auth
+If `imap_id_retain=yes`, imap-login will send the IMAP ID [[link,settings_types_string,string]] to auth
 process.
 
 The variable `%{client_id}` will expand to the IMAP ID in the auth process.
@@ -84,7 +84,7 @@ The `LOGIN` mechanism is obsolete, but still used by some older clients.
 
 ### Authentication Penalty
 
-See [[link,auth_penalty]] for how to disable authentication penalty.
+See [[link,auth_penalty]] for how to disable [[link,auth_penalty,authentication penalty]].
 The proxy already handled this.
 
 ### `auth_cache_size`

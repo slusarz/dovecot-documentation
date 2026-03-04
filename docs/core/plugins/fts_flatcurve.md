@@ -72,7 +72,7 @@ fts flatcurve {
 
 ## Data Storage
 
-Xapian search data is stored separately for each mailbox.
+Xapian search data is stored separately for each [[link,design_mailbox,mailbox]].
 
 The data is stored under a 'fts-flatcurve' directory in the Dovecot index
 file location for the mailbox.  The Xapian library is responsible for all

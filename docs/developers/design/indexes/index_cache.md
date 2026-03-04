@@ -124,7 +124,7 @@ Variable sized binary data.
 
 ### `MAIL_CACHE_FIELD_STRING`
 
-Variable sized string. There is no difference internally to how
+Variable sized [[link,settings_types_string,string]]. There is no difference internally to how
 `MAIL_CACHE_FIELD_VARIABLE_SIZE` is handled, but it helps at least
 [[doveadm,dump]] to know whether to hex-encode the output.
 

@@ -11,7 +11,7 @@ System users are typically defined in `/etc/passwd` file, but this
 isn't necessary. Using [NSS](http://en.wikipedia.org/wiki/Name_Service_Switch)
 you can configure the lookups to be done from elsewhere (e.g. LDAP).
 
-See [[link,auth_passwd]] userdb configuration for how to set this up.
+See [[link,auth_passwd]] [[link,userdb,userdb]] configuration for how to set this up.
 Especially if you're using nss_ldap you must set [[setting,userdb_use_worker,yes]].
 
 System users usually have their own separate user IDs (UIDs). This is
@@ -19,7 +19,7 @@ good from a security point of view, because it means that the kernel will
 also prevent users from accessing each others' mails.
 
 If the users have direct write access to the mail files (eg. the users
-have shell access), they can easily cause all sorts of mailbox
+have shell access), they can easily cause all sorts of [[link,design_mailbox,mailbox]]
 corruptions. That may generate all kinds of error messages to Dovecot's
 error logs, so it may be sometimes difficult to tell if there really is
 a problem or if the user is doing something stupid.
@@ -42,7 +42,7 @@ passdbs:
 
 - [[link,auth_pam]]: Most commonly used in Linux and BSDs nowadays.
 
-- [[link,auth_bsd]]: BSD authentication is used by OpenBSD.
+- [[link,auth_bsd]]: BSD [[link,authentication,authentication]] is used by OpenBSD.
 
 - [[link,auth_passwd]]: System users (NSS, `/etc/passwd`, or similar).
   This may work instead of PAM (mostly in some BSDs).
@@ -57,7 +57,7 @@ If you wish to use non-system passwords, you can use pretty much any
 
 Usually UNIX systems are configured by default to deliver mails to
 `/var/mail/username` or `/var/spool/mail/username` mboxes. You may
-decide to use these, or use newer mailbox formats instead, such as
+decide to use these, or use newer [[link,mailbox_formats,mailbox formats]] instead, such as
 [[link,maildir]] or [[link,dbox]].
 
 Dovecot detects the mailbox format and location automatically if
@@ -71,7 +71,7 @@ autodetection is used.
 See [[link,mail_location]] for more information how to configure the
 mailbox location.
 
-Below are the highlights for mbox and maildir.
+Below are the highlights for mbox and [[link,maildir,maildir]].
 
 ### mbox
 

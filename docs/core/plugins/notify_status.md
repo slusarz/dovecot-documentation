@@ -5,7 +5,7 @@ title: notify-status
 
 # Notify Status Plugin (`notify-status`)
 
-This plugin updates a [[link,dict]] with mailbox status information
+This plugin updates a [[link,dict]] with [[link,design_mailbox,mailbox]] status information
 every time a mailbox changes.
 
 ## Settings

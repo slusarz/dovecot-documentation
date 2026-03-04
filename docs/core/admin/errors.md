@@ -43,7 +43,7 @@ With newer Dovecot versions these broken `X-UID:` headers aren't
 practically ever used. It happens only if the mail has a valid
 `X-IMAPbase`: header, `X-UID:` header, and the mail is written to an empty
 mbox file. Note that this can happen only to new mboxes, because expunging
-all messages in a mailbox causes Dovecot to create a metadata message at
+all messages in a [[link,design_mailbox,mailbox]] causes Dovecot to create a metadata message at
 the beginning of the mbox file.
 
 In any case it's still a good idea to filter out `X-UID:` and other
@@ -64,7 +64,7 @@ Delete Dovecot's index files (eg. `.imap/INBOX/`) and `X-IMAP:` and
 
 ##### Maildir
 
-This should really never be a problem with Maildir. If however you have
+This should really never be a problem with [[link,maildir,Maildir]]. If however you have
 managed to cause it somehow (by receiving 2 billion mails?), you can
 recreate the UIDs by deleting `dovecot-uidlist` file.
 
@@ -77,7 +77,7 @@ If not listed in this section, there are no known issues.
 On Mac OS X Leopard 10.5 Mail.app appears to support
 subscribe/unsubscribe by right clicking on a mailbox, selecting 'Get
 Account Info' and selecting 'Subscription List' from tabs. This however
-doesn't really work with any IMAP server.
+doesn't really work with any [[link,imap_server,IMAP server]].
 
 Apple Mail 3.6 (that comes with OS X 10.5 Leopard) supports
 subscribing/unsubscribing to folders in the public namespace.
@@ -91,7 +91,7 @@ subscribing/unsubscribing to folders in the public namespace.
   folders after a migration from UW IMAPd even if they are visible in
   other clients (e.g. Roundcube, Thunderbird, or on the disk itself),
   and you get the error message "BAD Error in IMAP command UID: Invalid
-  UID messageset" in the log or rawlog: It helps to remove the
+  UID messageset" in the log or [[link,rawlog,rawlog]]: It helps to remove the
   problematic IMAP account completely from Outlook and recreating it
   again there. It speaks a different IMAP afterwards, so there are
   reasons to believe it caches the details of some server on the first
@@ -135,7 +135,7 @@ See [[link,time_synchronization]].
 ## CentOS/RHEL8 Mail Location
 
 When installing dovecot on CentOS8 or RHEL8, you might experience problems
-with writing into mail location.
+with writing into [[link,mail_location,mail location]].
 
 This is due to several restrictions that need to be disabled.
 
@@ -221,7 +221,7 @@ Commonly visible as:
 
 `imap-login: Error: net_connect_unix(imap) failed: Resource temporarily unavailable`
 
-This means that there are more imap-login processes trying to connect to
+This means that there are more imap-[[link,login_processes,login processes]] trying to connect to
 the "imap" UNIX socket than there are imap processes accepting the
 connections. The kernel's connection listener queue got full and it
 started rejecting further connections. So what can be done about it?
@@ -262,7 +262,7 @@ forking less processes:
 - You can also switch (most of the) other commonly forked processes to
   be reused. For example [[setting,service_restart_request_count,100]]
   reuses the process for 100 different connections before it dies. This is
-  useful especially for imap, pop3 and managesieve services.
+  useful especially for imap, pop3 and [[link,managesieve,managesieve]] services.
   It's better to avoid using [[setting,service_restart_request_count,unlimited]]
   in case there are memory leaks.
 

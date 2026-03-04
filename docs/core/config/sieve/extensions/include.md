@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Sieve: Include Extension
 
-The Sieve include extension ([[rfc,6609]]) permits users to include
+The [[link,sieve,Sieve]] include extension ([[rfc,6609]]) permits users to include
 one Sieve script into another. This can make managing large scripts or
 multiple sets of scripts much easier, and allows a site and its users to
 build up libraries of scripts. Users are able to include their own

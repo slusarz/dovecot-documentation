@@ -73,7 +73,7 @@ protocol lda {
 ## Drivers
 
 A push notification driver is defined by the [[setting,push_notification]]
-setting. The configuration value is a named filter for a specified driver, see
+setting. The configuration value is a [[link,settings_types_named_filter,named filter]] for a specified driver, see
 the driver for their names and their supported options.
 
 It is possible to specify multiple push notification drivers by giving unique
@@ -100,7 +100,7 @@ The list of drivers shipped with Dovecot core appears below.
 ### DLOG (Debug log) [`dlog`]
 
 The most simple push notification plugin is the `dlog` plugin. It will write
-notifications into the debug log of the process. This driver has no options. To
+notifications into the [[link,debug,debug]] log of the process. This driver has no options. To
 enable it you will have to define it explicitly, otherwise it is disabled.
 
 | Name | Required | Type | Description |
@@ -129,7 +129,7 @@ be used by any push endpoint that implements this API, not just OX App Suite.
 | Name | Required | Type | Description |
 | ---- | -------- | ---- | ----------- |
 | `push_notification_driver` | **YES** | [[link,settings_types_string]] | To identify this settings block the driver should get the value `ox`. |
-| `push_notification_ox_url` | **YES** | [[link,settings_types_string]] | The HTTP end-point (URL + authentication information) to use is configured in the Dovecot configuration file. Contains authentication information needed for Basic Authentication (if any). Example: `http<s> + "://" + <login> + ":" + <password> + "@" + <host> + ":" + <port> + "/preliminary/http-notify/v1/notify"`<br/>For HTTPS endpoints, system CAs are trusted by default, but internal CAs might need further configuration.<br/>For further details on configuring the App Suite endpoint, see: [OX App Suite Push Notification API#Configuration of Dovecot "http-notify" plugin-in][ox-appsuite-push-notification-api-dovecot-configuration] |
+| `push_notification_ox_url` | **YES** | [[link,settings_types_string]] | The HTTP end-point (URL + [[link,authentication,authentication]] information) to use is configured in the Dovecot configuration file. Contains authentication information needed for Basic Authentication (if any). Example: `http<s> + "://" + <login> + ":" + <password> + "@" + <host> + ":" + <port> + "/preliminary/http-notify/v1/notify"`<br/>For HTTPS endpoints, system CAs are trusted by default, but internal CAs might need further configuration.<br/>For further details on configuring the App Suite endpoint, see: [OX App Suite Push Notification API#Configuration of Dovecot "http-notify" plugin-in][ox-appsuite-push-notification-api-dovecot-configuration] |
 | `push_notification_ox_cache_ttl` | NO | [[link,settings_types_time]] | Cache lifetime for the METADATA entry for a user. (DEFAULT: `60 seconds`) |
 | `push_notification_ox_user_from_metadata` | NO | [[link,settings_types_boolean]] | Use the user stored in the METADATA entry instead of the user sent by OX endpoint. (DEFAULT: user returned by endpoint response is used, i.e. `no`) |
 
@@ -160,8 +160,8 @@ Push notification sent in JSON format with the following fields:
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| `event` | string | [[rfc,5423]] event type (currently only "MessageNew") |
-| `folder` | string | Mailbox name |
+| `event` | [[link,settings_types_string,string]] | [[rfc,5423]] event type (currently only "MessageNew") |
+| `folder` | string | [[link,design_mailbox,Mailbox]] name |
 | `from` | string | [[rfc,2822]] address of the message sender (MIME-encoded), if applicable |
 | `imap-uid` | number | UID of the message, if applicable |
 | `imap-uidvalidity` | number | [[rfc,3501]] UIDVALIDITY value of the mailbox |

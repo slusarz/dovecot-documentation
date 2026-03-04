@@ -28,8 +28,8 @@ The mail index files are used in a few different places:
 * [`mailbox_list_index`](#mailbox-list-index) (`dovecot.list.index*`)
 * mdbox map index (`dovecot.map.index*`)
 
-The mailbox index is optional for some mailbox formats (maildir, mbox), but
-required for all high performance mailbox formats (sdbox, mdbox).
+The [[link,design_mailbox,mailbox]] index is optional for some [[link,mailbox_formats,mailbox formats]] ([[link,maildir,maildir]], mbox), but
+required for all high performance mailbox formats ([[link,sdbox,sdbox]], [[link,mdbox,mdbox]]).
 
 The index files were implemented to optimize Dovecot, so the file formats
 attempt to be efficient. The index files are often mmap()ed into memory and

@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Variable expansion design
 
-Dovecot comes with powerful variable expansion system, which allows constructing reusable text templates.
+Dovecot comes with powerful [[link,settings_syntax_expansion,variable expansion]] system, which allows constructing reusable text templates.
 This has been upgraded since v2.3 to a more flexible system.
 
 ## Syntax
@@ -34,7 +34,7 @@ NUMBER = [0-9]+
 
 ## Design
 
-Internally, everything is stored in a binary-safe string container. There is no other data type internally.
+Internally, everything is stored in a binary-safe [[link,settings_types_string,string]] container. There is no other data type internally.
 This buffer can be set and unset, and the content can be tagged by filters to be binary or string.
 
 The system uses programs to perform the actual expansion. The given input is always first parsed into a list of programs.
@@ -48,7 +48,7 @@ Program parameters consists from variable table(s), provider(s) and escape funct
 Parameters are provided via `struct var_expand_params`. Variable mappings are provided via `struct var_expand_table` array, which is `VAR_EXPAND_TABLE_END` terminated list of
 key-value mappings. Key's value can also be provided by a function.
 
-Providers are used to handle scoped variables, such as passdb, ldap etc. There are also global providers which are always available.
+Providers are used to handle scoped variables, such as [[link,passdb,passdb]], ldap etc. There are also global providers which are always available.
 
 Providers can be provide with `struct var_expand_provider` array which contains prefix and provider function, and is `VAR_EXPAND_TABLE_END` terminated.
 

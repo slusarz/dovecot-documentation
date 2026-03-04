@@ -10,7 +10,7 @@ dovecotlinks:
 An MDA is a Mail Delivery Agent.
 
 An MDA is being passed messages from a [[link,mta]] and delivers it to a real
-or virtual mailbox.
+or virtual [[link,design_mailbox,mailbox]].
 
 Dovecot MDAs:
 

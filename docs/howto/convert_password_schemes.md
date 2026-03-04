@@ -12,7 +12,7 @@ the encryption of passwords have to more secure. In this example we
 convert passwords stored in MySQL with basic CRYPT-encryption to
 SSHA256-encryption (Salted SHA256).
 
-See [[link,password_schemes]] for a list of supported password schemes.
+See [[link,password_schemes]] for a list of supported [[link,password_schemes,password schemes]].
 
 We used php to generate the new passwords, but you can use any language
 you want

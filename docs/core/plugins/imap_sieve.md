@@ -5,7 +5,7 @@ title: imap-sieve
 
 # IMAPSieve Plugin (`imap-sieve`)
 
-As defined in the base specification ([[rfc,5228]]), the Sieve language is
+As defined in the base specification ([[rfc,5228]]), the [[link,sieve,Sieve]] language is
 used only during delivery. However, in principle, it can be used at any
 point in the processing of an email message.
 
@@ -21,7 +21,7 @@ scripts from within IMAP.
 
 The `imap_sieve` plugin for IMAP adds the
 `IMAPSIEVE` capability to the `imap` service. The basic
-`IMAPSIEVE` capability allows attaching a Sieve script to a mailbox
+`IMAPSIEVE` capability allows attaching a Sieve script to a [[link,design_mailbox,mailbox]]
 for any mailbox by setting a special IMAP METADATA entry. This way,
 users can configure Sieve scripts that are run for IMAP events in their
 mailboxes.

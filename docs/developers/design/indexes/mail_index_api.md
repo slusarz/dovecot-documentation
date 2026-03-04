@@ -19,7 +19,7 @@ The purpose of the main structures are:
 
 * `struct mail_index`: Global state of the index.
 
-* `struct mail_index_view`: View into the mailbox state, which contains
+* `struct mail_index_view`: View into the [[link,design_mailbox,mailbox]] state, which contains
   the mail sequence &lt;-&gt; UID mapping. The views see new messages come and
   expunged messages go only when it's being explicitly synchronized.
   However, the record data (flags, keywords, extensions) can change without

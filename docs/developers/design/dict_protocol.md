@@ -116,7 +116,7 @@ C: L<key>TAB<user>
 | `OK` | `O` | Lookup was performed successfully and there was a single value for the key. Value is then appended to the response line. |
 | `MULTI_OK` | `M` | Lookup was performed successfully and there were multiple values for the key. In this case all results are joined together with a tab and then double-escaped so the end result looks like a single value. Client would then need to unescape twice to get the list of values separated by tabs. |
 | `NOTFOUND` | `N` | Lookup was performed successfully but no value was found with this key. |
-| `FAIL` | `F` | Lookup failed due to an error. A tab-escaped error string is appended to the response line. |
+| `FAIL` | `F` | Lookup failed due to an error. A tab-escaped error [[link,settings_types_string,string]] is appended to the response line. |
 
 ## `ITERATE` Command
 
@@ -194,7 +194,7 @@ C: S<transaction id>TAB<key>TAB<value>
 
 ## `UNSET` Command
 
-Unset a record in the dictionary given the key.
+Unset a record in the [[link,dict,dictionary]] given the key.
 
 ```
 C: U<transaction id>TAB<key>

@@ -52,10 +52,10 @@ the most useful optimization you can do.
 
 - See [[link,mbox]] for mbox-specific optimizations.
 
-- See [[link,maildir]] for Maildir-specific optimizations.
+- See [[link,maildir]] for [[link,maildir,Maildir]]-specific optimizations.
 
 - See [[link,dbox]] for Dovecot's own
-  high-performance mailbox format. It usually gives much better performance
+  high-performance [[link,design_mailbox,mailbox]] format. It usually gives much better performance
   than mbox/Maildir.
 
 - See [[plugin,fts]] for optimizing IMAP SEARCH command.
@@ -85,7 +85,7 @@ the most useful optimization you can do.
 
 - See [[link,login_processes]] for optimizing CPU usage caused by logins.
 
-- See [[setting,auth_cache_size]] setting for caching passdb and userdb
+- See [[setting,auth_cache_size]] setting for caching [[link,passdb,passdb]] and [[link,userdb,userdb]]
   lookups.
 
   - To distribute password hash calculations to multiple CPU cores (via
@@ -111,7 +111,7 @@ little.
 - [[setting,auth_cache_size]] controls maximum memory size for caching
   passdb/userdb lookups
 
-- [[link,login_processes_high_performance]] for login processes
+- [[link,login_processes_high_performance]] for [[link,login_processes,login processes]]
 
 - [[setting,imap_hibernate_timeout]]` controls when to move IDLEing IMAP
   connections to wait for changes in a shared imap-hibernate process.

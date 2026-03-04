@@ -45,7 +45,7 @@ to point to the search result. The mail's "wanted fields/headers"
 parameters don't need to include anything needed by the search query,
 Dovecot optimizes them internally.
 
-If the search needs to parse message bodies and the mailbox is large,
+If the search needs to parse message bodies and the [[link,design_mailbox,mailbox]] is large,
 this call can take a long time. If you want to do other things while
 searching, you can use `mailbox_search_next_nonblock()` that does only
 a bit of work and then returns either with a result or "try again later"

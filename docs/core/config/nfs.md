@@ -9,7 +9,7 @@ dovecotlinks:
 
 Dovecot is commonly used with NFS. However, Dovecot does **not** support
 accessing the same user simultaneously by different servers. That will
-result in more or less severe mailbox corruption. Note that this applies
+result in more or less severe [[link,design_mailbox,mailbox]] corruption. Note that this applies
 to all mailbox access, including mail delivery.
 
 * Users must be assigned to specific backends (i.e. in the proxy's passdb
@@ -62,7 +62,7 @@ Potential optimizations to use:
 
 * mdbox format is likely more efficient to use than the sdbox format. The
   downside is that it requires running periodic [[doveadm,purge]] for each
-  user. Theses commands should be run via a doveadm proxy so they are run
+  user. Theses commands should be run via a [[link,doveadm,doveadm]] proxy so they are run
   in the proper backends.
 * Use [[setting,mail_volatile_path,/dev/shm/dovecot/%{user | sha1 % 256 | hex(2)}/%{user}]] to store some
   temporary files (e.g. lock files) in tmpfs rather than NFS.

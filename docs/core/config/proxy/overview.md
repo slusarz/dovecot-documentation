@@ -12,10 +12,10 @@ dovecotlinks:
 # Dovecot Proxying
 
 Dovecot supports proxying IMAP, POP3, [[link,submission]], [[link,lmtp]],
-[[link,managesieve]] and doveadm connections to other hosts.
+[[link,managesieve]] and [[link,doveadm,doveadm]] connections to other hosts.
 
 The proxying can be done for all users, or only for some specific users. There
-are two ways to do the authentication on the remote server:
+are two ways to do the [[link,authentication,authentication]] on the remote server:
 
 <!-- @include: include/proxy-auth-methods.inc -->
 
@@ -26,11 +26,11 @@ Additionally, `host` is also a required field. See below for details on
 them and other optional extra fields.
 
 In backends, set [[setting,login_trusted_networks]] to point to the proxies'
-IP addresses. This way you'll get the clients' actual IP addresses logged
+[[link,settings_types_ip,IP addresses]]. This way you'll get the clients' actual IP addresses logged
 instead of the proxy's.
 
-The destination servers don't need to be running Dovecot, but you should make
-sure that the Dovecot proxy doesn't advertise more capabilities than the
+The destination servers don't need to be [[link,running_dovecot,running Dovecot]], but you should make
+sure that the [[link,recommended_metrics_dovecot_proxy,Dovecot proxy]] doesn't advertise more capabilities than the
 destination server can handle. For IMAP you can do this by changing
 [[setting,imap_capability]]. For POP3 you'll have to modify Dovecot's sources
 for now (`src/pop3/capability.h`).
@@ -99,7 +99,7 @@ Abort connection after this much time has passed.
 
 This overrides the default [[setting,login_proxy_timeout]].
 
-This setting applies only to proxying via login processes, not to lmtp or
+This setting applies only to proxying via [[link,login_processes,login processes]], not to lmtp or
 doveadm processes.
 
 ### `proxy_nopipelining`
@@ -164,7 +164,7 @@ You can forward arbitrary variables by returning them prefixed with
 
 Dovecot will use a protocol-dependent extension to forward these
 variables to the next hop. The next hop imports these to the auth request as
-passdb extra fields, so they are visible in, e.g.,
+[[link,passdb_extra_fields,passdb extra fields]], so they are visible in, e.g.,
 `%{passdb:forward_variable}`.
 
 If the proxying continues, all these fields are further forwarded to the next
@@ -227,7 +227,7 @@ password and `nopassword` field.
 
 ## Master Users
 
-Note that this is different from master passwords.
+Note that this is different from [[link,auth_master_passwords,master passwords]].
 
 This way of forwarding requires the destination server to support master user
 feature. The users will be normally authenticated in the proxy and the common

@@ -45,7 +45,7 @@ Dovecot Event.
 ### `void dlua_dovecot_register(struct dlua_script *script)`
 
 Register dovecot variable. This item can also be extended by context specific
-tables, like authentication database adds `dovecot.auth`.
+tables, like [[link,authentication,authentication]] database adds `dovecot.auth`.
 
 ### `void dlua_push_event(lua_State *L, struct event *event)`
 

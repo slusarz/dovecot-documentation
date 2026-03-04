@@ -61,7 +61,7 @@ dovenull    7262  0.0  0.1   4016  1916 pts/0    S+   19:54   0:00 dovecot/pop3-
   through it.
 * `config` parses the configuration file and sends the configuration to
   other processes.
-* `auth` handles all authentication.
+* `auth` handles all [[link,authentication,authentication]].
 * `auth -w` process is an authentication worker process. It's used only
   with some "blocking" authentication databases, such as [[link,auth_sql]].
 * `imap-login` and `pop3-login` processes handle new IMAP and POP3

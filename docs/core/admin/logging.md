@@ -23,7 +23,7 @@ You can find the log file locations by running [[doveadm,log find]].
 
 ## Last Errors
 
-You can easily print the last 1000 error messages of a running Dovecot:
+You can easily print the last 1000 error messages of a [[link,running_dovecot,running Dovecot]]:
 [[doveadm,log errors]].
 
 ## Changing Log File Paths
@@ -39,7 +39,7 @@ debug_log_path = /var/log/dovecot-debug.log
 ```
 
 The warning and error messages go to the file specified by [[setting,log_path]]
-while informative messages goes to [[setting,info_log_path]] and debug
+while informative messages goes to [[setting,info_log_path]] and [[link,debug,debug]]
 messages goes to [[setting,debug_log_path]].
 
 ## Syslog
@@ -119,7 +119,7 @@ Save the below scriptlet as `/etc/logrotate.d/dovecot`:
 ```
 
 ::: info
-doveadm is not working properly with SELinux (e.g. doveadm cannot read
+[[link,doveadm,doveadm]] is not working properly with SELinux (e.g. doveadm cannot read
 config file when called from logrotate context). SELinux safe postrotate
 alternative scriptlet:
 
@@ -151,10 +151,10 @@ meant for you to help you find it.
 There are several settings that control logging verbosity. By default
 they're all disabled, but they may be useful for debugging.
 
-* [[setting,auth_verbose,yes]] enables logging all failed authentication
+* [[setting,auth_verbose,yes]] enables logging all failed [[link,authentication,authentication]]
   attempts.
 
-* [[setting,log_debug,category=auth]] enables all authentication debug
+* [[setting,log_debug,category=auth]] enables all [[link,authentication_debug,authentication debug]]
   logging (also enables [[setting,auth_verbose]]). Passwords are logged
   as `<hidden>`.
 

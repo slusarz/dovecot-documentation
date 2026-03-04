@@ -7,10 +7,10 @@ dovecotlinks:
 
 # PAM (`pam`)
 
-This is the most common way to authenticate system users nowadays.
+This is the most common way to authenticate [[link,system_users,system users]] nowadays.
 
 PAM is not itself a password database, but rather its configuration tells
-the system how exactly to do the authentication. Usually this means using
+the system how exactly to do the [[link,authentication,authentication]]. Usually this means using
 the `pam_unix.so` module, which authenticates user from the system's
 shadow password file.
 
@@ -26,7 +26,7 @@ and ApplePAM (Mac OS X).
 
 ## Settings
 
-<SettingsComponent tag="passdb-pam" />
+<SettingsComponent tag="[[link,passdb,passdb]]-pam" />
 
 ## Service Name
 
@@ -197,7 +197,7 @@ passdb pam {
 }
 ```
 
-On older versions of Mac OS X, "passwd" can be used as a userdb to fill
+On older versions of Mac OS X, "passwd" can be used as a [[link,userdb,userdb]] to fill
 in UID, GID, and homedir information after PAM was used as a passdb, even
 though Directory Services prevents "passdb passwd" from working as a
 username/password authenticator.

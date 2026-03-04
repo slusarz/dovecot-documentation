@@ -31,8 +31,8 @@ The password field can be in four formats (see [[link,password_schemes]]):
 used to set various [[link,passdb_extra_fields]] and
 [[link,userdb_extra_fields]].
 
-Keys which begin with a `userdb_ prefix` are used for userdb, others are
-used for passdb.
+Keys which begin with a `userdb_ prefix` are used for [[link,userdb,userdb]], others are
+used for [[link,passdb,passdb]].
 
 For example, if you wish to override [[setting,mail_path]] for one use,
 use `userdb_mail_path=~/mail`.
@@ -68,7 +68,7 @@ passdb passwd-file {
 To iterate databases that use [[variable]] expansion in the path, you need to provide enough information when using
 e.g. [[doveadm,user]] to iterate. For example [[doveadm,user,*@domain.com]] would match with ``%{user | domain}`` expansion in
 the above example, and [[doveadm,user,*]] would iterate `/etc/auth/passwd` if available.
-This iteration works with all doveadm mail commands similarly.
+This iteration works with all [[link,doveadm,doveadm]] mail commands similarly.
 
 ### Variables
 
@@ -103,8 +103,8 @@ userdb passwd-file {
 ```
 
 * The `fields` is explained in [[setting,userdb_fields]]. They
-  can be used to provide userdb extra fields based on templates. If you leave
-  any of the standard userdb fields (uid, gid, home) empty in the passwd file,
+  can be used to provide [[link,userdb_extra_fields,userdb extra fields]] based on templates. If you leave
+  any of the standard [[link,userdb_fields,userdb fields]] (uid, gid, home) empty in the passwd file,
   these defaults will be used. If you leave out the `:default` suffix, they
   override the passwd file fields.
 
@@ -151,7 +151,7 @@ with the Linux-style format. While that stanza often is `::0:0` use of
 `cut` is likely much safer than sed or other blind substitution.
 
 In `/etc/master.passwd`, a password of `* ` indicates that password
-authentication is disabled for that user and the token `*LOCKED*` prevents
+[[link,authentication,authentication]] is disabled for that user and the token `*LOCKED*` prevents
 all login authentication, so you might as well exclude those:
 
 ```sh

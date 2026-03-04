@@ -10,7 +10,7 @@ dovecotlinks:
 
 # Mailbox Formats
 
-Mailbox formats control the way that mail data is stored.
+[[link,design_mailbox,Mailbox]] formats control the way that mail data is stored.
 
 ## Available Formats
 
@@ -30,7 +30,7 @@ Users' INBOX mailboxes are commonly stored in `/var/spool/mail` or
 See [[link,maildir]].
 
 One file contains one message. A reliable choice since files are never
-modified and all operations are atomic. The top-level Maildir
+modified and all operations are atomic. The top-level [[link,maildir,Maildir]]
 directory contains the `Maildir/cur`, `Maildir/new`, and
 `Maildir/tmp` subdirectories.
 
@@ -50,13 +50,13 @@ There are two flavors of dbox:
 
 See [[link,imapc]].
 
-Use remote IMAP server as mail storage.
+Use remote [[link,imap_server,IMAP server]] as mail storage.
 
 ### pop3c
 
 See [[link,pop3c]].
 
-Use remote POP3 server as mail storage.
+Use remote [[link,pop3_server,POP3 server]] as mail storage.
 
 ## Configuration
 

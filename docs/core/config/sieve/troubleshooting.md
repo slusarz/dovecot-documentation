@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Sieve Troubleshooting
 
-This page explains how to approach problems with Sieve.
+This page explains how to approach problems with [[link,sieve,Sieve]].
 
 ## Common Problems
 
@@ -81,7 +81,7 @@ The Sieve script causing this error contained the following command:
 fileinto "INBOX/Co&APY-rdineren";
 ```
 
-The specified mailbox contains the non-ASCII character 'ö'.
+The specified [[link,design_mailbox,mailbox]] contains the non-ASCII character 'ö'.
 
 Unfortunately, the author of this script used the wrong encoding. This
 is modified UTF-7 such as used by IMAP. However, Sieve expects UTF-8 for

@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Prefetch User Database (`prefetch`)
 
-Prefetch [[link,userdb]] can be used to combine passdb and userdb lookups
+Prefetch [[link,userdb]] can be used to combine [[link,passdb,passdb]] and [[link,userdb,userdb]] lookups
 into a single lookup.
 
 It's usually used with [[link,auth_sql]] and [[link,auth_ldap]].

@@ -16,7 +16,7 @@ Static password database is typically used only for testing, proxying setups,
 and perhaps some other special kind of setups.
 
 ::: danger
-**Static passdb allows users to log in with any username.**
+**Static [[link,passdb,passdb]] allows users to log in with any username.**
 :::
 
 For password you can either set:
@@ -72,7 +72,7 @@ userdb static {
 The home is optional. You can also return other [[link,userdb_extra_fields]].
 You can use [[variable]] everywhere.
 
-For the above 3 fields a static userdb isn't actually necessary at all.
+For the above 3 fields a static [[link,userdb,userdb]] isn't actually necessary at all.
 Instead, you can just leave out the userdb configuration and set:
 
  * [[setting,mail_uid]]

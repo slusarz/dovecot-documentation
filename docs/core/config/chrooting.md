@@ -20,7 +20,7 @@ chroots:
 - Authentication process (dovecot-auth) can be chrooted by setting
   `chroot=<path>` inside `service auth` and/or
   `service auth-worker` sections. This could be a good idea to change
-  if you're not using a passdb or userdb that needs to access files
+  if you're not using a [[link,passdb,passdb]] or [[link,userdb,userdb]] that needs to access files
   outside of the chroot. Also make sure not to run the auth process as
   root then.
 

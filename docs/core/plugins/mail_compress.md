@@ -9,7 +9,7 @@ dovecotlinks:
 
 # Mail Compression Plugin (`mail-compress`)
 
-This plugin can be used to read compressed mbox, maildir or dbox files. It
+This plugin can be used to read compressed mbox, [[link,maildir,maildir]] or dbox files. It
 can also be used to write (via IMAP, [[link,lda]] and/or [[link,lmtp]])
 compressed messages to [[link,dbox]] or [[link,maildir]] mailboxes.
 
@@ -57,7 +57,7 @@ be directly compressed (or vice versa).
 You could, however, use [[man,doveadm-sync]] to copy all mails to another
 location (which saves them compressed) and then replace the original
 location with the new compressed location. You can do this
-by treating the operation the same as if you were migrating from one mailbox
+by treating the operation the same as if you were migrating from one [[link,design_mailbox,mailbox]]
 format to another (see the dsync page examples).
 
 ### Maildir

@@ -79,7 +79,7 @@ passdb sql {
 
 `submission_host = smtp-out.example.com:25`
 
-SMTP server which is used for sending email rejects, Sieve forwards,
+SMTP server which is used for sending email rejects, [[link,sieve,Sieve]] forwards,
 vacations, etc.
 
 Alternatively, `sendmail_path` setting can be used to send mails using the

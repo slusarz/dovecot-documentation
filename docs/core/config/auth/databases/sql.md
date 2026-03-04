@@ -46,9 +46,9 @@ If all the passwords are in same format, you can use
 [[setting,passdb_default_password_scheme]] to specify it. Otherwise each
 password needs to be prefixed with `{password-scheme}`, for example
 `{plain}cleartext-password`. See [[link,password_schemes]] for a list of
-supported password schemes.
+supported [[link,password_schemes,password schemes]].
 
-By default MySQL does case-insensitive string comparisons, so you may have a
+By default MySQL does case-insensitive [[link,settings_types_string,string]] comparisons, so you may have a
 problem if your users are logging with different as `user`, `User` and
 `uSer`. To fix this, you can make the SQL database return a
 [[link,userdb_extra_fields]] which makes Dovecot modify the username to
@@ -66,7 +66,7 @@ The query can also return other [[link,passdb_extra_fields]]
 which have special meaning.
 
 You can't use multiple statements in one query, but you could use a stored
-procedure. If you want something like a last login update, use
+procedure. If you want something like a [[link,last_login,last login]] update, use
 [[link,post_login_scripting]] instead.
 
 ### Password Verification by SQL Server
@@ -90,14 +90,14 @@ mismatches are also logged as `unknown user`.
 
 ## userdb
 
-Usually your SQL database contains also the userdb information. This means
+Usually your SQL database contains also the [[link,userdb,userdb]] information. This means
 user's UID, GID, and home directory. If you're using only static UID and GID,
 and your home directory can be specified with a template, you could use
 [[link,auth_staticdb]] instead. It is also a bit faster since it avoids
 doing the userdb SQL query.
 
 [[setting,userdb_sql_query]] setting contains the SQL query to look up the
-userdb information. The commonly returned userdb fields are uid, gid, home, and
+userdb information. The commonly returned [[link,userdb_fields,userdb fields]] are uid, gid, home, and
 mail. See [[link,userdb_extra_fields]] for more information about these and
 other fields that can be returned.
 

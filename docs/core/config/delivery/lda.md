@@ -8,7 +8,7 @@ dovecotlinks:
 # Dovecot LDA
 
 The Dovecot LDA is a [[link,mda]], which takes mail from an [[link,mta]]
-and delivers it to a user's mailbox, while keeping Dovecot index files up to
+and delivers it to a user's [[link,design_mailbox,mailbox]], while keeping Dovecot index files up to
 date.
 
 ::: tip
@@ -40,7 +40,7 @@ See [[man,dovecot-lda]].
 
 ## System Users
 
-You can use LDA with a few selected system users (i.e. user is found from
+You can use LDA with a few selected [[link,system_users,system users]] (i.e. user is found from
 `/etc/passwd` / NSS) by calling dovecot-lda in the user's `~/.forward` file:
 
 ```
@@ -50,7 +50,7 @@ You can use LDA with a few selected system users (i.e. user is found from
 This should work with any MTA which supports per-user `.forward`
 files.
 
-This method doesn't require the authentication socket explained below
+This method doesn't require the [[link,authentication,authentication]] socket explained below
 since it's executed as the user itself.
 
 ## Virtual Users
@@ -64,7 +64,7 @@ example:
 dovecot-lda -f $FROM_ENVELOPE -d $DEST_USERNAME
 ```
 
-You'll need to set up a auth-userdb socket for dovecot-lda so it knows
+You'll need to set up a auth-[[link,userdb,userdb]] socket for dovecot-lda so it knows
 where to find mailboxes for the users:
 
 ```[dovecot.conf]
@@ -98,7 +98,7 @@ HOME=/path/to/user/homedir dovecot-lda -f $FROM_ENVELOPE
 ```
 
 This way you don't need to have a userdb listener socket. Note that you
-should verify the user's existence prior to running dovecot-lda,
+should verify the user's existence prior to [[link,running_dovecot,running dovecot]]-lda,
 otherwise you'll end up having mail delivered to nonexistent users as
 well.
 
@@ -184,7 +184,7 @@ protocol lda {
 ### Non-Dovecot LDA
 
 Dovecot allows using non-Dovecot LDA to deliver mails to mbox and
-Maildir files. Dovecot adds the newly delivered mails to its index files,
+[[link,maildir,Maildir]] files. Dovecot adds the newly delivered mails to its index files,
 which is relatively fast operation. However, IMAP clients often want to first
 fetch some of the email headers and other metadata. This requires Dovecot to
 open and parse the emails, which may add user-visible latency. By using

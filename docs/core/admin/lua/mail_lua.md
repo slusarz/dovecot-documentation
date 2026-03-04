@@ -57,7 +57,7 @@ Parameters:
 :   * `script`: `dlua_script`
     * `mailbox`: `mailbox`
 
-Pushes a mailbox on top of stack.
+Pushes a [[link,design_mailbox,mailbox]] on top of stack.
 
 ### `void dlua_push_mail(struct dlua_script *script, struct mail* mail)`
 

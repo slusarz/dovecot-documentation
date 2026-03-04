@@ -31,7 +31,7 @@ be explicitly added using the `metric` configuration blocks.
 
 The [`metric_filter`](#metric_filter) setting is the only required setting in a
 [`metric`](#metric) block. It specifies which events should be used when
-calculating the statistics for a given metric block. Event filtering is
+calculating the statistics for a given metric block. [[link,event_filter,Event filtering]] is
 described in detail in [[link,event_filter]].
 
 Note that Dovecot also has many unnamed events. These aren't generally useful
@@ -70,7 +70,7 @@ can be added to provide modifiers to the discrete value. This is done as
 variables are provided:
 
 * `%{value}` - The original value
-* `%{user | domain}` - Text after the `@` character, or empty string if there is no `@`.
+* `%{user | domain}` - Text after the `@` character, or empty [[link,settings_types_string,string]] if there is no `@`.
 
 Example:
 

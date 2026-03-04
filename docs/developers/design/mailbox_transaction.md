@@ -15,7 +15,7 @@ create a transaction with `mailbox_transaction_begin()`.
 ### `MAILBOX_TRANSACTION_FLAG_HIDE`
 
 Mark the changes in a way that when later
-[syncing](mailbox_syncing) the mailbox in this session,
+[syncing](mailbox_syncing) the [[link,design_mailbox,mailbox]] in this session,
 `mailbox_sync_next()` won't return sync records for the changes done by
 this transaction. This is primarily meant for flag and keyword changes;
 you can't hide expunges. For example IMAP's `STORE FLAGS.SILENT` command
@@ -33,7 +33,7 @@ Normally you would use this flag when you want to save or copy messages.
 ### `MAILBOX_TRANSACTION_FLAG_ASSIGN_UIDS`
 
 Require assigning UIDs to saved/copied messages immediately. Normally this
-is done only when it's easy (maildir: if dovecot-uidlist can be locked
+is done only when it's easy ([[link,maildir,maildir]]: if dovecot-uidlist can be locked
 without waiting, mbox: if mbox is already fully synced).
 
 ### `MAILBOX_TRANSACTION_FLAG_REFRESH`

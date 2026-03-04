@@ -5,7 +5,7 @@ title: virtual
 
 # Virtual Mailbox Plugin (`virtual`)
 
-This plugin allows virtual mailboxes to be created.
+This plugin allows virtual [[link,design_mailbox,mailbox]]es to be created.
 
 Virtual mailboxes consist of Dovecot search criteria that are used to build
 a listing of messages that don't exist in a physical mailbox.
@@ -46,7 +46,7 @@ default it uses the `fs` layout, so you can create directories such as:
 * INBOX: `~/Maildir/virtual/INBOX/`
 * Sub/mailbox: `~/Maildir/virtual/Sub/mailbox/`
 
-If you prefer to use the Maildir++ layout instead, set
+If you prefer to use the [[link,maildir,Maildir]]++ layout instead, set
 [[setting,mailbox_list_layout,maildir++]].
 
 ### Virtual Mailboxes
@@ -68,7 +68,7 @@ mailbox is being selected, so if more mailboxes are created during that they
 aren't noticed.
 
 `*` wildcard matches only one namespace at a time based on the namespace
-prefix. For example if you have namespaces with an empty prefix and a prefix
+prefix. For example if you have [[link,namespaces,namespaces]] with an empty prefix and a prefix
 `mail/`:
 
 * `*` matches only mailboxes from the namespace with empty prefix

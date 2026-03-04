@@ -5,7 +5,7 @@ title: Sieve Examples
 
 # Sieve Examples
 
-Below are some simple Sieve code examples, more can be found at
+Below are some simple [[link,sieve,Sieve]] code examples, more can be found at
 http://sieve.info/examplescripts.
 
 ## Mail Filtering by Various Headers
@@ -333,7 +333,7 @@ sieve_script global1 {
 ```
 
 Settings for both [[link,sieve_storage_type_personal,personal]] and
-[[link,sieve_storage_type_global,global]] Sieve script storage types may also be
+[[link,sieve_storage_type_global,global]] Sieve [[link,sieve_storage_type,script storage types]] may also be
 overridden by [[link,userdb_extra_fields]].
 
 It's not currently possible to use subdirectories for the scripts.
@@ -368,7 +368,7 @@ strings.
 
 Using the `:create` argument for the `fileinto` command, the indicated
 folder is created automatically if it doesn't exist. The `:create`
-argument is provided by the mailbox extension.
+argument is provided by the [[link,design_mailbox,mailbox]] extension.
 
 ## Emulating `lmtp_save_to_detail_mailbox=yes`
 

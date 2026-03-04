@@ -6,7 +6,7 @@ title: Mailbox Sync
 # Mailbox Synchronization
 
 The idea behind synchronization is to find out what changes other
-sessions have done to the mailbox and to finalize our own changes to the
+sessions have done to the [[link,design_mailbox,mailbox]] and to finalize our own changes to the
 mailbox.
 
 For example if you expunge a message in a transaction and commit it, the

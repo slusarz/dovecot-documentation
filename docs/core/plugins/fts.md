@@ -64,7 +64,7 @@ LDA/LMTP nor an IMAP 'APPEND' command updates the indexes immediately. This
 means that if a user has received a lot of mail since the last indexing
 (i.e., the last search operation), it may take a while to index all the new
 mails before replying to the search command. Dovecot sends periodic "\* OK
-Indexed n% of the mailbox" updates which can be caught by client
+Indexed n% of the [[link,design_mailbox,mailbox]]" updates which can be caught by client
 implementations to implement a progress bar.
 
 Updating the FTS index as messages arrive makes for a more responsive user

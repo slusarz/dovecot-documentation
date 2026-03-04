@@ -16,11 +16,11 @@ have been removed in favor of using the standard `imapc_*` settings.
 `allow_invalid_cert` settings have been removed. The standard `ssl_*` settings
 can be used instead (also inside `passdb { ... }` if wanted).
 
-<SettingsComponent tag="imapc-auth" />
+<SettingsComponent tag="[[link,imapc,imapc]]-auth" />
 
 ## Example
 
-Authenticates users against remote IMAP server in IP address 192.168.1.123:
+Authenticates users against remote [[link,imap_server,IMAP server]] in IP address 192.168.1.123:
 
 ```[dovecot.conf]
 passdb imap {

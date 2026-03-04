@@ -13,7 +13,7 @@ Only functions returning "int" can actually return a failure.
 - Functions that return a pointer will never use NULL as a failure.
   Only "find" type of functions can return NULL, which means "not found".
 - Iterators usually work by the init() returning iterator pointer and
-  next() returning a boolean. If there were any errors in either init()
+  next() returning a [[link,settings_types_boolean,boolean]]. If there were any errors in either init()
   or next(), deinit() finally returns a failure.
 
 ## Getting lib-storage Errors
@@ -27,7 +27,7 @@ the client-safe error variables clearly, preferably `client_error`.
   `mailbox_list_get_last_error()` (client-safe error) or
   `mailbox_list_get_last_internal_error()`.
 - All other functions that have some way of accessing mail_storage
-  (mailbox, mail, transactions, etc.) set their errors to the storage.
+  ([[link,design_mailbox,mailbox]], mail, transactions, etc.) set their errors to the storage.
   You can get these errors with `mail_storage_get_last_error()`
   (client-safe error) or `mail_storage_get_last_internal_error()`.
   There are also `mailbox_get_last_error()` and
@@ -51,7 +51,7 @@ Errors can be set with two calls:
 
 - `mailbox_list_set_error()` and `mail_storage_set_error()` should
   be used when the error is user's fault in some way. For example
-  invalid mailbox name, out of quota, etc. The error string will be
+  invalid mailbox name, out of quota, etc. The error [[link,settings_types_string,string]] will be
   shown to user. It won't be written to a log file.
 
 - `mailbox_list_set_critical()`, `mail_storage_set_critical()`,

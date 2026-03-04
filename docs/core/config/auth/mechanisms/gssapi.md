@@ -8,7 +8,7 @@ dovecotlinks:
 # GSSAPI
 
 GSSAPI (Generic Security Services Application Program Interface) is an
-authentication mechanism that provides mutual authentication using opaque
+[[link,authentication,authentication]] mechanism that provides mutual authentication using opaque
 messages (such as tokens).
 
 GSSAPI is usually used with Kerberos, and is a good choice when dealing
@@ -38,7 +38,7 @@ kadmin -q 'ktadd -k /root/keytab IMAP/fully.qualified.host@REALM'
 and put the keytab file into `/etc/dovecot`, set mode `0440` and ownership
 to `root:dovecot`.
 
-On Active Directory, you need to create a Service User with password that
+On Active Directory, you need to create a [[link,service_user,Service User]] with password that
 never expires and cannot be changed, and then use `setspn.exe` to create the
 service principals for this user.
 
@@ -85,9 +85,9 @@ auth_krb5_keytab = /etc/dovecot/keytab
 
 This should enable GSSAPI support for Dovecot.
 
-GSSAPI requires at least one passdb configured. Note that authentication
+GSSAPI requires at least one [[link,passdb,passdb]] configured. Note that authentication
 will normally succeed, even if user is not found in any passdb. Please
-configure a userdb if you do not want this.
+configure a [[link,userdb,userdb]] if you do not want this.
 
 ### Specifying Accepted Credential
 

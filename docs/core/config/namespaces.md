@@ -43,7 +43,7 @@ All visible namespaces must have the same separator.
 Inside each namespace there is a list of folders, which form a sub-hierarchy.
 
 ::: info
-Enable default INBOX namespace and English language mailbox names with
+Enable default INBOX namespace and English language [[link,design_mailbox,mailbox]] names with
 [[setting,mailbox_special_use]] flags with [[setting,@mailbox_defaults,english]]
 Using this setting will set these settings by default:
 
@@ -125,7 +125,7 @@ namespace <name> {
 
 The namespace name is only used internally within configurations. It allows you
 to update an existing namespace - by repeating the namespace block and adding
-additional configuration settings - or allows userdb to override namespace
+additional configuration settings - or allows [[link,userdb,userdb]] to override namespace
 settings for specific users, e.g.:
 
 ```
@@ -155,7 +155,7 @@ For example if you have a mailbox "foo" with child mailbox "bar", the full
 path to the child mailbox would be "foo/bar" with `/` as the separator, and
 "foo.bar" with `.` as the separator.
 
-IMAP clients, Sieve scripts, and many parts of Dovecot configuration use the
+IMAP clients, [[link,sieve,Sieve]] scripts, and many parts of Dovecot configuration use the
 configured separator when referring to mailboxes. This means that if you change
 the separator, you may break things.
 
@@ -226,7 +226,7 @@ See [[link,shared_mailboxes]].
 ### Mixed mbox and Maildir
 
 If you have your INBOX as mbox in `/var/mail/username` and the rest of the
-mailboxes in Maildir format under `~/Maildir`, you can do this by creating two
+mailboxes in [[link,maildir,Maildir]] format under `~/Maildir`, you can do this by creating two
 namespaces:
 
 ```[dovecot.conf]

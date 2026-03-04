@@ -15,7 +15,7 @@ dovecotlinks:
 
 There are many ways to configure Dovecot to use virtual users.
 
-Users are often categorized as being either system users (in
+Users are often categorized as being either [[link,system_users,system users]] (in
 `/etc/passwd`) or virtual users (not in `/etc/passwd`). However from
 Dovecot's point of view there isn't much of a difference between them.
 If a [[link,auth_passwd]] lookup and a [[link,auth_sql]] lookup return the
@@ -58,7 +58,7 @@ supports]] but you need to tell the format to Dovecot because it won't try
 to guess it.
 
 The SQL and LDAP configuration files have the `default_pass_scheme` setting
-for this. If you have passwords in multiple formats, or the passdb doesn't
+for this. If you have passwords in multiple formats, or the [[link,passdb,passdb]] doesn't
 have such a setting, you'll need to prefix each password with
 `{<scheme>}`, for example `{PLAIN}plaintext-password` or
 `{PLAIN-MD5}1a1dc91c907325c69271ddf0c944bc72`.
@@ -121,7 +121,7 @@ Some uses for home directory are:
 ### Home vs. Mail Directory
 
 Home directory shouldn't be the same as mail directory with mbox or
-Maildir formats (but with dbox it's fine). It's possible to do
+[[link,maildir,Maildir]] formats (but with dbox it's fine). It's possible to do
 that, but you might run into trouble with it sooner or later. Some
 problems with this are:
 
@@ -134,7 +134,7 @@ problems with this are:
   because there already exists a conflicting file or directory.
 
   - e.g., with Maildir if you have `.dovecot.sieve` file, user can't
-    create a mailbox called "dovecot.sieve" (i.e. "dovecot" mailbox
+    create a [[link,design_mailbox,mailbox]] called "dovecot.[[link,sieve,sieve]]" (i.e. "dovecot" mailbox
     that has a "sieve" child)
 
 - And vice versa: If user creates "dovecot.sieve" mailbox, Dovecot will
@@ -201,8 +201,8 @@ Then use [[setting,mail_path,~/Maildir]].
 
 ### Mail Location
 
-If your users have varying locations for mail location, which cannot be
-represented by templating, userdb can return the
+If your users have varying locations for [[link,mail_location,mail location]], which cannot be
+represented by templating, [[link,userdb,userdb]] can return the
 [[link,userdb_extra_fields,mail field]] to override the default
 [[setting,mail_path]]. Normally this is not needed, and it is sufficient to
 have the setting in config file.
@@ -261,7 +261,7 @@ be owned by vmail user and vmail group.
 ## Virtual and System Users
 
 If you need to do PAM/passwd lookup for system users, and also have
-domain users, you can configure authentication to drop the domain part
+domain users, you can configure [[link,authentication,authentication]] to drop the domain part
 after doing virtual user lookup.
 
 ```[dovecot.conf]
