@@ -5,6 +5,7 @@ import { generateSidebar } from 'vitepress-sidebar'
 import { dovecotMdExtend } from '../lib/markdown.js'
 import { getExcludes, lib_dirname } from '../lib/utility.js'
 import dovecotVitepressInit from '../lib/dovecot_vitepress_init.js'
+import { linkCheck, linkReport } from '../lib/link_checker.js'
 import path from 'path'
 import fs from 'fs'
 
@@ -166,6 +167,17 @@ export default defineConfig({
 	head: [
 		['link', { rel: 'icon', type: 'image/x-icon', href: base + '/favicon.ico' } ],
 		['script', { async: '', src: '/js/versions.js' } ]
-	]
+	],
+
+	transformHtml(code, id, ctx) {
+		linkCheck(code, id, ctx, [
+			// 'https://example.com/dead-link',
+			// /^https:\/\/ignored-domain\.com\/.*/,
+		])
+	},
+
+	async buildEnd(siteConfig) {
+		await linkReport()
+	}
 
 })
