@@ -38,7 +38,7 @@ program
 	.parse()
 const debug = program.opts().debug
 
-const doInclude = (content, includes) => {
+const doInclude = (content, includesMap) => {
 	const result = content.replace(includesRE, (m, m1) => {
 		if (!m1.length) return m
 		/* VitePress MD supports paths relative to base with leading
@@ -50,14 +50,14 @@ const doInclude = (content, includes) => {
 			if (relative.startsWith('..') || path.isAbsolute(relative)) {
 				throw new Error("Path traversal detected in include: " + m1)
 			}
-			return doInclude(fs.readFileSync(targetPath, 'utf8'), includes)
+			return doInclude(fs.readFileSync(targetPath, 'utf8'), includesMap)
 		}
 		const inc_f = path.basename(m1)
-		for (const fn of includes) {
-			if (path.basename(fn) == inc_f)
-				return doInclude(fs.readFileSync(fn, 'utf8'), includes)
+		const fn = includesMap.get(inc_f)
+		if (fn) {
+			return doInclude(fs.readFileSync(fn, 'utf8'), includesMap)
 		}
-		throw new Error("Missing include " + inc_f)
+		throw new Error("Missing include " + m1)
 	})
 	return result
 }
@@ -200,8 +200,17 @@ const main = async (component, outPath) => {
 	/* Generate list of man files. */
 	const files = (await dovecotSettingBootstrap('man_paths'))
 		.flatMap((x) => fg.sync(x))
-	const includes = (await dovecotSettingBootstrap('man_includes'))
+	const includesArray = (await dovecotSettingBootstrap('man_includes'))
 		.flatMap((x) => fg.sync(x))
+
+	/* Convert includes array to a Map for O(1) lookups */
+	const includesMap = new Map()
+	for (const fn of includesArray) {
+		const inc_f = path.basename(fn)
+		if (!includesMap.has(inc_f)) {
+			includesMap.set(inc_f, fn)
+		}
+	}
 
 	/* Get hash of last git commit. */
 	const gitHash = gitCommitInfo().shortHash
@@ -218,7 +227,7 @@ const main = async (component, outPath) => {
 		const page = matter(str)
 		const vf = new VFile({
 			path: f,
-			value: await doInclude(page.content, includes)
+			value: await doInclude(page.content, includesMap)
 		})
 		if (page.data.dovecotComponent != component)
 			continue
