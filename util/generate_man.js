@@ -207,7 +207,7 @@ const main = async (component, outPath) => {
 	const gitHash = gitCommitInfo().shortHash
 
 	/* Process man files. */
-	for (const f of files) {
+	await Promise.all(files.map(async (f) => {
 		if (debug) {
 			console.debug('Processing file:', f)
 		}
@@ -221,7 +221,7 @@ const main = async (component, outPath) => {
 			value: await doInclude(page.content, includes)
 		})
 		if (page.data.dovecotComponent != component)
-			continue
+			return
 
 		await unified().
 			use(processDovecotMdPre).
@@ -238,7 +238,7 @@ const main = async (component, outPath) => {
 			}).
 			process(vf).
 			then((file) => fs.promises.writeFile(out_f, String(file)))
-	}
+	}))
 }
 
 main(component, outPath)
