@@ -1051,6 +1051,7 @@ at the actual RCPT command where the server can deny the recipient.`
 
 	smtp_submit_started: {
 		root: 'smtp-submit',
+		inherit: 'smtp_submit',
 		text: `Started message submission.`
 	},
 
@@ -1792,7 +1793,7 @@ characters and no control characters.
 	},
 
 	smtp_submit: {
-		// TODO: Inherits from provided parent event
+		inherit: 'smtp_connection',
 		fields: {
 			mail_from: `The envelope sender for the outgoing message.`,
 			recipients: `The number of recipients for the outgoing message.`,
