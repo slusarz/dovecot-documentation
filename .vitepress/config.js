@@ -33,6 +33,9 @@ export const dovecotConfig = {
 	man_paths: [
 		'docs/core/man/*.[[:digit:]].md'
 	],
+	doc_paths: [
+		'docs/**/*.md'
+	],
 	plugin_paths: [
 		'docs/core/plugins/*.md'
 	],
