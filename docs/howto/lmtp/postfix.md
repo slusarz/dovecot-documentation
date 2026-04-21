@@ -7,7 +7,7 @@ title: Postfix
 
 ## Basic Configuration
 
-The first step is to enable LMTP in `dovecot.conf`:
+The first step is to enable [[link,lmtp,LMTP]] in `dovecot.conf`:
 
 ```doveconf[dovecot.conf]
 protocols = imap lmtp
@@ -90,5 +90,5 @@ mail.
 
 ::: info
 You cannot use "reject_unverified_recipient" with "pipe", so this doesn't
-work with the Dovecot LDA "deliver".
+work with the Dovecot [[link,lda,LDA]] "deliver".
 :::

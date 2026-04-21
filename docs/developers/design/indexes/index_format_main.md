@@ -8,7 +8,7 @@ dovecotlinks:
 # Main Index
 
 The main index can be used to quickly look up messages' UIDs, flags,
-keywords and extension-specific data, such as cache file or mbox file
+keywords and extension-specific data, such as cache file or [[link,mbox,mbox]] file
 offsets.
 
 ::: info
@@ -67,7 +67,7 @@ The flags are a combination of `enum mail_flags` and
 * 0x80 - `MAIL_INDEX_MAIL_FLAG_DIRTY` - Message flags haven't been
   successfully written to backend mailbox. This is used for example with mbox
   and `mbox_lazy_writes=yes`. It also allows having modifiable flags for
-  read-only mailboxes. Alternatively, with some mailbox formats this flag
+  read-only mailboxes. Alternatively, with some [[link,mailbox_formats,mailbox formats]] this flag
   can be used in a backend-specific way.
 
 The rest of the data is stored in record extensions.

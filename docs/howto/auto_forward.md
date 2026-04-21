@@ -35,7 +35,7 @@ Customer would like to have auto forwarding feature as described below:
 
 ## Solution
 
-The following is an example of what the Sieve config and rules could look
+The following is an example of what the [[link,sieve,Sieve]] config and rules could look
 like:
 
 ::: code-group

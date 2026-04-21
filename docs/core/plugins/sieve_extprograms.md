@@ -5,7 +5,7 @@ title: sieve-extprograms
 
 # Pigeonhole Sieve Extprograms Plugin (`sieve-extprograms`)
 
-The "sieve_extprograms" plugin provides an extension to the Sieve
+The "sieve_extprograms" plugin provides an extension to the [[link,sieve,Sieve]]
 filtering language, adding new action commands for invoking a predefined
 set of external programs.
 
@@ -62,7 +62,7 @@ the Sieve action invoking the program will fail. The action will also
 fail when the shell script returns a nonzero exit code. Standard output
 is available for returning a message (for the filter command) or string
 data (for the execute command) to the Sieve interpreter. Standard error
-is written to the LDA log file.
+is written to the [[link,lda,LDA]] log file.
 
 The three extensions introduced by this plugin - `vnd.dovecot.pipe`,
 `vnd.dovecot.filter` and `vnd.dovecot.execute` - each have separate

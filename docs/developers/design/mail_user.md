@@ -14,7 +14,7 @@ directly. Some of the most useful things you can do with a user are:
 
 - `user->set` gives you access to user's settings.
 
-- `user->namespaces` points to a linked list of user's namespaces.
+- `user->namespaces` points to a linked list of user's [[link,namespaces,namespaces]].
 
 - `mail_user_get_home()` returns user's home directory, if there's
    one.
@@ -22,12 +22,12 @@ directly. Some of the most useful things you can do with a user are:
 - `mail_user_home_expand()` expands `~/` at the beginning of given
    path to user's actual home directory.
 
-Typically each new IMAP/POP3/etc. connection creates a single mail user.
+Typically each new IMAP/[[link,pop3,POP3]]/etc. connection creates a single mail user.
 If the same process handles multiple connections for the same user, they
 don't share the same mail_user (especially since each mail_user has a
 unique session ID).
 
-If a user has shared mailboxes from other users (not public namespaces),
+If a user has [[link,shared_mailboxes,shared mailboxes]] from other users (not public namespaces),
 a mail user is also created whenever necessary to list/access the user's
 mailboxes. Again there is no attempt to share the created mail user with
 other connections.

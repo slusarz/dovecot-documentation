@@ -37,7 +37,7 @@ apt-get install postfix-pgsql sasl2-bin libsasl2-modules postgresql \
 
 ## Configuring PostgreSQL
 
-Edit `/etc/postgresql/pg_hba.conf` to accept password authentication for
+Edit `/etc/postgresql/pg_hba.conf` to accept password [[link,authentication,authentication]] for
 localhost:
 
 ```
@@ -220,7 +220,7 @@ MECHANISMS=pam
 PARAMS="-m /var/spool/postfix/etc"
 ```
 
-As of version 2.1.19 of SASL you also need to add the -r parameter in
+As of version 2.1.19 of [[link,sasl,SASL]] you also need to add the -r parameter in
 order to authenticate with an email address (containing a @) as user id:
 
 ```

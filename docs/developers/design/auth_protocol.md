@@ -105,7 +105,7 @@ be ignored.
 
 ### Authentication Mechanisms
 
-MECH command announces an available authentication SASL mechanism.
+MECH command announces an available authentication [[link,sasl,SASL]] mechanism.
 If the client advertises minor version 3 or higher, also SASL mechanisms using
 channel binding are returned.
 
@@ -115,7 +115,7 @@ Mechanisms may have parameters giving some details about them:
 | ---------- | ----------- |
 | `anonymous` | Anonymous authentication |
 | `plaintext` | Transfers plaintext passwords |
-| `dictionary` | Subject to passive (dictionary) attack |
+| `dictionary` | Subject to passive ([[link,dict,dictionary]]) attack |
 | `active` | Subject to active (non-dictionary) attack |
 | `forward-secrecy` | Provides forward secrecy between sessions |
 | `mutual-auth` | Provides mutual authentication |

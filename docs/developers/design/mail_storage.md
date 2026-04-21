@@ -11,7 +11,7 @@ container for its mailboxes.
 
 For example with [[link,mdbox]], each storage has one directory where all the
 message bodies are written to, while the per-mailbox directories only
-contain index files. With other mailbox formats the mail storage doesn't
+contain index files. With other [[link,mailbox_formats,mailbox formats]] the mail storage doesn't
 do much else than allow allocating [[link,design_mailbox,mailboxes]].
 
 ## Public Functions
@@ -48,7 +48,7 @@ Allocate memory for a storage and set its virtual functions.
 ### `create(ns)`
 
 Initialize the storage based on given namespace settings. The same storage
-can be used by other namespaces, but they don't call `create()` again.
+can be used by other [[link,namespaces,namespaces]], but they don't call `create()` again.
 
 This function typically shouldn't fail, except when storage can't handle
 the wanted namespace settings.

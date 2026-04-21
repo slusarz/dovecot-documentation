@@ -123,7 +123,7 @@ Any other fields are ignored.
 
 ## Prefetching
 
-If you want to avoid doing two SQL queries when logging in with IMAP/POP3, you
+If you want to avoid doing two SQL queries when logging in with IMAP/[[link,pop3,POP3]], you
 can make the [[setting,passdb_sql_query]] return all the necessary userdb
 fields and use [[link,auth_prefetch]] to use those fields.
 

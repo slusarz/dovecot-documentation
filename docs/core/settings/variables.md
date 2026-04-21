@@ -34,7 +34,7 @@ You can use special variables in several places:
   commonly used by [[link,mail_location]].
 * Static [[link,userdb]] and [[link,auth_passwd_file]] template strings
 * [[link,auth_ldap]], [[link,auth_sql]], and [[link,userdb]] query strings
-* Log prefix for imap/pop3 process
+* Log prefix for imap/[[link,pop3,pop3]] process
 
 ## Variable expansion syntax
 
@@ -244,7 +244,7 @@ See also:
 
 | Variable | Description |
 | -------- | ----------- |
-| `service` | imap, pop3, smtp, lda (and doveadm, etc.) |
+| `service` | imap, pop3, smtp, [[link,lda,lda]] (and [[link,doveadm,doveadm]], etc.) |
 | `local_ip` | local IP address |
 | `remote_ip` | remote IP address |
 | `local_port` | local port |
@@ -296,7 +296,7 @@ See also:
 | `original_user` | Same as `user`, except using the original username the client sent before any changes by auth process. With master user logins (also with [[setting,auth_master_user_separator]] based logins),this contains only the original master username. |
 | `listener` | Socket listener name as specified in config file, which accepted the client connection. |
 | `owner_user` | For shared storage this is the `user` variable of the owner, otherwise it is the same as `user`.<br />[[added,variables_owner_user_added]] |
-| `passdb:<name>` | Return passdb extra field "name". |
+| `passdb:<name>` | Return [[link,passdb,passdb]] extra field "name". |
 | `passdb:forward_<name>` | Used by proxies to pass on extra fields to the next hop, see [[link,auth_forward_fields]]. |
 
 ## Authentication Variables
@@ -335,7 +335,7 @@ See also:
 | `original_user` | Same as `user`, except using the original username the client sent before any changes by auth process. |
 | `passdb:<name>` | Return passdb extra field "name". |
 | `userdb:<name>` | Return userdb extra field "name". Note that this can also be used in passdbs to access any userdb_\* extra fields added by previous passdb lookups. |
-| `client_id` | If [[setting,imap_id_retain]] is enabled this variable is populated with the client ID request as IMAP arglist. For directly logging the ID see the [[event,imap_id_received]] event. |
+| `client_id` | If [[setting,imap_id_retain]] is enabled this variable is populated with the client ID request as IMAP arglist. For directly [[link,logging,logging]] the ID see the [[event,imap_id_received]] event. |
 | `passdb:forward_<name>` | Used by proxies to pass on extra fields to the next hop, see [[link,auth_forward_fields]]. |
 | `id` | Internal ID number of the current passdb/userdb. |
 | `token` | Used OAUTH2 token. This is only present in [[setting,oauth2_fields]]. [[added,variables_oauth2]] |

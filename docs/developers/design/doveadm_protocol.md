@@ -11,7 +11,7 @@ See also:
 :::
 
 doveadm-server can be accessed via UNIX sockets or TCP protocol (by
-adding `inet_listener` to doveadm service).
+adding `inet_listener` to [[link,doveadm,doveadm]] service).
 
 The doveadm server supports the following protocol versions (major.minor):
 
@@ -47,7 +47,7 @@ change much practically, because the client was supposed to have sent the
 
 ## Authentication
 
-The authentication is done with a regular SASL PLAIN authentication,
+The [[link,authentication,authentication]] is done with a regular [[link,sasl,SASL]] PLAIN authentication,
 i.e. `PLAIN<tab>base64(\0username\0password)`. Currently the username
 must be `doveadm`. For example for user=doveadm, password=secret use:
 

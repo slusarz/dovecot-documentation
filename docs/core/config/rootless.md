@@ -83,7 +83,7 @@ The important settings to change for rootless installation are:
   default_internal_group = group
   ```
 
-- Remove default chrooting from all services, this is optional if you want
+- Remove default [[link,chrooting,chrooting]] from all services, this is optional if you want
   to use Linux capabilities instead.
 
   ```doveconf[dovecot.conf]

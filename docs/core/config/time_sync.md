@@ -50,7 +50,7 @@ library, and will normally not have an impact on Dovecot's behavior.
 
 Dovecot's behavior when time moves backwards is:
 
-- Existing imap and pop3 processes either sleep or die
+- Existing imap and [[link,pop3,pop3]] processes either sleep or die
 
 - Master process stops creating new processes until either the original
   time is reached, or after a maximum wait of 3 minutes.
@@ -67,7 +67,7 @@ The reason why imap/pop3 processes get killed and new ones can't be
 created for a while is to avoid problems related to timestamps. Some
 issues are:
 
-- Uniqueness of Maildir filenames and dbox global unique identifiers
+- Uniqueness of [[link,maildir,Maildir]] filenames and [[link,dbox,dbox]] global unique identifiers
   relies on a growing timestamp.
 
 - Dotlock files' staleness is detected by looking at its mtime.

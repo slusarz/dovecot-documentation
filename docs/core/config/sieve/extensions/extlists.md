@@ -7,14 +7,14 @@ dovecotlinks:
 
 # Sieve: Extlists Extension
 
-The extlists extension ([[rfc,6134]]) enables Sieve scripts to check membership
+The extlists extension ([[rfc,6134]]) enables [[link,sieve,Sieve]] scripts to check membership
 of a value in an external list or for redirecting messages to an external list
 of recipients. An "external list" is a list whose members are stored externally
 to the Sieve script. This extension adds a new ":list" match type to apply to
 supported tests and it can be be used to implement email whitelisting,
 blacklisting, addressbook lookups, and other sorts of list matching.
 
-For Dovecot, the external list is always implemented using a dict lookup.
+For Dovecot, the external list is always implemented using a [[link,dict,dict]] lookup.
 Redirecting messages to a list of recipients as described in the standard
 ([[rfc,6134]]) is currently not implemented in Dovecot and will always trigger
 an error if used.

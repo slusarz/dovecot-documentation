@@ -21,7 +21,7 @@ to error log at page [[link,logging]] as well.
 Killing the Dovecot master process with a normal TERM signal does a clean
 shutdown. This can be done easily with [[doveadm,stop]].
 
-[[setting,shutdown_clients]] controls whether existing IMAP and POP3
+[[setting,shutdown_clients]] controls whether existing IMAP and [[link,pop3,POP3]]
 sessions are killed.
 
 If you are using systemd, you need to set:
@@ -61,11 +61,11 @@ dovenull    7262  0.0  0.1   4016  1916 pts/0    S+   19:54   0:00 dovecot/pop3-
   through it.
 * `config` parses the configuration file and sends the configuration to
   other processes.
-* `auth` handles all authentication.
+* `auth` handles all [[link,authentication,authentication]].
 * `auth -w` process is an authentication worker process. It's used only
-  with some "blocking" authentication databases, such as [[link,auth_sql]].
+  with some "blocking" [[link,auth_databases,authentication databases]], such as [[link,auth_sql]].
 * `imap-login` and `pop3-login` processes handle new IMAP and POP3
-  connections until user has logged in. They also handle proxying SSL
+  connections until user has logged in. They also handle proxying [[link,ssl,SSL]]
   connections even after login.
 * `imap` and `pop3` processes handle the IMAP and POP3 connections after
   user has logged in.

@@ -8,7 +8,7 @@ dovecotlinks:
 # Dovecot Dict Protocol
 
 ::: info
-This document describes Dovecot Dict protocol v3.2 which is supported in
+This document describes Dovecot [[link,dict,Dict]] protocol v3.2 which is supported in
 Dovecot v2.3.17+.
 
 [[changed,dict_protocol_v4]] Dict protocol version was updated to v4, but

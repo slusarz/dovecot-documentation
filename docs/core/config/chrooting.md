@@ -14,17 +14,17 @@ manually setting up the chroot and it can be a bit tricky.
 Dovecot however supports internally running different parts of it in different
 chroots:
 
-- Login processes (imap-login, pop3-login) are chrooted by default into
+- [[link,login_processes,Login processes]] (imap-login, pop3-login) are chrooted by default into
   an empty non-writable directory.
 
-- Authentication process (dovecot-auth) can be chrooted by setting
+- [[link,authentication,Authentication]] process (dovecot-auth) can be chrooted by setting
   `chroot=<path>` inside `service auth` and/or
   `service auth-worker` sections. This could be a good idea to change
-  if you're not using a passdb or userdb that needs to access files
+  if you're not using a [[link,passdb,passdb]] or [[link,userdb,userdb]] that needs to access files
   outside of the chroot. Also make sure not to run the auth process as
   root then.
 
-- Mail processes (imap, pop3) can be made to chroot in different ways.
+- Mail processes (imap, [[link,pop3,pop3]]) can be made to chroot in different ways.
   See below.
 
 ## Security Problems

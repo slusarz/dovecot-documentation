@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Lua: mail-lua
 
-mail-lua is a plugin that can be loaded to provide API for mail storage Lua
+mail-lua is a plugin that can be loaded to provide API for mail storage [[link,lua,Lua]]
 plugins.
 
 mail-lua provides a common script to be used in mail storage instead

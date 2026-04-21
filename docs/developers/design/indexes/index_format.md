@@ -26,10 +26,10 @@ The mail index files are used in a few different places:
 
 * Mailbox indexes (`dovecot.index*`)
 * [`mailbox_list_index`](#mailbox-list-index) (`dovecot.list.index*`)
-* mdbox map index (`dovecot.map.index*`)
+* [[link,mdbox,mdbox]] map index (`dovecot.map.index*`)
 
-The mailbox index is optional for some mailbox formats (maildir, mbox), but
-required for all high performance mailbox formats (sdbox, mdbox).
+The mailbox index is optional for some [[link,mailbox_formats,mailbox formats]] ([[link,maildir,maildir]], [[link,mbox,mbox]]), but
+required for all high performance mailbox formats ([[link,sdbox,sdbox]], mdbox).
 
 The index files were implemented to optimize Dovecot, so the file formats
 attempt to be efficient. The index files are often mmap()ed into memory and
@@ -92,7 +92,7 @@ There are several advantages to having a transaction log:
   the mailbox by other processes. For example IMAP protocol needs to send
   the IMAP client a list of all mailbox changes after each IMAP command.
 
-  * This is also important when storing the index files in NFS or in a
+  * This is also important when storing the index files in [[link,nfs,NFS]] or in a
     clustered filesystem. Instead of re-reading the whole index file after
     each external change, Dovecot can simply read the new changes from the
     transaction log and apply them to the in-memory copy of the main index.
@@ -101,7 +101,7 @@ There are several advantages to having a transaction log:
   especially) since a specific point in time:
 
   * QRESYNC extension
-  * doveadm sync (dsync)
+  * [[link,doveadm,doveadm]] sync (dsync)
 
 See [Transaction Log](index_log) for more details.
 

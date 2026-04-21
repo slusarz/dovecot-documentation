@@ -119,7 +119,7 @@ Save the below scriptlet as `/etc/logrotate.d/dovecot`:
 ```
 
 ::: info
-doveadm is not working properly with SELinux (e.g. doveadm cannot read
+[[link,doveadm,doveadm]] is not working properly with SELinux (e.g. doveadm cannot read
 config file when called from logrotate context). SELinux safe postrotate
 alternative scriptlet:
 
@@ -132,7 +132,7 @@ alternative scriptlet:
 
 ## Internal Errors
 
-If IMAP or POP3 processes encounter some error, they don't show the
+If IMAP or [[link,pop3,POP3]] processes encounter some error, they don't show the
 exact reason for clients. Instead they show:
 
 ```
@@ -151,7 +151,7 @@ meant for you to help you find it.
 There are several settings that control logging verbosity. By default
 they're all disabled, but they may be useful for debugging.
 
-* [[setting,auth_verbose,yes]] enables logging all failed authentication
+* [[setting,auth_verbose,yes]] enables logging all failed [[link,authentication,authentication]]
   attempts.
 
 * [[setting,log_debug,category=auth]] enables all authentication debug
@@ -165,7 +165,7 @@ they're all disabled, but they may be useful for debugging.
 * [[setting,log_debug,category=mail]] enables all kinds of mail related
   debug logging, such as showing where Dovecot is looking for mails.
 
-* [[setting,verbose_ssl,category=ssl]] enables logging SSL errors and warnings.
+* [[setting,verbose_ssl,category=ssl]] enables logging [[link,ssl,SSL]] errors and warnings.
   Even without this setting if connection is closed because of an SSL
   error, the error is logged as the disconnection reason.
 

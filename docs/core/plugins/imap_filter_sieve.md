@@ -5,7 +5,7 @@ title: imap-filter-sieve
 
 # IMAP FILTER=SIEVE Plugin (`imap-filter-sieve`)
 
-Normally, Sieve filters can either be applied at initial mail delivery
+Normally, [[link,sieve,Sieve]] filters can either be applied at initial mail delivery
 or triggered by certain events in the Internet Message Access Protocol
 (IMAPSIEVE; [[rfc,6785]]).
 
@@ -55,5 +55,5 @@ Sieve plugin at delivery.
 
 The [[link,sieve_storage_type_before,before]],
 [[link,sieve_storage_type_after,after]] and
-[[link,sieve_storage_type_discard,discard]] Sieve script storage types are
+[[link,sieve_storage_type_discard,discard]] Sieve [[link,sieve_script_torage_type,script storage types]] are
 currently ignored by this plugin.

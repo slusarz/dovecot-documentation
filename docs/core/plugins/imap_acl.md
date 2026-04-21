@@ -5,7 +5,7 @@ title: imap-acl
 
 # IMAP ACL Plugin (`imap-acl`)
 
-This plugin implements the IMAP ACL ([[rfc,4314]]) extension.
+This plugin implements the IMAP [[link,acl,ACL]] ([[rfc,4314]]) extension.
 
 ## Settings
 

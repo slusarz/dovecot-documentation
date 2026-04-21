@@ -47,7 +47,7 @@ mailbox names behave with namespace configuration.
 
 ## Users and Owners
 
-When accessing other users' shared mailboxes, there's a difference
+When accessing other users' [[link,shared_mailboxes,shared mailboxes]], there's a difference
 between a namespace's user and owner:
 
 - `ns->user` points to the mail user actually accessing the mailbox

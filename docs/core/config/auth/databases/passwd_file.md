@@ -68,7 +68,7 @@ passdb passwd-file {
 To iterate databases that use [[variable]] expansion in the path, you need to provide enough information when using
 e.g. [[doveadm,user]] to iterate. For example [[doveadm,user,*@domain.com]] would match with ``%{user | domain}`` expansion in
 the above example, and [[doveadm,user,*]] would iterate `/etc/auth/passwd` if available.
-This iteration works with all doveadm mail commands similarly.
+This iteration works with all [[link,doveadm,doveadm]] mail commands similarly.
 
 ### Variables
 
@@ -151,7 +151,7 @@ with the Linux-style format. While that stanza often is `::0:0` use of
 `cut` is likely much safer than sed or other blind substitution.
 
 In `/etc/master.passwd`, a password of `* ` indicates that password
-authentication is disabled for that user and the token `*LOCKED*` prevents
+[[link,authentication,authentication]] is disabled for that user and the token `*LOCKED*` prevents
 all login authentication, so you might as well exclude those:
 
 ```sh

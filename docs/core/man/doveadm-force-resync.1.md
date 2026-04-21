@@ -29,7 +29,7 @@ dovecotComponent: core
 Under certain circumstances it may happen, that [[man,dovecot]] is
 unable to automatically solve problems with mailboxes. In such
 situations the **force-resync** command may be helpful. It tries to fix
-all problems. For sdbox and mdbox mailboxes the storage files will be
+all problems. For [[link,sdbox,sdbox]] and [[link,mdbox,mdbox]] mailboxes the storage files will be
 also checked.
 
 <!-- @include: include/global-options.inc -->

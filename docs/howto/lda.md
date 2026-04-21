@@ -45,7 +45,7 @@ dovecot_delivery:
   temp_errors = 64 : 69 : 70: 71 : 72 : 73 : 74 : 75 : 78
 ```
 
-LDA is now running using the local user's UID and GID. The mail is delivered
+[[link,lda,LDA]] is now running using the local user's UID and GID. The mail is delivered
 to the location specified by [[link,mail_location]].
 
 Note that the above configuration doesn't do any [[link,userdb]] lookups, so
@@ -161,7 +161,7 @@ see [[link,lda]] for more information about using the LDA itself.
 
 ### System Users
 
-If you wish you use `dovecot-lda` for all system users on a single
+If you wish you use `dovecot-lda` for all [[link,system_users,system users]] on a single
 domain mail host you can do it by editing `mailbox_command` parameter
 in `/etc/postfix/main.cf`
 ([`postconf(5)`](http://www.postfix.org/postconf.5.html)):
@@ -215,7 +215,7 @@ Then run `postfix reload`.
 
 - Postfix's `mailbox_size_limit` setting applies to all files that
   are written via dovecot-lda. The default is 50 MB, so dovecot-lda
-  can't write **any** files larger than that, including mbox files or
+  can't write **any** files larger than that, including [[link,mbox,mbox]] files or
   log files. This shows up only in Dovecot's logs:
 
   ```
@@ -237,7 +237,7 @@ dovecot   unix  -       n       n       -       -       pipe
 
 An example using address extensions (i.e. user+extension@domain.com (don't
 forget to define the proper recipient_delimiter in Postfix's main.cf))
-to deliver to the folder 'extension' in your maildir (If you wish to
+to deliver to the folder 'extension' in your [[link,maildir,maildir]] (If you wish to
 preserve the case of `${extension}`, remove the `hu`
 [flags](http://www.postfix.org/pipe.8.html), and be sure to utilize
 [[variable]] in your `dovecot.conf` for mail locations and other
@@ -254,7 +254,7 @@ dovecot unix    -       n       n       -       -      pipe
 
 This example ignores address extensions (ie user+extension@domain.com
 delivers just like user@domain.com ), but still shows the original
-address for Sieve:
+address for [[link,sieve,Sieve]]:
 
 ```
 dovecot   unix  -       n       n       -       -       pipe
@@ -281,7 +281,7 @@ root or invoke it through sudo. See [[link,lda]] for how to do this securely.
 ### Postfix with a NFS mail store
 
 If you are experiencing problems with dovecot-lda processes hanging when
-delivering to an NFS mail store, it's likely that the dovecot-lda
+delivering to an [[link,nfs,NFS]] mail store, it's likely that the dovecot-lda
 process is hanging while waiting for free locks. The occurrence of this
 can be greatly reduced, if not eradicated, by forcing Postfix to only
 deliver to the same recipient one at a time.
@@ -307,7 +307,7 @@ recipients can be found in the local password or alias database.
 
 #### Virtual users (static)
 
-When you use virtual users and domains you should maintain a list of
+When you use [[link,virtual_users,virtual users]] and domains you should maintain a list of
 valid recipients. The relevant settings are:
 
 **virtual_alias_maps, virtual_mailbox_maps**
@@ -329,7 +329,7 @@ recipient@example.com  available
 Don't forget to run "postmap" afterwards.
 
 ::: info
-If you use the Dovecot LDA or LMTP it doesn't matter what you
+If you use the Dovecot LDA or [[link,lmtp,LMTP]] it doesn't matter what you
 use behind the recipient address. Use "OK", the full name of the user or
 else.
 :::

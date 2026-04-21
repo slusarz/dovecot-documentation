@@ -122,7 +122,7 @@ used to kick users' connections.
 * [[setting_text,service_idle_kill_interval,idle_kill_interval=infinite]],
   because it should never die or all of its tracked state would be lost.
 
-* [[doveadm,who]] and some other doveadm commands connect to anvil's UNIX
+* [[doveadm,who]] and some other [[link,doveadm,doveadm]] commands connect to anvil's UNIX
   listener and request its state.
 
 ### auth
@@ -130,23 +130,23 @@ used to kick users' connections.
 The master auth process. There are 4 types of auth client connections:
 
 **auth**
-:   Only [[link,sasl]] authentication is allowed. This can be safely
+:   Only [[link,sasl]] [[link,authentication,authentication]] is allowed. This can be safely
     exposed to entire world.
 
 **userdb**
-:   userdb lookups and passdb lookups (without the password itself) can
+:   [[link,userdb,userdb]] lookups and [[link,passdb,passdb]] lookups (without the password itself) can
     be done for any user, and a list of users can be requested. This may
     or may not be a security issue. Access to userdb lookup is commonly
     needed by [[link,lda]], doveadm, and other tools.
 
 **login**
 :   Starts a two phase user login by performing authenticating (same as
-    `client` type). Used by login processes.
+    `client` type). Used by [[link,login_processes,login processes]].
 
 **master**
 :   Finishes the two phase user login by performing a userdb lookup
     (similar to "userdb" type). Used by post-login processes (e.g. imap,
-    pop3).
+    [[link,pop3,pop3]]).
 
 ::: info [[changed,service_auth_listener_type]]
 The listener type is configured explicitly using the **type** field.
@@ -224,7 +224,7 @@ parsed data in simpler format to config clients.
   are no secrets in the configuration.
 
   Passwords are obviously secrets, but less obviously [[setting,ssl_server_key_file]]
-  is also a secret, since it contains the actual SSL key data instead of
+  is also a secret, since it contains the actual [[link,ssl,SSL]] key data instead of
   only a filename.
 
 ### dict
@@ -311,7 +311,7 @@ doveadm can automatically connect to the correct backend to run the command.
 
 ### imap, pop3, submission, managesieve
 
-Post-login process for handling IMAP/POP3/Submission/ManageSieve client
+Post-login process for handling IMAP/POP3/[[link,submission,Submission]]/[[link,managesieve,ManageSieve]] client
 connections.
 
 * [[setting_text,service_client_limit,client_limit]] may be increased from the
@@ -394,7 +394,7 @@ service indexer-worker {
 
 ### lmtp
 
-LMTP process for delivering new mails.
+[[link,lmtp,LMTP]] process for delivering new mails.
 
 * [[setting_text,service_client_limit,client_limit=1]], because most of the
   time spent on an LMTP client is spent waiting for disk I/O and other blocking
@@ -418,7 +418,7 @@ LMTP process for delivering new mails.
 
 All processes started via Dovecot master process log their messages via
 the `log` process. This allows some nice features compared to directly
-logging via syslog.
+[[link,logging,logging]] via syslog.
 
 * [[setting_text,service_process_limit,process_limit=1]], because the log
   process keeps track of all the other logging processes.
@@ -429,7 +429,7 @@ logging via syslog.
 ### stats
 
 Event statistics tracking. Its behavior is very similar to the anvil process,
-but anvil's data is of higher importance and lower traffic than stats, so stats
+but anvil's data is of higher importance and lower traffic than [[link,stats,stats]], so stats
 are tracked in a separate process.
 
 * [[setting_text,service_client_limit,client_limit]] should be large enough to

@@ -61,7 +61,7 @@ are disconnected.
     setting was overridden in */etc/dovecot/dovecot.conf*.
 
 **-f** *passdb_field*
-:   Alternative username field to use for kicking, as returned by passdb.
+:   Alternative username field to use for kicking, as returned by [[link,passdb,passdb]].
     Only the passdb fields beginning with the *user\_* prefix are
     tracked.
 

@@ -13,7 +13,7 @@ Typically plugins add hooks in their init() function by calling
 
 ### `mail_user_created`
 
-A new mail user was created. It doesn't yet have any namespaces.
+A new mail user was created. It doesn't yet have any [[link,namespaces,namespaces]].
 
 ### `mail_storage_created`
 
@@ -37,7 +37,7 @@ used if plugin wants to override mailbox_list's methods.
 User's all namespaces have been created.
 
 This hook is called only per user at startup. More internal
-namespaces may be created later when using shared mailboxes.
+namespaces may be created later when using [[link,shared_mailboxes,shared mailboxes]].
 
 ### `mail_namespaces_added`
 

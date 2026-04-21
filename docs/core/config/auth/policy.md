@@ -33,7 +33,7 @@ Auth policy overrides some of the default HTTP client settings:
 * [[setting,http_client_max_parallel_connections,100]]
 * [[setting,http_client_user_agent,dovecot/auth-policy-client]]
 
-You can override these and any other HTTP client or SSL settings by placing
+You can override these and any other HTTP client or [[link,ssl,SSL]] settings by placing
 them inside [[setting,auth_policy]] [[link,settings_syntax_named_filters]].
 
 <SettingsComponent tag="auth_policy" />
@@ -193,7 +193,7 @@ Overall indicator whether the request succeeded or not.
 ### Auth Policy check: Authentication 'Before' userdb/passdb
 
 First query is done **before** password and user databases are
-consulted. This means that any userdb/passdb attributes are left empty.
+consulted. This means that any [[link,userdb,userdb]]/[[link,passdb,passdb]] attributes are left empty.
 
 The command used here is `allow` and will appear on the URL as
 `command=allow`.

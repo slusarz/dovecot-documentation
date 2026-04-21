@@ -60,7 +60,7 @@ Triggers for FTS indexing are configurable. It can be started on demand when
 searching, or automatically when new messages arrive or as a batch job.
 
 By default the FTS indexes are updated only while searching, so neither
-LDA/LMTP nor an IMAP 'APPEND' command updates the indexes immediately. This
+[[link,lda,LDA]]/[[link,lmtp,LMTP]] nor an IMAP 'APPEND' command updates the indexes immediately. This
 means that if a user has received a lot of mail since the last indexing
 (i.e., the last search operation), it may take a while to index all the new
 mails before replying to the search command. Dovecot sends periodic "\* OK

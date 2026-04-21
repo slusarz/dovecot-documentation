@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Sieve Troubleshooting
 
-This page explains how to approach problems with Sieve.
+This page explains how to approach problems with [[link,sieve,Sieve]].
 
 ## Common Problems
 
@@ -57,7 +57,7 @@ support by default.
 Sieve support is provided as a separate plugin that needs to be enabled
 by adding it to [[setting,mail_plugins]] in the `protocol lda {...}` section
 for the LDA and the `protocol lmtp {...}` section for LMTP. If this
-is omitted, Sieve scripts are ignored. See [[plugin,sieve]].
+is omitted, Sieve scripts are ignored. See Sieve.
 
 Without actually running LDA, you can also check if executing
 `doveconf -f service=lda mail_plugins` includes "sieve".

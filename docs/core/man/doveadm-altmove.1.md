@@ -30,7 +30,7 @@ dovecotComponent: core
 
 ## DESCRIPTION
 
-This command can be used with sdbox or mdbox storage to move mails to
+This command can be used with [[link,sdbox,sdbox]] or [[link,mdbox,mdbox]] storage to move mails to
 alternative storage path when *mail_alt_path* is specified for the mail
 location.
 
@@ -73,7 +73,7 @@ moved to the alternative storage.
 ## FILES
 
 */etc/dovecot/conf.d/10-mail.conf*
-:   Mailbox locations and namespaces.
+:   Mailbox locations and [[link,namespaces,namespaces]].
 
 ## EXAMPLE
 

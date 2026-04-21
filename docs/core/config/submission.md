@@ -57,7 +57,7 @@ provide a basis for adding all kinds of functionality in the (not so distant)
 future. For the first time, it will be possible to act upon message
 submission, rather than only message retrieval; e.g. plugins can be devised
 that process outgoing messages somehow. Examples of the things that could be
-implemented are adding Sieve filtering support for outgoing messages, or
+implemented are adding [[link,sieve,Sieve]] filtering support for outgoing messages, or
 implicitly storing submitted messages to the Sent folder. Once a plugin API
 is devised, you can create your own plugins.
 :::
@@ -93,7 +93,7 @@ service:
 Add `submission` to the [[setting,protocols]] setting and configure the relay
 MTA server.
 
-The submission service is a login service, just like IMAP, POP3 and
+The submission service is a login service, just like IMAP, [[link,pop3,POP3]] and
 [[link,managesieve]], so clients are required to authenticate.
 
 The same [[link,authentication,authentication configuration]] will apply to

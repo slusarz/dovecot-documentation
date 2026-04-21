@@ -85,9 +85,9 @@ auth_krb5_keytab = /etc/dovecot/keytab
 
 This should enable GSSAPI support for Dovecot.
 
-GSSAPI requires at least one passdb configured. Note that authentication
+GSSAPI requires at least one [[link,passdb,passdb]] configured. Note that authentication
 will normally succeed, even if user is not found in any passdb. Please
-configure a userdb if you do not want this.
+configure a [[link,userdb,userdb]] if you do not want this.
 
 ### Specifying Accepted Credential
 

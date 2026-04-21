@@ -14,7 +14,7 @@ The ManageSieve ([[rfc,5804]]) service is used to manage a user's
 It has the following advantages over doing it directly via filesystem:
 
 * No need to let users log in via FTP/SFTP/etc, which could be difficult
-  especially with virtual users.
+  especially with [[link,virtual_users,virtual users]].
 * ManageSieve is a standard protocol ([[rfc,5804]]), so users can manage
   their scripts using (hopefully) user-friendly ManageSieve
   clients. Many webmails already include a ManageSieve client.
@@ -66,7 +66,7 @@ accepts a few more. The following settings can be configured in the
 
 The part of the [[link,sieve]] configuration that is relevant
 for ManageSieve mainly consists of the configuration of the
-[[link,sieve_storage_type_personal,personal]] Sieve script storage type.
+[[link,sieve_storage_type_personal,personal]] Sieve [[link,sieve_storage,script storage]] type.
 Currently, only the [[link,sieve_storage_file,file driver]] Sieve script
 storage driver supports the management functions needed by Managesieve. For
 ManageSieve, the configuration of [[setting,sieve_script_active_path]] is
@@ -167,9 +167,9 @@ sieve_script personal {
 
 ### Proxy
 
-Like Dovecot's imap server, the ManageSieve login daemon supports proxying to
+Like Dovecot's [[link,imap_server,imap server]], the ManageSieve login daemon supports proxying to
 multiple backend servers. The [[link,authentication_proxies]] page
-for POP3 and IMAP applies automatically to ManageSieve as well.
+for [[link,pop3,POP3]] and IMAP applies automatically to ManageSieve as well.
 
 ## Troubleshooting
 
@@ -228,7 +228,7 @@ OK "Dovecot ready."
 Note that the reported `STARTTLS` capability means that the server
 accepts TLS, but, since you are using telnet/netcat, you cannot use this
 (refer to Manual TLS Login below). The `SASL` capability lists the
-available SASL authentication mechanisms. If this list is empty and
+available [[link,sasl,SASL]] [[link,authentication_mechanisms,authentication mechanisms]]. If this list is empty and
 `STARTTLS` is available, it probably means that the server forces you
 to initiate TLS first (as dictated by [[setting,auth_allow_cleartext,yes]]
 in `dovecot.conf`).

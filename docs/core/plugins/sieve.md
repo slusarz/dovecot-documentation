@@ -56,7 +56,7 @@ dovecotlinks:
 
 ## Configuration
 
-To use Sieve, you will first need to make sure you are using Dovecot
+To use [[link,sieve,Sieve]], you will first need to make sure you are using Dovecot
 [[link,lda]] or [[link,lmtp]] for delivering incoming mail to users'
 mailboxes.
 
@@ -79,7 +79,7 @@ protocol lmtp {
 ## Script storage
 
 Sieve scripts are retrieved from a script storage. This can currently be the
-local filesystem, an LDAP database or any dict storage. Depending on the storage
+local filesystem, an LDAP database or any [[link,dict,dict]] storage. Depending on the storage
 implementation, its type and its configuration, storages can contain one script,
 several scripts identified by name, and a series of scripts in a well-defined
 order to be executed in sequence.
@@ -93,10 +93,10 @@ sieve_script personal {
 ```
 
 The storage name (`personal` in the example) is used internally within
-configurations, as an identifier for logging, and as an identifier for command
+configurations, as an identifier for [[link,logging,logging]], and as an identifier for command
 line tools. It also allows updating a storage that was defined earlier - by
 repeating the [[setting,sieve_script]] block and adding additional configuration
-settings - or it allows userdb to override storage settings for specific users.
+settings - or it allows [[link,userdb,userdb]] to override storage settings for specific users.
 
 ### Script storage types
 
@@ -118,8 +118,8 @@ the configuration is used.
 The LDA Sieve plugin uses the personal storage to find the active script for
 Sieve filtering at delivery. If the storage supports storing more than a single
 script (e.g. the [[link,sieve_storage_file,file storage]] does), personal
-scripts can also be retrieved by name. The Sieve include extension will then use
-this  storage for retrieving `:personal` scripts and the ManageSieve service
+scripts can also be retrieved by name. The [[link,sieve_include,Sieve include extension]] will then use
+this  storage for retrieving `:personal` scripts and the [[link,managesieve,ManageSieve]] service
 will be able to store the user's scripts there.
 
 If the storage supports storing more than a single script, only one of those
@@ -166,7 +166,7 @@ the configuration is used.
 
 If [[setting,sieve_script_name]] is set for this script storage, the default
 script can be seen and accessed by this name through ManageSieve (and
-doveadm sieve). See [[link,sieve_visible_default_script]].
+[[link,doveadm,doveadm]] sieve). See [[link,sieve_visible_default_script]].
 
 This is usually a global script, so be sure to pre-compile the specified
 script manually in that case using the sievec command line tool, as
@@ -265,7 +265,7 @@ to this driver:
 
 If the [[setting,sieve_script_name]] setting is not configured and the Sieve
 script is not retrieved by name (e.g. using the
-[[link,sieve_include,include extension]] or by [[link,managesieve]]), the name
+Sieve include extension or by ManageSieve), the name
 defaults to the file name without the `.sieve` suffix.
 
 ##### `sieve_script_bin_path`
@@ -292,7 +292,7 @@ sieve_script default {
 
 ### Dict storage driver
 
-To retrieve a Sieve script from a [[link,dict]] database, two lookups are
+To retrieve a Sieve script from a dictionary database, two lookups are
 performed.
 
 First, the name of the Sieve script is queried from the dict

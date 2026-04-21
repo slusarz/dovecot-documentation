@@ -94,7 +94,7 @@ mail_attribute {
 }
 ```
 
-In this case when mail attributes are being accessed, the dict settings are
+In this case when mail attributes are being accessed, the [[link,dict,dict]] settings are
 looked up using the named filter called `mail_attribute`. Note that named
 filters cannot have a name before the `{`, i.e. `mail_attribute foo {` will
 result in an error.
@@ -194,7 +194,7 @@ namespace inbox { prefix = INBOX/ } # DOES NOT WORK
 
 ## Named Filter Overrides
 
-It's possible to add/update/replace named (list) filters via userdb settings or
+It's possible to add/update/replace named (list) filters via [[link,userdb,userdb]] settings or
 via `-o` command line parameters. For example if you have:
 
 ```doveconf[dovecot.conf]

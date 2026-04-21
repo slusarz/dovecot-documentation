@@ -25,7 +25,7 @@ messages in/out of the Spam mailbox.
 ::: warning
 **You cannot run shell scripts anywhere you want.**
 
-Sieve allows you to only run scripts under [[setting,sieve_pipe_bin_dir]]. You
+[[link,sieve,Sieve]] allows you to only run scripts under [[setting,sieve_pipe_bin_dir]]. You
 can't use `/usr/local/bin/my-sieve-filter.sh`, you have to put the
 script under `sieve_pipe_bin_dir` and use `my-sieve-filter.sh` in the
 script instead.
@@ -124,7 +124,7 @@ to do classification.
 - INBOX name is case-sensitive
 
 - [[plugin,imap-sieve]] will **only** apply to IMAP. It **will not** apply
-  to LDA or LMTP. Use [[link,sieve]] normally for LDA/LMTP.
+  to [[link,lda,LDA]] or [[link,lmtp,LMTP]]. Use Sieve normally for LDA/LMTP.
 
 - With this configuration, moving mails will slow down due to learn
   being done per email. If you want to avoid this, you need to think of
@@ -137,7 +137,7 @@ to do classification.
 - Please read [[link,sieve_plugins]] for more information about sieve
   extensions.
 
-- If you run SpamAssassin trough Amavis and you use a virtual users
+- If you run SpamAssassin trough Amavis and you use a [[link,virtual_users,virtual users]]
   setup, you should instead configure SpamAssassin to use
   MySQL/PostgreSQL as a backend, unless you want a headache with file
   permissions and lock files.

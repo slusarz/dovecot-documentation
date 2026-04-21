@@ -185,7 +185,7 @@ is usually not running as root at this point, so you may need to adjust file
 permissions.
 
 It's possible to give inline values (instead of a path to a file) for the
-setting by using `inline:` prefix in the value. For example userdb could be
+setting by using `inline:` prefix in the value. For example [[link,userdb,userdb]] could be
 returning `crypt_global_public_key_file=inline:<public key content>` without
 having to use files.
 

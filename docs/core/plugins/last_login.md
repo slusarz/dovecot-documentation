@@ -8,18 +8,18 @@ dovecotlinks:
 # Last Login Plugin (`last-login`)
 
 This plugin can be used to update user's last-login timestamp in a configured
-dictionary.
+[[link,dict,dictionary]].
 
-Last login information is useful for troubleshooting scenarios, which usually
+Last login information is useful for [[link,troubleshooting,troubleshooting]] scenarios, which usually
 starts with end user contacting customer care agent that the mailbox is
 unreachable or empty. Amongst the first things is to check when the customer
 last successfully did login to the mailbox and using which protocol, as this
-might indicate that there might be some device with POP3 configured thus
+might indicate that there might be some device with [[link,pop3,POP3]] configured thus
 emptying the mailbox. Last login feature is designed for this use case, to
 allow easy way to search per any account the timestamp of last login or last
 mail delivery to the mailbox.
 
-Last login information is also useful in determining system usage statistics.
+Last login information is also useful in determining system usage [[link,stats,statistics]].
 
 ## Settings
 
@@ -52,7 +52,7 @@ In this example, last_login plugin is explicitly enabled only for imap & pop3
 protocols.
 
 If enabled globally, it'll also update the timestamp whenever new mails are
-delivered via lda/lmtp or when doveadm is run for the user. This can also be
+delivered via [[link,lda,lda]]/[[link,lmtp,lmtp]] or when [[link,doveadm,doveadm]] is run for the user. This can also be
 thought of as a feature, so if you want to update a different timestamp for
 user when new mails are delivered, you can do that by enabling the last_login
 plugin also for lda/lmtp and changing the [[setting,last_login_key]] setting

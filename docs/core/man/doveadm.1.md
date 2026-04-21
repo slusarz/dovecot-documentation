@@ -97,7 +97,7 @@ Stop [[man,dovecot]] and all its child processes.
 
 ### doveadm acl
 
-[[man,doveadm-acl]], Manage Access Control List (ACL).
+[[man,doveadm-acl]], Manage Access Control List ([[link,acl,ACL]]).
 
 ### doveadm altmove
 
@@ -173,7 +173,7 @@ into another mailbox.
 
 ### doveadm purge
 
-[[man,doveadm-purge]], Remove messages with refcount=0 from mdbox
+[[man,doveadm-purge]], Remove messages with refcount=0 from [[link,mdbox,mdbox]]
 files.
 
 ### doveadm quota
@@ -195,7 +195,7 @@ UIDs matching given search query.
 
 ### doveadm stats
 
-[[man,doveadm-stats]], Inspect or reset stats.
+[[man,doveadm-stats]], Inspect or reset [[link,stats,stats]].
 
 ### doveadm sync
 
@@ -250,7 +250,7 @@ UIDs matching given search query.
 :   Dovecot's main configuration file.
 
 */etc/dovecot/conf.d/10-mail.conf*
-:   Mailbox locations and namespaces.
+:   Mailbox locations and [[link,namespaces,namespaces]].
 
 */etc/dovecot/conf.d/90-plugin.conf*
 :   Plugin specific settings.

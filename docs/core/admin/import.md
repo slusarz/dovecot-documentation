@@ -74,7 +74,7 @@ Note that there is no way to make this solution perfect:
 
 * IMAP clients that have cached mails locally will delete their local caches
   and have to re-download mails later on.
-* POP3 clients that leave mails on server will notice all the mails are gone,
+* [[link,pop3,POP3]] clients that leave mails on server will notice all the mails are gone,
   and delete their local UIDL caches. When old mails come back, they're
   re-downloaded as new emails (duplicates).
 

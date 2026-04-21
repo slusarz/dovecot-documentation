@@ -47,7 +47,7 @@ dovecotComponent: core
 ## DESCRIPTION
 
 **doveadm save** can be used to save messages. This can be useful for
-scripts and for debugging. Sieve is not invoked for saved messages, but
+scripts and for debugging. [[link,sieve,Sieve]] is not invoked for saved messages, but
 quota is enforced.
 
 <!-- @include: include/global-options.inc -->

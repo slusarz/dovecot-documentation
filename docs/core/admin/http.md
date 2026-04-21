@@ -18,7 +18,7 @@ Dovecot's lib-http uses custom HTTP response codes for some error
 conditions.
 
 In certain locations, e.g. [[link,lua_lib-http]], these codes may be visible
-to an admin or in logging, so these response codes must be handled in the
+to an admin or in [[link,logging,logging]], so these response codes must be handled in the
 same way that standard RFC codes are.
 
 | Number | Code | Description |

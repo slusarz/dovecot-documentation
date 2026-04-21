@@ -8,18 +8,18 @@ dovecotComponent: pigeonhole
 
 ## SYNOPSIS
 
-**sievec** [*options*] *script-file* [*out-file*]
+**[[link,sievec,sievec]]** [*options*] *script-file* [*out-file*]
 
 ## DESCRIPTION
 
 The **sievec** command is part of Pigeonhole ([[man,pigeonhole,,7]]),
-which adds Sieve ([[rfc,5228]]) and ManageSieve ([[rfc,5804]]) support to
+which adds [[link,sieve,Sieve]] ([[rfc,5228]]) and [[link,managesieve,ManageSieve]] ([[rfc,5804]]) support to
 Dovecot ([[man,dovecot]]).
 
 Using the **sievec** command, Sieve scripts can be compiled into a
 binary representation. The resulting binary can be used directly to
 process e-mail messages during the delivery process. The delivery of
-mail messages and - by means of the LDA Sieve plugin - also the
+mail messages and - by means of the [[link,lda,LDA]] Sieve plugin - also the
 execution of Sieve scripts is performed by Dovecot's local delivery
 agent (LDA) called [[man,dovecot-lda]].
 

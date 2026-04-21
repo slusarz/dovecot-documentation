@@ -44,7 +44,7 @@ liblib:
 - [Events](events)
 - [Plugins](plugins)
 
-lib-dcrypt:
+[[link,lib_dcrypt,lib-dcrypt]]:
 
 - [lib-dcrypt Data Formats](dcrypt)
 
@@ -53,13 +53,13 @@ lib-storage:
 - [Mail User](mail_user) contains everything related to
   a single user.
 - [Mail Namespace](mail_namespace) A single user can
-  contain multiple namespaces.
+  contain multiple [[link,namespaces,namespaces]].
 - [Mailbox List](mailbox_list) is used to list/manage
   a list of mailboxes for a single namespace (1:1 relationship).
 - [Mail Storage](mail_storage) is used to access mails
   in a specific location with a specific mailbox format. Multiple namespaces
   can point to the same storage. A single namespace may in future (but not
-  currently) point to multiple storages (e.g. a mixed mbox and Maildir
+  currently) point to multiple storages (e.g. a mixed [[link,mbox,mbox]] and [[link,maildir,Maildir]]
   directory).
 - [Mailbox](mailbox) is used to access a specific mailbox
   in a storage.

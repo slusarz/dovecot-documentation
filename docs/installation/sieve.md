@@ -14,8 +14,8 @@ dovecotlinks:
 This is the recommended way of installing Dovecot/Pigeonhole.
 :::
 
-Pigeonhole is the name of the project that adds support for the Sieve
-language ([[rfc,5228]]) and the ManageSieve protocol ([[rfc,5804]]) to
+Pigeonhole is the name of the project that adds support for the [[link,sieve,Sieve]]
+language ([[rfc,5228]]) and the [[link,managesieve,ManageSieve]] protocol ([[rfc,5804]]) to
 Dovecot ([[man,dovecot]]).
 
 You can get pigeonhole packages from https://repo.dovecot.org/.

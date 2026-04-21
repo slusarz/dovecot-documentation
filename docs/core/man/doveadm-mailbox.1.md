@@ -55,7 +55,7 @@ dovecotComponent: core
 
 This command is used to create one or more mailboxes. The mailbox format
 of the created mailboxes depends on the *mail_driver* setting, or the
-user's *mail* field, returned by the userdb.
+user's *mail* field, returned by the [[link,userdb,userdb]].
 
 **-g** *guid*
 :   Create the mailbox with the specified GUID.
@@ -361,7 +361,7 @@ This command is used to unsubscribe one or more mailboxes.
 This command is used to set UID validity, next UID, first recent UID and
 modification sequence values.
 
-Usually this is only ever to be used during migration, or restoring
+Usually this is only ever to be used during [[link,migration,migration]], or restoring
 mailbox after disaster. Settings these values is highly discouraged, and
 is not supported for all mail backends.
 

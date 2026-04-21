@@ -53,7 +53,7 @@ Three plugins are associated with quota:
 | ---- | ----------- |
 | [[plugin,imap-quota]] | Enables IMAP commands for requesting and administering current quota. |
 | quota (this plugin) | Implements the actual quota handling and includes all quota drivers. |
-| [[plugin,quota-clone]] | Copy the current quota usage to a dict. |
+| [[plugin,quota-clone]] | Copy the current quota usage to a [[link,dict,dict]]. |
 
 ## Configuration
 
@@ -139,7 +139,7 @@ against the quota at all.
 
 You can override the quota settings in your [[link,userdb_extra_fields]]. Keep
 global settings in configuration plugin section and override only those
-settings you need to in your userdb.
+settings you need to in your [[link,userdb,userdb]].
 
 Use [[doveadm,user]] command to verify that the userdb returns the expected
 quota settings.
@@ -231,7 +231,7 @@ quota "User quota" {
 }
 ```
 
-Note that globally configured quota roots are used only for private namespaces.
+Note that globally configured quota roots are used only for private [[link,namespaces,namespaces]].
 
 ### Quota for Private Namespaces
 
@@ -339,7 +339,7 @@ quota "User quota" {
 ### Driver: fs
 
 The `fs` (filesystem) quota driver supports both local filesystems and
-rquota (NFS).
+rquota ([[link,nfs,NFS]]).
 
 #### Configuration
 
@@ -377,7 +377,7 @@ making it impossible to expunge any mails.
 If user has run out of quota and index files are also in memory (because
 they're also over quota), it's possible that message flag changes are lost.
 This should be pretty rare though because Dovecot keeps some extra space
-allocated inside the mbox file for flag changes.
+allocated inside the [[link,mbox,mbox]] file for flag changes.
 
 Example:
 
@@ -390,7 +390,7 @@ mail_index_path = /var/no-quotas/index/%{user}
 
 #### Maildir
 
-Maildir needs to be able to add UIDs of new messages to `dovecot-uidlist`
+[[link,maildir,Maildir]] needs to be able to add UIDs of new messages to `dovecot-uidlist`
 file. If it can't do this, it can give an error when opening the mailbox,
 making it impossible to expunge any mails.
 

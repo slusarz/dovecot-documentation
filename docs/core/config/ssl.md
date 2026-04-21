@@ -72,14 +72,14 @@ There are a couple of different ways to specify when SSL/TLS is required:
 
 * [[setting,ssl,yes]] and [[setting,auth_allow_cleartext,yes]]: SSL/TLS
   is offered to the client, but the client isn't required to use it. The
-  client is allowed to login with cleartext authentication even when SSL/TLS
+  client is allowed to login with cleartext [[link,authentication,authentication]] even when SSL/TLS
   isn't enabled on the connection. This is insecure, because the
   cleartext password is exposed to the internet.
 
 * [[setting,ssl,yes]] and [[setting,auth_allow_cleartext,no]]: SSL/TLS
   is offered to the client, but the client isn't required to use it. The
   client isn't allowed to use cleartext authentication, unless SSL/TLS is
-  enabled first. However, if non-cleartext authentication mechanisms are
+  enabled first. However, if non-cleartext [[link,authentication_mechanisms,authentication mechanisms]] are
   enabled they are still allowed even without SSL/TLS.
 
   Depending on how secure they are, the authentication is either fully
@@ -110,7 +110,7 @@ There are a couple of different ways to specify when SSL/TLS is required:
   Dovecot attempts to indicate this to the IMAP clients via the
   LOGINDISABLED capability, but many clients still ignore it and send
   the password anyway. There is unfortunately no way for Dovecot to
-  prevent this behavior. The POP3 standard doesn't have an equivalent
+  prevent this behavior. The [[link,pop3,POP3]] standard doesn't have an equivalent
   capability at all, so the POP3 clients can't even know if the server
   would accept a cleartext authentication.
   :::
@@ -120,7 +120,7 @@ There are a couple of different ways to specify when SSL/TLS is required:
   [[setting,ssl,required]], it guarantees that the entire connection is
   protected against eavesdropping (SSL/TLS encrypts the rest of the
   connection), while [[setting,auth_allow_cleartext,no]] only guarantees
-  that the password is protected against eavesdropping (SASL mechanism
+  that the password is protected against eavesdropping ([[link,sasl,SASL]] mechanism
   is encrypted, but no SSL/TLS is necessarily used). Nowadays you most
   likely should be using SSL/TLS anyway for the entire connection, since
   the cost of SSL/TLS is cheap enough. Using both SSL/TLS and
@@ -141,7 +141,7 @@ The value of [[setting,ssl]] influences whether a connection is considered
 
 * [[link,haproxy_tls_forward]] are always `secured`.
 
-  * This is true even if HAProxy isn't running on the same server as
+  * This is true even if [[link,haproxy,HAProxy]] isn't running on the same server as
     Dovecot, and the connection between HAProxy and Dovecot isn't secured.
 
     The reasoning here is that this kind of a configuration is most likely
@@ -257,7 +257,7 @@ local_name imap.example2.org {
 [[added,ssl_sni_settings_reload_added]]: A server can reload different SSL
 certificates and other related settings using SNI (e.g.
 [[setting,login_greeting]] or [[setting,postmaster_address]]). The reloading of
-settings based on SNI is supported for IMAP, SMTP and LMTP.
+settings based on SNI is supported for IMAP, SMTP and [[link,lmtp,LMTP]].
 
 #### Client Support
 
@@ -391,7 +391,7 @@ openssl crl -in class3-revoke.crl -inform DER -outform PEM > class3-revoke.pem
 With the above settings, if a client connects which doesn't present a
 certificate signed by one of the CAs in the [setting,ssl_server_ca_file]], Dovecot won't
 let the user log in. This could present a problem if you're using Dovecot
-to provide SASL authentication for an MTA (such as Postfix) which is not
+to provide SASL authentication for an [[link,mta,MTA]] (such as Postfix) which is not
 capable of supplying client certificates for SASL authentication.
 
 If you need Dovecot to provide SASL authentication to an MTA without
@@ -420,7 +420,7 @@ setting [[setting,auth_ssl_username_from_cert,yes]].
 
 You may also want to disable the password checking completely. Doing this
 currently circumvents Dovecot's security model so it's not recommended to
-use it, but it is possible by making the passdb allow logins using any
+use it, but it is possible by making the [[link,passdb,passdb]] allow logins using any
 password (typically requiring `nopassword` extra field to be returned).
 
 ## Testing

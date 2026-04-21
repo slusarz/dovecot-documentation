@@ -8,13 +8,13 @@ dovecotlinks:
 # Lua Director
 
 ::: warning
-This is an unsupported method of running Dovecot. Caveat emptor.
+This is an unsupported method of [[link,running_dovecot,running Dovecot]]. Caveat emptor.
 
 It is only intended for small-scale deployments - this is NOT designed to
 scale for more than a few servers.
 :::
 
-Small scale deployments using NFS or other shared storage need a way to
+Small scale deployments using [[link,nfs,NFS]] or other shared storage need a way to
 ensure users end up in same backend. For this purpose, a simple
 [[link,lua,Lua script]] can be used.
 
@@ -82,7 +82,7 @@ functionality, you can create an entry yourself with the appropriate backend.
 
 There are few ways you can use this script.
 
-First, is drop-in replacement for director with no authentication.
+First, is drop-in replacement for director with no [[link,authentication,authentication]].
 
 ```doveconf[dovecot.conf]
 passdb lua {

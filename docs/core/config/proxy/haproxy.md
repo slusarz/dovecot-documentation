@@ -27,7 +27,7 @@ software.
 For Dovecot to recognize that TLS termination has been performed, you need to
 configure haproxy to use
 [PROXYv2](https://www.haproxy.org/download/1.8/doc/proxy-protocol.txt)
-protocol with SSL attributes. For example:
+protocol with [[link,ssl,SSL]] attributes. For example:
 
 ```
 server s1 127.0.0.1:143 send-proxy-v2-ssl

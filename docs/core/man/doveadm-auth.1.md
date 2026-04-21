@@ -8,12 +8,12 @@ dovecotComponent: core
 
 ## SYNOPSIS
 
-**doveadm** [*GLOBAL OPTIONS*] **auth** *command* [*OPTIONS*] [*ARGUMENTS*]
+**[[link,doveadm,doveadm]]** [*GLOBAL OPTIONS*] **auth** *command* [*OPTIONS*] [*ARGUMENTS*]
 
 ## DESCRIPTION
 
 The **doveadm auth** *COMMANDS* can be used to perform various
-authentication related actions.
+[[link,authentication,authentication]] related actions.
 
 <!-- @include: include/global-options-formatter.inc -->
 
@@ -62,8 +62,8 @@ providing a user-mask matching their usernames.
   [**-f** *field*]
   *user* [...]
 
-Similar to [[man,doveadm-user]] command, except it performs a *passdb*
-lookup (without authentication) instead of a *userdb* lookup.
+Similar to [[man,doveadm-user]] command, except it performs a *[[link,passdb,passdb]]*
+lookup (without authentication) instead of a *[[link,userdb,userdb]]* lookup.
 
 **-a** *userdb_socket_path*
 :   This option is used to specify an absolute path to an alternative
@@ -98,7 +98,7 @@ Test authentication for the given user.
     *base_dir* setting was overridden in */etc/dovecot/dovecot.conf*.
 
 **-A** *sasl_mech*
-:   The SASL mechanism used for the authentication. By default PLAIN is used.
+:   The [[link,sasl,SASL]] mechanism used for the authentication. By default PLAIN is used.
 
 <!-- @include: include/option-x.inc -->
 

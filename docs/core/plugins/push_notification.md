@@ -193,7 +193,7 @@ Example (`Content-Type: application/json; charset=utf-8`):
 
 ### Lua [`lua`]
 
-You can use Lua to write custom push notification handlers.
+You can use [[link,lua,Lua]] to write custom push notification handlers.
 
 See [[plugin,push-notification-lua]] for configuration information.
 

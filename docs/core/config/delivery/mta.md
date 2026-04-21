@@ -27,7 +27,7 @@ packages:
   [Dave Sill's Life with qmail](http://www.lifewithqmail.org/) which contains
   instructions to work around some of qmail's security issues.
 * [HALON](https://halon.io/) is a commercial MTA, which supports Dovecot Auth
-  and LMTP.
+  and [[link,lmtp,LMTP]].
 
 Some people also subsume mail fetching utilities under the MTA category, among
 them:

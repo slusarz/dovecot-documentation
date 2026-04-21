@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Sieve: Vacation Extension
 
-The Sieve vacation extension ([[rfc,5230]]) defines a mechanism
+The [[link,sieve,Sieve]] vacation extension ([[rfc,5230]]) defines a mechanism
 to generate automatic replies to incoming email messages. It takes
 various precautions to make sure replies are only sent when appropriate.
 
@@ -45,7 +45,7 @@ taken from:
 
 - **Envelope recipient**: `-a` parameter to dovecot-lda if given, otherwise
   `-d` parameter to dovecot-lda. If neither is given (delivering to
-  system users), the `$USER` environment is used.
+  [[link,system_users,system users]]), the `$USER` environment is used.
 
 The vacation replies are sent to the envelope sender.
 

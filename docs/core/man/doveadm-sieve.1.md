@@ -52,7 +52,7 @@ The **doveadm sieve** commands can be used to manage Sieve filtering.
   [**-a**]
   *scriptname*
 
-This command puts one new Sieve script in the script storage. The script
+This command puts one new Sieve script in the [[link,sieve_storage,script storage]]. The script
 is read from standard input. If the script compiles successfully, it is
 stored under the provided *scriptname .* If the **-a** option is
 present, the Sieve script is subsequently marked as the active script

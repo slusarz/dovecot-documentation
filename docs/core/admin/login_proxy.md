@@ -7,10 +7,10 @@ dovecotlinks:
 
 # Login Process Proxying
 
-Proxying using login processes is done for IMAP, POP3, Submission, and
-ManageSieve protocols.
+Proxying using [[link,login_processes,login processes]] is done for IMAP, [[link,pop3,POP3]], [[link,submission,Submission]], and
+[[link,managesieve,ManageSieve]] protocols.
 
-LMTP and doveadm protocols implement their own proxying, but they try to
+[[link,lmtp,LMTP]] and [[link,doveadm,doveadm]] protocols implement their own proxying, but they try to
 be mostly compatible.
 
 ## Proxying States
@@ -40,7 +40,7 @@ The list of sending states (left side of `/`):
 | `capability` | CAPABILITY command. Only used if backend doesn't send it automatically. |
 | `login` | LOGIN command. |
 | `authenticate` | AUTHENTICATE command. Sent if LOGIN command couldn't be used, e.g., because using master user login or non-cleartext authentication mechanism. |
-| `auth-continue` | SASL continuation sent for AUTHENTICATE command. |
+| `auth-continue` | [[link,sasl,SASL]] continuation sent for AUTHENTICATE command. |
 
 The list of received states (right side of `/`):
 

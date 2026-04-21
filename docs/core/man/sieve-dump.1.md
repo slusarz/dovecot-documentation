@@ -13,7 +13,7 @@ dovecotComponent: pigeonhole
 ## DESCRIPTION
 
 The **sieve-dump** command is part of Pigeonhole ([[man,pigeonhole,,7]]),
-which adds Sieve ([[rfc,5228]]) and ManageSieve ([[rfc,5804]]) support to
+which adds [[link,sieve,Sieve]] ([[rfc,5228]]) and [[link,managesieve,ManageSieve]] ([[rfc,5804]]) support to
 Dovecot ([[man,dovecot]]).
 
 Using the **sieve-dump** command, Sieve binaries, which are produced for

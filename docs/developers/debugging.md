@@ -60,7 +60,7 @@ Check where the core file should be written to and make sure it has enough
 write permissions.
 
 If core doesn’t contain an absolute path, it’s relative to the process’s
-current directory. With imap/pop3 processes this means that the core is
+current directory. With imap/[[link,pop3,pop3]] processes this means that the core is
 written to the user’s home directory. Make sure home is returned by
 [[link,userdb]] by setting [[setting,mail_debug,yes]] and checking from the
 logs that the correct home directory is returned.
@@ -186,11 +186,11 @@ gdb -p pid-of-hanging-process
 If a problem happens only with a specific client, the best way to figure out
 what’s happening is to find out what it's actually talking to server.
 
-Some clients may provide logging on their own, or you can use some TCP
+Some clients may provide [[link,logging,logging]] on their own, or you can use some TCP
 traffic sniffer such as Wireshark or ngrep.
 
 You can also use Dovecot’s [[link,rawlog]] to log the traffic. (It works
-with TLS/SSL.)
+with [[link,ssl,TLS/SSL]].)
 
 ### Debugging Core Dumps
 
@@ -267,7 +267,7 @@ src/imap/imap -u <username>
 doveadm exec imap -u <username>
 ```
 
-This also works for pop3 and managesieve. lmtp can also be started from
+This also works for pop3 and [[link,managesieve,managesieve]]. [[link,lmtp,lmtp]] can also be started from
 command line without the -u parameter (because the recipient is given
 with RCPT TO command).
 
@@ -286,7 +286,7 @@ with RCPT TO command).
    This can also be used together with imaptest, if you define
    imaptest to use only one username. Some configurations or use
    cases might require dovecot to be running (e.g. for
-   authentication). In those cases, select a different port for
+   [[link,authentication,authentication]]). In those cases, select a different port for
    "nc" or change dovecot not to listen on 143.
 
 ## Debug Most Dovecot Executables Inside the Source Tree
@@ -453,7 +453,7 @@ $7 = {cmd = 0x55822ecc8b00 <cmds+16>, conn = 0x55823025c160, start_timeval = {
       rows = 0, uncork_pending = false}
 ```
 
-There can of course be multiple dict connections, which you can access by
+There can of course be multiple [[link,dict,dict]] connections, which you can access by
 following the linked list:
 
 ```c

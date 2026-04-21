@@ -9,9 +9,9 @@ dovecotlinks:
 
 # Mail Compression Plugin (`mail-compress`)
 
-This plugin can be used to read compressed mbox, maildir or dbox files. It
+This plugin can be used to read compressed [[link,mbox,mbox]], [[link,maildir,maildir]] or [[link,dbox,dbox]] files. It
 can also be used to write (via IMAP, [[link,lda]] and/or [[link,lmtp]])
-compressed messages to [[link,dbox]] or [[link,maildir]] mailboxes.
+compressed messages to dbox or Maildir mailboxes.
 
 ## Compression Methods
 
@@ -89,7 +89,7 @@ prevent compression).
 
 ## Compress Existing Mails
 
-To compress existing mails, the supported way is to use local dsync migration.
+To compress existing mails, the supported way is to use local dsync [[link,migration,migration]].
 See [[link,migrating_mailboxes]].
 
 You'll probably want to use some cronjob to compress old mails. However note

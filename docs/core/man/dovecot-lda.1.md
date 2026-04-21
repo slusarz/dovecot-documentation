@@ -22,14 +22,14 @@ dovecotComponent: core
 ## DESCRIPTION
 
 The **dovecot-lda** is a local mail delivery agent which takes mail from
-an MTA and delivers it to a user's mailbox, while keeping Dovecot index
+an [[link,mta,MTA]] and delivers it to a user's mailbox, while keeping Dovecot index
 files up to date.
 
 Main features of the **dovecot-lda** are:
 
 * Mailbox indexing during mail delivery, providing faster mailbox access later
 * Quota enforcing by the quota plugin
-* Sieve language support by the Pigeonhole sieve plugin
+* [[link,sieve,Sieve]] language support by the Pigeonhole sieve plugin
 
 ## OPTIONS
 
@@ -44,8 +44,8 @@ Options accepted by **dovecot-lda**:
 
 **-d** *username*
 :   Destination *username*. If given, the user information is looked up
-    from userdb. Typically used with virtual users, but not necessarily
-    with system users.
+    from [[link,userdb,userdb]]. Typically used with [[link,virtual_users,virtual users]], but not necessarily
+    with [[link,system_users,system users]].
 
 **-e**
 :   If mail gets rejected, write the rejection reason to stderr and exit
@@ -75,7 +75,7 @@ Options accepted by **dovecot-lda**:
       is stored to `Mail/$mailbox` or to INBOX if `$mailbox` is empty.
 
     - The mailbox name is specified the same as it's visible in IMAP
-      client. For example if you've a Maildir with `.box.sub/`
+      client. For example if you've a [[link,maildir,Maildir]] with `.box.sub/`
       directory, your namespace configuration is
       [[setting,namespace_prefix,INBOX/]] and
       [[setting,namespace_separator,/]], the correct way to deliver mail there
@@ -126,10 +126,10 @@ Options accepted by **dovecot-lda**:
 :   Dovecot's main configuration file.
 
 */etc/dovecot/conf.d/10-mail.conf*
-:   Mailbox locations and namespaces.
+:   Mailbox locations and [[link,namespaces,namespaces]].
 
 */etc/dovecot/conf.d/15-lda.conf*
-:   LDA specific settings.
+:   [[link,lda,LDA]] specific settings.
 
 */etc/dovecot/conf.d/90-plugin.conf*
 :   Plugin specific settings.

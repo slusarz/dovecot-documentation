@@ -16,7 +16,7 @@ passwords and using them to access other services.
 
 ::: warning [[deprecated,weak_password_schemes]]
 Some password schemes are disabled by default due to being considered weak.
-This includes MD based (except DIGEST-MD5 and CRAM-MD5), LANMAN, NTLM and
+This includes MD based (except [[link,auth_digest_md5,DIGEST-MD5]] and CRAM-MD5), LANMAN, NTLM and
 a few others.
 
 Please read the documentation carefully.
@@ -111,7 +111,7 @@ generate passwords that have other letters after $2, those should work too.)
 
 bcrypt is bundled with Dovecot, so it does not require an external library.
 
-You can tune the computational cost using -r parameter for doveadm.
+You can tune the computational cost using -r parameter for [[link,doveadm,doveadm]].
 
 ### SHA512-CRYPT
 
@@ -179,7 +179,7 @@ different schemes for a single user.
 | Mechanism | Comment |
 | --------- | ------- |
 | CRAM-MD5 | Used with CRAM-MD5 mechanism. |
-| [[link,auth_digest_md5]] | Used with DIGEST-MD5 mechanism. The username is included in the hash, so it's not possible to use the hash for different usernames. |
+| DIGEST-MD5 | Used with DIGEST-MD5 mechanism. The username is included in the hash, so it's not possible to use the hash for different usernames. |
 | SCRAM-SHA-1 | Used with SCRAM-SHA-1 and SCRAM-SHA-1-PLUS mechanisms.<br />[[added,auth_mechanism_scram_sha_added]] |
 | SCRAM-SHA-256 | Stronger replacement for SCRAM-SHA-1.<br />[[added,auth_mechanism_scram_sha_added]] |
 

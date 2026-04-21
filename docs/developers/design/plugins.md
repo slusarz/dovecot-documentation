@@ -78,7 +78,7 @@ Error: Can't load plugin imap_quota_plugin: Plugin quota must be loaded also
 Different kinds of plugins can also hook into various things:
 
 * imap: `imap_client_created_hook_set()`
-* pop3: `pop3_client_created_hook_set()`
-* submission: `submission_client_created_hook_set()`
-* lmtp: `hook_client_created`
+* [[link,pop3,pop3]]: `pop3_client_created_hook_set()`
+* [[link,submission,submission]]: `submission_client_created_hook_set()`
+* [[link,lmtp,lmtp]]: `hook_client_created`
 * lib-storage: `mail_storage_hooks_add()`

@@ -20,7 +20,7 @@ dovecotlinks:
 # ACL: Access Control List Plugin (`acl`)
 
 This page talks mainly about how ACLs work, for more general description of how
-shared mailboxes work, see [[link,shared_mailboxes]].
+[[link,shared_mailboxes,shared mailboxes]] work, see shared mailboxes.
 
 Dovecot supports both administrator-configured ACL files and the IMAP ACL
 extension (see [[plugin,imap-acl]], which allows users to change ACLs
@@ -120,7 +120,7 @@ namespace shared {
 in favor of configuration-file embedded settings.
 :::
 
-Master users have their own ACLs. They're not the mailbox owners, so by
+[[link,auth_master_users,Master users]] have their own ACLs. They're not the mailbox owners, so by
 default they have no permissions to any of the mailboxes. See
 [[link,acl_master_users]] for more information.
 
@@ -130,11 +130,11 @@ default they have no permissions to any of the mailboxes. See
 
 Per-mailbox ACLs are stored in `dovecot-acl` named file, which exists in:
 
-* Maildir:: The Maildir's mail directory (e.g., `~/Maildir`,
+* [[link,maildir,Maildir]]:: The Maildir's mail directory (e.g., `~/Maildir`,
   `~/Maildir/.folder/`).
-* mbox: Control directory. You should explicitly specify
+* [[link,mbox,mbox]]: Control directory. You should explicitly specify
   [[setting,mail_control_path]].
-* dbox: dbox's mail directory (e.g., `~/dbox/INBOX/dbox-Mails/`).
+* [[link,dbox,dbox]]: dbox's mail directory (e.g., `~/dbox/INBOX/dbox-Mails/`).
 
 ## ACL File Format
 
@@ -185,7 +185,7 @@ specific mailboxes.
 | `s` | write-seen | \Seen flag can be changed |
 | `t` | write-deleted | \Deleted flag can be changed |
 | `i` | insert | Messages can be written or copied to the mailbox |
-| `p` | post | Messages can be posted to the mailbox by [[link,lda]], e.g. from Sieve |
+| `p` | post | Messages can be posted to the mailbox by [[link,lda]], e.g. from [[link,sieve,Sieve]] |
 | `e` | expunge | Messages can be expunged |
 | `k` | create | Mailboxes can be created (or renamed) directly under this mailbox (but not necessarily under its children, see [ACL Inheritance](#acl-inheritance-and-default-acls)) (renaming also requires delete rights) |
 | `x` | delete | Mailbox can be deleted |
@@ -243,7 +243,7 @@ There are default ACLs though:
 
 * In private namespace, the owner has all ACL rights for mailboxes in the
   namespace.
-* In shared and public namespaces, there are no ACL rights by default.
+* In shared and public [[link,namespaces,namespaces]], there are no ACL rights by default.
 * However, optionally the default ACLs can be taken from the INBOX for private
   and shared namespaces. See [[setting,acl_defaults_from_inbox]].
 

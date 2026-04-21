@@ -40,7 +40,7 @@ See [[man,dovecot-lda]].
 
 ## System Users
 
-You can use LDA with a few selected system users (i.e. user is found from
+You can use LDA with a few selected [[link,system_users,system users]] (i.e. user is found from
 `/etc/passwd` / NSS) by calling dovecot-lda in the user's `~/.forward` file:
 
 ```
@@ -183,8 +183,8 @@ protocol lda {
 
 ### Non-Dovecot LDA
 
-Dovecot allows using non-Dovecot LDA to deliver mails to mbox and
-Maildir files. Dovecot adds the newly delivered mails to its index files,
+Dovecot allows using non-Dovecot LDA to deliver mails to [[link,mbox,mbox]] and
+[[link,maildir,Maildir]] files. Dovecot adds the newly delivered mails to its index files,
 which is relatively fast operation. However, IMAP clients often want to first
 fetch some of the email headers and other metadata. This requires Dovecot to
 open and parse the emails, which may add user-visible latency. By using

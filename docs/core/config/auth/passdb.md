@@ -25,7 +25,7 @@ dovecotlinks:
 
 # Password Databases (`passdb`)
 
-Dovecot uses `passdb` and [[link,userdb]] as part of the authentication process.
+Dovecot uses `passdb` and [[link,userdb]] as part of the [[link,authentication,authentication]] process.
 
 `passdb` authenticates the user. It also provides any other pre-login
 information needed for users, such as:
@@ -35,9 +35,9 @@ information needed for users, such as:
 
 | Passdb Lookups | Dovecot Proxy | Dovecot Backend |
 | -------------- | ------------- | --------------- |
-| IMAP & POP3 logins | YES | YES |
-| LMTP mail delivery | YES | YES |
-| doveadm commands | YES | YES |
+| IMAP & [[link,pop3,POP3]] logins | YES | YES |
+| [[link,lmtp,LMTP]] mail delivery | YES | YES |
+| [[link,doveadm,doveadm]] commands | YES | YES |
 
 See also [[link,userdb]].
 
@@ -64,7 +64,7 @@ configure things like [[link,authentication_proxies]].
 
 You can use multiple databases, so if the password doesn't match in the first
 database, Dovecot checks the next one. This can be useful if you want to easily
-support having both virtual users and also local system users (see
+support having both [[link,virtual_users,virtual users]] and also local [[link,system_users,system users]] (see
 [[link,auth_multiple_dbs]]).
 
 You can control the behavior of what happens after a passdb lookup is
@@ -90,7 +90,7 @@ Databases that belong to this category are:
 | Database | Description |
 | -------- | ----------- |
 | [[link,auth_pam,PAM]] | Pluggable Authentication Modules. |
-| [[link,auth_imap,IMAP]] | Authenticate against remote IMAP server. |
+| [[link,auth_imap,IMAP]] | Authenticate against remote [[link,imap_server,IMAP server]]. |
 | [[link,auth_oauth2,OAuth2]] | Authenticate against OAuth2 provider. |
 | [[link,auth_bsd,BSDAuth]] | BSD authentication (deprecated, unsupported). |
 
@@ -119,7 +119,7 @@ Databases that support looking up everything:
 | [[link,auth_ldap,LDAP]] | Lightweight Directory Access Protocol. |
 | [[link,auth_sql,SQL]] | SQL database (PostgreSQL, MySQL, SQLite, Cassandra). |
 | [[link,auth_staticdb,Static]] | Static `passdb` for simple configurations. |
-| [[link,auth_lua,Lua]] | Lua script for authentication. |
+| [[link,auth_lua,Lua]] | [[link,lua,Lua]] script for authentication. |
 
 ### Fields
 
@@ -353,7 +353,7 @@ See [`allow_nets`](#allow-nets) for additional documentation.
 
 #### `proxy`
 
-Proxy the connection to another IMAP/POP3 server.
+Proxy the connection to another IMAP/[[link,pop3_server,POP3 server]].
 
 See [[link,authentication_proxies]].
 
@@ -389,7 +389,7 @@ notify the users.
 
 ::: warning
 The `nologin` field is mainly intended for user logins (IMAP, POP3,
-ManageSieve). It is ignored with `doveadm`, because the intention is that admin
+[[link,managesieve,ManageSieve]]). It is ignored with `doveadm`, because the intention is that admin
 could still be able to access a disabled user via `doveadm`.
 
 [[changed,lmtp_nologin_added]] The `nologin` field prevents LMTP access now
@@ -465,7 +465,7 @@ To enable this feature, you need to configure:
 ::warning If CA certificates are not used, a passdb must provide a valid check_client_fp (or variant) to validate the
           client certificate. If none is provided, the authentication will fail.
 
-When feature is enabled, and certificate has not been validated by certificate authority (or is self-signed), at least one passdb must successfully match the fingerprint, otherwise the whole authentication will fail with "Client didn't present valid SSL certificate".
+When feature is enabled, and certificate has not been validated by certificate authority (or is self-signed), at least one passdb must successfully match the fingerprint, otherwise the whole authentication will fail with "Client didn't present valid [[link,ssl,SSL]] certificate".
 
 If your certificate is authenticated by certificate authority, using any of the fingerprint matching keywords will fail that passdb if the fingerprint does not match, but next password database can still authenticate the user. Note though that none of the passdbs are required to successfully match the fingerprint in this case.
 

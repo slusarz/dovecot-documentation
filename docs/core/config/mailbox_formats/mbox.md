@@ -110,7 +110,7 @@ dotlock file can't be created. There are a couple of ways to work around this:
 `flock()` system call is quite commonly used for both read and
 write locking. The read lock allows multiple processes to obtain a
 read lock for the mbox, so it works well for reading as well. The
-downside is that it doesn't work if mailboxes are stored in NFS.
+downside is that it doesn't work if mailboxes are stored in [[link,nfs,NFS]].
 
 #### fcntl
 
@@ -239,7 +239,7 @@ to store metadata. These headers are:
 
 Whenever any of these headers exist, Dovecot treats them as its own private
 metadata. It does sanity checks for them, so the headers may also be modified
-or removed completely. None of these headers are sent to IMAP/POP3 clients
+or removed completely. None of these headers are sent to IMAP/[[link,pop3,POP3]] clients
 when they read the mail.
 
 ::: warning
@@ -544,7 +544,7 @@ mail_path = ~/mail
 * [[setting,mail_path,%{home}/mail]],
 * [[setting,mailbox_list_layout,fs]],
 * [[setting,mailbox_subscriptions_filename,.subscriptions]], and
-* [[setting,mail_inbox_path,inbox]] with fs layout (so INBOX is in
+* [[setting,mail_inbox_path,inbox]] with [[link,fs,fs]] layout (so INBOX is in
   `~/mail/inbox` rather than `~/mail/INBOX`).
 
 ### Index Files
@@ -591,7 +591,7 @@ mail_privileged_group = mail
 
 NOTE: With [[link,lda]] the [[setting,mail_privileged_group]] setting
 unfortunately doesn't work, so you'll have to use the sticky bit, disable
-dotlocking completely, or use LMTP server instead.
+dotlocking completely, or use [[link,lmtp,LMTP]] server instead.
 
 ### /var/mail/\* Permissions
 
@@ -618,7 +618,7 @@ each user has to have a private directory where the mailboxes are stored.
 Dovecot also needs a directory for its index files unless you disable them
 completely.
 
-If you **really** want to use Dovecot as a plain POP3 server without index
+If you **really** want to use Dovecot as a plain [[link,pop3_server,POP3 server]] without index
 files, you can work around not having a per-user directory:
 
 * Set users' home directory in an empty non-writable directory, e.g.

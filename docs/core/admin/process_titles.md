@@ -19,7 +19,7 @@ states, there are the following:
 
 The process is still starting up and isn't yet ready to accept connections.
 This can especially happen if the process is still attempting to connect to
-the stats socket.
+the [[link,stats,stats]] socket.
 
 ### `[idling]`
 
@@ -52,7 +52,7 @@ is no additional information about which ones specifically.
 
 [[added,process_title_mail_processes]]
 
-This means imap, pop3, submission and managesieve processes.
+This means imap, [[link,pop3,pop3]], [[link,submission,submission]] and [[link,managesieve,managesieve]] processes.
 
 ### `[waiting on client]`
 
@@ -61,7 +61,7 @@ the request.
 
 ### `[auth lookup]`
 
-Mail process is waiting on auth process to finish userdb lookups.
+Mail process is waiting on auth process to finish [[link,userdb,userdb]] lookups.
 
 ### `[post-login script]`
 

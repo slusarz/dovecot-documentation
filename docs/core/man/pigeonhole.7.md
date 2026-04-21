@@ -8,8 +8,8 @@ dovecotComponent: pigeonhole
 
 ## DESCRIPTION
 
-Pigeonhole adds support for the Sieve language ([[rfc,5228]]) and the
-ManageSieve protocol ([[rfc,5804]]) to Dovecot ([[man,dovecot]]).
+Pigeonhole adds support for the [[link,sieve,Sieve]] language ([[rfc,5228]]) and the
+[[link,managesieve,ManageSieve]] protocol ([[rfc,5804]]) to Dovecot ([[man,dovecot]]).
 
 In the literal sense, a pigeonhole is a a hole or recess inside a dovecot for
 pigeons to nest in. It is, however, also the name for one of a series of

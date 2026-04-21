@@ -66,7 +66,7 @@ timestamps to the log.
 ### dovecot-sysreport
 
 ::: tip
-This is the recommended way of reporting core dumps to the Dovecot developers.
+This is the recommended way of reporting [[link,debug_core_dumps,core dumps]] to the Dovecot developers.
 :::
 
 ::: warning

@@ -8,7 +8,7 @@ dovecotlinks:
 
 # POP3
 
-Dovecot was primarily designed to be an IMAP server, so although it works fine
+Dovecot was primarily designed to be an [[link,imap_server,IMAP server]], so although it works fine
 as a POP3 server, it's not really optimized for that.
 
 ## Maildir Performance
@@ -74,7 +74,7 @@ should be done.
 
 If another connection comes while the mailbox is locked, Dovecot waits until
 the locking times out (2 minutes with Maildir, [[setting,mbox_lock_timeout]]
-with mbox).
+with [[link,mbox,mbox]]).
 
 ## Flag Changes
 
@@ -119,7 +119,7 @@ pop3_uidl_format = %{guid}
 
 However, note that GUIDs may not be unique, as the GUID does not change when a
 message is copied. (While copying is not possible using only POP3, it can be
-done using IMAP, Sieve, or doveadm.)
+done using IMAP, [[link,sieve,Sieve]], or [[link,doveadm,doveadm]].)
 
 ### MD5 UIDL format (mbox-only)
 
@@ -136,7 +136,7 @@ For example:
 * Inserting messages in the middle of mbox files (eg. restoring mbox files from
   backups can cause "Expunged message reappeared" errors)
 * Reordering messages inside mbox
-* [[link,mbox,Other random problems]] causing UID
+* mbox causing UID
   renumbering (although you should figure out why they're happening)
 
 The MD5 summing method however doesn't work well if you receive two identical
@@ -145,7 +145,7 @@ messages. Usually the MD5 sum is taken from these headers:
 * The first Received: header
 * Delivered-To: header
 
-Normally there won't be a problem, because the MTA adds a unique identifier to
+Normally there won't be a problem, because the [[link,mta,MTA]] adds a unique identifier to
 the first Received: header. If the same message is sent to multiple users in
 one delivery, the Delivered-To: header is still different, making the MD5 sum
 different.

@@ -11,7 +11,7 @@ LMTP is a network-available service that handles local delivery of messages.
 
 It is defined by [[rfc,2033]].
 
-The main difference from LDA is that the LDA is a short-running process,
+The main difference from [[link,lda,LDA]] is that the LDA is a short-running process,
 started as a binary from command line, while LMTP is a long-running process
 started by Dovecot's master process.
 
@@ -30,7 +30,7 @@ Compared to dovecot-lda parameters, the addresses are taken from:
 | `-f` | `MAIL FROM:` | Envelope sender address |
 | `-r` | `RCPT TO:` | Final envelope recipient address |
 | `-a` | `RCPT TO:`, but may be overridden by [[setting,lda_original_recipient_header]] | Original envelope recipient address |
-| `-d` | `RCPT TO:`, but with the `+extension` part removed when [[setting,recipient_delimiter]] is enabled | Destination username. If usernames differ from recipient email addresses, the userdb must handle the translation. |
+| `-d` | `RCPT TO:`, but with the `+extension` part removed when [[setting,recipient_delimiter]] is enabled | Destination username. If usernames differ from recipient email addresses, the [[link,userdb,userdb]] must handle the translation. |
 
 ## Listeners
 
@@ -67,7 +67,7 @@ Unfortunately LMTP process currently needs to run as root, and only
 temporarily drop privileges to users. Otherwise it couldn't handle mail
 deliveries to more than a single user with different UID.
 
-If you're using only a single global UID/GID (i.e. virtual users), you can
+If you're using only a single global UID/GID (i.e. [[link,virtual_users,virtual users]]), you can
 improve security by running lmtp processes as that user:
 
 ```doveconf[dovecot.conf]
@@ -82,7 +82,7 @@ It's possible to use Dovecot LMTP server as a proxy to remote LMTP or
 SMTP servers.
 
 The configuration is similar to [[link,authentication_proxies]], but you'll
-need to tell Dovecot LMTP to issue passdb lookups: [[setting,lmtp_proxy,yes]].
+need to tell Dovecot LMTP to issue [[link,passdb,passdb]] lookups: [[setting,lmtp_proxy,yes]].
 
 ## Performance
 

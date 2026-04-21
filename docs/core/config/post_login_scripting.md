@@ -7,8 +7,8 @@ dovecotlinks:
 
 # Post-login Scripting
 
-If you want to do something special after authentication, but before beginning
-the IMAP or POP3 session, you can do this by telling imap/pop3 executable to
+If you want to do something special after [[link,authentication,authentication]], but before beginning
+the IMAP or [[link,pop3,POP3]] session, you can do this by telling imap/pop3 executable to
 use post-login service by editing `dovecot.conf`:
 
 ```doveconf[dovecot.conf]
@@ -41,11 +41,11 @@ The scripts are run in the specified order. Remember that the post-login script
 runs with the privileges of the `user` setting given to the service (root by
 default). If you need the script to access user's mail files, change it to
 whatever user owns the mails (e.g. vmail). If you're using multiple UNIX UIDs
-(e.g. system users), use `script-login -d` to drop to the `UID` or `GID`
-specified by the userdb lookup (ignoring user/group/chroot service settings).
+(e.g. [[link,system_users,system users]]), use `script-login -d` to drop to the `UID` or `GID`
+specified by the [[link,userdb,userdb]] lookup (ignoring user/group/chroot service settings).
 
 It's not currently possible to run post-login scripts in
-[[link,authentication_proxies]] because they're not actually logging into
+[[link,authentication_proxies]] because they're not actually [[link,logging,logging]] into
 the local Dovecot.
 
 ## Running Environment
@@ -60,7 +60,7 @@ The script can use environment variables:
 * `USER`: Username
 * `IP`: Remote IP address
 * `LOCAL_IP`: Local IP address
-* Fields returned by [[link,userdb]] lookup with their keys uppercased (e.g.
+* Fields returned by userdb lookup with their keys uppercased (e.g.
   if userdb returned home, it's stored in `HOME`).
 
 It's possible to add/modify userdb fields by adding them to environment and

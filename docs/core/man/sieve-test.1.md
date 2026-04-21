@@ -13,7 +13,7 @@ dovecotComponent: pigeonhole
 ## DESCRIPTION
 
 The **sieve-test** command is part of Pigeonhole ([[man,pigeonhole,,7]]),
-which adds Sieve ([[rfc,5228]]) and ManageSieve ([[rfc,5804]]) support to
+which adds [[link,sieve,Sieve]] ([[rfc,5228]]) and [[link,managesieve,ManageSieve]] ([[rfc,5804]]) support to
 Dovecot ([[man,dovecot]]).
 
 Using the **sieve-test** command, the execution of Sieve scripts can be
@@ -166,7 +166,7 @@ be specified multiple times. It can be used as follows:
 
 To improve script debugging, this Sieve implementation supports a custom
 Sieve language extension called 'vnd.dovecot.debug'. It adds the
-**debug_log** command that allows logging debug messages.
+**debug_log** command that allows [[link,logging,logging]] debug messages.
 
 Example:
 
@@ -184,7 +184,7 @@ necessary to enable nor possible to disable the availability of the
 debug extension with the **-x** option. The logged messages are written
 to **stdout** in this case.
 
-In contrast, for the actual Sieve plugin for the Dovecot LDA
+In contrast, for the actual Sieve plugin for the Dovecot [[link,lda,LDA]]
 ([[man,dovecot-lda]]) the vnd.dovecot.debug extension needs to be
 enabled explicitly using the [[setting,sieve_extensions]] or
 [[setting,sieve_global_extensions]] setting. The messages

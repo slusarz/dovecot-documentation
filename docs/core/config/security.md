@@ -13,12 +13,12 @@ Additional things you can configure:
 
 - Allocate each user their own UID and GID (see [[link,system_users]])
 
-- Use a separate `dovecot-auth` user for authentication process (see
+- Use a separate `dovecot-auth` user for [[link,authentication,authentication]] process (see
   [[link,system_users]])
 
 - You can chroot authentication and mail processes (see [[link,chrooting]])
 
-- There are some security related SSL settings (see [[link,ssl_configuration]])
+- There are some security related [[link,ssl,SSL]] settings (see [[link,ssl_configuration]])
 
 - Set `first/last_valid_uid/gid` settings to contain only the range
   actually used by mail processes

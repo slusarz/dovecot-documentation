@@ -5,9 +5,9 @@ title: Kerberos
 
 # Kerberos Authentication
 
-Dovecot supports Kerberos 5 using GSSAPI.
+Dovecot supports Kerberos 5 using [[link,auth_gssapi,GSSAPI]].
 
-The Kerberos authentication mechanism doesn't require having a
+The Kerberos [[link,authentication,authentication]] mechanism doesn't require having a
 [[link,passdb]], but you do need a [[link,userdb]] so Dovecot can lookup
 user-specific information, such as where their mailboxes are stored.
 
@@ -37,7 +37,7 @@ auth process is running as).
 If you wish to provide an IMAP service, you will need to install a
 service ticket of the form `imap/hostname@REALM`.
 
-For POP3, you will need a service ticket of the form `pop/hostname@REALM`.
+For [[link,pop3,POP3]], you will need a service ticket of the form `pop/hostname@REALM`.
 
 When using Dovecot's [[link,sasl]] with [[link,mta]], you will need to
 install service ticket of the form `smtp/hostname@REALM`.

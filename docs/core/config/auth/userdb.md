@@ -16,7 +16,7 @@ dovecotlinks:
 
 # User Databases (`userdb`)
 
-Dovecot uses [[link,passdb]] and `userdb` as part of the authentication
+Dovecot uses [[link,passdb]] and `userdb` as part of the [[link,authentication,authentication]]
 process.
 
 [[link,passdb]] authenticated the user. `userdb` lookup then retrieves
@@ -28,9 +28,9 @@ post-login information specific to the authenticated user. This may include:
 
 | Userdb Lookups | Dovecot Proxy | Dovecot Backend |
 | -------------- | ------------- | --------------- |
-| IMAP & POP3 logins | No | YES |
-| LMTP mail delivery | No | YES |
-| doveadm commands | No | YES |
+| IMAP & [[link,pop3,POP3]] logins | No | YES |
+| [[link,lmtp,LMTP]] mail delivery | No | YES |
+| [[link,doveadm,doveadm]] commands | No | YES |
 
 The `userdb` and [[link,passdb]] may be the same or they may be different
 depending on your needs. You can also have [[link,auth_multiple_dbs]].
@@ -71,7 +71,7 @@ User's GID (UNIX group ID), overrides the global [[setting,mail_gid]] setting.
 
 User's home directory, overrides the global [[setting,mail_home]] setting.
 
-Although not required, it's highly recommended even for virtual users.
+Although not required, it's highly recommended even for [[link,virtual_users,virtual users]].
 
 ### Optional Extra Fields
 
@@ -87,13 +87,13 @@ Changes the username (can also be done by the [[link,passdb]] lookup).
 
 | Database | Description |
 | -------- | ----------- |
-| [[link,auth_passwd,Passwd]] | System users (NSS, `/etc/passwd`, or similar). |
+| [[link,auth_passwd,Passwd]] | [[link,system_users,System users]] (NSS, `/etc/passwd`, or similar). |
 | [[link,auth_passwd_file,Passwd-file]] | `/etc/passwd`-like file. |
 | [[link,auth_ldap,LDAP]] | Lightweight Directory Access Protocol. |
 | [[link,auth_sql,SQL]] | SQL database (PostgreSQL, MySQL, SQLite, Cassandra). |
 | [[link,auth_staticdb,Static]] | Userdb information generated from a given template. |
 | [[link,auth_prefetch,Prefetch]] | Prefetch database. This assumes that the [[link,passdb]] already returned also all the required user database information. |
-| [[link,auth_lua,Lua]] | Lua script for authentication. |
+| [[link,auth_lua,Lua]] | [[link,lua,Lua]] script for authentication. |
 
 ## Settings
 
@@ -192,7 +192,7 @@ wherever NSS is configured to taken them from).
 
 The logged in user has access to those groups.
 
-This may be useful for shared mailboxes.
+This may be useful for [[link,shared_mailboxes,shared mailboxes]].
 
 #### `userdb_import`
 

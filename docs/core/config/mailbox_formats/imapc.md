@@ -10,7 +10,7 @@ dovecotlinks:
 
 # Imapc Mailbox Format
 
-The imapc storage accesses a remote IMAP server as if it were a regular
+The imapc storage accesses a remote [[link,imap_server,IMAP server]] as if it were a regular
 (local) Dovecot mailbox format. Dovecot can treat it as a dummy storage or
 optionally a more capable storage.
 

@@ -48,7 +48,7 @@ sure, that relevant `!include` or `!include_try` configuration lines
 are not commented.
 
 If the connection fails and dovecot emits a log "*auth: Fatal: Support not
-compiled in for passdb driver 'pam'*", then rebuild dovecot with the pam
+compiled in for [[link,passdb,passdb]] driver 'pam'*", then rebuild dovecot with the pam
 development headers package installed. In that case you have to re-run
 the configure script, possibly including option **--with-pam** to the
 configure
@@ -82,7 +82,7 @@ nc localhost 143
 a login "username" "password"
 ```
 
-Replace the username and password with your local authentication credentials.
+Replace the username and password with your local [[link,authentication,authentication]] credentials.
 
 Note that all IMAP commands begin with a tag, which is basically any
 string you want, but it must be there. So don't leave out the "a" in the
@@ -121,7 +121,7 @@ a NO Plaintext authentication disabled.
 ```
 
 If this is the case, you didn't set [[setting,auth_allow_cleartext,yes]].
-You could alternatively use OpenSSL to test that the server works with SSL:
+You could alternatively use OpenSSL to test that the server works with [[link,ssl,SSL]]:
 
 - Test using imaps port (assuming you haven't disabled imaps port):
 
@@ -256,7 +256,7 @@ System configuration
 
 ### Dovecot Configuration
 
-Enable LMTP delivery times in the configuration:
+Enable [[link,lmtp,LMTP]] delivery times in the configuration:
 
 ```doveconf[dovecot.conf]
 deliver_log_format = msgid=%{msgid} from=<%{from}> size=%{size} vsize=%{vsize} session=%{session_time}ms delivery=%{delivery_time}ms: %{message}
@@ -297,7 +297,7 @@ Check the output for errors.
 Verify that messages exist in INBOX:
 [[doveadm,mailbox status,-u testuser1 all INBOX]].
 
-Copy a message with doveadm:
+Copy a message with [[link,doveadm,doveadm]]:
 [[doveadm,copy,-u testuser1 Trash mailbox INBOX 1]].
 
 Copy messages with imaptest:

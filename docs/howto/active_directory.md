@@ -19,7 +19,7 @@ passdb ldap {
 ```
 :::
 
-This enables LDAP to be used as passdb.
+This enables LDAP to be used as [[link,passdb,passdb]].
 The most important settings are:
 
 - Configure how the LDAP server is reached.
@@ -34,7 +34,7 @@ The most important settings are:
 ```
 :::
 
-- Use LDAP authentication binding for verifying users' passwords:
+- Use [[link,auth_ldap,LDAP authentication]] binding for verifying users' passwords:
 
 ::: code-group
 ```doveconf[dovecot.conf]
@@ -72,7 +72,7 @@ passdb ldap {
 ```
 :::
 
-- Returns userdb fields when prefetch userdb wasn't used (LMTP & doveadm).
+- Returns [[link,userdb,userdb]] fields when prefetch userdb wasn't used ([[link,lmtp,LMTP]] & [[link,doveadm,doveadm]]).
 The username is again normalized in case `user_filter` found it via some
 other means:
 
@@ -88,7 +88,7 @@ passdb ldap {
 :::
 
 - How to find the user for passdb lookup (this can be set specifically to
-distinct values inside each [[setting,passdb]] / [[setting,userdb]] section):
+distinct values inside each passdb / userdb section):
 
 ::: code-group
 ```doveconf[dovecot.conf]

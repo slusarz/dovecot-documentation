@@ -20,7 +20,7 @@ dovecotComponent: core
 
 The **user** command is used to perform a user lookup - to show what
 information Dovecot sees about the *user* (s), or if it exists at all
-in the configured *userdb* (s).
+in the configured *[[link,userdb,userdb]]* (s).
 
 The *auth_info* may be useful when the userdb is for example a SQL
 database and you are using %variables, like **%{protocol}** or **%{local_ip}**,

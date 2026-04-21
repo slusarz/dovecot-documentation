@@ -7,10 +7,10 @@ dovecotlinks:
 
 # Multiple Authentication Databases
 
-Dovecot supports defining multiple authentication databases, so that if the
+Dovecot supports defining multiple [[link,auth_databases,authentication databases]], so that if the
 password doesn't match in the first database, it checks the next one. This can
-be useful if you want to easily support having both local system users in
-`/etc/passwd` and virtual users.
+be useful if you want to easily support having both local [[link,system_users,system users]] in
+`/etc/passwd` and [[link,virtual_users,virtual users]].
 
 Currently the fallback works only with the PLAIN authentication mechanism.
 
@@ -27,7 +27,7 @@ directory properly (i.e. virtual users' `home=/var/vmail/%{user | domain}/%{user
 
 If it's not possible to have a home directory for virtual users (avoid that if
 possible), you can do this by pointing multiple authentication databases
-to system users' mail location and have the virtual userdb override it by
+to system users' mail location and have the virtual [[link,userdb,userdb]] override it by
 returning mail [[link,passdb_extra_fields]].
 
 ## Example with Home Dirs

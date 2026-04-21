@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Events Design
 
-Dovecot supports events, which improves both logging and statistics.
+Dovecot supports events, which improves both [[link,logging,logging]] and statistics.
 
 ::: tip
 See Also:
@@ -101,7 +101,7 @@ There are 4 types of fields:
 
 The fields can be used for various purposes:
 
-* Filtering events with `field_name=value` matching
+* [[link,event_export_label,Filtering events]] with `field_name=value` matching
 * Counting fields in statistics (most commonly number fields)
 * They can include metadata that are internally used by the code. For example
   passing data from one plugin to others.

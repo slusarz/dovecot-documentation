@@ -10,12 +10,12 @@ dovecotlinks:
 
 # Lua Authentication Database (`lua`)
 
-You can implement passdb and userdb using [Lua](https://www.lua.org/) script.
+You can implement [[link,passdb,passdb]] and [[link,userdb,userdb]] using [Lua](https://www.lua.org/) script.
 
 ## Authentication
 
-When used in authentication, additional module `dovecot.auth` is added, which
-contains constants for [[link,passdb]] and [[link,userdb]].
+When used in [[link,authentication,authentication]], additional module `dovecot.auth` is added, which
+contains constants for passdb and userdb.
 
 For details about Dovecot Lua, see [[link,lua]].
 
@@ -128,7 +128,7 @@ Checks if the plain password matches the crypted or hashed password.
 
 ##### `auth_request#event()`
 
-Returns child event for the auth request. Can be used for logging and
+Returns child event for the auth request. Can be used for [[link,logging,logging]] and
 other events. Comes with a prefix.
 
 #### Subtables

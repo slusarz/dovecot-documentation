@@ -92,7 +92,7 @@ section multiple times, the settings are merged together.
 
 ## Authentication
 
-The above example configures Dovecot to use PAM for system user authentication.
+The above example configures Dovecot to use PAM for system user [[link,authentication,authentication]].
 See [[link,auth_pam]] for how to configure it.
 
 A typical configuration with Linux would be to create `/etc/pam.d/dovecot`
@@ -105,10 +105,10 @@ account   required        pam_unix.so
 
 ### Virtual Users
 
-If you're planning on using virtual users, it's easier to first create a
+If you're planning on using [[link,virtual_users,virtual users]], it's easier to first create a
 simple passwd-like file to make sure that the authentication will work.
 Later when you know Dovecot is working, you can do it differently (see
-[[link,virtual_users]]).
+virtual users).
 
 Run as your own non-root user:
 

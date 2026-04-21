@@ -75,7 +75,7 @@ compressed form.
 ## Key Formats
 
 lib-dcrypt can consume keys in PEM format [[rfc,1421]] (with or without
-password), and in Dovecot's special format intended for dict storage.
+password), and in Dovecot's special format intended for [[link,dict,dict]] storage.
 
 Dovecot's format consists from unencrypted and encrypted keys. You can
 encrypt keys using password or another key. There are also two version,

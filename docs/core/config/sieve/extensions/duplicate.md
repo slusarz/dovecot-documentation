@@ -8,7 +8,7 @@ dovecotlinks:
 # Sieve: Duplicate Extension
 
 The duplicate extension ([[rfc,7352]]) adds a new test command
-called `duplicate` to the Sieve language. This test adds the ability
+called `duplicate` to the [[link,sieve,Sieve]] language. This test adds the ability
 to detect duplications.
 
 The main application for this new test is handling duplicate deliveries

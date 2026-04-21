@@ -56,7 +56,7 @@ The parameters are forwarded as part of the ID command field-value list.
 
 ## POP3
 
-For POP3, forwarding is done with custom `XCLIENT` command which
+For [[link,pop3,POP3]], forwarding is done with custom `XCLIENT` command which
 accepts a space separated list of field=value parameters.
 
 ::: warning
@@ -108,7 +108,7 @@ See [XCLIENT information](https://www.postfix.org/XCLIENT_README.html).
 
 ### Supported Fields LMTP
 
-Additional fields supported for the LMTP `RCPT TO` command:
+Additional fields supported for the [[link,lmtp,LMTP]] `RCPT TO` command:
 
 | Field | Description |
 | ----- | ----------- |

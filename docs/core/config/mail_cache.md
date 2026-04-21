@@ -12,7 +12,7 @@ files automatically based on what the IMAP client uses. This is a
 per-folder decision.
 
 This works generally well for newly created folders, but not so well
-during migration, because Dovecot doesn't yet known which fields need
+during [[link,migration,migration]], because Dovecot doesn't yet known which fields need
 to be cached. So Dovecot needs to be told what to initially add to
 `dovecot.index.cache` while mails are being saved.
 
@@ -75,12 +75,12 @@ IMAP ENVELOPE is used by many clients, which includes:
 | `flags` | Tracks various boolean flags for the mail: Does the header/body have CRLF linefeeds? Does it have NUL characters? |
 | `date.sent` | The Date: header parsed to timestamp |
 | `date.received` | Mail delivery date (IMAP INTERNALDATE) |
-| `date.save` | Mail save/copy date (mdbox stores this always in dovecot.index)
+| `date.save` | Mail save/copy date ([[link,mdbox,mdbox]] stores this always in dovecot.index)
 | `size.physical` | Physical message size (line feeds exactly as they are stored in the stored mail). Note that the size is of the mail as plaintext, i.e. after decryption/compression. This is typically used by [[link,quota_driver_fs]] or [[link,quota_driver_maildir]] quota. |
 | `imap.bodystructure` | IMAP BODYSTRUCTURE response, which describes what the message's MIME structure looks like. |
 | `imap.body` | IMAP BODY response. This is the short version of imap.bodystructure, not the message body itself. If imap.bodystructure is cached, this field isn't cached because it can be generated from the imap.bodystructure. |
 | `imap.envelope` | IMAP ENVELOPE response, which contains the From, To, Cc, Bcc, Sender, Reply-To, Date, Subject, Message-ID and In-Reply-To headers in parsed forms. This is typically in the [[setting,mail_never_cache_fields]] because the raw headers are more useful in the cache and the ENVELOPE can be generated from them. |
-| `pop3.uidl` | POP3 UIDL responses. This is useful especially if some of the UIDLs have been migrated from an old system or if [[setting,pop3_reuse_xuidl]] is used. Otherwise Dovecot generates the UIDL in a way that usually doesn't require cache. |
+| `pop3.uidl` | [[link,pop3,POP3]] UIDL responses. This is useful especially if some of the UIDLs have been migrated from an old system or if [[setting,pop3_reuse_xuidl]] is used. Otherwise Dovecot generates the UIDL in a way that usually doesn't require cache. |
 | `pop3.order` | POP3 messages' order. This is used after migration from another system where the IMAP and POP3 messages' order differs. |
 | `guid` | Internal Dovecot GUID for messages. |
 | `mime.parts` | MIME parts' sizes. |

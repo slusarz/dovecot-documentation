@@ -5,7 +5,7 @@ title: Exim
 
 # Dovecot LMTP and Exim
 
-Exim provides support for LMTP over UNIX sockets using the
+Exim provides support for [[link,lmtp,LMTP]] over UNIX sockets using the
 [LMTP transport](http://www.exim.org/exim-html-current/doc/html/spec_html/ch-the_lmtp_transport.html).
 
 Your distribution may not provide this; run `exim -bV` and check for
@@ -67,7 +67,7 @@ dovecot_lmtp:
 
 ## Stripping Domain
 
-If you are using a userdb which does not have domain names, you may need
+If you are using a [[link,userdb,userdb]] which does not have domain names, you may need
 to add a setting to `dovecot.conf`:
 
 ```
@@ -124,7 +124,7 @@ protocol lmtp {
 ```
 
 (If you don't mind allowing case insensitive logins for dovecot
-authentication, you may set [[setting,auth_username_format]] in the global
+[[link,authentication,authentication]], you may set [[setting,auth_username_format]] in the global
 configuration accordingly and renounce the above change).
 
 In case you prefer to configure exim to lower case the local part

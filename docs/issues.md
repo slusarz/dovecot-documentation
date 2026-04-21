@@ -37,7 +37,7 @@ If the output does doesn't already show it, specify also:
 * Dovecot version
 * Operating system or Linux distribution name
 * CPU architecture (x86 or something else?)
-* Filesystem you used (especially if you use NFS or not)
+* Filesystem you used (especially if you use [[link,nfs,NFS]] or not)
 
 ::: tip
 Don’t send the whole `dovecot.conf` file, it’s way too large especially

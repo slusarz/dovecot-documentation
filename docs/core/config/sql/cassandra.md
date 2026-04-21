@@ -27,7 +27,7 @@ and headers installed.
 
 ## SSL/TLS Settings
 
-Not all of Dovecot SSL settings are supported by the Cassandra library. Below
+Not all of Dovecot [[link,ssl,SSL]] settings are supported by the Cassandra library. Below
 is the list of supported settings:
 
 <SettingsComponent tag="ssl-cassandra" />

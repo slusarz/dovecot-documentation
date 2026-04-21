@@ -31,8 +31,8 @@ be explicitly added using the `metric` configuration blocks.
 
 The [`metric_filter`](#metric_filter) setting is the only required setting in a
 [`metric`](#metric) block. It specifies which events should be used when
-calculating the statistics for a given metric block. Event filtering is
-described in detail in [[link,event_filter]].
+calculating the statistics for a given metric block. [[link,event_filter,Event filtering]] is
+described in detail in Event Filtering.
 
 Note that Dovecot also has many unnamed events. These aren't generally useful
 for statistics, but in some situations they may become visible in statistics.

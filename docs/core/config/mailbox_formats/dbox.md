@@ -225,7 +225,7 @@ at the [[link,mta]], [[link,mda]], or [[link,lda]] (as it is recommended with
 [[link,mbox]]).
 
 There is one exception, though, namely when [[setting,pop3_reuse_xuidl,yes]]:
-in this case `X-UIDL` is used for the POP3 UIDLs.
+in this case `X-UIDL` is used for the [[link,pop3,POP3]] UIDLs.
 Therefore, in this case, is recommended to strip the `X-UIDL` mail headers
 *case-insensitively* at the mail delivery layer.
 

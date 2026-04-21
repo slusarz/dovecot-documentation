@@ -11,7 +11,7 @@ System users are typically defined in `/etc/passwd` file, but this
 isn't necessary. Using [NSS](http://en.wikipedia.org/wiki/Name_Service_Switch)
 you can configure the lookups to be done from elsewhere (e.g. LDAP).
 
-See [[link,auth_passwd]] userdb configuration for how to set this up.
+See [[link,auth_passwd]] [[link,userdb,userdb]] configuration for how to set this up.
 Especially if you're using nss_ldap you must set [[setting,userdb_use_worker,yes]].
 
 System users usually have their own separate user IDs (UIDs). This is
@@ -31,7 +31,7 @@ everyone uses the same locking methods in the same order.
 
 ## Authentication
 
-Admins often wish to use different passwords for IMAP and POP3 than for
+Admins often wish to use different passwords for IMAP and [[link,pop3,POP3]] than for
 other services (eg. SSH), because IMAP and POP3 clients often send the
 password unencrypted over the internet without even bothering to give
 users any warnings. Dovecot can easily support non-system passwords for
@@ -51,13 +51,13 @@ If you wish to use non-system passwords, you can use pretty much any
 [[link,passdb]], but for simple installations you'll probably want to use
 [[link,auth_passwd_file]].
 
-[[link,userdb]] for system users is always [[link,auth_passwd]].
+userdb for system users is always [[link,auth_passwd]].
 
 ## Mail Location
 
 Usually UNIX systems are configured by default to deliver mails to
 `/var/mail/username` or `/var/spool/mail/username` mboxes. You may
-decide to use these, or use newer mailbox formats instead, such as
+decide to use these, or use newer [[link,mailbox_formats,mailbox formats]] instead, such as
 [[link,maildir]] or [[link,dbox]].
 
 Dovecot detects the mailbox format and location automatically if

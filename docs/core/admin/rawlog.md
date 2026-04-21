@@ -7,8 +7,8 @@ dovecotlinks:
 
 # Rawlog
 
-Dovecot supports logging IMAP/POP3/LMTP/SMTP(submission) traffic (also
-TLS/SSL encrypted). There are several possibilities for this:
+Dovecot supports [[link,logging,logging]] IMAP/[[link,pop3,POP3]]/[[link,lmtp,LMTP]]/[[link,submission,SMTP(submission)]] traffic (also
+[[link,ssl,TLS/SSL]] encrypted). There are several possibilities for this:
 
 1. [[setting,rawlog_dir]]
 
@@ -28,15 +28,15 @@ TLS/SSL encrypted). There are several possibilities for this:
 
 ## Pre-login Rawlog
 
-The pre-login rawlog is used before IMAP, POP3, Submission or ManageSieve
-client logs into the post-login process. Note that LMTP and doveadm protocols
+The pre-login rawlog is used before IMAP, POP3, Submission or [[link,managesieve,ManageSieve]]
+client logs into the post-login process. Note that LMTP and [[link,doveadm,doveadm]] protocols
 don't have a pre-login process.
 
 ::: info
 SSL/TLS sessions are currently not decrypted to rawlogs.
 :::
 
-You can enable pre-login rawlog for all users by telling the login processes
+You can enable pre-login rawlog for all users by telling the [[link,login_processes,login processes]]
 to log to a rawlog directory:
 
 ```doveconf[dovecot.conf]
@@ -67,7 +67,7 @@ performance impact for those users is minimal.
 ### Home Directory
 
 ::: info
-For rawlog binary to work, your userdb must have returned a home directory
+For rawlog binary to work, your [[link,userdb,userdb]] must have returned a home directory
 for the user.
 :::
 
@@ -118,7 +118,7 @@ See [[setting,import_environment]].
 
 ### Configuration
 
-To enable rawlog binary, use post-login scripting:
+To enable rawlog binary, use [[link,post_login_scripting,post-login scripting]]:
 
 ```doveconf[dovecot.conf]
 service imap {

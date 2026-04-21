@@ -33,7 +33,7 @@ Output stream filters:
 - failure-at: Insert a failure at the specified offset. This can be
   useful for testing.
 
-- lib-dcrypt/encrypt: Write encrypted data.
+- [[link,lib_dcrypt,lib-dcrypt]]/encrypt: Write encrypted data.
 
 - wrapper: Can be used to implement other ostreams where data can be
   coming from any form of activity.

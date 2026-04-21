@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Pop3c Mailbox Format
 
-The pop3c storage accesses a remote POP3 server as if it were a regular
+The pop3c storage accesses a remote [[link,pop3_server,POP3 server]] as if it were a regular
 (local) Dovecot mailbox format.
 
 The remote POP3 mailbox is visible as the INBOX folder on the Dovecot side.

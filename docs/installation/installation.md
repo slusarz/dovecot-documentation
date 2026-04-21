@@ -50,7 +50,7 @@ sudo make install
 ```
 
 That installs Dovecot under the `/usr/local` directory. The
-configuration file is in `/usr/local/etc/dovecot.conf`. Logging goes
+configuration file is in `/usr/local/etc/dovecot.conf`. [[link,logging,Logging]] goes
 to syslog's mail facility by default, which typically goes to
 `/var/log/mail.log` or something similar. If you are in a hurry, you
 can then jump to [[link,quick_config]].
@@ -118,7 +118,7 @@ sudo make install
 
 ### SSL/TLS Support
 
-Dovecot uses OpenSSL for SSL/TLS support and it should be automatically
+Dovecot uses OpenSSL for [[link,ssl,SSL/TLS]] support and it should be automatically
 detected. If it is not, you are missing some header files or libraries, or they
 are just in a non-standard path. Make sure you have the `openssl-dev`
 or a similar package installed, and if it is not in the standard
@@ -132,7 +132,7 @@ changed using the `--with-ssldir=DIR` configure option. Both can of
 course be overridden from the configuration file.
 
 You can use [Mozilla SSL Configuration Generator](https://ssl-config.mozilla.org/#server=dovecot&config=modern)
-to help create a default SSL configuration.
+to help create a default [[link,ssl_configuration,SSL configuration]].
 
 ### Optional Configure Options
 
@@ -239,7 +239,7 @@ system.
 
 ##### `--with-lua`
 
-Enables Lua support for authentication and push notifications.
+Enables [[link,lua,Lua]] support for [[link,authentication,authentication]] and [[link,push_notification,push notifications]].
 
 ##### `--with-pcre2`
 
@@ -356,7 +356,7 @@ similar package). You can also build this as a plugin.
 
 ##### `--with-gssapi(=plugin)`
 
-Build with GSSAPI authentication support (requires `krb5-devel`,
+Build with [[link,auth_gssapi,GSSAPI]] authentication support (requires `krb5-devel`,
 `libkrb5-dev` or similar package)
 
 ### Dynamic IMAP and POP3 Modules

@@ -50,13 +50,13 @@ There are two flavors of dbox:
 
 See [[link,imapc]].
 
-Use remote IMAP server as mail storage.
+Use remote [[link,imap_server,IMAP server]] as mail storage.
 
 ### pop3c
 
 See [[link,pop3c]].
 
-Use remote POP3 server as mail storage.
+Use remote [[link,pop3_server,POP3 server]] as mail storage.
 
 ## Configuration
 

@@ -13,9 +13,9 @@ See [[link,event_design]] first for an overview of the design.
 
 ## Sending Events
 
-Events are sent by logging it. Any `e_debug()`, `e_info()`, `e_warning()`
+Events are sent by [[link,logging,logging]] it. Any `e_debug()`, `e_info()`, `e_warning()`
 or `e_error()` call will also send the event, which may be redirected to the
-stats process. Often events that are intended for statistics are sent using the
+[[link,stats,stats]] process. Often events that are intended for statistics are sent using the
 `e_debug()` call. The event can be sent to statistics even if it's not
 actually logged. Avoid sending events excessively.
 
@@ -104,7 +104,7 @@ shouldn't be used for naming new categories.
 
 * (Local) disk reads should have `disk_read` and `disk_write` fields
 
-  * With remote filesystems like NFS it may be difficult to differentiate
+  * With remote filesystems like [[link,nfs,NFS]] it may be difficult to differentiate
     between disk IO and network IO. Generally the `disk_read/write` should
     be used for `POSIX read()` and `write()` calls from filesystem.
   * Counting only `read()s` and `write()s` doesn't necessarily translate
@@ -141,7 +141,7 @@ to the stats process. We may need to fix this if it becomes a problem.
 :::
 
 Field inheritance may become problematic also when multiple nested ioloops
-are used. For example an outgoing imapc connection could receive a reply,
+are used. For example an outgoing [[link,imapc,imapc]] connection could receive a reply,
 which synchronously triggers an outgoing quota SQL connection. The quota
 SQL connection's parent event likely shouldn't be the imapc connection's
 event, because otherwise they could be mixing the `IP/port fields` and

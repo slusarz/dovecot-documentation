@@ -11,7 +11,7 @@ Quota clone plugin is useful when you want to store everybody's current quota
 usage to a database, but you don't want to use the database as the
 authoritative quota database.
 
-For example you might want to access everybody's quota via Redis (or SQL)
+For example you might want to access everybody's quota via [[link,dict_redis,Redis]] (or SQL)
 but you don't store the Redis database permanently so it could become empty
 once in a while.
 
@@ -22,9 +22,9 @@ that is less resource intensive.
 In these example use-cases, you can use [[link,quota_driver_count]] as the
 authoritative quota database and make a copy of the quota usage to Redis.
 From Redis you could then once in a while gather everybody's current quota
-usage and send it to yet another place (e.g. for statistics handling).
+usage and send it to yet another place (e.g. for [[link,stats,statistics]] handling).
 
-Every time quota is updated, the value is updated to the cloned dict. There are
+Every time quota is updated, the value is updated to the cloned [[link,dict,dict]]. There are
 race conditions with it so the quota may not always be 100% correct. The old
 value is always replaced with the new one though (not just
 incremented/decremented) so the cloned quota is never too much wrong.

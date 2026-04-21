@@ -457,7 +457,7 @@ possible to write a portable GC without radical changes in how you write
 code. There are a few ways to avoid most free() calls however: data
 stack and memory pools.
 
-Data stack works in somewhat similar way to C's control stack. alloca()
+[[link,data_stack,Data stack]] works in somewhat similar way to C's control stack. alloca()
 is quite near to what it does, but there's one major difference: Stack
 frames are explicitly defined, so functions can return values allocated
 from data stack. t_strdup_printf() call is an excellent example of why

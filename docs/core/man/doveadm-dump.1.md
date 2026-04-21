@@ -16,8 +16,8 @@ dovecotComponent: core
 ## DESCRIPTION
 
 Dovecot uses several binary index and log files in order to improve
-performance for accessing mails. For some mailbox formats, such as sdbox
-and mdbox, the index files are part of the format itself. For details
+performance for accessing mails. For some [[link,mailbox_formats,mailbox formats]], such as [[link,sdbox,sdbox]]
+and [[link,mdbox,mdbox]], the index files are part of the format itself. For details
 about index files, see [[link,design_index_format_main].
 
 **doveadm dump** is used to show the contents of those mailbox index/log

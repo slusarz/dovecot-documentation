@@ -24,7 +24,7 @@ Currently supported drivers are:
 | Name | Description |
 | ---- | ----------- |
 | [`file`](#flat-files) | Flat Files |
-| [`fs`](#filesystem-lib-fs-wrapper) | FS (lib-fs wrapper) |
+| [`fs`](#filesystem-lib-fs-wrapper) | [[link,fs,FS]] (lib-fs wrapper) |
 | [`ldap`](#ldap) | LDAP (read only) |
 | [`proxy`](#proxy) | Proxy |
 | [`redis`](#redis) | Redis |
@@ -49,7 +49,7 @@ databases, but good for small ones such as a single user's quota.
 ### Filesystem (lib-fs-wrapper)
 
 This is a wrapper for lib-fs, which most importantly has the `posix`
-driver. Use the [[setting,fs]] setting to configure the filesystem.
+driver. Use the Dovecot Filesystems setting to configure the filesystem.
 For example:
 
 ```doveconf[dovecot.conf]
@@ -214,7 +214,7 @@ It's possible to implement [[setting,mail_attribute]] also with SQL dict.
 ::: warning
 Using shared attributes in [[setting,mail_attribute]] requires the
 mailbox GUID to be unique between users. This is not the case when
-mails were migrated via imapc, because it uses a hash of the
+mails were migrated via [[link,imapc,imapc]], because it uses a hash of the
 mailbox name as the GUID. So every migrated user would have
 exactly the same INBOX GUID, preventing the use of dict-sql. It is
 currently not possible to add a username as an additional unique
@@ -290,7 +290,7 @@ service dict {
 ```
 
 If you use multiple UNIX UIDs, you can add an extra group for all Dovecot mail
-processes. This works even if you have untrusted system users who have shell
+processes. This works even if you have untrusted [[link,system_users,system users]] who have shell
 access to the server:
 
 ```doveconf[dovecot.conf]

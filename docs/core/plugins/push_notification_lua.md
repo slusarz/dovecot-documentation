@@ -5,7 +5,7 @@ title: push-notification-lua
 
 # Push Notification Plugin: Lua (`push-notification-lua`)
 
-You can use Lua to write custom push notification handlers.
+You can use [[link,lua,Lua]] to write custom push notification handlers.
 
 ::: info
 Lua push notification requires the base push-notification plugin to be
@@ -14,7 +14,7 @@ configured.
 See [[plugin,push-notification]] for configuration information.
 :::
 
-See [[link,lua]] for general information on how Lua is implemented in Dovecot.
+See Lua for general information on how Lua is implemented in Dovecot.
 
 ## Configuration
 

@@ -20,7 +20,7 @@ can be used instead (also inside `passdb { ... }` if wanted).
 
 ## Example
 
-Authenticates users against remote IMAP server in IP address 192.168.1.123:
+Authenticates users against remote [[link,imap_server,IMAP server]] in IP address 192.168.1.123:
 
 ```doveconf[dovecot.conf]
 passdb imap {

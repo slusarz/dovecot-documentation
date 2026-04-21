@@ -14,8 +14,8 @@ written with security primarily in mind. Dovecot is an excellent choice for
 both small and large installations. It's fast, simple to set up, requires
 no special administration and it uses very little memory.
 
-Dovecot supports the IMAP ([[rfc,3501]]), POP3 ([[rfc,1939]]), LMTP
-([[rfc,2033]]), and ManageSieve ([[rfc,5228]]) mail protocols.
+Dovecot supports the IMAP ([[rfc,3501]]), [[link,pop3,POP3]] ([[rfc,1939]]), [[link,lmtp,LMTP]]
+([[rfc,2033]]), and [[link,managesieve,ManageSieve]] ([[rfc,5228]]) mail protocols.
 
 ## Dovecot Pro
 

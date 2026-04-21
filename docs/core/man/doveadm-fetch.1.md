@@ -138,7 +138,7 @@ This command uses by default the output formatter **pager**.
         :   A message's unique (POP3) identifier within a mailbox.
 
     :   **refcount**
-        :   Mail reference count, mdbox only.
+        :   Mail reference count, [[link,mdbox,mdbox]] only.
 
     :   **seq**
         :   A message's sequence number in a mailbox.

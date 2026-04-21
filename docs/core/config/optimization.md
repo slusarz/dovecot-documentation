@@ -46,7 +46,7 @@ See Also:
 
 ## Disk I/O
 
-Usually heavily loaded IMAP and POP3 servers don't use much CPU, but
+Usually heavily loaded IMAP and [[link,pop3,POP3]] servers don't use much CPU, but
 they use all the disk I/O they can get. So reducing disk I/O is probably
 the most useful optimization you can do.
 
@@ -60,7 +60,7 @@ the most useful optimization you can do.
 
 - See [[plugin,fts]] for optimizing IMAP SEARCH command.
 
-- See [[link,pop3]] for POP3 optimizations, especially
+- See POP3 for POP3 optimizations, especially
   [[setting,pop3_no_flag_updates,yes]].
 
 - [[setting,mailbox_list_index,yes]] can help a lot by replying to IMAP STATUS
@@ -76,7 +76,7 @@ the most useful optimization you can do.
 - [[setting,mail_volatile_path,/tmp/dovecot-volatile/%{user | sha1 % 256 | hex(2)}/%{user}]] moves, e.g.,
   lock files to the volatile directory. This is helpful especially if the
   [[link,mail_location,mail location settings]] otherwise point to a remote
-  filesystem like NFS.
+  filesystem like [[link,nfs,NFS]].
 
 - If the [[plugin,acl]] is used, but only global ACLs are needed, set
   [[setting,acl_globals_only,yes]].
@@ -85,7 +85,7 @@ the most useful optimization you can do.
 
 - See [[link,login_processes]] for optimizing CPU usage caused by logins.
 
-- See [[setting,auth_cache_size]] setting for caching passdb and userdb
+- See [[setting,auth_cache_size]] setting for caching [[link,passdb,passdb]] and [[link,userdb,userdb]]
   lookups.
 
   - To distribute password hash calculations to multiple CPU cores (via

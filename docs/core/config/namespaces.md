@@ -20,7 +20,7 @@ to locate mailboxes and whether they're private, shared or public.
 Dovecot namespaces can be used for several other purposes too:
 
 * Changing the [[link,namespaces_hierarchy_separators,Hierarchy Separators]]
-* Providing backwards compatibility when switching from another IMAP server
+* Providing backwards compatibility when switching from another [[link,imap_server,IMAP server]]
 * Provides support for [[link,shared_mailboxes_public]] and
   [[link,shared_mailboxes_user]] mailboxes
 * Allows having mails in multiple different locations with possibly different
@@ -125,7 +125,7 @@ namespace <name> {
 
 The namespace name is only used internally within configurations. It allows you
 to update an existing namespace - by repeating the namespace block and adding
-additional configuration settings - or allows userdb to override namespace
+additional configuration settings - or allows [[link,userdb,userdb]] to override namespace
 settings for specific users, e.g.:
 
 ```
@@ -155,7 +155,7 @@ For example if you have a mailbox "foo" with child mailbox "bar", the full
 path to the child mailbox would be "foo/bar" with `/` as the separator, and
 "foo.bar" with `.` as the separator.
 
-IMAP clients, Sieve scripts, and many parts of Dovecot configuration use the
+IMAP clients, [[link,sieve,Sieve]] scripts, and many parts of Dovecot configuration use the
 configured separator when referring to mailboxes. This means that if you change
 the separator, you may break things.
 
@@ -225,8 +225,8 @@ See [[link,shared_mailboxes]].
 
 ### Mixed mbox and Maildir
 
-If you have your INBOX as mbox in `/var/mail/username` and the rest of the
-mailboxes in Maildir format under `~/Maildir`, you can do this by creating two
+If you have your INBOX as [[link,mbox,mbox]] in `/var/mail/username` and the rest of the
+mailboxes in [[link,maildir,Maildir]] format under `~/Maildir`, you can do this by creating two
 namespaces:
 
 ```doveconf[dovecot.conf]

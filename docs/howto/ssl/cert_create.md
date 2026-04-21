@@ -11,7 +11,7 @@ dovecotlinks:
 
 ## Self-signed SSL Certificates
 
-Self-signed SSL certificates are the easiest way to get your SSL server
+Self-signed [[link,ssl,SSL]] certificates are the easiest way to get your SSL server
 working. However unless you take some action to prevent it, **this is
 at the cost of security**:
 

@@ -8,7 +8,7 @@ dovecotlinks:
 
 # Sieve: Spamtest and Virustest Extensions
 
-Using the spamtest and virustest extensions ([[rfc,5235]]), the Sieve language
+Using the spamtest and virustest extensions ([[rfc,5235]]), the [[link,sieve,Sieve]] language
 provides a uniform and standardized command interface for evaluating
 spam and virus tests performed on the message. Users no longer need to
 know what headers need to be checked and how the scanner's verdict is
@@ -16,7 +16,7 @@ represented in the header field value. They only need to know how to use
 the spamtest (spamtestplus) and virustest extensions.
 
 This also gives GUI-based Sieve editors the means to provide a portable and
-easy to install interface for spam and virus filter configuration.
+easy to install interface for spam and virus [[link,fts_filter_configuration,filter configuration]].
 
 The burden of specifying which headers need to be checked and how the
 scanner output is represented falls onto the Sieve administrator.

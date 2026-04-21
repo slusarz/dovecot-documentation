@@ -9,14 +9,14 @@ dovecotlinks:
 
 ## Cleartext Authentication
 
-The simplest authentication mechanism is PLAIN. The client simply sends the
+The simplest [[link,authentication,authentication]] mechanism is PLAIN. The client simply sends the
 password unencrypted to Dovecot. All clients support the PLAIN mechanism, but
 obviously there's the problem that anyone listening on the network can steal
 the password. For that reason (and some others) other mechanisms were
 implemented.
 
 Today however many people use [[link,ssl]], and there's no problem with
-sending unencrypted password inside SSL secured connections. So if you're
+sending unencrypted password inside SSL [[link,secured_connections,secured connections]]. So if you're
 using SSL, you probably don't need to bother worrying about anything else
 than the PLAIN mechanism.
 
@@ -58,7 +58,7 @@ all, because they only support verifying a known cleartext password.
 | [[link,auth_gssapi]] | Kerberos v5 support. |
 | ANONYMOUS | Support for logging in anonymously. This may be useful if you're intending to provide publicly accessible IMAP archive. |
 | OTP | One time password mechanisms. |
-| EXTERNAL | EXTERNAL SASL mechanism. |
+| EXTERNAL | EXTERNAL [[link,sasl,SASL]] mechanism. |
 | [[link,auth_oauth2,OAUTHBEARER]] | OAuth2 bearer authentication [[rfc,7628]]. |
 | [[link,auth_oauth2,XOAUTH2]] | [Google flavor OAUTHBEARER](https://developers.google.com/gmail/imap/xoauth2-protocol) |
 

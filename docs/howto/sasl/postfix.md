@@ -9,7 +9,7 @@ dovecotlinks:
 
 Since version 2.3, Postfix supports SMTP AUTH through Dovecot [[link,sasl]].
 
-If you intend to use GSSAPI, oauth2, external (certificate based) authentication,
+If you intend to use [[link,auth_gssapi,GSSAPI]], oauth2, external (certificate based) [[link,authentication,authentication]],
 you should look at using [[link,submission,submission service]] instead.
 
 If using Postfix obtained from a binary (such as a .rpm or .deb file), you

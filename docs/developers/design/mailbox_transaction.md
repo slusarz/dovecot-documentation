@@ -33,8 +33,8 @@ Normally you would use this flag when you want to save or copy messages.
 ### `MAILBOX_TRANSACTION_FLAG_ASSIGN_UIDS`
 
 Require assigning UIDs to saved/copied messages immediately. Normally this
-is done only when it's easy (maildir: if dovecot-uidlist can be locked
-without waiting, mbox: if mbox is already fully synced).
+is done only when it's easy ([[link,maildir,maildir]]: if dovecot-uidlist can be locked
+without waiting, [[link,mbox,mbox]]: if mbox is already fully synced).
 
 ### `MAILBOX_TRANSACTION_FLAG_REFRESH`
 
@@ -89,7 +89,7 @@ Bitmask of types of changes that occurred within this transaction.
 
 ### `no_read_perm`
 
-User doesn't have read ACL for the mailbox, so don't show the
+User doesn't have read [[link,acl,ACL]] for the mailbox, so don't show the
 `uid_validity` / `saved_uids`.
 
 ## Deinitialization

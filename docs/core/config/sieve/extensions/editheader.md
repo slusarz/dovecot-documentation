@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Sieve: Editheader Extension
 
-The editheader extension ([[rfc,5293]]) enables Sieve
+The editheader extension ([[rfc,5293]]) enables [[link,sieve,Sieve]]
 scripts to delete and add message header fields, thereby allowing
 interaction with other components that consume or produce header fields.
 

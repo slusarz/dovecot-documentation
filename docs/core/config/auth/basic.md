@@ -14,7 +14,7 @@ may need to be set on your system.
 
 [[setting,auth_mechanisms,plain login]]
 
-Enables the `PLAIN` and `LOGIN` authentication mechanisms.
+Enables the `PLAIN` and `LOGIN` [[link,authentication_mechanisms,authentication mechanisms]].
 
 The `LOGIN` mechanism is obsolete, but still used by old clients.
 
@@ -35,7 +35,7 @@ For example the SHA1 hash for "pass" is
 we only log `9d4e1e`.
 
 This can be useful for detecting brute force authentication attempts without
-logging the users' actual passwords.
+[[link,logging,logging]] the users' actual passwords.
 
 ### Authentication Penalty
 
@@ -45,8 +45,8 @@ See [[link,auth_penalty]].
 
 [[setting,auth_cache_size,100M]]
 
-Specifies the amount of memory used for authentication caching (passdb
-and userdb lookups).
+Specifies the amount of memory used for [[link,auth_caching,authentication caching]] ([[link,passdb,passdb]]
+and [[link,userdb,userdb]] lookups).
 
 ### `imap_id_retain`
 
@@ -106,7 +106,7 @@ session ID to the Backends.
 
 [[setting,mail_max_userip_connections,10]]
 
-Maximum number of simultaneous IMAP4 or POP3 connections allowed for
+Maximum number of simultaneous [[link,imap,IMAP]] or [[link,pop3,POP3]] connections allowed for
 the same user from the same IP address (`10` = 10 IMAP + 10 POP3).
 
 ### SSL

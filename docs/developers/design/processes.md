@@ -13,9 +13,9 @@ most important processes are:
 - Master process (dovecot)
 - Log process (log)
 - Config process (config)
-- Authentication process (auth)
-- Login processes (imap-login, pop3-login)
-- Mail processes (imap, pop3, lmtp)
+- [[link,authentication,Authentication]] process (auth)
+- [[link,login_processes,Login processes]] (imap-login, pop3-login)
+- Mail processes (imap, [[link,pop3,pop3]], [[link,lmtp,lmtp]])
 
 ![Auth](images/auth.png)
 
@@ -43,7 +43,7 @@ opening many idling connections.
 
 ## Log Process
 
-Most of the logging is done via the log process. Only the master process
+Most of the [[link,logging,logging]] is done via the log process. Only the master process
 and processes that start up standalone (e.g. `dovecot-lda`) bypass the log
 process.
 
@@ -78,7 +78,7 @@ executing `doveconf`.
 ## Authentication Process
 
 The auth process handles everything related to the actual authentication:
-SASL authentication mechanisms, looking up and verifying the passwords and
+[[link,sasl,SASL]] [[link,authentication_mechanisms,authentication mechanisms]], looking up and verifying the passwords and
 looking up user information.
 
 There is only a single auth master process, which accepts all incoming
@@ -87,14 +87,14 @@ what it does and must not block for long or it will cause all the
 authentications to hang.
 
 To handle potentially long-running blocking operations there are auth worker
-processes. These are often used for passdb and userdb lookups. The auth worker
+processes. These are often used for [[link,passdb,passdb]] and [[link,userdb,userdb]] lookups. The auth worker
 processes can also be used for verifying password hashes, which may be
 necessary if strong hashing algorithms are used.
 
 ## Login Processes
 
 The login processes implement the required minimum of the IMAP, POP3,
-ManageSieve or Submission protocols before a user logs in successfully.
+[[link,managesieve,ManageSieve]] or [[link,submission,Submission]] protocols before a user logs in successfully.
 Each protocol is handled by a separate process (and binary).
 
 These processes are run with least possible privileges. Unfortunately
@@ -124,7 +124,7 @@ UNIX socket and sends the file descriptor it. The mail process verifies from
 the auth process that the authentication really was successful.
 
 By default each login process will handle only a single connection and
-afterwards kill itself (but see SSL proxying below). This way attacker
+afterwards kill itself (but see [[link,ssl,SSL]] proxying below). This way attacker
 can't see other people's connections. This can however be disabled, in which
 case the security of the design suffers greatly.
 
@@ -134,7 +134,7 @@ lifetime of the connection. This way if a security hole is found from
 the SSL library, an authenticated user still can't execute code outside
 the login process.
 
-See [[link,login_processes]] for more information about different settings
+See login processes for more information about different settings
 related to login processes.
 
 ## Mail Processes
@@ -147,8 +147,8 @@ privileges of the logged in user.
 There are also various other processes commonly used:
 
 * anvil: Keep track of which mail processes handle which users
-* dict: Proxy process for dict lookups
+* [[link,dict,dict]]: Proxy process for dict lookups
 * dns-client: Asynchronous DNS lookups
 * imap-hibernate: IDLEing imap connections can be moved to hibernation processes
 * indexer and indexer-worker: For full text search indexing
-* stats: Tracking statistics
+* [[link,stats,stats]]: Tracking statistics

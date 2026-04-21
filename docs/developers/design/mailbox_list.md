@@ -65,7 +65,7 @@ List mailboxes that match any of the given patterns list.
 
 #### `mailbox_list_iter_init_namespaces()`
 
-List matching mailboxes from all namespaces.
+List matching mailboxes from all [[link,namespaces,namespaces]].
 
 - `MAILBOX_LIST_ITER_SKIP_ALIASES` flag skips namespaces that have
   `alias_for` set. You usually want to set this flag to avoid
@@ -165,7 +165,7 @@ Mailbox flags:
 
 Mailbox exists, but can't be selected. It's
 possible that it can be created and then it becomes selectable.
-For example with mbox and FS layout the directories aren't
+For example with [[link,mbox,mbox]] and [[link,fs,FS]] layout the directories aren't
 selectable mailboxes.
 
 ##### `MAILBOX_NONEXISTENT`

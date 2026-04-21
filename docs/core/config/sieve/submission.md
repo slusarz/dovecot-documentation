@@ -15,7 +15,7 @@ The `%{user | domain}` variable expands to the recipient domain.
 
 ### Domain (`%{user | domain}`) is Empty
 
-IMAP or POP3 protocol doesn't have explicit support for domains. The
+IMAP or [[link,pop3,POP3]] protocol doesn't have explicit support for domains. The
 usernames are commonly in `user@domain` format, and that is also where
 Dovecot gets the domain from. If the username doesn't have `@domain`, then
 the domain is also usually empty (unless [[setting,auth_default_domain]]
@@ -79,7 +79,7 @@ passdb sql {
 
 `submission_host = smtp-out.example.com:25`
 
-SMTP server which is used for sending email rejects, Sieve forwards,
+SMTP server which is used for sending email rejects, [[link,sieve,Sieve]] forwards,
 vacations, etc.
 
 Alternatively, `sendmail_path` setting can be used to send mails using the

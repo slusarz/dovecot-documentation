@@ -121,7 +121,7 @@ If [[setting,mail_path]] is set, the path is automatically created if any
 directories are missing. You'll see something like this if you enable
 [[setting,log_debug]].
 
-Example for mbox:
+Example for [[link,mbox,mbox]]:
 
 ```
 Debug: Namespace : /home/user/Mail doesn't exist yet, using default permissions
@@ -195,7 +195,7 @@ user:{PLAIN}password:1000:1000::/home/user::userdb_mail_driver=mbox userdb_mail_
 
 ## Mixing Multiple Mailbox Formats
 
-It's possible to use different mailbox formats same user by configuring
+It's possible to use different [[link,mailbox_formats,mailbox formats]] same user by configuring
 multiple namespaces. See [[link,namespaces]].
 
 Each mailbox format has to live in a different namespace. Mixing mailbox
@@ -231,7 +231,7 @@ Before configuring Dovecot, you'll need to know where your mails are
 located. You should already have an SMTP server installed and configured
 to deliver mails somewhere, so the easiest way to make Dovecot work is
 to just use the same location. Otherwise you could create a `~/Maildir`
-directory and configure your SMTP server to use the Maildir format.
+directory and configure your SMTP server to use the [[link,maildir,Maildir]] format.
 
 First send a test mail to yourself (as your own non-root user):
 

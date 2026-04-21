@@ -5,7 +5,7 @@ title: SSL
 
 # SSL
 
-For configuring Dovecot to use SSL, see [[link,ssl_configuration]].
+For configuring Dovecot to use [[link,ssl,SSL]], see [[link,ssl_configuration]].
 
 LetsEncrypt has a
 [good primer](https://www.eff.org/deeplinks/2019/01/encrypting-web-encrypting-net-primer-using-certbot-secure-your-mailserver)
@@ -27,7 +27,7 @@ SSL and TLS terms are often used in confusing ways:
 * TLS (Transport Layer Security) replaced the SSL protocol. TLSv1 protocol is
   used practically always nowadays. Some clients use TLS to mean that they're
   going to use STARTTLS command after connecting to the standard imap (143),
-  pop3 (110) or smtp port (25/587). Nothing would prevent using SSLv3 protocol
+  [[link,pop3,pop3]] (110) or smtp port (25/587). Nothing would prevent using SSLv3 protocol
   after STARTTLS command.
 
 Unfortunately there doesn't seem to be any clear and simple way to refer to
@@ -55,12 +55,12 @@ SSL port deprecation never really happened, probably because of a few reasons:
 * Some admins don't even know about STARTTLS.
 * Some admins want to require SSL/TLS, but don't realize that this is also
   possible with STARTTLS (Dovecot has [[setting,auth_allow_cleartext,no]]
-  and [[setting,ssl,required]] settings).
+  and SSL settings).
 * Some admins understand everything, but still prefer to allow only SSL ports
   (maybe with a firewall). This could be because it makes it easier to ensure
   that no information is leaked, because SSL/TLS handshake happens immediately.
-  Some clients unfortunately try to do cleartext authentication without
-  STARTTLS, even when IMAP server has told the client that it won't work.
+  Some clients unfortunately try to do cleartext [[link,authentication,authentication]] without
+  STARTTLS, even when [[link,imap_server,IMAP server]] has told the client that it won't work.
   Besides, it requires fewer round-trips if you begin SSL upon connection when
   you know you want it, instead of connect, negotiate capabilities, insist on
   TLS, then start all over again inside the encrypted session.

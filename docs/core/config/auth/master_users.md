@@ -159,7 +159,7 @@ the logs.
 
 ## Master Passwords
 
-You can configure a passdb which first performs authentication using the
+You can configure a passdb which first performs [[link,authentication,authentication]] using the
 master password. Then it continues to the primary passdb to verify that
 the user exists and get other extra fields.
 

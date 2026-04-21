@@ -5,7 +5,7 @@ title: imap-sieve
 
 # IMAPSieve Plugin (`imap-sieve`)
 
-As defined in the base specification ([[rfc,5228]]), the Sieve language is
+As defined in the base specification ([[rfc,5228]]), the [[link,sieve,Sieve]] language is
 used only during delivery. However, in principle, it can be used at any
 point in the processing of an email message.
 

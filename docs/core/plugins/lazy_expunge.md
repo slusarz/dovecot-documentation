@@ -17,7 +17,7 @@ the message from a mailbox.
 
 This behavior is useful for a variety of reasons:
 
-1. Protect against misconfigured clients (e.g. POP3 client that deletes all
+1. Protect against misconfigured clients (e.g. [[link,pop3,POP3]] client that deletes all
    messages)
 2. Protect against accidental deletion (user error)
 3. Archiving
@@ -125,7 +125,7 @@ See [[plugin,quota]].
 
 ### Doveadm
 
-Doveadm can be used to manually clean expunge storage.
+[[link,doveadm,Doveadm]] can be used to manually clean expunge storage.
 
 Example to delete all messages in `.EXPUNGED` mailbox older than one day:
 

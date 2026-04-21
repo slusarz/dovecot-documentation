@@ -191,7 +191,7 @@ Dovecot creates the following fields:
 
 - box: Mailbox name
 
-- user: User name who owns the mailbox, or empty for public namespaces
+- user: User name who owns the mailbox, or empty for public [[link,namespaces,namespaces]]
 
 - hdr: Indexed message headers
 
@@ -228,7 +228,7 @@ it are:
 
 - Have some HTTP proxy redirecting the connections based on the URL
 
-- Configure Dovecot's userdb lookup to return a different host for
+- Configure Dovecot's [[link,userdb,userdb]] lookup to return a different host for
   [[setting,fts_solr_url]] setting using [[link,userdb_extra_fields]].
 
   - MySQL: `query = SELECT concat('https://', solr_host, ':8983/solr/dovecot/') AS fts_solr_url, ...`

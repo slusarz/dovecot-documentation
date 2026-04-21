@@ -54,7 +54,7 @@ different things.
   how the client and server talk to each others in order to perform the
   authentication. Most people use only PLAIN authentication, which
   basically means that the user and password are sent without any kind
-  of encryption to the server. SSL/TLS can then be used to provide the
+  of encryption to the server. [[link,ssl,SSL/TLS]] can then be used to provide the
   encryption to make PLAIN authentication secure.
 
   **Password scheme is about how the password is hashed in your
@@ -90,7 +90,7 @@ For simulating a full login with both passdb and userdb lookup, use
 
 ### PLAIN SASL Mechanism
 
-With IMAP and POP3, it's easy to log in manually using the IMAP's LOGIN
+With IMAP and [[link,pop3,POP3]], it's easy to log in manually using the IMAP's LOGIN
 command or POP3's USER and PASS commands (see [[link,testing]] for details),
 but with SMTP AUTH you'll need to use PLAIN authentication mechanism, which
 requires you to build a base64-encoded string in the correct format.

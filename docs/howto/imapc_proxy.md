@@ -6,7 +6,7 @@ title: imapc Proxy
 # Dovecot imapc Proxy
 
 Using Dovecot as a secure IMAP Proxy in front of Exchange, using
-Exchange Authentication and IMAPC.
+Exchange [[link,authentication,Authentication]] and [[link,imapc,IMAPC]].
 
 This is based on already having Dovecot already compiled and installed.
 
@@ -96,7 +96,7 @@ Start dovecot and test it with openssl as:
 openssl s_client -connect machine.example.org:143 -starttls imap
 ```
 
-You should see a whole bunch of SSL information, and the last line
+You should see a whole bunch of [[link,ssl,SSL]] information, and the last line
 should say:
 
 ```

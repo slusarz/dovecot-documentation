@@ -11,7 +11,7 @@ Login referrals are an IMAP extension specified by [[rfc,2221]]. It is
 practically not used by anyone, so this page exists mainly for historical
 reasons.
 
-Their purpose is to redirect clients to an different IMAP server in case
+Their purpose is to redirect clients to an different [[link,imap_server,IMAP server]] in case
 of hardware failures or organizational changes. No client action is needed
 to invoke the LOGIN-REFERRALS capability: the redirection is triggered by
 the server and occurs transparently.
@@ -20,7 +20,7 @@ the server and occurs transparently.
 As stated by [[rfc,2221]], a man in the middle attack may use a rogue
 'password catching' server to collect login data and redirect your clients
 to their own rogue IMAP server. Although this would be avoided by enforcing
-SSL/TLS. Login referrals are not supported by many clients, so you
+[[link,ssl,SSL/TLS]]. Login referrals are not supported by many clients, so you
 probably don't want to use them anyway.
 :::
 
@@ -63,7 +63,7 @@ The following clients are known to support login referrals:
 
 ## Examples
 
-Forward user to another server after successful authentication (SQL):
+Forward user to another server after successful [[link,authentication,authentication]] (SQL):
 
 ```doveconf[dovecot.conf]
 passdb sql {

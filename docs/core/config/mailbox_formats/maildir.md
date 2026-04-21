@@ -11,7 +11,7 @@ The Maildir format debuted with the qmail server in the mid-1990s. Each
 mailbox folder is a directory and each message a file. This improves
 efficiency because individual emails can be modified, deleted and added
 without affecting the mailbox or other emails, and makes it safer to use on
-networked file systems such as NFS.
+networked file systems such as [[link,nfs,NFS]].
 
 ::: warning
 The Maildir mailbox format is mainly viable for smaller installations.
@@ -261,7 +261,7 @@ at the [[link,mta]], [[link,mda]], or [[link,lda]] (as is recommended with
 [[link,mbox]]).
 
 There is one exception, though, namely when [[setting,pop3_reuse_xuidl,yes]]
-is used: in this case `X-UIDL` is used for the POP3 UIDLs.
+is used: in this case `X-UIDL` is used for the [[link,pop3,POP3]] UIDLs.
 Therefore, in this case, is recommended to strip the `X-UIDL` mail headers
 *case-insensitively* at the mail delivery layer.
 
@@ -309,7 +309,7 @@ If you want Maildirs to use hierarchical directories, such as:
 * `Maildir/folder/`
 * `Maildir/folder/subfolder/`
 
-you'll need to enable fs layout:
+you'll need to enable [[link,fs,fs]] layout:
 
 ```doveconf[dovecot.conf]
 mailbox_list_layout = fs
@@ -418,7 +418,7 @@ here, unusual upper/lower casing has been used.
 
 ### Multiple Namespaces pointing to INBOX
 
-When there are multiple namespaces that point to the same INBOX namespace,
+When there are multiple [[link,namespaces,namespaces]] that point to the same INBOX namespace,
 `dovecot.list.index` can potentially keep fighting over whether INBOX exists
 or not.
 

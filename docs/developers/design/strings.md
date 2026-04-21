@@ -51,7 +51,7 @@ Dovecot's dynamic strings.
 - `i_snprintf()` is a wrapper to `snprintf()` that makes it easier
   to check if result was truncated. It also adds a few other safety
   checks. This should be avoided in general, except in situations where
-  you just don't want to use data stack and there's no way for the
+  you just don't want to use [[link,data_stack,data stack]] and there's no way for the
   result to get truncated.
 
 - `i_strocpy()` is similar to `strlcpy()`, but makes it easier to

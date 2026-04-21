@@ -7,7 +7,7 @@ dovecotlinks:
 
 # Sieve: Extension for Notifications
 
-The Sieve enotify extension ([[rfc,5435]]) adds the `notify` action to
+The [[link,sieve,Sieve]] enotify extension ([[rfc,5435]]) adds the `notify` action to
 the Sieve language.
 
 ## Configuration

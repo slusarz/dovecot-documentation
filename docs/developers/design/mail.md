@@ -109,7 +109,7 @@ Only functions returning int can fail, others don't.
   - Typically the input contains the raw data in disk, lines may end
      with LF or CRLF depending on how they're on disk.
 
-  - mbox drops Dovecot's internal headers from the stream (X-UID:,
+  - [[link,mbox,mbox]] drops Dovecot's internal headers from the stream (X-UID:,
      Status:, etc.).
 
   - Plugins (e.g. [[plugin,mail-compress]]) can also hook into this call
@@ -141,7 +141,7 @@ an existing mailbox (e.g. dsync):
 - `mail_update_modseq()` and `mail_update_pvt_modseq()` can be used to
   increase the message's shared/private modseq.
 
-- `mail_update_pop3_uidl()` can be used to give a specific POP3 UIDL
+- `mail_update_pop3_uidl()` can be used to give a specific [[link,pop3,POP3]] UIDL
   for the message. This is used internally when `pop3_save_uidl=yes`.
 
 Other metadata can't be changed. IMAP protocol requires that messages

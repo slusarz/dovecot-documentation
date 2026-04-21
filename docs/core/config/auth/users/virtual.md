@@ -15,7 +15,7 @@ dovecotlinks:
 
 There are many ways to configure Dovecot to use virtual users.
 
-Users are often categorized as being either system users (in
+Users are often categorized as being either [[link,system_users,system users]] (in
 `/etc/passwd`) or virtual users (not in `/etc/passwd`). However from
 Dovecot's point of view there isn't much of a difference between them.
 If a [[link,auth_passwd]] lookup and a [[link,auth_sql]] lookup return the
@@ -36,7 +36,7 @@ The databases usually contain the following information:
 
 ## Usernames and Domains
 
-Dovecot doesn't care much about domains in usernames. IMAP and POP3
+Dovecot doesn't care much about domains in usernames. IMAP and [[link,pop3,POP3]]
 protocols currently have no concept of "domain", so the username is just
 something that shows up in your logs and maybe in some configuration,
 but they have no direct functionality.
@@ -73,7 +73,7 @@ secure.
 
 So, if not the *dovecot* user, what then? You can decide that yourself.
 You can create, for example, one *vmail* user which owns all the mails,
-or you can assign a separate UID for each user. See [[link,system_users]]
+or you can assign a separate UID for each user. See System Users
 for more information about different ways to allocate UIDs for users.
 
 ## UNIX GIDs
@@ -120,8 +120,8 @@ Some uses for home directory are:
 
 ### Home vs. Mail Directory
 
-Home directory shouldn't be the same as mail directory with mbox or
-Maildir formats (but with dbox it's fine). It's possible to do
+Home directory shouldn't be the same as mail directory with [[link,mbox,mbox]] or
+[[link,maildir,Maildir]] formats (but with [[link,dbox,dbox]] it's fine). It's possible to do
 that, but you might run into trouble with it sooner or later. Some
 problems with this are:
 
@@ -138,7 +138,7 @@ problems with this are:
     that has a "sieve" child)
 
 - And vice versa: If user creates "dovecot.sieve" mailbox, Dovecot will
-  probably start logging all kinds of errors because the mailbox
+  probably start [[link,logging,logging]] all kinds of errors because the mailbox
   directory isn't a valid [[link,sieve]] script.
 
 - If you ever intend to migrate to another mailbox format, it's much
@@ -261,7 +261,7 @@ be owned by vmail user and vmail group.
 ## Virtual and System Users
 
 If you need to do PAM/passwd lookup for system users, and also have
-domain users, you can configure authentication to drop the domain part
+domain users, you can configure [[link,authentication,authentication]] to drop the domain part
 after doing virtual user lookup.
 
 ``doveconf[dovecot.conf]

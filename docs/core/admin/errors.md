@@ -42,12 +42,12 @@ especially contained these intentionally broken `X-UID:` headers.
 With newer Dovecot versions these broken `X-UID:` headers aren't
 practically ever used. It happens only if the mail has a valid
 `X-IMAPbase`: header, `X-UID:` header, and the mail is written to an empty
-mbox file. Note that this can happen only to new mboxes, because expunging
+[[link,mbox,mbox]] file. Note that this can happen only to new mboxes, because expunging
 all messages in a mailbox causes Dovecot to create a metadata message at
 the beginning of the mbox file.
 
 In any case it's still a good idea to filter out `X-UID:` and other
-metadata headers in your MDA. [[link,lda]] does this internally.
+metadata headers in your [[link,mda,MDA]]. [[link,lda]] does this internally.
 See [[link,mbox_header_filter]].
 
 #### Fixing
@@ -64,7 +64,7 @@ Delete Dovecot's index files (eg. `.imap/INBOX/`) and `X-IMAP:` and
 
 ##### Maildir
 
-This should really never be a problem with Maildir. If however you have
+This should really never be a problem with [[link,maildir,Maildir]]. If however you have
 managed to cause it somehow (by receiving 2 billion mails?), you can
 recreate the UIDs by deleting `dovecot-uidlist` file.
 
@@ -77,7 +77,7 @@ If not listed in this section, there are no known issues.
 On Mac OS X Leopard 10.5 Mail.app appears to support
 subscribe/unsubscribe by right clicking on a mailbox, selecting 'Get
 Account Info' and selecting 'Subscription List' from tabs. This however
-doesn't really work with any IMAP server.
+doesn't really work with any [[link,imap_server,IMAP server]].
 
 Apple Mail 3.6 (that comes with OS X 10.5 Leopard) supports
 subscribing/unsubscribing to folders in the public namespace.
@@ -85,13 +85,13 @@ subscribing/unsubscribing to folders in the public namespace.
 #### Outlook
 
 - You should enable [[setting,pop3_client_workarounds,outlook-no-nuls]]
-  workaround with POP3.
+  workaround with [[link,pop3,POP3]].
 
 - If some Outlook users don't see new or sent mails in the appropriate
-  folders after a migration from UW IMAPd even if they are visible in
+  folders after a [[link,migration,migration]] from UW IMAPd even if they are visible in
   other clients (e.g. Roundcube, Thunderbird, or on the disk itself),
   and you get the error message "BAD Error in IMAP command UID: Invalid
-  UID messageset" in the log or rawlog: It helps to remove the
+  UID messageset" in the log or [[link,rawlog,rawlog]]: It helps to remove the
   problematic IMAP account completely from Outlook and recreating it
   again there. It speaks a different IMAP afterwards, so there are
   reasons to believe it caches the details of some server on the first
@@ -100,12 +100,12 @@ subscribing/unsubscribing to folders in the public namespace.
 
 #### Thunderbird
 
-- If you're using [[link,mbox]], [[link,dbox]], or [[link,maildir]] with
+- If you're using mbox, [[link,dbox]], or Maildir with
   `:LAYOUT=fs` you should enable
   [[setting,imap_client_workarounds,tb-extra-mailbox-sep]] workaround for IMAP.
   ([Bug report](https://bugzilla.mozilla.org/show_bug.cgi?id=29926))
 
-- If you're using [[link,mbox]], and if you are not using a technique to
+- If you're using mbox, and if you are not using a technique to
   allow folders that contain both sub-folders and messages (see
   [[link,mbox_child_folders]]) then you will have to disable "Server
   supports folders that contain sub-folders and messages" setting from
@@ -262,7 +262,7 @@ forking less processes:
 - You can also switch (most of the) other commonly forked processes to
   be reused. For example [[setting,service_restart_request_count,100]]
   reuses the process for 100 different connections before it dies. This is
-  useful especially for imap, pop3 and managesieve services.
+  useful especially for imap, pop3 and [[link,managesieve,ManageSieve]] services.
   It's better to avoid using [[setting,service_restart_request_count,unlimited]]
   in case there are memory leaks.
 

@@ -31,7 +31,7 @@ you provided (KMail, others?). In both cases the user never sees the
 advertised realms.
 
 ::: warning
-Any settings that modify the username before the passdb lookup (e.g.
+Any settings that modify the username before the [[link,passdb,passdb]] lookup (e.g.
 [[setting,auth_default_domain]]) will not work with Digest-MD5
 password scheme, because the password hash was calculated using the
 unmodified username. Any username modification will result in hash

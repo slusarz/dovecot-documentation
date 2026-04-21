@@ -94,7 +94,7 @@ It can also be used to inspect configuration @groups by querying them directly.
 
     Possible names for the *filter* are:
     :   **protocol**
-        :   The protocol, e.g. imap or pop3
+        :   The protocol, e.g. imap or [[link,pop3,pop3]]
 
     :   **local_name**
         :   The local hostname for TLS SNI matching, e.g. mail.example.com.

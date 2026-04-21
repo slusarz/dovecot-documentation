@@ -7,11 +7,11 @@ dovecotlinks:
 
 # System Users Configuration
 
-Dovecot typically requires 3 or more system users:
+Dovecot typically requires 3 or more [[link,system_users,system users]]:
 
 * `root`: Dovecot is started as root.
 * [`dovenull`](#dovenull-user): Dovecot uses an unprivileged user for
-  untrusted login processes.
+  untrusted [[link,login_processes,login processes]].
 * [`dovecot`](#dovecot-user): Dovecot uses an unprivileged user for
   internal processes.
 * [`mail user(s)`](#mail-users): Mails are accessed using yet another user.
@@ -27,7 +27,7 @@ it is possible. See [[link,rootless]].
 ## `dovenull` user
 
 `dovenull` user is used internally for processing users' logins. It shouldn't
-have access to any files, authentication databases or anything else either. It
+have access to any files, [[link,auth_databases,authentication databases]] databases or anything else either. It
 should belong to its own private `dovenull` group where no one else belongs
 to, and which doesn't have access to any files either (other than what Dovecot
 internally creates).
@@ -49,13 +49,13 @@ You can change the default `dovecot` user to something else via
 You can use one or more system users for accessing users' mails. Most
 configurations can be placed to two categories:
 
-1. [[link,system_users]], where each Dovecot user has their own system user
+1. System Users, where each Dovecot user has their own system user
    in `/etc/passwd`. For system user setups you generally don't have to
    worry about UIDs or GIDs, they are returned by [[link,auth_passwd]].
 2. [[link,virtual_users]], where all Dovecot users run under a single
    system user. Typically you'd set this with [[setting,mail_uid]]
    (e.g. `mail_uid=vmail`). Note that you most likely don't want the
-   userdb lookup to return any UID/GID, as they override [[setting,mail_uid]].
+   [[link,userdb,userdb]] lookup to return any UID/GID, as they override [[setting,mail_uid]].
 
 However it's possible to use a setup that is anything between these two. For
 example use a separate system user for each domain. See below for more
@@ -63,7 +63,7 @@ information about how UIDs can be used.
 
 ### UIDs
 
-Dovecot's [[link,userdb]] configuration calls system users UIDs.
+Dovecot's userdb configuration calls system users UIDs.
 There are a few things you should know about them:
 
 * Although UID normally means a numeric ID (as specified by `/etc/passwd`),
@@ -75,7 +75,7 @@ There are a few things you should know about them:
   50000 virtual Dovecot users. You'll then just have to be careful that the
   UIDs aren't used unintentionally elsewhere.
 * The important thing to consider with your UID allocation policy is that if
-  Dovecot has a security hole in its IMAP or POP3 implementation, the attacker
+  Dovecot has a security hole in its IMAP or [[link,pop3,POP3]] implementation, the attacker
   can read mails of other people who are using the same UID. So clearly the
   most secure way is to allocate a different UID for each user. It can however
   be a bit of a pain and OSes don't always support more than 65536 UIDs.
@@ -114,7 +114,7 @@ It's also possible to give all the users access to extra groups with
 
 ## Authentication Process User
 
-Depending on passdb and userdb configuration, the lookups are done either by
+Depending on [[link,passdb,passdb]] and userdb configuration, the lookups are done either by
 auth process or auth worker process. They have different default users:
 
 ```doveconf[dovecot.conf]
@@ -127,7 +127,7 @@ service auth-worker {
 }
 ```
 
-The user must have access to your [[link,passdb]] and [[link,userdb]].
+The user must have access to your passdb and [[link,userdb]].
 It's not used for anything else. The default is to use `root`, because
 it's guaranteed to have access to all the password databases.
 If you don't need this, you should change it to `$SET:default_internal_user`.

@@ -12,7 +12,7 @@ dovecotlinks:
 # Migrating Mailboxes
 
 ::: warning
-Badly done migration will cause your IMAP and/or POP3 clients to re-download
+Badly done migration will cause your IMAP and/or [[link,pop3,POP3]] clients to re-download
 all mails! Read this page carefully!
 :::
 
@@ -37,8 +37,8 @@ Things that you should consider in your config:
 * [[plugin,mail-compress]] and [[plugin,mail-crypt]] settings
 * [[link,nfs]] related settings
 
-Sometimes, if your production configuration file has complex authentication
-flows, push notifications, or other settings that might cause unwanted
+Sometimes, if your production configuration file has complex [[link,authentication,authentication]]
+flows, [[link,push_notification,push notifications]], or other settings that might cause unwanted
 effects during migration, you can make a separate migration configuration
 file. To use this configuration file, you can store it as, for example,
 `/etc/dovecot/dovecot-migration.conf`, and use it with
@@ -91,7 +91,7 @@ are preserved:
 
 ### Preparations
 
-If the old system is running v2.1.14+ , you can use doveadm protocol to
+If the old system is running v2.1.14+ , you can use [[link,doveadm,doveadm]] protocol to
 migrate your mails.
 
 If the old system is older, see
@@ -130,7 +130,7 @@ If you are experiencing problems, run:
 doveadm -D backup -Ru username tcp:host:port
 ```
 
-This will enable debug logging.
+This will enable debug [[link,logging,logging]].
 
 The doveadm backup command forces the destination to look exactly like
 the source, deleting mails and mailboxes if necessary.
@@ -179,14 +179,14 @@ Ensure both source and target system agree on usernames.
 Configure IMAP client on the target system.
 
 ::: tip [[changed,migration_imapc_features]]
-All IMAPC features are auto-enabled by default. Please refer
+All [[link,imapc,IMAPC]] features are auto-enabled by default. Please refer
 to [[setting,imapc_features]] for description on individual flags
 on how to turn these off when necessary.
 :::
 
 * [[setting,imapc_list_prefix,INBOX]]
 
-  * If the old IMAP server uses `INBOX.` namespace prefix, set this.
+  * If the old [[link,imap_server,IMAP server]] uses `INBOX.` namespace prefix, set this.
 
 * [[setting,imapc_host,remotehost]]
 
@@ -313,7 +313,7 @@ See [[link,doveadm_error_codes]] for details on how to handle errors.
 
 * POP3 message order (when it's different from IMAP message order) is not
   preserved with [[link,mbox]].
-* If source POP3 server merges multiple IMAP mailboxes into one POP3 INBOX,
+* If source [[link,pop3_server,POP3 server]] merges multiple IMAP mailboxes into one POP3 INBOX,
   the migration won't be transparent.
 * If source IMAP and POP3 servers return messages somehow differently,
   [[plugin,pop3-migration]] might not be able to match the messages
@@ -382,7 +382,7 @@ depending on their language).
 The `All Mail` folder contains also "archived mails" that don't exist in
 any other folder. These mails need to be migrated. See below.
 
-Google requires that SSL/TLS be enabled to connect through IMAP. See
+Google requires that [[link,ssl,SSL/TLS]] be enabled to connect through IMAP. See
 [migrating messages over IMAP](#migrating-messages-over-imap) for information
 on the various SSL/TLS related flags.
 

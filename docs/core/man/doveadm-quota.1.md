@@ -76,10 +76,10 @@ usage.
 ## FILES
 
 */etc/dovecot/dovecot.conf*
-:   Dovecot's main configuration file, including the *dict* section.
+:   Dovecot's main configuration file, including the *[[link,dict,dict]]* section.
 
 */etc/dovecot/conf.d/10-mail.conf*
-:   Mailbox locations and namespaces.
+:   Mailbox locations and [[link,namespaces,namespaces]].
 
 */etc/dovecot/conf.d/90-quota.conf*
 :   Quota configuration.

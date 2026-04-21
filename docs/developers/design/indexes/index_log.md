@@ -53,8 +53,8 @@ See `lib-index/mail-transaction-log.h` in the source code for details.
 Transactions are either internal or external. The difference is that
 external transactions describe changes that were already made to the
 mailbox, while internal transactions are commands to do something to the
-mailbox. This is especially relevant with mailbox formats that support
-changes to them done outside Dovecot, like mbox or Maildir. When
+mailbox. This is especially relevant with [[link,mailbox_formats,mailbox formats]] that support
+changes to them done outside Dovecot, like [[link,mbox,mbox]] or [[link,maildir,Maildir]]. When
 beginning to synchronize such a mailbox with index files, the
 index file is first updated with all the external changes, and the
 uncommitted internal transactions are applied on top of them.

@@ -5,7 +5,7 @@ title: Sieve Examples
 
 # Sieve Examples
 
-Below are some simple Sieve code examples, more can be found at
+Below are some simple [[link,sieve,Sieve]] code examples, more can be found at
 http://sieve.info/examplescripts.
 
 ## Mail Filtering by Various Headers
@@ -333,7 +333,7 @@ sieve_script global1 {
 ```
 
 Settings for both [[link,sieve_storage_type_personal,personal]] and
-[[link,sieve_storage_type_global,global]] Sieve script storage types may also be
+[[link,sieve_storage_type_global,global]] Sieve [[link,sieve_storage,script storage]] types may also be
 overridden by [[link,userdb_extra_fields]].
 
 It's not currently possible to use subdirectories for the scripts.

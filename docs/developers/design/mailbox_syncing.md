@@ -62,7 +62,7 @@ external changes are checked only once every few seconds or so.
 
 This is mainly useful with mboxes.
 
-If `mbox_dirty_syncs=yes` and a new mail gets appended to mbox by an
+If `mbox_dirty_syncs=yes` and a new mail gets appended to [[link,mbox,mbox]] by an
 external program, Dovecot assumes that the only change was the added
 mail, even though the program may have also modified existing
 messages' flags by rewriting Status: headers. If
@@ -70,7 +70,7 @@ messages' flags by rewriting Status: headers. If
 next time mailbox is opened. So when this flag is enabled, it means
 Dovecot should try harder to find out if there were any external
 unexpected changes. It's currently used only with IMAP SELECT and
-CHECK commands and POP3 startup. Probably unnecessary elsewhere.
+CHECK commands and [[link,pop3,POP3]] startup. Probably unnecessary elsewhere.
 
 #### `MAILBOX_SYNC_FLAG_FULL_WRITE`
 

@@ -7,7 +7,7 @@ dovecotlinks:
 
 # LDAP Authentication (`ldap`)
 
-There are two ways to do LDAP authentication in [[link,passdb,passdb]]:
+There are two ways to do LDAP [[link,authentication,authentication]] in [[link,passdb,passdb]]:
 
 * [Authentication Binds](#authentication-binds)
 * [Password Lookups](#password-lookups)
@@ -31,7 +31,7 @@ If LDAP server requires authentication, set:
 
  * [[setting,ldap_auth_dn]]
  * [[setting,ldap_auth_dn_password]]
- * [[setting,ldap_auth_sasl_mechanisms]] can be set to list of SASL mechanisms
+ * [[setting,ldap_auth_sasl_mechanisms]] can be set to list of [[link,sasl,SASL]] mechanisms
    to authenticate with. Note that this is used only for the initial connection
    authentication, not for any subsequent [authentication binds](#authentication-binds).
 
@@ -54,13 +54,13 @@ When using
 -  [[setting,passdb_use_worker,no]],
 -  [[setting,userdb_use_worker,no]],
 -  auth binds and
--  userdb ldap lookups,
+-  [[link,userdb,userdb]] ldap lookups,
 
 the userdb lookups should use a separate connection to the LDAP server.
 That way it can send LDAP requests asynchronously to the server, which
 improves the performance. This can be done by specifying distinct
 [[setting,ldap_connection_group]] in the LDAP
-[[setting,passdb]] / [[setting,userdb]] sections.
+[[setting,passdb]] / userdb sections.
 
 ::: code-group
 ```doveconf[dovecot.conf]
@@ -93,7 +93,7 @@ Dovecot configuration. Note that if either [[setting,ssl_client_ca_file]]
 or [[setting,ssl_client_ca_dir]] is set, neither default is used from
 `ldap.conf`.
 
-Not all of Dovecot SSL settings are supported by the LDAP library. Below is
+Not all of Dovecot [[link,ssl,SSL]] settings are supported by the LDAP library. Below is
 the list of supported settings:
 
 <SettingsComponent tag="ssl-ldap" level="3" />
@@ -254,7 +254,7 @@ See [[link,password_schemes]] for a list of supported password schemes.
 #### Username
 
 LDAP lookups are case-insensitive. Unless the username is normalized, it's
-possible that a user logging in as "user", "User" and "uSer" are treated
+possible that a user [[link,logging,logging]] in as "user", "User" and "uSer" are treated
 differently. By default Dovecot uses [[setting,auth_username_format,
 %{user | lower}]] to lowercase the username before it reaches the LDAP lookup.
 
@@ -338,7 +338,7 @@ You can do authentication binding using DN template by configuring it in the
 The main reason to use DN template is to avoid doing the DN lookup, so
 that the authentication consists only of one LDAP request.
 
-With IMAP and POP3 logins, the same optimization can be done by using
+With IMAP and [[link,pop3,POP3]] logins, the same optimization can be done by using
 [[link,auth_prefetch]] and returning userdb info in the DN lookup (a total
 of two LDAP requests per login in both cases). If you're also using Dovecot
 for SMTP AUTH, it doesn't do a userdb lookup so the prefetch optimization

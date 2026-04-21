@@ -93,7 +93,7 @@ This command uses by default the output formatter **table**.
 
     :   **p -> post**
         :   Messages can be posted to the *mailbox* by **dovecot-lda**,
-            e.g. from Sieve scripts.
+            e.g. from [[link,sieve,Sieve]] scripts.
 
     :   **e -> expunge**
         :   Messages can be expunged.
@@ -162,7 +162,7 @@ Show all the ACLs for the *mailbox*.
   [**-u** *user* | **-A** | **-F** *file* | **\-\-no-userdb-lookup**]
   [**-S** *socket_path*]
 
-Make sure the *user*'s shared mailboxes exist correctly in the
+Make sure the *user*'s [[link,shared_mailboxes,shared mailboxes]] exist correctly in the
 *acl_sharing_map*.
 
 ### acl remove

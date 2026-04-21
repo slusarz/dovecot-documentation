@@ -163,7 +163,7 @@ value except `ignore`.
 
 ## Virtual POP3 INBOX
 
-If you want POP3 INBOX to contain some or all mailboxes, you can do this in the
+If you want [[link,pop3,POP3]] INBOX to contain some or all mailboxes, you can do this in the
 following way:
 
 ::: code-group

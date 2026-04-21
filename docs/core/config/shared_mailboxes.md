@@ -39,7 +39,7 @@ namespace, under which all the shared mailboxes are.
 
 See [[link,namespaces]] for details of how namespaces are configured.
 
-For example to create a public Maildir mailboxes, use:
+For example to create a public [[link,maildir,Maildir]] mailboxes, use:
 
 ```dovecot[dovecot.conf]
 # User's private mail location
@@ -67,11 +67,11 @@ namespace public {
 In the above example, you would then create Maildir mailboxes under the
 `/var/mail/public/` directory.
 
-Note that with [[link,maildir]] format Dovecot uses Maildir++ layout by
+Note that with Maildir format Dovecot uses Maildir++ layout by
 default for folders, where the folder names must begin with a "." or
 Dovecot will ignore them.
 
-You can also optionally use the "fs" layout if you want the directory
+You can also optionally use the "[[link,fs,fs]]" layout if you want the directory
 structure to look like:
 
 - `/var/mail/public/` (root dir)
@@ -129,7 +129,7 @@ namespace subscriptions {
 
 #### mbox
 
-If you have a read-only directory structure containing mbox files,
+If you have a read-only directory structure containing [[link,mbox,mbox]] files,
 you'll need to store index files elsewhere:
 
 ```doveconf[dovecot.conf]
@@ -293,7 +293,7 @@ mail_index_private_path = ~/Maildir/shared/%{owner_user}
 
 ### dbox
 
-With dbox, the index files are a very important part of the mailboxes.
+With [[link,dbox,dbox]], the index files are a very important part of the mailboxes.
 You must not try to change [[setting,mail_index_path]] to a user-specific
 location. This will only result in mailbox corruption.
 ([[setting,mail_index_private_path]] can be used though.)
@@ -329,12 +329,12 @@ acl_sharing_map {
 ```
 
 The IMAP processes must be able to write to the `db/` directory. If
-you're using system users, you probably want to make it mode 0770 and
+you're using [[link,system_users,system users]], you probably want to make it mode 0770 and
 group `sharedusers` and set `mail_access_groups=sharedusers` (or
 something similar).
 
 If you use multiple domains and don't wish users to share their
-mailboxes to users in other domains, you can use separate dict files for
+mailboxes to users in other domains, you can use separate [[link,dict,dict]] files for
 each domain:
 
 ```doveconf[dovecot.conf]
@@ -347,7 +347,7 @@ acl_sharing_map {
 
 #### Using SQL dictionary
 
-See [[link,dict]] for more information, especially about permission issues.
+See dictionary for more information, especially about permission issues.
 
 ::: code-group
 ```doveconf[dovecot.conf]
@@ -622,7 +622,7 @@ there's a security hole in Dovecot.
 ### Permissions For New Mailboxes
 
 When creating a new mailbox, Dovecot copies the permissions from the
-mailbox root directory. For example, with [[link,mbox]] if you have
+mailbox root directory. For example, with mbox if you have
 directories:
 
 ```
@@ -727,7 +727,7 @@ isn't done when the path contains any other
 ### Mail Delivery Agent Permissions
 
 When using [[link,lda]], it uses all the same configuration files as
-IMAP/POP3, so you don't need to worry about it.
+IMAP/[[link,pop3,POP3]], so you don't need to worry about it.
 
 When using an external [[link,mda]] to deliver to a shared mailbox, you need to
 make sure that the resulting files have proper permissions. For example

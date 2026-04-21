@@ -30,7 +30,7 @@ error codes.
 | Code | Label | Status | Description |
 | ---- | ----- | ------ | ----------- |
 | 0 | | Success | |
-| 2 | | Success, but mailbox changed during the sync | This code can be safely ignored during intermediate migrations (any changes will be captured during a subsequent sync).  For a final migration/cut-over, this error code indicates that the dsync command should be re-run to ensure that all changes made to the original mailbox are reflected in the new mailbox (i.e., a final migration should not be considered successful unless/until dsync returns 0). |
+| 2 | | Success, but [[link,design_mailbox,mailbox]] changed during the sync | This code can be safely ignored during intermediate migrations (any changes will be captured during a subsequent sync).  For a final [[link,migration,migration]]/cut-over, this error code indicates that the dsync command should be re-run to ensure that all changes made to the original mailbox are reflected in the new mailbox (i.e., a final migration should not be considered successful unless/until dsync returns 0). |
 | 64 | EX_USAGE | Incorrect parameters | Dsync was called with wrong parameters. This should never be seen in production migration usage (absent a bug). |
 | 65 | EX_DATAERR | Data error | Theoretically can happen, but should never happen in real-life usage. If seen, it should be handled as a failed migration, and details should be reported to Dovecot for further investigation. |
 | 66 | EX_NOINPUT | Cannot open input | |
@@ -304,7 +304,7 @@ All mail commands require providing `-u`, `-F` or `-A` parameter.
 `USER` environment variable is no longer supported.
 
 This will always be subject to user database lookup and requires access to
-auth userdb socket.
+auth [[link,userdb,userdb]] socket.
 :::
 
 ### doveadm fetch
