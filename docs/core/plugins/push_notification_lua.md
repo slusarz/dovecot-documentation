@@ -64,6 +64,11 @@ All events contain at least:
 
 Events are always called after the fact.
 
+For `_raw` events, while the function is called after the transaction is
+successfully committed, the message data is captured efficiently during the
+initial delivery/append trigger. This ensures the data is available locally
+even if the backend storage is remote (e.g., object storage).
+
 There has to be at least one event handler, or the transaction begin and end
 functions are never called. This is an optimization to avoid a roundtrip to
 Lua when it's not needed.
@@ -121,8 +126,17 @@ Functions:
 `dovecot_lua_notify_event_message_new(context, {name, mailbox, uid, uid_validity, date, tz, from, from_address, from_display_name, to, to_address, to_display_name, subject, snippet})`
 :   Called when message is delivered.
 
+`dovecot_lua_notify_event_message_new_raw(context, {name, mailbox, uid, uid_validity, stream})`
+:   Called after message is delivered and committed. Provides raw access
+    to message contents via `stream` (Dovecot `istream` object).
+
 `dovecot_lua_notify_event_message_append(context, {name, mailbox, uid, uid_validity, from, from_address, from_display_name, to, to_address, to_display_name, subject, snippet})`
 :   Called when message is APPENDed to a mailbox (via IMAP).
+
+`dovecot_lua_notify_event_message_append_raw(context, {name, mailbox, uid, uid_validity, stream})`
+:   Called after message is APPENDed and committed to a mailbox (via IMAP).
+    Provides raw access to message contents via `stream` (Dovecot
+    `istream` object).
 
 `dovecot_lua_notify_event_message_read(context, {name, mailbox, uid, uid_validity})`
 :   Called when message is marked as `Seen`.
