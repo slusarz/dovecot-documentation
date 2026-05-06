@@ -1150,14 +1150,14 @@ If all messages are desired to be expunged, the "all" query can be used.
 		 * encouraged. */
 		args: {
 			hash: {
-				// TODO: Needs to be documented in man page
 				cli: 'h',
-				type: doveadm_arg_types.STRING
+				type: doveadm_arg_types.STRING,
+				text: `Save provided hash as content hash. Must be either MD5 or SHA256 in hexdigits.`
 			},
 			metadata: {
-				// TODO: Needs to be documented in man page
 				cli: 'm',
-				type: doveadm_arg_types.ARRAY
+				type: doveadm_arg_types.ARRAY,
+				text: `Assign a value to a metadata. Can be provided as many times as needed. Requires either metawrap as driver or metadata capable FS-driver.`
 			},
 			'filter-name': {
 				positional: true,
@@ -1763,11 +1763,13 @@ For each mailbox that has FTS data, it outputs the following key/value fields:
 		args: {
 			hash: {
 				cli: 'h',
-				type: doveadm_arg_types.STRING
+				type: doveadm_arg_types.STRING,
+				text: `Save provided hash as content hash. Must be either MD5 or SHA256 in hexdigits.`
 			},
 			metadata: {
 				cli: 'm',
-				type: doveadm_arg_types.ARRAY
+				type: doveadm_arg_types.ARRAY,
+				text: `Assign a value to a metadata. Can be provided as many times as needed. Requires either metawrap as driver or metadata capable FS-driver.`
 			},
 			'filter-name': {
 				positional: true,
