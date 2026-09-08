@@ -396,6 +396,59 @@ Currently it is not possible to know which one happened.
 		text: `Inherits from fs or any other specified event (e.g. mail).`
 	},
 
+	/* Autoexpunge */
+
+	autoexpunge_needed: {
+		added: {
+			events_autoexpunge_added: false,
+		},
+		root: 'storage',
+		inherit: 'mailbox',
+		fields: {
+			mailbox_guid: {
+				text: `Mailbox GUID. (Best-effort: may be absent.)`,
+			},
+		},
+		text: `
+A mailbox configured with [[setting,mailbox_autoexpunge_action,defer]] was
+detected (at client session teardown or LMTP delivery) to have messages
+matching [[setting,mailbox_autoexpunge]] and/or [[setting,mailbox_autoexpunge_max_mails]],
+but nothing was expunged. An external scheduler can consume this event and run
+[[link,man_doveadm_mailbox_autoexpunge]] at off-peak times.
+
+One event is emitted per affected mailbox.
+
+::: tip
+The detection is cheap (message count and oldest save date from the
+[[setting,mailbox_list_index,yes|mailbox list index]], without opening the
+mailbox), so the event may be emitted even though a subsequent
+[[link,man_doveadm_mailbox_autoexpunge]] run finds nothing to expunge. The
+counters are not tracked.
+:::`
+	},
+
+	autoexpunge_done: {
+		added: {
+			events_autoexpunge_added: false,
+		},
+		root: 'storage',
+		inherit: 'mailbox',
+		fields: {
+			mailbox_guid: {
+				text: `Mailbox GUID. (Best-effort: may be absent.)`,
+			},
+			messages_expunged: `Number of messages expunged in this run.`,
+		},
+		text: `
+A run of the autoexpunge engine (either an immediate-mode run at client
+session teardown or LMTP delivery, or a
+[[link,man_doveadm_mailbox_autoexpunge]] run) expunged at least one message
+from the mailbox. Emitted per mailbox whenever a run expunges at least one
+message, from every execution path, regardless of the
+[[setting,mailbox_autoexpunge_action]] setting. No event is emitted for
+runs that expunged nothing.`
+	},
+
 	/* Mail User */
 
 	mail_user_session_finished: {

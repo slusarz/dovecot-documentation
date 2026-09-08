@@ -1,6 +1,10 @@
 ---
 layout: doc
 title: doveadm-mailbox
+dovecotlinks:
+  man_doveadm_mailbox_autoexpunge:
+    hash: mailbox-autoexpunge
+    text: "doveadm-mailbox(1): mailbox autoexpunge"
 dovecotComponent: core
 ---
 
@@ -409,6 +413,45 @@ NOTE: This command cannot be used to add new fields to cache! You need
 to first add them to configuration. Setting caching to no will not
 immediately drop field from cache, it will stop adding the field to
 cache.
+
+### mailbox autoexpunge
+
+**doveadm** [*GLOBAL OPTIONS*] mailbox autoexpunge
+  [**-A** | **-u** *user* | **-F** *file* | **\-\-no-userdb-lookup**]
+  [**-S** *socket_path*]
+  *mailbox*
+
+Run the autoexpunge engine for the given *mailbox*, expunging all
+messages that exceed the mailbox's **autoexpunge** and/or
+**autoexpunge_max_mails** settings. The command works on any mailbox with
+autoexpunging configured, regardless of its **autoexpunge_action** setting,
+and can therefore also be used to run autoexpunging for
+**autoexpunge_action = defer** mailboxes at off-peak times.
+
+If the mailbox has neither **autoexpunge** nor **autoexpunge_max_mails**
+configured, the command is a silent no-op.
+
+The per-user **dovecot.autoexpunge.lock** is taken for the run, so
+concurrent executions for the same user are serialized. If the lock is
+already held by another process, the mailbox is reported as *in progress*
+and no work is done.
+
+The command is idempotent: it re-detects what is due at run time, so a
+second run immediately after a first is a no-op.
+
+This command uses by default the output *formatter* **flow**, with the
+fields **mailbox**, **status** and **expunged**. The **status** is one of
+**expunged** (messages were expunged, see **expunged** count), **clean**
+(nothing was due), **in progress** (another process is autoexpunging), or
+**error**. On failure, the exit code is non-zero.
+
+```sh
+doveadm -f tab mailbox autoexpunge -u bob Trash
+```
+```
+mailbox	status	expunged
+Trash	expunged	152
+```
 
 ### mailbox cache remove
 

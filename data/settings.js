@@ -9255,7 +9255,52 @@ anything needs to be expunged.
 recommended when using this setting with [[link,sdbox]] or [[link,maildir]],
 as it avoids using \`stat()\` to find out the mail's saved-timestamp. With
 [[link,mdbox]] format this isn't necessary, since the saved-timestamp is
-always available.`
+always available.
+
+When set together with [[setting,mailbox_autoexpunge_action]], see its
+documentation for the \`defer\` mode, where detection is still done at these
+times, but the actual expunging is left to an external job (e.g. via
+[[link,man_doveadm_mailbox_autoexpunge]]) that runs at off-peak times.`
+	},
+
+	mailbox_autoexpunge_action: {
+		added: {
+			mailbox_autoexpunge_action_added: false,
+		},
+		default: 'immediate',
+		tags: [ 'mailbox' ],
+		values: setting_types.ENUM,
+		values_enum: [ 'immediate', 'defer' ],
+		seealso: [
+			'mailbox_autoexpunge',
+			'mailbox_autoexpunge_max_mails',
+			'[[link,man_doveadm_mailbox_autoexpunge]]',
+			'[[link,event_autoexpunge_needed]]',
+			'[[link,event_autoexpunge_done]]',
+		],
+		text: `
+Controls when the expunging of mails matching [[setting,mailbox_autoexpunge]]
+and/or [[setting,mailbox_autoexpunge_max_mails]] actually happens.
+
+| Value | Description |
+| ----- | ----------- |
+| \`immediate\` | Expunge the mails right away, when the client session ends (IMAP/POP3) or when LMTP delivery finishes (default). |
+| \`defer\` | Only detect at these times whether the mailbox has any mails that would be expunged. When it does, an [[link,event_autoexpunge_needed]] event is emitted per mailbox, and no expunging is done. An external scheduler (e.g. a cron job) can consume the event and run [[link,man_doveadm_mailbox_autoexpunge]] at off-peak times. |
+
+With \`defer\`, detection is cheap: it only checks the mailbox's message
+count and oldest save date from the [[setting,mailbox_list_index,yes|mailbox list index]], without opening or syncing the mailbox. Detection is
+therefore approximate and can over-report: the [[link,man_doveadm_mailbox_autoexpunge]]
+command re-detects at run time, so redundant runs are cheap no-ops. No
+persistent state is kept by Dovecot; if the scheduled run never happens,
+mails are simply not expunged yet.
+
+Setting \`defer\` without [[setting,mailbox_autoexpunge]] or
+[[setting,mailbox_autoexpunge_max_mails]] has no effect.
+
+While a [[link,man_doveadm_mailbox_autoexpunge]] run (or an immediate-mode run)
+expunges at least one message from a mailbox, an [[link,event_autoexpunge_done]]
+event is emitted for that mailbox, from every execution path, regardless of
+this setting.`
 	},
 
 	mailbox_autoexpunge_max_mails: {
