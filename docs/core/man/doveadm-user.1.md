@@ -37,13 +37,7 @@ userdb passwd-file {
 
 ## OPTIONS
 
-**-a** *userdb_socket_path*
-:   This option is used to specify an absolute path to an alternative
-    UNIX domain socket.
-
-    By default [[man,doveadm]] will use the socket */rundir/auth-userdb*.
-    The socket may be located in another directory, when the default
-    *base_dir* setting was overridden in */etc/dovecot/dovecot.conf*.
+<!-- @include: include/option-auth-userdb-socket.inc -->
 
 **-e** *template*
 :   When this option and a string with %variables is given,

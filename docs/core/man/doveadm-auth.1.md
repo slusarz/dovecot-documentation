@@ -43,13 +43,7 @@ Flush the authentication cache. By default the cache is flushed for all
 the users. You can also flush the cache for one or more users by
 providing a user-mask matching their usernames.
 
-**-a** *master_socket_path*
-:   This option is used to specify an absolute path to an alternative
-    UNIX domain socket.
-
-    By default [[man,doveadm]] will use the socket */rundir/auth-master*.
-    The socket may be located in another directory, when the default
-    *base_dir* setting was overridden in */etc/dovecot/dovecot.conf*.
+<!-- @include: include/option-auth-master-socket.inc -->
 
 <!-- @include: include/option-x.inc -->
 
@@ -64,13 +58,7 @@ ratio, number of positive/negative cache entries and the
 positive/negative/used/max cache sizes. This information can be used
 for tuning the cache size and TTL.
 
-**-a** *master_socket_path*
-:   This option is used to specify an absolute path to an alternative
-    UNIX domain socket.
-
-    By default [[man,doveadm]] will use the socket */rundir/auth-master*.
-    The socket may be located in another directory, when the default
-    *base_dir* setting was overridden in */etc/dovecot/dovecot.conf*.
+<!-- @include: include/option-auth-master-socket.inc -->
 
 **--reset**
 :   Reset the hit/miss/insert counters after reading them.
@@ -86,13 +74,7 @@ for tuning the cache size and TTL.
 Similar to [[man,doveadm-user]] command, except it performs a *passdb*
 lookup (without authentication) instead of a *userdb* lookup.
 
-**-a** *userdb_socket_path*
-:   This option is used to specify an absolute path to an alternative
-    UNIX domain socket.
-
-    By default [[man,doveadm]] will use the socket */rundir/auth-userdb*.
-    The socket may be located in another directory, when the default
-    *base_dir* setting was overridden in */etc/dovecot/dovecot.conf*.
+<!-- @include: include/option-auth-userdb-socket.inc -->
 
 **-f** *field*
 :   When this option and the name of a userdb field is given,
@@ -110,13 +92,7 @@ lookup (without authentication) instead of a *userdb* lookup.
 
 Test authentication for the given user.
 
-**-a** *auth_socket_path*
-:   This option is used to specify an absolute path to an alternative
-    UNIX domain socket.
-
-    By default [[man,doveadm]] will use the socket */rundir/auth-client*.
-    The socket may be located in another directory, when the default
-    *base_dir* setting was overridden in */etc/dovecot/dovecot.conf*.
+<!-- @include: include/option-auth-client-socket.inc -->
 
 **-A** *sasl_mech*
 :   The SASL mechanism used for the authentication. By default PLAIN is used.
@@ -134,18 +110,11 @@ Test authentication for the given user.
 
 Test full login for the given user; i.e. performing both passdb lookup (authentication) and userdb lookup (login).
 
-**-a** *auth_socket_path*
-:   This option is used to specify an absolute path to an alternative
-    UNIX domain socket.
-
-    By default [[man,doveadm]] will use the socket */rundir/auth-client*.
-    The socket may be located in another directory, when the default
-    *base_dir* setting was overridden in */etc/dovecot/dovecot.conf*.
+<!-- @include: include/option-auth-client-socket.inc -->
 
 **-m** *auth_master_socket_path*
 :   This option is used to specify an absolute path to an alternative
     UNIX domain socket for the master socket.
-
     By default [[man,doveadm]] will use the socket */rundir/auth-master*.
     The socket may be located in another directory, when the default
     *base_dir* setting was overridden in */etc/dovecot/dovecot.conf*.

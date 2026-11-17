@@ -28,11 +28,7 @@ dovecotComponent: core
 
 In the first form, the command will be performed for all users.
 
-In the second form, the command will be performed for all users listed
-in the given *file*.
-
-In the third form, the command will be performed for the user contained in the
-*USER* environment variable.
+<!-- @include: include/description-user-forms.inc -->
 
 In the last form, the command will affect only the matching *user*(s).
 

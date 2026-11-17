@@ -39,8 +39,8 @@ is done in destination user's context, you can use -U to change this.
 
 In the first form, the mails will be imported for all users.
 
-In the second form, the mails will be imported for all users listed in
-the given *file*.
+<!-- @include: include/description-user-forms.inc -->
+
 
 In the final form, the mails will be imported only for given *user* (s).
 

@@ -36,11 +36,7 @@ location.
 
 In the first form, [[man,doveadm]] will execute the **altmove** for all users.
 
-In the second form, the command will be performed for all users listed in
-the given *file*.
-
-In the third form, the command will be performed for the user contained in the
-*USER* environment variable.
+<!-- @include: include/description-user-forms.inc -->
 
 In the last form, only matching mails of the given *user*(s) will be
 moved to the alternative storage.

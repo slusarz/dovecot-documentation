@@ -37,11 +37,8 @@ match, you can use *doveadm fetch* or *doveadm search* commands.
 
 In the first form, the command will be performed for all users.
 
-In the second form, [[man,doveadm]] will expunge messages of the users
-listed in the given *file*.
+<!-- @include: include/description-user-forms.inc -->
 
-In the third form, the command will be performed for the user contained in the
-*USER* environment variable.
 
 In the final form, only matching mails of the given *user* (s) will be
 expunged.
