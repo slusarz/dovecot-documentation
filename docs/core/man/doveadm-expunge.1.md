@@ -39,7 +39,6 @@ In the first form, the command will be performed for all users.
 
 <!-- @include: include/description-user-forms.inc -->
 
-
 In the final form, only matching mails of the given *user* (s) will be
 expunged.
 

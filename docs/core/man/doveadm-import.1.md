@@ -41,7 +41,6 @@ In the first form, the mails will be imported for all users.
 
 <!-- @include: include/description-user-forms.inc -->
 
-
 In the final form, the mails will be imported only for given *user* (s).
 
 <!-- @include: include/global-options.inc -->

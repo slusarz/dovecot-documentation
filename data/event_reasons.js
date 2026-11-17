@@ -277,10 +277,9 @@ Use for checking the refcount and for actually doing the lazy_expunge move.`
 	'fts:index': {
 		category: 'other_plugins',
 		description: `
-Message is being added to the full text search index.
-
-Note that this reason won't be used for email opening events, because the
-emails are already opened by the indexer precache searching code. So usually
-the \`indexer:index_mailbox\` reason is what is wanted to be used.`
+Message is being added to the full text search index. (Not used for email
+opening events: emails are already opened by the indexer precache
+searching code, so \`indexer:index_mailbox\` is usually the reason to
+watch for.)`
 	},
 }
