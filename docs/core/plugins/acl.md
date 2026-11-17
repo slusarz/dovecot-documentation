@@ -91,7 +91,7 @@ namespace inbox {
   acl user=admin {
     rights = lwristepai
  }
- ## Set this to yes to ignore ACLS for this namespace
+ ## Set this to yes to ignore ACLs for this namespace
  #acl_ignore = yes
 }
 
@@ -210,7 +210,7 @@ Where **identifier** is one of:
 * `anyone` (or `anonymous`)
 * Negative rights can be given by prepending the identifier with `-`
 
-The ACLS are processed in the precedence given above, so for example if you
+The ACLs are processed in the precedence given above, so for example if you
 have given read-access to a group, you can still remove that from specific
 users inside the group.
 

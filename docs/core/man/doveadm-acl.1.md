@@ -44,9 +44,8 @@ This command uses by default the output formatter **table**.
     * **anyone**
     * **anonymous**, which is an alias for anyone
 
-    The ACLs are processed in the precedence given above, so for
-    example if you have given read-access to a group, you can still
-    remove that from specific users inside the group.
+    The ACLs are processed in the precedence given above; see the
+    [[plugin,acl]] for the precedence rules.
 
     Group-override identifier allows you to override users' ACLs.
     Probably the most useful reason to do this is to temporarily
