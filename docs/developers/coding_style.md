@@ -455,25 +455,5 @@ Accessing freed memory is the most difficult problem to solve with C
 code. Only real solution is to use garbage collector, but it's not
 possible to write a portable GC without radical changes in how you write
 code. There are a few ways to avoid most free() calls however: data
-stack and memory pools.
-
-Data stack works in somewhat similar way to C's control stack. alloca()
-is quite near to what it does, but there's one major difference: Stack
-frames are explicitly defined, so functions can return values allocated
-from data stack. t_strdup_printf() call is an excellent example of why
-this is useful. Rather than creating some arbitrary sized buffer and
-using snprintf() which may truncate the value, you can just use
-t_strdup_printf() without worrying about buffer sizes being large
-enough.
-
-Try to keep the allocations from data stack small, since the data
-stack's highest memory usage size is kept for the rest of the process's
-lifetime. The initial data stack size is 32kB and it should be enough in
-normal use. See lib/data-stack.h. Memory pools are useful when you have
-to construct an object from multiple pieces and you can free it all at
-once. Actually Dovecot's Memory Pool API is just an abstract class for
-allocating memory. There's system_pool for allocating memory with
-calloc(), realloc() and free() and you can create a pool to allocate
-memory from data stack. If your function needs to allocate memory for
-multiple objects, you may want to take struct pool as parameter to allow
-caller to specify where the memory is allocated from. See lib/mempool.
+stack and memory pools. See the [[link,data_stack]] documentation for
+how the data stack and memory pools work.
