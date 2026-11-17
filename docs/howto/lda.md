@@ -194,7 +194,7 @@ Then run `postfix reload`.
 
   Alas, these permission will disappear if you update Dovecot.
 
-  A more robust way to do so is to compile a relay program
+  Alternatively, compile a relay program
   `/etc/postfix/dovecot-lda-relay` that has the setgid permission and
   execs the real `dovecot-lda`.
 
@@ -239,7 +239,7 @@ An example using address extensions (i.e. user+extension@domain.com (don't
 forget to define the proper recipient_delimiter in Postfix's main.cf))
 to deliver to the folder 'extension' in your maildir (If you wish to
 preserve the case of `${extension}`, remove the `hu`
-[flags](http://www.postfix.org/pipe.8.html), and be sure to utilize
+[flags](http://www.postfix.org/pipe.8.html), and be sure to use
 [[variable]] in your `dovecot.conf` for mail locations and other
 configuration parameters that are expecting lower case):
 
@@ -368,30 +368,11 @@ to use "relay_recipient_maps" instead of "virtual_mailbox_maps".
 
 ### Dynamic address verification with LMTP
 
-You can also use LMTP and the Postfix setting
-"reject_unverified_recipient" for dynamic address verification. It's
-really nice because Postfix doesn't need to query an external datasource
-(MySQL, LDAP...). Postfix maintain a local database with existing/non
-existing addresses (you can configure how long positive/negative results
-should be cached).
-
-To use LMTP and dynamic address verification you must first get Dovecot
-working. Then you can configure Postfix to use LMTP and set
-"reject_unverified_recipient" in the smtpd_recipient_restrictions.
-
-On every incoming email Postfix will probe if the recipient address
-exists. You will see similar entries in your logfile:
-
-```
-Recipient address rejected: undeliverable address: host tux.example.com[private/dovecot-lmtp] said: 550 5.1.1 < tzknvtr@example.com > User doesn't exist: tzknvtr@example.com (in reply to RCPT TO command); from=< cnrilrgfclra@spammer.org > to=< tzknvtr@example.com >
-```
-
-If the recipient address exists (status=deliverable) Postfix accepts the
-mail.
+<!-- @include: include/dynamic-address-verification.inc -->
 
 ::: info
-You cannot use "reject_unverified_recipient" with "pipe" so this doesn't
-work with the Dovecot LDA "deliver".
+You cannot use "reject_unverified_recipient" with "pipe", so this
+won't work with the Dovecot LDA "deliver".
 :::
 
 ## qmail
