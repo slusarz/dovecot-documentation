@@ -9,7 +9,7 @@ title: Home
 
 <hr />
 
-Dovecot is an open source email server for Linux/UNIX-like systems,
+Dovecot is an open source email backend for Linux/UNIX-like systems,
 written with security primarily in mind. Dovecot is an excellent choice for
 both small and large installations. It's fast, simple to set up, requires
 no special administration and it uses very little memory.

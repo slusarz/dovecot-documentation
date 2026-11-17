@@ -4,7 +4,7 @@ title: dovecot
 dovecotComponent: core
 ---
 
-# dovecot(1) - A secure and highly configurable IMAP and POP3 server
+# dovecot(1) - A secure and highly configurable email backend
 
 ## SYNOPSIS
 
@@ -28,11 +28,8 @@ dovecotComponent: core
 
 ## DESCRIPTION
 
-Dovecot is an open source IMAP and POP3 server for Linux/UNIX-like
-systems, written with security primarily in mind. Dovecot is an
-excellent choice for both small and large installations. It's fast,
-simple to set up, requires no special administration and it uses very
-little memory.
+Dovecot is an open source email backend for Linux/UNIX-like systems.
+See the top-level documentation page for more details.
 
 ## OPTIONS
 
