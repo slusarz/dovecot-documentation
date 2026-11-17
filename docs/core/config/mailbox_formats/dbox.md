@@ -213,21 +213,7 @@ think that all the messages in alt storage were deleted and lose their flags.
 
 ## dbox and Mail Header Metadata
 
-Unlike when using [[link,mbox]], where mail headers (for example
-`Status`, `X-UID`, etc.) are used to determine and store metadata, the
-mail headers within dbox files are (usually) **not** used for this purpose by
-Dovecot; neither when mails are created/moved/etc. via IMAP nor when dboxes
-are placed (e.g. copied or moved in the filesystem) in a mail location (and
-then "imported" by Dovecot).
-
-Therefore, it is (usually) **not** necessary, to strip any such mail headers
-at the [[link,mta]], [[link,mda]], or [[link,lda]] (as it is recommended with
-[[link,mbox]]).
-
-There is one exception, though, namely when [[setting,pop3_reuse_xuidl,yes]]:
-in this case `X-UIDL` is used for the POP3 UIDLs.
-Therefore, in this case, is recommended to strip the `X-UIDL` mail headers
-*case-insensitively* at the mail delivery layer.
+<!-- @include: include/mail-header-metadata.inc -->
 
 ## Accessing Expunged Mails with mdbox
 
