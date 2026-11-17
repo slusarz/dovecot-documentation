@@ -19,18 +19,18 @@ implemented yet; this is clearly indicated where applicable.
 
 ## DESCRIPTION
 
-The **sieve-filter** command is part of Pigeonhole ([[man,pigeonhole,,7]]),
-which adds Sieve ([[rfc,5228]]) and ManageSieve ([[rfc,5804]]) support to
-Dovecot ([[man,dovecot]]).
-
 The Sieve language was originally meant for filtering messages upon
 delivery. However, there are occasions when it is desirable to filter
 messages that are already stored in a mailbox, for instance when a bug
 in a Sieve script caused many messages to be delivered incorrectly.
-Using the sieve-filter tool it is possible to apply a Sieve script on
-all messages in a particular *source-mailbox*, making it possible to
-delete messages, to store them in a different mailbox, to change their
-content, and to change the assigned IMAP flags and keywords. Attempts to
+
+<!-- @include: include/pigeonhole-intro.inc -->
+
+Using the [[man,sieve-filter]] command, it is possible to apply a Sieve
+script on all messages in a particular *source-mailbox*, making it
+possible to delete messages, to store them in a different mailbox, to
+change their content, and to change the assigned IMAP flags and
+keywords. Attempts to
 send messages to the outside world are ignored by default for obvious
 reasons, but, using the proper command line options, it is possible to
 capture and handle outgoing mail as well.

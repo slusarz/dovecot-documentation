@@ -12,16 +12,16 @@ dovecotComponent: pigeonhole
 
 ## DESCRIPTION
 
-The **sieve-test** command is part of Pigeonhole ([[man,pigeonhole,,7]]),
-which adds Sieve ([[rfc,5228]]) and ManageSieve ([[rfc,5804]]) support to
-Dovecot ([[man,dovecot]]).
-
-Using the **sieve-test** command, the execution of Sieve scripts can be
-tested. This evaluates the script for the provided message, yielding a
+The [[man,sieve-test]] command is used to test the execution of Sieve
+scripts. It evaluates the script for the provided message, yielding a
 set of Sieve actions. Unless the **-e** option is specified, it does not
 actually execute these actions, meaning that it does not store or
-forward the message anywhere. Instead, it prints a detailed list of what
-actions would normally take place. Note that, even when **-e** is
+forward the message anywhere. Instead, it prints a detailed list of
+what actions would normally take place.
+
+<!-- @include: include/pigeonhole-intro.inc -->
+
+Note that, even when **-e** is
 specified, no messages are ever transmitted to remote SMTP recipients.
 The outgoing messages are always printed to **stdout** instead.
 

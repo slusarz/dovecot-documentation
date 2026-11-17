@@ -12,17 +12,15 @@ dovecotComponent: pigeonhole
 
 ## DESCRIPTION
 
-The **sieve-dump** command is part of Pigeonhole ([[man,pigeonhole,,7]]),
-which adds Sieve ([[rfc,5228]]) and ManageSieve ([[rfc,5804]]) support to
-Dovecot ([[man,dovecot]]).
-
-Using the **sieve-dump** command, Sieve binaries, which are produced for
+Using the [[man,sieve-dump]] command, Sieve binaries, which are produced for
 instance by [[man,sievec]], can be transformed into a human-readable
 textual representation. This can provide valuable insight in how the
 Sieve script is executed. This is also particularly useful to view
 corrupt binaries that can result from bugs in the Sieve implementation.
 This tool is intended mainly for development purposes, so normally
 system administrators and users will not need to use this tool.
+
+<!-- @include: include/pigeonhole-intro.inc -->
 
 The format of the output is not explained here in detail, but it should
 be relatively easy to understand. The Sieve binaries comprise a set of

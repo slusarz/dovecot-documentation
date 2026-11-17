@@ -12,11 +12,7 @@ dovecotComponent: pigeonhole
 
 ## DESCRIPTION
 
-The **sievec** command is part of Pigeonhole ([[man,pigeonhole,,7]]),
-which adds Sieve ([[rfc,5228]]) and ManageSieve ([[rfc,5804]]) support to
-Dovecot ([[man,dovecot]]).
-
-Using the **sievec** command, Sieve scripts can be compiled into a
+Using the [[man,sievec]] command, Sieve scripts can be compiled into a
 binary representation. The resulting binary can be used directly to
 process e-mail messages during the delivery process. The delivery of
 mail messages and - by means of the LDA Sieve plugin - also the
@@ -30,6 +26,8 @@ However, in some cases [[man,dovecot-lda]] does not have permission to write
 the compiled binary to disk, forcing it to recompile the script every
 time it is executed. Using the **sievec** tool, this can be performed
 manually by an authorized user to increase performance.
+
+<!-- @include: include/pigeonhole-intro.inc -->
 
 The Pigeonhole Sieve implementation recognizes files with a **.sieve**
 extension as Sieve scripts and corresponding files with a **.svbin**
