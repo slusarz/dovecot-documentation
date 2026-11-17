@@ -58,10 +58,10 @@ ssl_server_key_file = /etc/ssl/dovecot.pem
 For using multiple SSL certificates, see [[link,ssl_multiple_certs]].
 
 ::: tip
-It's important to note that `ssl = yes` must be set globally if
-you require SSL for any protocol (or Dovecot will not listen on the
-SSL ports), which in turn requires that a certificate and key are
-specified globally even if you intend to specify certificates per protocol.
+`ssl = yes` must be set globally if you require SSL for any protocol
+(or Dovecot will not listen on the SSL ports), which in turn requires
+that a certificate and key are specified globally even if you intend to
+specify certificates per protocol.
 :::
 
 ## How to Specify When SSL/TLS is Required

@@ -256,8 +256,8 @@ if possible.
 #### Configuration
 
 The `file` storage driver supports all settings described in
-[Common Settings](#common-settings). Additionally, the following settings apply
-to this driver:
+[Common Settings](#common-settings). The following settings additionally
+apply to this driver:
 
 <SettingsComponent tag="sieve-storage-file" />
 

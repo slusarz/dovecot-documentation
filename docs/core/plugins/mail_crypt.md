@@ -162,7 +162,7 @@ keys.
 
 #### Elliptic Curve (EC) Key
 
-In order to generate an EC key, you must first choose a curve from the output
+To generate an EC key, you must first choose a curve from the output
 of this command:
 
 ```sh

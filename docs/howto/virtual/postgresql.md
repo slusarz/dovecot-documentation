@@ -126,7 +126,7 @@ If you prefer dovecot as the transport, make sure 'dovecot' or something
 like `lmtp:unix:private/dovecot-lmtp` is returned from the transport_maps
 query.
 
-In order to make virtual_transport setting effective, leave
+To make the virtual_transport setting effective, leave
 transport_maps as default.
 
 ## Configuring Postfix
@@ -220,8 +220,8 @@ MECHANISMS=pam
 PARAMS="-m /var/spool/postfix/etc"
 ```
 
-As of version 2.1.19 of SASL you also need to add the -r parameter in
-order to authenticate with an email address (containing a @) as user id:
+As of version 2.1.19 of SASL you also need to add the -r parameter
+to authenticate with an email address (containing a @) as user id:
 
 ```
 PARAMS="-r -m /var/spool/postfix/etc"

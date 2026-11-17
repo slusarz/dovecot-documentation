@@ -25,7 +25,7 @@ restrictions for what can be done on the client side. The ever diversifying
 mail client software also tests the limits of the IMAP protocol and current
 server implementations.
 
-Furthermore, the IMAP protocol requires some rather complicated and expensive
+The IMAP protocol also requires some rather complicated and expensive
 searching capabilities.  For example, the protocol requires arbitrary
 substring matching.  Some newer mobile clients (e.g. Apple iOS) rely on this
 functionality.

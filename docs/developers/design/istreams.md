@@ -82,15 +82,17 @@ returns:
 
 - &gt;0: Number of new bytes read.
 
-Reading from a stream doesn't actually go forward in the stream, that
-needs to be done manually with `i_stream_skip()`. This makes it easy
-to read full data records into the stream directly instead of creating
-separate buffers. For example when reading line-based input you can keep
-reading input into the stream until you find LF and then just access the
-string directly from the input buffer. There are actually helper
-functions for this: `i_stream_next_line()` attempts to return the next
-line if available, `i_stream_read_next_line()` does the same but does
-a read to try to get the data.
+Reading from a stream doesn't actually go forward in the stream.
+That needs to be done manually with `i_stream_skip()`, which makes it
+easy to read full data records into the stream directly instead of
+creating separate buffers.
+
+For example when reading line-based input you can keep reading input
+into the stream until you find LF and then just access the string
+directly from the input buffer. There are actually helper functions
+for this: `i_stream_next_line()` attempts to return the next line if
+available, and `i_stream_read_next_line()` does the same but does a
+read to try to get the data.
 
 Because more and more data can be read into the buffer, the buffer size
 is typically limited, and once this limit is reached read returns -2.

@@ -15,7 +15,7 @@ For example you might want to access everybody's quota via Redis (or SQL)
 but you don't store the Redis database permanently so it could become empty
 once in a while.
 
-Additionally, it is expensive to directly scan quota information from each
+It is also expensive to directly scan quota information from each
 individual user account, so quota-clone allows access to quota information
 that is less resource intensive.
 

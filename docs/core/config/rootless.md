@@ -14,26 +14,28 @@ Dovecot in their favorite mail server. It's also useful if you just wish
 to test Dovecot without messing up your system.
 
 If you think of this as a good way to achieve security, ask yourself
-which is worse:
+which is worse: running Dovecot rootless, or the default setup where
+the mail user can read everyone's mail.
+
+With rootless Dovecot:
 
 - A very small possibility to get root privileges through Dovecot.
 
-- A small possibility without logging in, to get into system as a
+- A small possibility without logging in, to get into the system as a
   non-privileged **dovecot** user, chrooted into an empty directory.
 
 - A small possibility to get user's privileges after logging in, but no
   possibility to read others' mails since they're saved with different
   UIDs (plus you might also be chrooted to your own mailbox).
 
-**or**
+With the default setup:
 
 - Absolutely zero possibility to get root privileges through Dovecot.
 
-- A small possibility to get into system as a mail user, possibly even
-  without logging in, and being able to read everyone's mail (and
-  finally gaining roots by exploiting some just discovered local
-  vulnerability, unless you bothered to set up a special chrooted
-  environment).
+- A small possibility to get into the system as a mail user, possibly
+  even without logging in, and read everyone's mail (and finally
+  gaining root by exploiting some just discovered local vulnerability,
+  unless you bothered to set up a special chrooted environment).
 
 ## Installation
 

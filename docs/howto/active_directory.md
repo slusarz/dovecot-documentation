@@ -45,8 +45,8 @@ passdb ldap {
 ```
 :::
 
-- Use auth worker processes to perform LDAP lookups in order to use multiple
-concurrent LDAP connections. Otherwise only a single LDAP connection is used.
+- Use auth worker processes to perform LDAP lookups to use multiple
+  concurrent LDAP connections. Otherwise only a single LDAP connection is used.
 
 ::: code-group
 ```doveconf[dovecot.conf]
