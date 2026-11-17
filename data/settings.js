@@ -7,6 +7,14 @@ const include = (name) =>
 	fs.readFileSync(new URL('../docs/core/config/include/' + name,
 	  import.meta.url), 'utf8')
 
+/* Update notes shared between settings. */
+const note_path_types_expansion =
+	`Setting type changed. A leading \`~/\` in the value is now expanded to the user's home directory.`
+const note_auth_sql_bind_params = `
+\`%{variable}\` values are now sent to the database as bind parameters
+instead of being expanded into the query text. See
+[[link,auth_sql_variables]] for the resulting restrictions.`
+
 export const settings = {
 
 	/* Core (advanced) settings. */
@@ -6884,7 +6892,7 @@ Username for HTTP proxy.`
 
 	http_client_rawlog_dir: {
 		changed: {
-			settings_path_types_added: `Setting type changed. A leading \`~/\` in the value is now expanded to the user's home directory.`,
+			settings_path_types_added: note_path_types_expansion,
 		},
 		tags: [ 'http', 'http_client' ],
 		values: setting_types.PATH_DIR,
@@ -7174,7 +7182,7 @@ defaults.`
 
 	http_server_rawlog_dir: {
 		changed: {
-			settings_path_types_added: `Setting type changed. A leading \`~/\` in the value is now expanded to the user's home directory.`,
+			settings_path_types_added: note_path_types_expansion,
 		},
 		tags: [ 'http', 'http-server' ],
 		values: setting_types.PATH_DIR,
@@ -11166,10 +11174,7 @@ is allowed to login as other users.`
 
 	passdb_sql_query: {
 		changed: {
-			settings_auth_sql_bind_params_changed: `
-\`%{variable}\` values are now sent to the database as bind parameters
-instead of being expanded into the query text. See
-[[link,auth_sql_variables]] for the resulting restrictions.`
+			settings_auth_sql_bind_params_changed: note_auth_sql_bind_params
 		},
 		tags: [ 'passdb' ],
 		values: setting_types.STRING,
@@ -11645,7 +11650,7 @@ sending server.`
 
 	rawlog_dir: {
 		changed: {
-			settings_path_types_added: `Setting type changed. A leading \`~/\` in the value is now expanded to the user's home directory.`,
+			settings_path_types_added: note_path_types_expansion,
 		},
 		seealso: [ '[[link,rawlog]]' ],
 		values: setting_types.PATH_DIR,
@@ -13238,10 +13243,7 @@ with \`internal error\`.`
 
 	userdb_sql_query: {
 		changed: {
-			settings_auth_sql_bind_params_changed: `
-\`%{variable}\` values are now sent to the database as bind parameters
-instead of being expanded into the query text. See
-[[link,auth_sql_variables]] for the resulting restrictions.`
+			settings_auth_sql_bind_params_changed: note_auth_sql_bind_params
 		},
 		tags: [ 'userdb' ],
 		values: setting_types.STRING,
@@ -13251,10 +13253,7 @@ SQL query to lookup the userdb fields.`
 
 	userdb_sql_iterate_query: {
 		changed: {
-			settings_auth_sql_bind_params_changed: `
-\`%{variable}\` values are now sent to the database as bind parameters
-instead of being expanded into the query text. See
-[[link,auth_sql_variables]] for the resulting restrictions.`
+			settings_auth_sql_bind_params_changed: note_auth_sql_bind_params
 		},
 		tags: [ 'userdb' ],
 		values: setting_types.STRING,
